@@ -1,0 +1,4 @@
+
+<Project Header="Project 'FullHalf_Step_Mode'" Path=".\FullHalf_Step_Mode.rprj" Project="Yes" OutputFile="" sate="96" ActiveApp="FullHalf_Step_Mode" >
+	<ApplicationBuild Header="FullHalf_Step_Mode" Extern=".\FullHalf_Step_Mode.rapp" Path=".\FullHalf_Step_Mode.rapp" OutputFile=".\STM3210B-EVAL\FullHalf_Step_Mode.elf" sate="98" Config="STM3210B-EVAL" />
+</Project>

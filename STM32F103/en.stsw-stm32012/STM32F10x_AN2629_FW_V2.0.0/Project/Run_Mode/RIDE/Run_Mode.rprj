@@ -1,0 +1,4 @@
+
+<Project Header="Project 'Run_Mode'" Path=".\Run_Mode.rprj" Project="Yes" OutputFile="" sate="96" ActiveApp="Run_Mode" >
+	<ApplicationBuild Header="Run_Mode" Extern=".\Run_Mode.rapp" Path=".\Run_Mode.rapp" OutputFile=".\STM3210B-EVAL\Run_Mode.elf" sate="98" Config="STM3210B-EVAL" />
+</Project>

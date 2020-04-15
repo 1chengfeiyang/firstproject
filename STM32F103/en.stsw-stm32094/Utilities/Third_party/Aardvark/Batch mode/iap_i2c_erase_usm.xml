@@ -1,0 +1,7 @@
+<aardvark>
+<!-- +++++++++++++++++++++++++++CONFIGURATION++++++++++++++++++++++++ -->
+<configure i2c="1" spi="0" gpio="1" tpower="0" pullups="1"/>
+<i2c_bitrate khz="100"/>
+<!-- +++++++++++++++++++++++++++ERASE USER SPACE MEMORY COMMAND++++++++++++++++++++++++ -->
+<i2c_write addr="0x18" count="1"  radix="16">60 </i2c_write>  
+</aardvark>

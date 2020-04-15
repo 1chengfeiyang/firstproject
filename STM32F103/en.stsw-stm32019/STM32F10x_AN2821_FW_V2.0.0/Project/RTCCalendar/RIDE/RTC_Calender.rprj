@@ -1,0 +1,4 @@
+
+<Project Header="Project 'RTC_Calender'" Path=".\RTC_Calender.rprj" Project="Yes" OutputFile="" sate="96" ActiveApp="RTC_Calender" >
+	<ApplicationBuild Header="RTC_Calender" Extern=".\FullHalf_Step_Mode.rapp" Path=".\FullHalf_Step_Mode.rapp" OutputFile=".\STM3210B-EVAL\FullHalf_Step_Mode.elf" sate="98" Config="STM3210B-EVAL" />
+</Project>

@@ -1,0 +1,208 @@
+
+<ApplicationBuild Header="IR_Decoding_PWMI" Extern=".\IR_Decoding_PWMI.rapp" Path=".\IR_Decoding_PWMI.rapp" OutputFile=".\IR_RC5_Decoder\IR_Decoding_PWMI.elf" sate="98" Config="IR_RC5_Decoder" AsyncBuild="" >
+	<Group Header="CMSIS" Marker="-1" OutputFile="" sate="0" AsyncBuild="" >
+		<NodeC Path="..\src\system_stm32f10x.c" Header="system_stm32f10x.c" Marker="-1" AsyncBuild="" OutputFile=".\IR_RC5_Decoder\system_stm32f10x.o" sate="0" />
+		<NodeC Path="..\..\..\..\LIBRARIES\CMSIS\CM3\CoreSupport\core_cm3.c" Header="core_cm3.c" Marker="-1" AsyncBuild="" OutputFile=".\IR_RC5_Decoder\core_cm3.o" sate="0" />
+																																																															
+	</Group>
+	<Group Header="Doc" Marker="-1" OutputFile="" sate="0" AsyncBuild="" >
+		<NodeText Path="..\readme.txt" Header="readme.txt" Marker="-1" OutputFile="" sate="0" AsyncBuild="" />
+																																																															
+	</Group>
+	<Group Header="RIDE" Marker="-1" OutputFile="" sate="64" AsyncBuild="" >
+		<NodeASM Path="..\..\..\..\LIBRARIES\CMSIS\CM3\DeviceSupport\ST\STM32F10x\startup\gcc_ride7\startup_stm32f10x_hd_vl.s" Header="startup_stm32f10x_hd_vl.s" Marker="-1" AsyncBuild="" OutputFile=".\IR_RC5_Decoder\startup_stm32f10x_hd_vl.o" sate="0" >
+			<Options>																					</Options>
+																				
+		</NodeASM>
+																																																															
+	</Group>
+	<Group Header="StdPeriph_Driver" Marker="-1" OutputFile="" sate="0" AsyncBuild="" >
+		<NodeC Path="..\..\..\..\LIBRARIES\STM32F10X_STDPERIPH_DRIVER\src\stm32f10x_usart.c" Header="stm32f10x_usart.c" Marker="-1" AsyncBuild="" OutputFile=".\IR_RC5_Decoder\stm32f10x_usart.o" sate="0" />
+		<NodeC Path="..\..\..\..\LIBRARIES\STM32F10X_STDPERIPH_DRIVER\src\misc.c" Header="misc.c" Marker="-1" AsyncBuild="" OutputFile=".\IR_RC5_Decoder\misc.o" sate="0" />
+		<NodeC Path="..\..\..\..\LIBRARIES\STM32F10X_STDPERIPH_DRIVER\src\stm32f10x_dma.c" Header="stm32f10x_dma.c" Marker="-1" AsyncBuild="" OutputFile=".\IR_RC5_Decoder\stm32f10x_dma.o" sate="0" />
+		<NodeC Path="..\..\..\..\LIBRARIES\STM32F10X_STDPERIPH_DRIVER\src\stm32f10x_gpio.c" Header="stm32f10x_gpio.c" Marker="-1" AsyncBuild="" OutputFile=".\IR_RC5_Decoder\stm32f10x_gpio.o" sate="0" />
+		<NodeC Path="..\..\..\..\LIBRARIES\STM32F10X_STDPERIPH_DRIVER\src\stm32f10x_i2c.c" Header="stm32f10x_i2c.c" Marker="-1" AsyncBuild="" OutputFile=".\IR_RC5_Decoder\stm32f10x_i2c.o" sate="0" />
+		<NodeC Path="..\..\..\..\LIBRARIES\STM32F10X_STDPERIPH_DRIVER\src\stm32f10x_rcc.c" Header="stm32f10x_rcc.c" Marker="-1" AsyncBuild="" OutputFile=".\IR_RC5_Decoder\stm32f10x_rcc.o" sate="0" />
+		<NodeC Path="..\..\..\..\LIBRARIES\STM32F10X_STDPERIPH_DRIVER\src\stm32f10x_sdio.c" Header="stm32f10x_sdio.c" Marker="-1" AsyncBuild="" OutputFile=".\IR_RC5_Decoder\stm32f10x_sdio.o" sate="0" />
+		<NodeC Path="..\..\..\..\LIBRARIES\STM32F10X_STDPERIPH_DRIVER\src\stm32f10x_spi.c" Header="stm32f10x_spi.c" Marker="-1" AsyncBuild="" OutputFile=".\IR_RC5_Decoder\stm32f10x_spi.o" sate="0" />
+		<NodeC Path="..\..\..\..\LIBRARIES\STM32F10X_STDPERIPH_DRIVER\src\stm32f10x_tim.c" Header="stm32f10x_tim.c" Marker="-1" AsyncBuild="" OutputFile=".\IR_RC5_Decoder\stm32f10x_tim.o" sate="0" />
+		<NodeC Path="..\..\..\..\LIBRARIES\STM32F10X_STDPERIPH_DRIVER\src\stm32f10x_fsmc.c" Header="stm32f10x_fsmc.c" Marker="-1" AsyncBuild="" OutputFile=".\IR_RC5_Decoder\stm32f10x_fsmc.o" sate="0" />
+																																																															
+	</Group>
+	<Group Header="User" Marker="-1" OutputFile="" sate="0" AsyncBuild="" >
+		<NodeC Path="..\src\main.c" Header="main.c" Marker="-1" OutputFile=".\IR_RC5_Decoder\main.o" sate="0" AsyncBuild="" />
+		<NodeC Path="..\src\stm32f10x_it.c" Header="stm32f10x_it.c" Marker="-1" OutputFile=".\IR_RC5_Decoder\stm32f10x_it.o" sate="0" AsyncBuild="" />
+		<NodeC Path="..\src\rc5_decode.c" Header="rc5_decode.c" Marker="-1" AsyncBuild="" OutputFile=".\IR_RC5_Decoder\rc5_decode.o" sate="0" >
+			<Options>
+				<Config Header="IR_SIRC_Decoder" >
+					<Set Header="NodeC" >
+						<Section Header="Build" >
+							<Property Header="Exclude" Value="Yes" Removable="1" />
+							<Property Header="LinkExclude" Value="Yes" Removable="1" />
+																																			
+						</Section>
+																													
+					</Set>
+																		
+				</Config>
+														
+			</Options>
+										
+		</NodeC>
+		<NodeC Path="..\src\ir_decode.c" Header="ir_decode.c" Marker="0" AsyncBuild="" OutputFile=".\IR_RC5_Decoder\ir_decode.o" sate="0" >
+			<Options>
+				<Config Header="STM3210C-EVAL" >
+					<Set Header="NodeC" >
+						<Section Header="Build" >
+							<Property Header="Exclude" Value="Yes" Removable="1" />
+							<Property Header="LinkExclude" Value="Yes" Removable="1" />
+																																			
+						</Section>
+																													
+					</Set>
+																		
+				</Config>
+				<Config Header="IR_RC5_Decoder" >
+					<Set Header="NodeC" >
+						<Section Header="Build" >
+							<Property Header="Exclude" Value="Yes" Removable="1" />
+							<Property Header="LinkExclude" Value="Yes" Removable="1" />
+																																			
+						</Section>
+																													
+					</Set>
+																		
+				</Config>
+														
+			</Options>
+										
+		</NodeC>
+																																																															
+	</Group>
+	<Configs>
+		<Config Header="IR_RC5_Decoder" />
+		<Config Header="IR_SIRC_Decoder" />
+																																																															
+	</Configs>
+	<Group Header="STM32_EVAL" Marker="-1" OutputFile="" sate="0" AsyncBuild="" >
+		<NodeC Path="..\..\..\..\Utilities\STM32_EVAL\stm32_eval.c" Header="stm32_eval.c" Marker="-1" AsyncBuild="" OutputFile=".\IR_RC5_Decoder\stm32_eval.o" sate="0" />
+		<NodeC Path="..\..\..\..\Utilities\STM32_EVAL\STM32100E_EVAL\stm32100e_eval_lcd.c" Header="stm32100e_eval_lcd.c" Marker="-1" AsyncBuild="" OutputFile=".\IR_RC5_Decoder\stm32100e_eval_lcd.o" sate="0" />
+																																				
+	</Group>
+	<Options>
+		<Config Header="Standard" >
+			<Set Header="ApplicationBuild" >
+				<Section Header="General" >
+					<Property Header="TargetFamily" Value="ARM" />
+																																																																																																																																																																																																				
+				</Section>
+				<Section Header="Directories" >
+					<Property Header="IncDir" Value="..\inc;..\..\..\Libraries\CMSIS\CM3\CoreSupport;..\..\..\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x;..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc;..\..\..\Libraries\STM32F10x_RC5_Emul_Receiver_Lib\inc;..\..\..\Utilities\STM32_EVAL" Removable="1" />
+					<Property Header="OutDir" Value="$(ApplicationDir)\STM3210B-EVAL" Removable="1" />
+																																																																																																																			
+				</Section>
+																																																																																									
+			</Set>
+			<Set Header="Target" >
+				<Section Header="ProcessorARM" >
+					<Property Header="Processor" Value="STM32F103VBT6" />
+																																																																																																																																																																																																				
+				</Section>
+				<Section Header="ToolSetARM" >
+					<Property Header="BuildToolSetARM" Value="ARM\GNU.config" Removable="1" />
+																																																																																																																																																																																																				
+				</Section>
+																																																																																																																																																								
+			</Set>
+			<Set Header="GCC" >
+				<Section Header="Defines" >
+					<Property Header="Defines" Value="USE_STM3210B_EVAL;STM32F10X_MD;USE_STDPERIPH_DRIVER" Removable="1" />
+																																																																																																																																																																																																				
+				</Section>
+				<Section Header="OPTIMIZE" >
+					<Property Header="Optimize" Value="-Os" Removable="1" />
+																																																																																																																																																																																																				
+				</Section>
+																																																																																																																																																								
+			</Set>
+			<Set Header="LD" >
+				<Section Header="Startup" >
+					<Property Header="DEFAULTSTARTUP" Value="No" Removable="1" />
+					<Property Header="File" Value="" Removable="1" />
+																																																																																																																																																																																																				
+				</Section>
+				<Section Header="Scripts" >
+					<Property Header="SCRIPTFILES" Value="Yes" Removable="1" />
+					<Property Header="File" Value="" Removable="1" />
+					<Property Header="StarterKitLimit" Value="No" Removable="1" />
+																																																																																																																																																																																																				
+				</Section>
+																																																																																																																																																								
+			</Set>
+																																																												
+		</Config>
+		<Config Header="IR_RC5_Decoder" >
+			<Set Header="ApplicationBuild" >
+				<Section Header="Directories" >
+					<Property Header="IncDir" Value="..\inc;..\..\..\..\Libraries\CMSIS\CM3\CoreSupport;..\..\..\..\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x;..\..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc;..\..\..\..\Utilities\STM32_EVAL;..\..\..\..\Utilities\STM32_EVAL\STM32100E_EVAL" Removable="1" />
+					<Property Header="OutDir" Value="$(ApplicationDir)\IR_RC5_Decoder" Removable="1" />
+					<Property Header="ListDir" Value="$(ApplicationDir)\IR_RC5_Decoder" Removable="1" />
+																									
+				</Section>
+																			
+			</Set>
+			<Set Header="Target" >
+				<Section Header="ProcessorARM" >
+					<Property Header="Processor" Value="STM32F100ZE" />
+																									
+				</Section>
+																			
+			</Set>
+			<Set Header="GCC" >
+				<Section Header="Defines" >
+					<Property Header="Defines" Value="USE_STDPERIPH_DRIVER;STM32F10X_HD_VL;USE_STM32100E_EVAL;IR_RC5_PROTOCOL" Removable="1" />
+																									
+				</Section>
+																			
+			</Set>
+										
+		</Config>
+		<Config Header="IR_SIRC_Decoder" >
+			<Set Header="ApplicationBuild" >
+				<Section Header="Directories" >
+					<Property Header="OutDir" Value="$(ApplicationDir)\IR_SIRC_Decoder" Removable="1" />
+					<Property Header="ListDir" Value="$(ApplicationDir)\IR_SIRC_Decoder" Removable="1" />
+					<Property Header="IncDir" Value="..\inc;..\..\..\..\Libraries\CMSIS\CM3\CoreSupport;..\..\..\..\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x;..\..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc;..\..\..\..\Utilities\STM32_EVAL;..\..\..\..\Utilities\STM32_EVAL\STM32100E_EVAL" Removable="1" />
+																									
+				</Section>
+																			
+			</Set>
+			<Set Header="Target" >
+				<Section Header="ProcessorARM" >
+					<Property Header="Processor" Value="STM32F100ZE" />
+																																											
+				</Section>
+																																	
+			</Set>
+			<Set Header="GCC" >
+				<Section Header="Defines" >
+					<Property Header="Defines" Value="USE_STDPERIPH_DRIVER;STM32F10X_HD_VL;USE_STM32100E_EVAL;IR_SIRC_PROTOCOL" Removable="1" />
+																									
+				</Section>
+																			
+			</Set>
+										
+		</Config>
+		<Config Header="STM3210C-EVAL" >
+			<Set Header="Target" >
+				<Section Header="ProcessorARM" >
+					<Property Header="Processor" Value="STM32F100ZE" />
+																									
+				</Section>
+																			
+			</Set>
+										
+		</Config>
+						
+	</Options>
+</ApplicationBuild>

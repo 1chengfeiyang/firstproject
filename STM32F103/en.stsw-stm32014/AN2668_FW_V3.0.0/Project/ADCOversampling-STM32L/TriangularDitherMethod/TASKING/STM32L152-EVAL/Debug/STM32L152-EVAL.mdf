@@ -1,0 +1,10 @@
+# space <name> <id> <mau size>
+space	ARM:ARM:linear	1	8
+# chip <name> <id> <mau size> <size> <type>
+chip	STM32L1xx_EEPROM	1	8	4096	rom
+chip	STM32L1xx_Flash	0	8	131072	rom
+chip	STM32L1xx_SRAM	2	8	16384	ram
+# map <space id> <start in space> <size in space> <chip id> <start on chip>
+map	1	134217728	131072	0	0
+map	1	134742016	4096	1	0
+map	1	536870912	16384	2	0

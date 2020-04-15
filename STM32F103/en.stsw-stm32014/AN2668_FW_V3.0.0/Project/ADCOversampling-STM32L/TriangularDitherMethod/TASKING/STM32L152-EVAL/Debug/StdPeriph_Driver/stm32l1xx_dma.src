@@ -1,0 +1,3036 @@
+	; TASKING VX-toolset for ARM Cortex: C compiler v4.4r1 Build 765 SN 00123456
+	; Options: -f cc3556a --dep-file=StdPeriph_Driver\.stm32l1xx_dma.obj.d -CARMv7M -D__PROC_STM32L152VB__ -DVECT_TAB_FLASH -DUSE_STDPERIPH_DRIVER -DUSE_STM32L152_EVAL -DSTM32L1XX_MD -I..\..\..\inc -I..\..\..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc -I..\..\..\..\..\..\Libraries\CMSIS\Device\ST\STM32L1xx\Include -I..\..\..\..\..\..\Libraries\CMSIS\Include -g -t4 -w557 -w529 -w588 --make-target=StdPeriph_Driver\stm32l1xx_dma.obj --language=-gcc,-volatile,+strings -O3 --source --compact-max-size=200 -o StdPeriph_Driver\stm32l1xx_dma.src
+	; Module start
+	;.ident 'TASKING VX-toolset for ARM Cortex: C compiler v4.4r1 Build 765 SN 00123456'
+	.source 'C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c'
+
+	.section	.text ,cluster('$group_DMA_DeInit')
+	.global	DMA_DeInit
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	     1  /**
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	     2    ******************************************************************************
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	     3    * @file    stm32l1xx_dma.c
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	     4    * @author  MCD Application Team
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	     5    * @version V1.1.1
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	     6    * @date    05-March-2012
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	     7    * @brief   This file provides firmware functions to manage the following 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	     8    *          functionalities of the Direct Memory Access controller (DMA):           
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	     9    *           + Initialization and Configuration
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    10    *           + Data Counter
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    11    *           + Interrupts and flags management
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    12    *           
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    13    *  @verbatim
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    14    ==============================================================================
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    15                        ##### How to use this driver #####
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    16    ==============================================================================
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    17      [..]
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    18      (#) Enable The DMA controller clock using 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    19          RCC_AHBPeriphClockCmd(RCC_AHBPeriph_DMA1, ENABLE) function for DMA1 or 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    20          using RCC_AHBPeriphClockCmd(RCC_AHBPeriph_DMA2, ENABLE) function for DMA2.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    21      (#) Enable and configure the peripheral to be connected to the DMA channel
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    22                 (except for internal SRAM / FLASH memories: no initialization is 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    23                 necessary).
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    24      (#) For a given Channel, program the Source and Destination addresses, 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    25          the transfer Direction, the Buffer Size, the Peripheral and Memory 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    26          Incrementation mode and Data Size, the Circular or Normal mode, 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    27          the channel transfer Priority and the Memory-to-Memory transfer 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    28          mode (if needed) using the DMA_Init() function.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    29      (#) Enable the NVIC and the corresponding interrupt(s) using the function 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    30          DMA_ITConfig() if you need to use DMA interrupts.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    31      (#) Enable the DMA channel using the DMA_Cmd() function.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    32      (#) Activate the needed channel Request using PPP_DMACmd() function for 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    33          any PPP peripheral except internal SRAM and FLASH (ie. SPI, USART ...) 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    34          The function allowing this operation is provided in each PPP peripheral 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    35          driver (ie. SPI_DMACmd for SPI peripheral).
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    36      (#) Optionally, you can configure the number of data to be transferred
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    37          when the channel is disabled (ie. after each Transfer Complete event
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    38          or when a Transfer Error occurs) using the function DMA_SetCurrDataCounter().
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    39          And you can get the number of remaining data to be transferred using 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    40          the function DMA_GetCurrDataCounter() at run time (when the DMA channel is
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    41          enabled and running).
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    42      (#) To control DMA events you can use one of the following two methods:
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    43          (##) Check on DMA channel flags using the function DMA_GetFlagStatus().
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    44          (##) Use DMA interrupts through the function DMA_ITConfig() at initialization
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    45               phase and DMA_GetITStatus() function into interrupt routines in
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    46               communication phase.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    47               After checking on a flag you should clear it using DMA_ClearFlag()
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    48               function. And after checking on an interrupt event you should 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    49               clear it using DMA_ClearITPendingBit() function.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    50      @endverbatim
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    51      
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    52    ******************************************************************************
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    53    * @attention
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    54    *
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    55    * <h2><center>&copy; COPYRIGHT 2012 STMicroelectronics</center></h2>
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    56    *
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    57    * Licensed under MCD-ST Liberty SW License Agreement V2, (the "License");
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    58    * You may not use this file except in compliance with the License.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    59    * You may obtain a copy of the License at:
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    60    *
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    61    *        http://www.st.com/software_license_agreement_liberty_v2
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    62    *
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    63    * Unless required by applicable law or agreed to in writing, software 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    64    * distributed under the License is distributed on an "AS IS" BASIS, 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    65    * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    66    * See the License for the specific language governing permissions and
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    67    * limitations under the License.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    68    *
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    69    ******************************************************************************
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    70    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    71  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    72  /* Includes ------------------------------------------------------------------*/
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    73  #include "stm32l1xx_dma.h"
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    74  #include "stm32l1xx_rcc.h"
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    75  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    76  /** @addtogroup STM32L1xx_StdPeriph_Driver
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    77    * @{
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    78    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    79  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    80  /** @defgroup DMA 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    81    * @brief DMA driver modules
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    82    * @{
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    83    */ 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    84  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    85  /* Private typedef -----------------------------------------------------------*/
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    86  /* Private define ------------------------------------------------------------*/
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    87  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    88  /* DMA1 Channelx interrupt pending bit masks */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    89  #define DMA1_CHANNEL1_IT_MASK    ((uint32_t)(DMA_ISR_GIF1 | DMA_ISR_TCIF1 | DMA_ISR_HTIF1 | DMA_ISR_TEIF1))
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    90  #define DMA1_CHANNEL2_IT_MASK    ((uint32_t)(DMA_ISR_GIF2 | DMA_ISR_TCIF2 | DMA_ISR_HTIF2 | DMA_ISR_TEIF2))
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    91  #define DMA1_CHANNEL3_IT_MASK    ((uint32_t)(DMA_ISR_GIF3 | DMA_ISR_TCIF3 | DMA_ISR_HTIF3 | DMA_ISR_TEIF3))
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    92  #define DMA1_CHANNEL4_IT_MASK    ((uint32_t)(DMA_ISR_GIF4 | DMA_ISR_TCIF4 | DMA_ISR_HTIF4 | DMA_ISR_TEIF4))
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    93  #define DMA1_CHANNEL5_IT_MASK    ((uint32_t)(DMA_ISR_GIF5 | DMA_ISR_TCIF5 | DMA_ISR_HTIF5 | DMA_ISR_TEIF5))
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    94  #define DMA1_CHANNEL6_IT_MASK    ((uint32_t)(DMA_ISR_GIF6 | DMA_ISR_TCIF6 | DMA_ISR_HTIF6 | DMA_ISR_TEIF6))
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    95  #define DMA1_CHANNEL7_IT_MASK    ((uint32_t)(DMA_ISR_GIF7 | DMA_ISR_TCIF7 | DMA_ISR_HTIF7 | DMA_ISR_TEIF7))
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    96  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    97  /* DMA2 Channelx interrupt pending bit masks */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    98  #define DMA2_CHANNEL1_IT_MASK    ((uint32_t)(DMA_ISR_GIF1 | DMA_ISR_TCIF1 | DMA_ISR_HTIF1 | DMA_ISR_TEIF1))
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	    99  #define DMA2_CHANNEL2_IT_MASK    ((uint32_t)(DMA_ISR_GIF2 | DMA_ISR_TCIF2 | DMA_ISR_HTIF2 | DMA_ISR_TEIF2))
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   100  #define DMA2_CHANNEL3_IT_MASK    ((uint32_t)(DMA_ISR_GIF3 | DMA_ISR_TCIF3 | DMA_ISR_HTIF3 | DMA_ISR_TEIF3))
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   101  #define DMA2_CHANNEL4_IT_MASK    ((uint32_t)(DMA_ISR_GIF4 | DMA_ISR_TCIF4 | DMA_ISR_HTIF4 | DMA_ISR_TEIF4))
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   102  #define DMA2_CHANNEL5_IT_MASK    ((uint32_t)(DMA_ISR_GIF5 | DMA_ISR_TCIF5 | DMA_ISR_HTIF5 | DMA_ISR_TEIF5))
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   103  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   104  /* DMA FLAG mask */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   105  #define FLAG_MASK                ((uint32_t)0x10000000)
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   106  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   107  /* DMA registers Masks */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   108  #define CCR_CLEAR_MASK           ((uint32_t)0xFFFF800F)
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   109  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   110  /* Private macro -------------------------------------------------------------*/
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   111  /* Private variables ---------------------------------------------------------*/
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   112  /* Private function prototypes -----------------------------------------------*/
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   113  /* Private functions ---------------------------------------------------------*/
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   114  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   115  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   116  /** @defgroup DMA_Private_Functions
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   117    * @{
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   118    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   119  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   120  /** @defgroup DMA_Group1 Initialization and Configuration functions
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   121   *  @brief   Initialization and Configuration functions
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   122   *
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   123  @verbatim   
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   124   ===============================================================================
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   125              ##### Initialization and Configuration functions #####
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   126   ===============================================================================
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   127      [..] This subsection provides functions allowing to initialize the DMA channel 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   128           source and destination addresses, incrementation and data sizes, transfer 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   129           direction, buffer size, circular/normal mode selection, memory-to-memory 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   130           mode selection and channel priority value.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   131      [..] The DMA_Init() function follows the DMA configuration procedures as described 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   132           in reference manual (RM0038).
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   133  @endverbatim
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   134    * @{
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   135    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   136    
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   137  /**
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   138    * @brief  Deinitializes the DMAy Channelx registers to their default reset
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   139    *         values.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   140    * @param  DMAy_Channelx: where y can be 1 or 2 to select the DMA and x can be 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   141    *         1 to 7 for DMA1 and 1 to 5 for DMA2 to select the DMA Channel.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   142    * @retval None
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   143    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   144  void DMA_DeInit(DMA_Channel_TypeDef* DMAy_Channelx)
+; Function DMA_DeInit
+.L70:
+	.thumb
+	.align	4
+DMA_DeInit:	.type	func
+
+.L41:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   145  {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   146    /* Check the parameters */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   147    assert_param(IS_DMA_ALL_PERIPH(DMAy_Channelx));
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   148  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   149    /* Disable the selected DMAy Channelx */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   150    DMAy_Channelx->CCR &= (uint16_t)(~DMA_CCR1_EN);
+	ldr	r1,[r0,#0]
+.L196:
+	movw	r2,#@lsh(65534)
+.L197:
+	ands	r1,r1,r2
+	str	r1,[r0,#0]
+.L198:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   151  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   152    /* Reset DMAy Channelx control register */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   153    DMAy_Channelx->CCR  = 0;
+	movs	r1,#0
+.L199:
+	str	r1,[r0,#0]
+.L200:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   154    
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   155    /* Reset DMAy Channelx remaining bytes register */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   156    DMAy_Channelx->CNDTR = 0;
+	str	r1,[r0,#4]
+.L201:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   157    
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   158    /* Reset DMAy Channelx peripheral address register */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   159    DMAy_Channelx->CPAR  = 0;
+	str	r1,[r0,#8]
+.L202:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   160    
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   161    /* Reset DMAy Channelx memory address register */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   162    DMAy_Channelx->CMAR = 0;
+	str	r1,[r0,#12]
+.L203:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   163    
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   164    if (DMAy_Channelx == DMA1_Channel1)
+	movw	r1,#@lsh(1073897480)
+	movt	r1,#@msh(1073897480)
+.L204:
+	cmp	r0,r1
+	bne	.L2
+.L205:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   165    {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   166      /* Reset interrupt pending bits for DMA1 Channel1 */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   167      DMA1->IFCR |= DMA1_CHANNEL1_IT_MASK;
+	movw	r0,#@lsh(1073897476)
+.L157:
+	movt	r0,#@msh(1073897476)
+	ldr	r1,[r0,#0]
+.L206:
+	orrs	r1,r1,#15
+.L207:
+	b	.L3
+.L2:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   168    }
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   169    else if (DMAy_Channelx == DMA1_Channel2)
+	movw	r1,#@lsh(1073897500)
+	movt	r1,#@msh(1073897500)
+.L208:
+	cmp	r0,r1
+	bne	.L4
+.L209:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   170    {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   171      /* Reset interrupt pending bits for DMA1 Channel2 */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   172      DMA1->IFCR |= DMA1_CHANNEL2_IT_MASK;
+	movw	r0,#@lsh(1073897476)
+.L158:
+	movt	r0,#@msh(1073897476)
+	ldr	r1,[r0,#0]
+.L210:
+	orrs	r1,r1,#240
+.L211:
+	b	.L5
+.L4:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   173    }
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   174    else if (DMAy_Channelx == DMA1_Channel3)
+	movw	r1,#@lsh(1073897520)
+	movt	r1,#@msh(1073897520)
+.L212:
+	cmp	r0,r1
+	bne	.L6
+.L213:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   175    {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   176      /* Reset interrupt pending bits for DMA1 Channel3 */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   177      DMA1->IFCR |= DMA1_CHANNEL3_IT_MASK;
+	movw	r0,#@lsh(1073897476)
+.L159:
+	movt	r0,#@msh(1073897476)
+	ldr	r1,[r0,#0]
+.L214:
+	orrs	r1,r1,#3840
+.L215:
+	b	.L7
+.L6:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   178    }
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   179    else if (DMAy_Channelx == DMA1_Channel4)
+	movw	r1,#@lsh(1073897540)
+	movt	r1,#@msh(1073897540)
+.L216:
+	cmp	r0,r1
+	bne	.L8
+.L217:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   180    {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   181      /* Reset interrupt pending bits for DMA1 Channel4 */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   182      DMA1->IFCR |= DMA1_CHANNEL4_IT_MASK;
+	movw	r0,#@lsh(1073897476)
+.L160:
+	movt	r0,#@msh(1073897476)
+	ldr	r1,[r0,#0]
+.L218:
+	orrs	r1,r1,#61440
+.L219:
+	b	.L9
+.L8:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   183    }
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   184    else if (DMAy_Channelx == DMA1_Channel5)
+	movw	r1,#@lsh(1073897560)
+	movt	r1,#@msh(1073897560)
+.L220:
+	cmp	r0,r1
+	bne	.L10
+.L221:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   185    {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   186      /* Reset interrupt pending bits for DMA1 Channel5 */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   187      DMA1->IFCR |= DMA1_CHANNEL5_IT_MASK;
+	movw	r0,#@lsh(1073897476)
+.L161:
+	movt	r0,#@msh(1073897476)
+.L222:
+	b	.L11
+.L10:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   188    }
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   189    else if (DMAy_Channelx == DMA1_Channel6)
+	movw	r1,#@lsh(1073897580)
+	movt	r1,#@msh(1073897580)
+.L223:
+	cmp	r0,r1
+	bne	.L12
+.L224:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   190    {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   191      /* Reset interrupt pending bits for DMA1 Channel6 */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   192      DMA1->IFCR |= DMA1_CHANNEL6_IT_MASK;
+	movw	r0,#@lsh(1073897476)
+.L162:
+	movt	r0,#@msh(1073897476)
+	ldr	r1,[r0,#0]
+.L225:
+	orrs	r1,r1,#15728640
+.L226:
+	b	.L13
+.L12:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   193    }
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   194    else if (DMAy_Channelx == DMA1_Channel7)
+	movw	r1,#@lsh(1073897600)
+	movt	r1,#@msh(1073897600)
+.L227:
+	cmp	r0,r1
+	bne	.L14
+.L228:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   195    {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   196      /* Reset interrupt pending bits for DMA1 Channel7 */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   197      DMA1->IFCR |= DMA1_CHANNEL7_IT_MASK;
+	movw	r0,#@lsh(1073897476)
+.L163:
+	movt	r0,#@msh(1073897476)
+	ldr	r1,[r0,#0]
+.L229:
+	orrs	r1,r1,#251658240
+.L230:
+	b	.L15
+.L14:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   198    }
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   199    else if (DMAy_Channelx == DMA2_Channel1)
+	movw	r1,#@lsh(1073898504)
+	movt	r1,#@msh(1073898504)
+.L231:
+	cmp	r0,r1
+	bne	.L16
+.L232:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   200    {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   201      /* Reset interrupt pending bits for DMA2 Channel1 */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   202      DMA2->IFCR |= DMA2_CHANNEL1_IT_MASK;
+	movw	r0,#@lsh(1073898500)
+.L164:
+	movt	r0,#@msh(1073898500)
+	ldr	r1,[r0,#0]
+.L233:
+	orrs	r1,r1,#15
+.L234:
+	b	.L17
+.L16:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   203    }
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   204    else if (DMAy_Channelx == DMA2_Channel2)
+	movw	r1,#@lsh(1073898524)
+	movt	r1,#@msh(1073898524)
+.L235:
+	cmp	r0,r1
+	bne	.L18
+.L236:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   205    {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   206      /* Reset interrupt pending bits for DMA2 Channel2 */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   207      DMA2->IFCR |= DMA2_CHANNEL2_IT_MASK;
+	movw	r0,#@lsh(1073898500)
+.L165:
+	movt	r0,#@msh(1073898500)
+	ldr	r1,[r0,#0]
+.L237:
+	orrs	r1,r1,#240
+.L238:
+	b	.L19
+.L18:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   208    }
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   209    else if (DMAy_Channelx == DMA2_Channel3)
+	movw	r1,#@lsh(1073898544)
+	movt	r1,#@msh(1073898544)
+.L239:
+	cmp	r0,r1
+	bne	.L20
+.L240:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   210    {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   211      /* Reset interrupt pending bits for DMA2 Channel3 */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   212      DMA2->IFCR |= DMA2_CHANNEL3_IT_MASK;
+	movw	r0,#@lsh(1073898500)
+.L166:
+	movt	r0,#@msh(1073898500)
+	ldr	r1,[r0,#0]
+.L241:
+	orrs	r1,r1,#3840
+.L242:
+	b	.L21
+.L20:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   213    }
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   214    else if (DMAy_Channelx == DMA2_Channel4)
+	movw	r1,#@lsh(1073898564)
+	movt	r1,#@msh(1073898564)
+.L243:
+	cmp	r0,r1
+	bne	.L22
+.L244:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   215    {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   216      /* Reset interrupt pending bits for DMA2 Channel4 */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   217      DMA2->IFCR |= DMA2_CHANNEL4_IT_MASK;
+	movw	r0,#@lsh(1073898500)
+.L167:
+	movt	r0,#@msh(1073898500)
+	ldr	r1,[r0,#0]
+.L245:
+	orrs	r1,r1,#61440
+.L246:
+	b	.L23
+.L22:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   218    }
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   219    else
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   220    { 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   221      if (DMAy_Channelx == DMA2_Channel5)
+	movw	r1,#@lsh(1073898584)
+	movt	r1,#@msh(1073898584)
+.L247:
+	cmp	r0,r1
+	it	ne
+	bxne	lr
+.L248:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   222      {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   223        /* Reset interrupt pending bits for DMA2 Channel5 */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   224        DMA2->IFCR |= DMA2_CHANNEL5_IT_MASK;
+	movw	r0,#@lsh(1073898500)
+.L168:
+	movt	r0,#@msh(1073898500)
+.L11:
+	ldr	r1,[r0,#0]
+.L249:
+	orrs	r1,r1,#983040
+.L3:
+.L5:
+.L7:
+.L9:
+.L13:
+.L15:
+.L17:
+.L19:
+.L21:
+.L23:
+	str	r1,[r0,#0]
+.L24:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   225      }
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   226    }
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   227  }
+	bx	lr
+.L71:
+	.size	DMA_DeInit,$-DMA_DeInit
+	; End of function
+	.endsec	; End of section
+
+	.section	.text ,cluster('$group_DMA_Init')
+	.global	DMA_Init
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   228  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   229  /**
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   230    * @brief  Initializes the DMAy Channelx according to the specified
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   231    *         parameters in the DMA_InitStruct.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   232    * @param  DMAy_Channelx: where y can be 1 or 2 to select the DMA and x can be 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   233    *         1 to 7 for DMA1 and 1 to 5 for DMA2 to select the DMA Channel.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   234    * @param  DMA_InitStruct: pointer to a DMA_InitTypeDef structure that
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   235    *         contains the configuration information for the specified DMA Channel.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   236    * @retval None
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   237    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   238  void DMA_Init(DMA_Channel_TypeDef* DMAy_Channelx, DMA_InitTypeDef* DMA_InitStruct)
+; Function DMA_Init
+.L76:
+	.thumb
+	.align	4
+DMA_Init:	.type	func
+
+.L43:
+	push	{r4}
+.L169:
+	mov	r3,r0
+.L173:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   239  {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   240    uint32_t tmpreg = 0;
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   241  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   242    /* Check the parameters */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   243    assert_param(IS_DMA_ALL_PERIPH(DMAy_Channelx));
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   244    assert_param(IS_DMA_DIR(DMA_InitStruct->DMA_DIR));
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   245    assert_param(IS_DMA_BUFFER_SIZE(DMA_InitStruct->DMA_BufferSize));
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   246    assert_param(IS_DMA_PERIPHERAL_INC_STATE(DMA_InitStruct->DMA_PeripheralInc));
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   247    assert_param(IS_DMA_MEMORY_INC_STATE(DMA_InitStruct->DMA_MemoryInc));   
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   248    assert_param(IS_DMA_PERIPHERAL_DATA_SIZE(DMA_InitStruct->DMA_PeripheralDataSize));
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   249    assert_param(IS_DMA_MEMORY_DATA_SIZE(DMA_InitStruct->DMA_MemoryDataSize));
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   250    assert_param(IS_DMA_MODE(DMA_InitStruct->DMA_Mode));
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   251    assert_param(IS_DMA_PRIORITY(DMA_InitStruct->DMA_Priority));
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   252    assert_param(IS_DMA_M2M_STATE(DMA_InitStruct->DMA_M2M));
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   253  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   254  /*--------------------------- DMAy Channelx CCR Configuration -----------------*/
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   255    /* Get the DMAy_Channelx CCR value */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   256    tmpreg = DMAy_Channelx->CCR;
+	ldr	r0,[r3,#0]
+.L172:
+	mov	r2,r1
+.L174:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   257    /* Clear MEM2MEM, PL, MSIZE, PSIZE, MINC, PINC, CIRC and DIR bits */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   258    tmpreg &= CCR_CLEAR_MASK;
+	bics	r0,r0,#32512
+	bics	r4,r0,#240
+.L254:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   259    /* Configure DMAy Channelx: data transfer, data size, priority level and mode */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   260    /* Set DIR bit according to DMA_DIR value */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   261    /* Set CIRC bit according to DMA_Mode value */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   262    /* Set PINC bit according to DMA_PeripheralInc value */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   263    /* Set MINC bit according to DMA_MemoryInc value */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   264    /* Set PSIZE bits according to DMA_PeripheralDataSize value */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   265    /* Set MSIZE bits according to DMA_MemoryDataSize value */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   266    /* Set PL bits according to DMA_Priority value */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   267    /* Set the MEM2MEM bit according to DMA_M2M value */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   268    tmpreg |= DMA_InitStruct->DMA_DIR | DMA_InitStruct->DMA_Mode |
+	ldr	r0,[r2,#8]
+.L255:
+	ldr	r1,[r2,#32]
+.L171:
+	orrs	r0,r0,r1
+.L256:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   269              DMA_InitStruct->DMA_PeripheralInc | DMA_InitStruct->DMA_MemoryInc |
+	ldr	r1,[r2,#16]
+.L257:
+	orrs	r0,r0,r1
+.L258:
+	ldr	r1,[r2,#20]
+.L259:
+	orrs	r0,r0,r1
+.L260:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   270              DMA_InitStruct->DMA_PeripheralDataSize | DMA_InitStruct->DMA_MemoryDataSize |
+	ldr	r1,[r2,#24]
+.L261:
+	orrs	r0,r0,r1
+.L262:
+	ldr	r1,[r2,#28]
+.L263:
+	orrs	r0,r0,r1
+.L264:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   271              DMA_InitStruct->DMA_Priority | DMA_InitStruct->DMA_M2M;
+	ldr	r1,[r2,#36]
+.L265:
+	orrs	r0,r0,r1
+.L266:
+	ldr	r1,[r2,#40]
+.L267:
+	orrs	r0,r0,r1
+.L268:
+	orrs	r4,r4,r0
+.L175:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   272  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   273    /* Write to DMAy Channelx CCR */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   274    DMAy_Channelx->CCR = tmpreg;
+	str	r4,[r3,#0]
+.L269:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   275  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   276  /*--------------------------- DMAy Channelx CNDTR Configuration ---------------*/
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   277    /* Write to DMAy Channelx CNDTR */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   278    DMAy_Channelx->CNDTR = DMA_InitStruct->DMA_BufferSize;
+	ldr	r0,[r2,#12]
+.L270:
+	str	r0,[r3,#4]
+.L271:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   279  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   280  /*--------------------------- DMAy Channelx CPAR Configuration ----------------*/
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   281    /* Write to DMAy Channelx CPAR */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   282    DMAy_Channelx->CPAR = DMA_InitStruct->DMA_PeripheralBaseAddr;
+	ldr	r0,[r2,#0]
+.L272:
+	str	r0,[r3,#8]
+.L273:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   283  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   284  /*--------------------------- DMAy Channelx CMAR Configuration ----------------*/
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   285    /* Write to DMAy Channelx CMAR */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   286    DMAy_Channelx->CMAR = DMA_InitStruct->DMA_MemoryBaseAddr;
+	ldr	r0,[r2,#4]
+.L274:
+	str	r0,[r3,#12]
+.L275:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   287  }
+	ldr	r4,[sp],#4
+.L170:
+	bx	lr
+.L77:
+	.size	DMA_Init,$-DMA_Init
+	; End of function
+	.endsec	; End of section
+
+	.section	.text ,cluster('$group_DMA_StructInit')
+	.global	DMA_StructInit
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   288  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   289  /**
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   290    * @brief  Fills each DMA_InitStruct member with its default value.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   291    * @param  DMA_InitStruct: pointer to a DMA_InitTypeDef structure which will
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   292    *         be initialized.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   293    * @retval None
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   294    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   295  void DMA_StructInit(DMA_InitTypeDef* DMA_InitStruct)
+; Function DMA_StructInit
+.L82:
+	.thumb
+	.align	4
+DMA_StructInit:	.type	func
+
+.L45:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   296  {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   297  /*-------------- Reset DMA init structure parameters values ------------------*/
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   298    /* Initialize the DMA_PeripheralBaseAddr member */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   299    DMA_InitStruct->DMA_PeripheralBaseAddr = 0;
+	movs	r1,#0
+.L280:
+	str	r1,[r0,#0]
+.L281:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   300    /* Initialize the DMA_MemoryBaseAddr member */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   301    DMA_InitStruct->DMA_MemoryBaseAddr = 0;
+	str	r1,[r0,#4]
+.L282:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   302    /* Initialize the DMA_DIR member */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   303    DMA_InitStruct->DMA_DIR = DMA_DIR_PeripheralSRC;
+	str	r1,[r0,#8]
+.L283:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   304    /* Initialize the DMA_BufferSize member */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   305    DMA_InitStruct->DMA_BufferSize = 0;
+	str	r1,[r0,#12]
+.L284:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   306    /* Initialize the DMA_PeripheralInc member */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   307    DMA_InitStruct->DMA_PeripheralInc = DMA_PeripheralInc_Disable;
+	str	r1,[r0,#16]
+.L285:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   308    /* Initialize the DMA_MemoryInc member */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   309    DMA_InitStruct->DMA_MemoryInc = DMA_MemoryInc_Disable;
+	str	r1,[r0,#20]
+.L286:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   310    /* Initialize the DMA_PeripheralDataSize member */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   311    DMA_InitStruct->DMA_PeripheralDataSize = DMA_PeripheralDataSize_Byte;
+	str	r1,[r0,#24]
+.L287:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   312    /* Initialize the DMA_MemoryDataSize member */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   313    DMA_InitStruct->DMA_MemoryDataSize = DMA_MemoryDataSize_Byte;
+	str	r1,[r0,#28]
+.L288:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   314    /* Initialize the DMA_Mode member */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   315    DMA_InitStruct->DMA_Mode = DMA_Mode_Normal;
+	str	r1,[r0,#32]
+.L289:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   316    /* Initialize the DMA_Priority member */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   317    DMA_InitStruct->DMA_Priority = DMA_Priority_Low;
+	str	r1,[r0,#36]
+.L290:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   318    /* Initialize the DMA_M2M member */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   319    DMA_InitStruct->DMA_M2M = DMA_M2M_Disable;
+	str	r1,[r0,#40]
+.L291:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   320  }
+	bx	lr
+.L83:
+	.size	DMA_StructInit,$-DMA_StructInit
+	; End of function
+	.endsec	; End of section
+
+	.section	.text ,cluster('$group_DMA_Cmd')
+	.global	DMA_Cmd
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   321  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   322  /**
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   323    * @brief  Enables or disables the specified DMAy Channelx.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   324    * @param  DMAy_Channelx: where y can be 1 or 2 to select the DMA and x can be 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   325    *         1 to 7 for DMA1 and 1 to 5 for DMA2 to select the DMA Channel.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   326    * @param  NewState: new state of the DMAy Channelx. 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   327    *         This parameter can be: ENABLE or DISABLE.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   328    * @retval None
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   329    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   330  void DMA_Cmd(DMA_Channel_TypeDef* DMAy_Channelx, FunctionalState NewState)
+; Function DMA_Cmd
+.L88:
+	.thumb
+	.align	4
+DMA_Cmd:	.type	func
+
+.L47:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   331  {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   332    /* Check the parameters */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   333    assert_param(IS_DMA_ALL_PERIPH(DMAy_Channelx));
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   334    assert_param(IS_FUNCTIONAL_STATE(NewState));
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   335  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   336    if (NewState != DISABLE)
+	cbz	r1,.L25
+.L296:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   337    {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   338      /* Enable the selected DMAy Channelx */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   339      DMAy_Channelx->CCR |= DMA_CCR1_EN;
+	ldr	r1,[r0,#0]
+.L176:
+	orrs	r1,r1,#1
+.L297:
+	b	.L26
+.L25:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   340    }
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   341    else
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   342    {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   343      /* Disable the selected DMAy Channelx */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   344      DMAy_Channelx->CCR &= (uint16_t)(~DMA_CCR1_EN);
+	ldr	r1,[r0,#0]
+.L177:
+	movw	r2,#@lsh(65534)
+.L298:
+	ands	r1,r1,r2
+.L26:
+	str	r1,[r0,#0]
+.L299:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   345    }
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   346  }
+	bx	lr
+.L89:
+	.size	DMA_Cmd,$-DMA_Cmd
+	; End of function
+	.endsec	; End of section
+
+	.section	.text ,cluster('$group_DMA_SetCurrDataCounter')
+	.global	DMA_SetCurrDataCounter
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   347  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   348  /**
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   349    * @}
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   350    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   351  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   352  /** @defgroup DMA_Group2 Data Counter functions
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   353   *  @brief   Data Counter functions 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   354   *
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   355  @verbatim   
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   356   ===============================================================================
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   357                        ##### Data Counter functions #####
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   358   ===============================================================================
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   359      [..] This subsection provides function allowing to configure and read the buffer 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   360           size (number of data to be transferred).The DMA data counter can be written 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   361           only when the DMA channel is disabled (ie. after transfer complete event).
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   362      [..] The following function can be used to write the Channel data counter value:
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   363           (+) void DMA_SetCurrDataCounter(DMA_Channel_TypeDef* DMAy_Channelx, uint16_t 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   364               DataNumber).
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   365      -@- It is advised to use this function rather than DMA_Init() in situations 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   366          where only the Data buffer needs to be reloaded.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   367      [..] The DMA data counter can be read to indicate the number of remaining transfers 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   368           for the relative DMA channel. This counter is decremented at the end of each 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   369           data transfer and when the transfer is complete: 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   370           (+) If Normal mode is selected: the counter is set to 0.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   371           (+) If Circular mode is selected: the counter is reloaded with the initial 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   372           value(configured before enabling the DMA channel).
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   373      [..] The following function can be used to read the Channel data counter value:
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   374           (+) uint16_t DMA_GetCurrDataCounter(DMA_Channel_TypeDef* DMAy_Channelx).
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   375  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   376  @endverbatim
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   377    * @{
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   378    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   379  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   380  /**
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   381    * @brief  Sets the number of data units in the current DMAy Channelx transfer.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   382    * @param  DMAy_Channelx: where y can be 1 or 2 to select the DMA and x can be 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   383    *         1 to 7 for DMA1 and 1 to 5 for DMA2 to select the DMA Channel.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   384    * @param  DataNumber: The number of data units in the current DMAy Channelx
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   385    *         transfer.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   386    * @note   This function can only be used when the DMAy_Channelx is disabled.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   387    * @retval None.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   388    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   389  void DMA_SetCurrDataCounter(DMA_Channel_TypeDef* DMAy_Channelx, uint16_t DataNumber)
+; Function DMA_SetCurrDataCounter
+.L94:
+	.thumb
+	.align	4
+DMA_SetCurrDataCounter:	.type	func
+
+.L49:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   390  {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   391    /* Check the parameters */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   392    assert_param(IS_DMA_ALL_PERIPH(DMAy_Channelx));
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   393    
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   394  /*--------------------------- DMAy Channelx CNDTR Configuration ---------------*/
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   395    /* Write to DMAy Channelx CNDTR */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   396    DMAy_Channelx->CNDTR = DataNumber;  
+	str	r1,[r0,#4]
+.L304:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   397  }
+	bx	lr
+.L95:
+	.size	DMA_SetCurrDataCounter,$-DMA_SetCurrDataCounter
+	; End of function
+	.endsec	; End of section
+
+	.section	.text ,cluster('$group_DMA_GetCurrDataCounter')
+	.global	DMA_GetCurrDataCounter
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   398  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   399  /**
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   400    * @brief  Returns the number of remaining data units in the current
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   401    *         DMAy Channelx transfer.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   402    * @param  DMAy_Channelx: where y can be 1 or 2 to select the DMA and x can be 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   403    *         1 to 7 for DMA1 and 1 to 5 for DMA2 to select the DMA Channel.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   404    * @retval The number of remaining data units in the current DMAy Channelx
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   405    *         transfer.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   406    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   407  uint16_t DMA_GetCurrDataCounter(DMA_Channel_TypeDef* DMAy_Channelx)
+; Function DMA_GetCurrDataCounter
+.L100:
+	.thumb
+	.align	4
+DMA_GetCurrDataCounter:	.type	func
+
+.L51:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   408  {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   409    /* Check the parameters */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   410    assert_param(IS_DMA_ALL_PERIPH(DMAy_Channelx));
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   411    /* Return the number of remaining data units for DMAy Channelx */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   412    return ((uint16_t)(DMAy_Channelx->CNDTR));
+	ldr	r0,[r0,#4]
+.L309:
+	uxth	r0,r0
+.L178:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   413  }
+	bx	lr
+.L101:
+	.size	DMA_GetCurrDataCounter,$-DMA_GetCurrDataCounter
+	; End of function
+	.endsec	; End of section
+
+	.section	.text ,cluster('$group_DMA_ITConfig')
+	.global	DMA_ITConfig
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   414  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   415  /**
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   416    * @}
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   417    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   418  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   419  /** @defgroup DMA_Group3 Interrupts and flags management functions
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   420   *  @brief   Interrupts and flags management functions 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   421   *
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   422  @verbatim   
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   423   ===============================================================================
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   424            ##### Interrupts and flags management functions #####
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   425   ===============================================================================
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   426      [..] This subsection provides functions allowing to configure the DMA Interrupts 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   427           sources and check or clear the flags or pending bits status.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   428           The user should identify which mode will be used in his application to manage 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   429           the DMA controller events: Polling mode or Interrupt mode. 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   430    *** Polling Mode ***
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   431    ====================
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   432      [..] Each DMA channel can be managed through 4 event Flags:(y : DMA Controller 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   433           number  x : DMA channel number ).
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   434           (#) DMAy_FLAG_TCx : to indicate that a Transfer Complete event occurred.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   435           (#) DMAy_FLAG_HTx : to indicate that a Half-Transfer Complete event occurred.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   436           (#) DMAy_FLAG_TEx : to indicate that a Transfer Error occurred.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   437           (#) DMAy_FLAG_GLx : to indicate that at least one of the events described 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   438               above occurred.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   439      -@- Clearing DMAy_FLAG_GLx results in clearing all other pending flags of the 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   440          same channel (DMAy_FLAG_TCx, DMAy_FLAG_HTx and DMAy_FLAG_TEx).
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   441      [..]In this Mode it is advised to use the following functions:
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   442          (+) FlagStatus DMA_GetFlagStatus(uint32_t DMA_FLAG);
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   443          (+) void DMA_ClearFlag(uint32_t DMA_FLAG);
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   444  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   445    *** Interrupt Mode ***
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   446    ======================
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   447      [..] Each DMA channel can be managed through 4 Interrupts:
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   448      (+) Interrupt Source
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   449         (##) DMA_IT_TC: specifies the interrupt source for the Transfer Complete 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   450              event.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   451         (##) DMA_IT_HT : specifies the interrupt source for the Half-transfer Complete 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   452              event.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   453         (##) DMA_IT_TE : specifies the interrupt source for the transfer errors event.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   454         (##) DMA_IT_GL : to indicate that at least one of the interrupts described 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   455              above occurred.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   456      -@@- Clearing DMA_IT_GL interrupt results in clearing all other interrupts of 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   457          the same channel (DMA_IT_TCx, DMA_IT_HT and DMA_IT_TE).
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   458      [..]In this Mode it is advised to use the following functions:
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   459          (+) void DMA_ITConfig(DMA_Channel_TypeDef* DMAy_Channelx, uint32_t DMA_IT, 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   460              FunctionalState NewState);
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   461          (+) ITStatus DMA_GetITStatus(uint32_t DMA_IT);
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   462          (+) void DMA_ClearITPendingBit(uint32_t DMA_IT);
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   463  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   464  @endverbatim
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   465    * @{
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   466    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   467  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   468  /**
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   469    * @brief  Enables or disables the specified DMAy Channelx interrupts.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   470    * @param  DMAy_Channelx: where y can be 1 or 2 to select the DMA and x can be 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   471    *         1 to 7 for DMA1 and 1 to 5 for DMA2 to select the DMA Channel.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   472    * @param  DMA_IT: specifies the DMA interrupts sources to be enabled
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   473    *         or disabled. 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   474    *   This parameter can be any combination of the following values:
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   475    *     @arg DMA_IT_TC: Transfer complete interrupt mask
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   476    *     @arg DMA_IT_HT: Half transfer interrupt mask
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   477    *     @arg DMA_IT_TE: Transfer error interrupt mask
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   478    * @param  NewState: new state of the specified DMA interrupts.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   479    *         This parameter can be: ENABLE or DISABLE.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   480    * @retval None
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   481    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   482  void DMA_ITConfig(DMA_Channel_TypeDef* DMAy_Channelx, uint32_t DMA_IT, FunctionalState NewState)
+; Function DMA_ITConfig
+.L106:
+	.thumb
+	.align	4
+DMA_ITConfig:	.type	func
+
+.L53:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   483  {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   484    /* Check the parameters */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   485    assert_param(IS_DMA_ALL_PERIPH(DMAy_Channelx));
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   486    assert_param(IS_DMA_CONFIG_IT(DMA_IT));
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   487    assert_param(IS_FUNCTIONAL_STATE(NewState));
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   488  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   489    if (NewState != DISABLE)
+	cbz	r2,.L28
+.L314:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   490    {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   491      /* Enable the selected DMA interrupts */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   492      DMAy_Channelx->CCR |= DMA_IT;
+	ldr	r2,[r0,#0]
+.L179:
+	orrs	r2,r2,r1
+.L315:
+	b	.L29
+.L28:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   493    }
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   494    else
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   495    {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   496      /* Disable the selected DMA interrupts */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   497      DMAy_Channelx->CCR &= ~DMA_IT;
+	ldr	r2,[r0,#0]
+.L180:
+	bics	r2,r2,r1
+.L29:
+	str	r2,[r0,#0]
+.L316:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   498    }
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   499  }
+	bx	lr
+.L107:
+	.size	DMA_ITConfig,$-DMA_ITConfig
+	; End of function
+	.endsec	; End of section
+
+	.section	.text ,cluster('$group_DMA_GetFlagStatus')
+	.global	DMA_GetFlagStatus
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   500  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   501  /**
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   502    * @brief  Checks whether the specified DMAy Channelx flag is set or not.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   503    * @param  DMAy_FLAG: specifies the flag to check.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   504    *   This parameter can be one of the following values:
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   505    *     @arg DMA1_FLAG_GL1: DMA1 Channel1 global flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   506    *     @arg DMA1_FLAG_TC1: DMA1 Channel1 transfer complete flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   507    *     @arg DMA1_FLAG_HT1: DMA1 Channel1 half transfer flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   508    *     @arg DMA1_FLAG_TE1: DMA1 Channel1 transfer error flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   509    *     @arg DMA1_FLAG_GL2: DMA1 Channel2 global flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   510    *     @arg DMA1_FLAG_TC2: DMA1 Channel2 transfer complete flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   511    *     @arg DMA1_FLAG_HT2: DMA1 Channel2 half transfer flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   512    *     @arg DMA1_FLAG_TE2: DMA1 Channel2 transfer error flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   513    *     @arg DMA1_FLAG_GL3: DMA1 Channel3 global flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   514    *     @arg DMA1_FLAG_TC3: DMA1 Channel3 transfer complete flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   515    *     @arg DMA1_FLAG_HT3: DMA1 Channel3 half transfer flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   516    *     @arg DMA1_FLAG_TE3: DMA1 Channel3 transfer error flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   517    *     @arg DMA1_FLAG_GL4: DMA1 Channel4 global flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   518    *     @arg DMA1_FLAG_TC4: DMA1 Channel4 transfer complete flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   519    *     @arg DMA1_FLAG_HT4: DMA1 Channel4 half transfer flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   520    *     @arg DMA1_FLAG_TE4: DMA1 Channel4 transfer error flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   521    *     @arg DMA1_FLAG_GL5: DMA1 Channel5 global flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   522    *     @arg DMA1_FLAG_TC5: DMA1 Channel5 transfer complete flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   523    *     @arg DMA1_FLAG_HT5: DMA1 Channel5 half transfer flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   524    *     @arg DMA1_FLAG_TE5: DMA1 Channel5 transfer error flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   525    *     @arg DMA1_FLAG_GL6: DMA1 Channel6 global flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   526    *     @arg DMA1_FLAG_TC6: DMA1 Channel6 transfer complete flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   527    *     @arg DMA1_FLAG_HT6: DMA1 Channel6 half transfer flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   528    *     @arg DMA1_FLAG_TE6: DMA1 Channel6 transfer error flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   529    *     @arg DMA1_FLAG_GL7: DMA1 Channel7 global flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   530    *     @arg DMA1_FLAG_TC7: DMA1 Channel7 transfer complete flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   531    *     @arg DMA1_FLAG_HT7: DMA1 Channel7 half transfer flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   532    *     @arg DMA1_FLAG_TE7: DMA1 Channel7 transfer error flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   533    *     @arg DMA2_FLAG_GL1: DMA2 Channel1 global flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   534    *     @arg DMA2_FLAG_TC1: DMA2 Channel1 transfer complete flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   535    *     @arg DMA2_FLAG_HT1: DMA2 Channel1 half transfer flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   536    *     @arg DMA2_FLAG_TE1: DMA2 Channel1 transfer error flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   537    *     @arg DMA2_FLAG_GL2: DMA2 Channel2 global flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   538    *     @arg DMA2_FLAG_TC2: DMA2 Channel2 transfer complete flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   539    *     @arg DMA2_FLAG_HT2: DMA2 Channel2 half transfer flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   540    *     @arg DMA2_FLAG_TE2: DMA2 Channel2 transfer error flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   541    *     @arg DMA2_FLAG_GL3: DMA2 Channel3 global flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   542    *     @arg DMA2_FLAG_TC3: DMA2 Channel3 transfer complete flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   543    *     @arg DMA2_FLAG_HT3: DMA2 Channel3 half transfer flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   544    *     @arg DMA2_FLAG_TE3: DMA2 Channel3 transfer error flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   545    *     @arg DMA2_FLAG_GL4: DMA2 Channel4 global flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   546    *     @arg DMA2_FLAG_TC4: DMA2 Channel4 transfer complete flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   547    *     @arg DMA2_FLAG_HT4: DMA2 Channel4 half transfer flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   548    *     @arg DMA2_FLAG_TE4: DMA2 Channel4 transfer error flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   549    *     @arg DMA2_FLAG_GL5: DMA2 Channel5 global flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   550    *     @arg DMA2_FLAG_TC5: DMA2 Channel5 transfer complete flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   551    *     @arg DMA2_FLAG_HT5: DMA2 Channel5 half transfer flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   552    *     @arg DMA2_FLAG_TE5: DMA2 Channel5 transfer error flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   553    *     
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   554    * @note
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   555    *    The Global flag (DMAy_FLAG_GLx) is set whenever any of the other flags 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   556    *    relative to the same channel is set (Transfer Complete, Half-transfer 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   557    *    Complete or Transfer Error flags: DMAy_FLAG_TCx, DMAy_FLAG_HTx or 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   558    *    DMAy_FLAG_TEx). 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   559    *      
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   560    * @retval The new state of DMAy_FLAG (SET or RESET).
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   561    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   562  FlagStatus DMA_GetFlagStatus(uint32_t DMAy_FLAG)
+; Function DMA_GetFlagStatus
+.L112:
+	.thumb
+	.align	4
+DMA_GetFlagStatus:	.type	func
+
+.L55:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   563  {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   564    FlagStatus bitstatus = RESET;
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   565    uint32_t tmpreg = 0;
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   566  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   567    /* Check the parameters */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   568    assert_param(IS_DMA_GET_FLAG(DMAy_FLAG));
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   569  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   570    /* Calculate the used DMAy */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   571    if ((DMAy_FLAG & FLAG_MASK) == (uint32_t)RESET)
+	tst	r0,#268435456
+.L321:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   572    {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   573      /* Get DMA1 ISR register value */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   574      tmpreg = DMA1->ISR;
+	ittee	eq
+	movweq	r1,#@lsh(1073897472)
+	movteq	r1,#@msh(1073897472)
+.L322:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   575    }
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   576    else
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   577    {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   578      /* Get DMA2 ISR register value */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   579      tmpreg = DMA2->ISR;
+	movwne	r1,#@lsh(1073898496)
+	movtne	r1,#@msh(1073898496)
+.L31:
+	ldr	r1,[r1,#0]
+.L182:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   580    }
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   581  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   582    /* Check the status of the specified DMAy flag */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   583    if ((tmpreg & DMAy_FLAG) != (uint32_t)RESET)
+	ands	r0,r1,r0
+.L181:
+	it	ne
+	movne	r0,#1
+.L323:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   584    {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   585      /* DMAy_FLAG is set */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   586      bitstatus = SET;
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   587    }
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   588    else
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   589    {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   590      /* DMAy_FLAG is reset */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   591      bitstatus = RESET;
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   592    }
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   593    
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   594    /* Return the DMAy_FLAG status */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   595    return  bitstatus;
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   596  }
+	bx	lr
+.L113:
+	.size	DMA_GetFlagStatus,$-DMA_GetFlagStatus
+	; End of function
+	.endsec	; End of section
+
+	.section	.text ,cluster('$group_DMA_ClearFlag')
+	.global	DMA_ClearFlag
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   597  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   598  /**
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   599    * @brief  Clears the DMAy Channelx's pending flags.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   600    * @param  DMAy_FLAG: specifies the flag to clear.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   601    *   This parameter can be any combination (for the same DMA) of the following values:
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   602    *     @arg DMA1_FLAG_GL1: DMA1 Channel1 global flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   603    *     @arg DMA1_FLAG_TC1: DMA1 Channel1 transfer complete flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   604    *     @arg DMA1_FLAG_HT1: DMA1 Channel1 half transfer flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   605    *     @arg DMA1_FLAG_TE1: DMA1 Channel1 transfer error flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   606    *     @arg DMA1_FLAG_GL2: DMA1 Channel2 global flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   607    *     @arg DMA1_FLAG_TC2: DMA1 Channel2 transfer complete flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   608    *     @arg DMA1_FLAG_HT2: DMA1 Channel2 half transfer flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   609    *     @arg DMA1_FLAG_TE2: DMA1 Channel2 transfer error flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   610    *     @arg DMA1_FLAG_GL3: DMA1 Channel3 global flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   611    *     @arg DMA1_FLAG_TC3: DMA1 Channel3 transfer complete flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   612    *     @arg DMA1_FLAG_HT3: DMA1 Channel3 half transfer flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   613    *     @arg DMA1_FLAG_TE3: DMA1 Channel3 transfer error flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   614    *     @arg DMA1_FLAG_GL4: DMA1 Channel4 global flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   615    *     @arg DMA1_FLAG_TC4: DMA1 Channel4 transfer complete flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   616    *     @arg DMA1_FLAG_HT4: DMA1 Channel4 half transfer flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   617    *     @arg DMA1_FLAG_TE4: DMA1 Channel4 transfer error flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   618    *     @arg DMA1_FLAG_GL5: DMA1 Channel5 global flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   619    *     @arg DMA1_FLAG_TC5: DMA1 Channel5 transfer complete flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   620    *     @arg DMA1_FLAG_HT5: DMA1 Channel5 half transfer flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   621    *     @arg DMA1_FLAG_TE5: DMA1 Channel5 transfer error flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   622    *     @arg DMA1_FLAG_GL6: DMA1 Channel6 global flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   623    *     @arg DMA1_FLAG_TC6: DMA1 Channel6 transfer complete flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   624    *     @arg DMA1_FLAG_HT6: DMA1 Channel6 half transfer flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   625    *     @arg DMA1_FLAG_TE6: DMA1 Channel6 transfer error flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   626    *     @arg DMA1_FLAG_GL7: DMA1 Channel7 global flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   627    *     @arg DMA1_FLAG_TC7: DMA1 Channel7 transfer complete flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   628    *     @arg DMA1_FLAG_HT7: DMA1 Channel7 half transfer flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   629    *     @arg DMA1_FLAG_TE7: DMA1 Channel7 transfer error flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   630    *     @arg DMA2_FLAG_GL1: DMA2 Channel1 global flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   631    *     @arg DMA2_FLAG_TC1: DMA2 Channel1 transfer complete flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   632    *     @arg DMA2_FLAG_HT1: DMA2 Channel1 half transfer flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   633    *     @arg DMA2_FLAG_TE1: DMA2 Channel1 transfer error flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   634    *     @arg DMA2_FLAG_GL2: DMA2 Channel2 global flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   635    *     @arg DMA2_FLAG_TC2: DMA2 Channel2 transfer complete flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   636    *     @arg DMA2_FLAG_HT2: DMA2 Channel2 half transfer flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   637    *     @arg DMA2_FLAG_TE2: DMA2 Channel2 transfer error flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   638    *     @arg DMA2_FLAG_GL3: DMA2 Channel3 global flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   639    *     @arg DMA2_FLAG_TC3: DMA2 Channel3 transfer complete flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   640    *     @arg DMA2_FLAG_HT3: DMA2 Channel3 half transfer flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   641    *     @arg DMA2_FLAG_TE3: DMA2 Channel3 transfer error flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   642    *     @arg DMA2_FLAG_GL4: DMA2 Channel4 global flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   643    *     @arg DMA2_FLAG_TC4: DMA2 Channel4 transfer complete flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   644    *     @arg DMA2_FLAG_HT4: DMA2 Channel4 half transfer flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   645    *     @arg DMA2_FLAG_TE4: DMA2 Channel4 transfer error flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   646    *     @arg DMA2_FLAG_GL5: DMA2 Channel5 global flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   647    *     @arg DMA2_FLAG_TC5: DMA2 Channel5 transfer complete flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   648    *     @arg DMA2_FLAG_HT5: DMA2 Channel5 half transfer flag.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   649    *     @arg DMA2_FLAG_TE5: DMA2 Channel5 transfer error flag.       
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   650    *     
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   651    * @note
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   652    *    Clearing the Global flag (DMAy_FLAG_GLx) results in clearing all other flags
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   653    *    relative to the same channel (Transfer Complete, Half-transfer Complete and 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   654    *    Transfer Error flags: DMAy_FLAG_TCx, DMAy_FLAG_HTx and DMAy_FLAG_TEx).  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   655    *      
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   656    * @retval None
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   657    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   658  void DMA_ClearFlag(uint32_t DMAy_FLAG)
+; Function DMA_ClearFlag
+.L118:
+	.thumb
+	.align	4
+DMA_ClearFlag:	.type	func
+
+.L57:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   659  {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   660    /* Check the parameters */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   661    assert_param(IS_DMA_CLEAR_FLAG(DMAy_FLAG));
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   662  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   663    if ((DMAy_FLAG & FLAG_MASK) == (uint32_t)RESET)
+	tst	r0,#268435456
+.L328:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   664    {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   665      /* Clear the selected DMAy flags */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   666      DMA1->IFCR = DMAy_FLAG;
+	ittee	eq
+	movweq	r1,#@lsh(1073897476)
+	movteq	r1,#@msh(1073897476)
+.L329:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   667    }
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   668    else
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   669    {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   670      /* Clear the selected DMAy flags */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   671      DMA2->IFCR = DMAy_FLAG;
+	movwne	r1,#@lsh(1073898500)
+	movtne	r1,#@msh(1073898500)
+.L34:
+	str	r0,[r1,#0]
+.L330:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   672    }  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   673  }
+	bx	lr
+.L119:
+	.size	DMA_ClearFlag,$-DMA_ClearFlag
+	; End of function
+	.endsec	; End of section
+
+	.section	.text ,cluster('$group_DMA_GetITStatus')
+	.global	DMA_GetITStatus
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   674  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   675  /**
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   676    * @brief  Checks whether the specified DMAy Channelx interrupt has occurred or not.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   677    * @param  DMAy_IT: specifies the DMAy interrupt source to check. 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   678    *   This parameter can be one of the following values:
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   679    *     @arg DMA1_IT_GL1: DMA1 Channel1 global interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   680    *     @arg DMA1_IT_TC1: DMA1 Channel1 transfer complete interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   681    *     @arg DMA1_IT_HT1: DMA1 Channel1 half transfer interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   682    *     @arg DMA1_IT_TE1: DMA1 Channel1 transfer error interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   683    *     @arg DMA1_IT_GL2: DMA1 Channel2 global interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   684    *     @arg DMA1_IT_TC2: DMA1 Channel2 transfer complete interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   685    *     @arg DMA1_IT_HT2: DMA1 Channel2 half transfer interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   686    *     @arg DMA1_IT_TE2: DMA1 Channel2 transfer error interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   687    *     @arg DMA1_IT_GL3: DMA1 Channel3 global interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   688    *     @arg DMA1_IT_TC3: DMA1 Channel3 transfer complete interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   689    *     @arg DMA1_IT_HT3: DMA1 Channel3 half transfer interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   690    *     @arg DMA1_IT_TE3: DMA1 Channel3 transfer error interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   691    *     @arg DMA1_IT_GL4: DMA1 Channel4 global interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   692    *     @arg DMA1_IT_TC4: DMA1 Channel4 transfer complete interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   693    *     @arg DMA1_IT_HT4: DMA1 Channel4 half transfer interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   694    *     @arg DMA1_IT_TE4: DMA1 Channel4 transfer error interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   695    *     @arg DMA1_IT_GL5: DMA1 Channel5 global interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   696    *     @arg DMA1_IT_TC5: DMA1 Channel5 transfer complete interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   697    *     @arg DMA1_IT_HT5: DMA1 Channel5 half transfer interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   698    *     @arg DMA1_IT_TE5: DMA1 Channel5 transfer error interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   699    *     @arg DMA1_IT_GL6: DMA1 Channel6 global interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   700    *     @arg DMA1_IT_TC6: DMA1 Channel6 transfer complete interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   701    *     @arg DMA1_IT_HT6: DMA1 Channel6 half transfer interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   702    *     @arg DMA1_IT_TE6: DMA1 Channel6 transfer error interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   703    *     @arg DMA1_IT_GL7: DMA1 Channel7 global interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   704    *     @arg DMA1_IT_TC7: DMA1 Channel7 transfer complete interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   705    *     @arg DMA1_IT_HT7: DMA1 Channel7 half transfer interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   706    *     @arg DMA1_IT_TE7: DMA1 Channel7 transfer error interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   707    *     @arg DMA2_IT_GL1: DMA2 Channel1 global interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   708    *     @arg DMA2_IT_TC1: DMA2 Channel1 transfer complete interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   709    *     @arg DMA2_IT_HT1: DMA2 Channel1 half transfer interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   710    *     @arg DMA2_IT_TE1: DMA2 Channel1 transfer error interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   711    *     @arg DMA2_IT_GL2: DMA2 Channel2 global interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   712    *     @arg DMA2_IT_TC2: DMA2 Channel2 transfer complete interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   713    *     @arg DMA2_IT_HT2: DMA2 Channel2 half transfer interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   714    *     @arg DMA2_IT_TE2: DMA2 Channel2 transfer error interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   715    *     @arg DMA2_IT_GL3: DMA2 Channel3 global interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   716    *     @arg DMA2_IT_TC3: DMA2 Channel3 transfer complete interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   717    *     @arg DMA2_IT_HT3: DMA2 Channel3 half transfer interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   718    *     @arg DMA2_IT_TE3: DMA2 Channel3 transfer error interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   719    *     @arg DMA2_IT_GL4: DMA2 Channel4 global interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   720    *     @arg DMA2_IT_TC4: DMA2 Channel4 transfer complete interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   721    *     @arg DMA2_IT_HT4: DMA2 Channel4 half transfer interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   722    *     @arg DMA2_IT_TE4: DMA2 Channel4 transfer error interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   723    *     @arg DMA2_IT_GL5: DMA2 Channel5 global interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   724    *     @arg DMA2_IT_TC5: DMA2 Channel5 transfer complete interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   725    *     @arg DMA2_IT_HT5: DMA2 Channel5 half transfer interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   726    *     @arg DMA2_IT_TE5: DMA2 Channel5 transfer error interrupt.   
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   727    *     
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   728    * @note
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   729    *    The Global interrupt (DMAy_FLAG_GLx) is set whenever any of the other 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   730    *    interrupts relative to the same channel is set (Transfer Complete, 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   731    *    Half-transfer Complete or Transfer Error interrupts: DMAy_IT_TCx, 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   732    *    DMAy_IT_HTx or DMAy_IT_TEx). 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   733    *      
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   734    * @retval The new state of DMAy_IT (SET or RESET).
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   735    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   736  ITStatus DMA_GetITStatus(uint32_t DMAy_IT)
+; Function DMA_GetITStatus
+.L124:
+	.thumb
+	.align	4
+DMA_GetITStatus:	.type	func
+
+.L59:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   737  {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   738    ITStatus bitstatus = RESET;
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   739    uint32_t tmpreg = 0;
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   740   
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   741    /* Check the parameters */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   742    assert_param(IS_DMA_GET_IT(DMAy_IT));
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   743  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   744    /* Calculate the used DMAy */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   745    if ((DMAy_IT & FLAG_MASK) == (uint32_t)RESET)
+	tst	r0,#268435456
+.L335:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   746    {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   747      /* Get DMA1 ISR register value */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   748      tmpreg = DMA1->ISR;
+	ittee	eq
+	movweq	r1,#@lsh(1073897472)
+	movteq	r1,#@msh(1073897472)
+.L336:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   749    }
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   750    else
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   751    {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   752      /* Get DMA2 ISR register value */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   753      tmpreg = DMA2->ISR;
+	movwne	r1,#@lsh(1073898496)
+	movtne	r1,#@msh(1073898496)
+.L36:
+	ldr	r1,[r1,#0]
+.L184:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   754    }
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   755    
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   756    /* Check the status of the specified DMAy interrupt */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   757    if ((tmpreg & DMAy_IT) != (uint32_t)RESET)
+	ands	r0,r1,r0
+.L183:
+	it	ne
+	movne	r0,#1
+.L337:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   758    {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   759      /* DMAy_IT is set */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   760      bitstatus = SET;
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   761    }
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   762    else
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   763    {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   764      /* DMAy_IT is reset */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   765      bitstatus = RESET;
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   766    }
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   767    /* Return the DMAy_IT status */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   768    return  bitstatus;
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   769  }
+	bx	lr
+.L125:
+	.size	DMA_GetITStatus,$-DMA_GetITStatus
+	; End of function
+	.endsec	; End of section
+
+	.section	.text ,cluster('$group_DMA_ClearITPendingBit')
+	.global	DMA_ClearITPendingBit
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   770  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   771  /**
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   772    * @brief  Clears the DMAy Channelx's interrupt pending bits.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   773    * @param  DMAy_IT: specifies the DMAy interrupt pending bit to clear.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   774    *   This parameter can be any combination (for the same DMA) of the following values:
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   775    *     @arg DMA1_IT_GL1: DMA1 Channel1 global interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   776    *     @arg DMA1_IT_TC1: DMA1 Channel1 transfer complete interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   777    *     @arg DMA1_IT_HT1: DMA1 Channel1 half transfer interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   778    *     @arg DMA1_IT_TE1: DMA1 Channel1 transfer error interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   779    *     @arg DMA1_IT_GL2: DMA1 Channel2 global interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   780    *     @arg DMA1_IT_TC2: DMA1 Channel2 transfer complete interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   781    *     @arg DMA1_IT_HT2: DMA1 Channel2 half transfer interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   782    *     @arg DMA1_IT_TE2: DMA1 Channel2 transfer error interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   783    *     @arg DMA1_IT_GL3: DMA1 Channel3 global interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   784    *     @arg DMA1_IT_TC3: DMA1 Channel3 transfer complete interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   785    *     @arg DMA1_IT_HT3: DMA1 Channel3 half transfer interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   786    *     @arg DMA1_IT_TE3: DMA1 Channel3 transfer error interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   787    *     @arg DMA1_IT_GL4: DMA1 Channel4 global interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   788    *     @arg DMA1_IT_TC4: DMA1 Channel4 transfer complete interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   789    *     @arg DMA1_IT_HT4: DMA1 Channel4 half transfer interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   790    *     @arg DMA1_IT_TE4: DMA1 Channel4 transfer error interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   791    *     @arg DMA1_IT_GL5: DMA1 Channel5 global interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   792    *     @arg DMA1_IT_TC5: DMA1 Channel5 transfer complete interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   793    *     @arg DMA1_IT_HT5: DMA1 Channel5 half transfer interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   794    *     @arg DMA1_IT_TE5: DMA1 Channel5 transfer error interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   795    *     @arg DMA1_IT_GL6: DMA1 Channel6 global interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   796    *     @arg DMA1_IT_TC6: DMA1 Channel6 transfer complete interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   797    *     @arg DMA1_IT_HT6: DMA1 Channel6 half transfer interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   798    *     @arg DMA1_IT_TE6: DMA1 Channel6 transfer error interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   799    *     @arg DMA1_IT_GL7: DMA1 Channel7 global interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   800    *     @arg DMA1_IT_TC7: DMA1 Channel7 transfer complete interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   801    *     @arg DMA1_IT_HT7: DMA1 Channel7 half transfer interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   802    *     @arg DMA1_IT_TE7: DMA1 Channel7 transfer error interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   803    *     @arg DMA2_IT_GL1: DMA2 Channel1 global interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   804    *     @arg DMA2_IT_TC1: DMA2 Channel1 transfer complete interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   805    *     @arg DMA2_IT_HT1: DMA2 Channel1 half transfer interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   806    *     @arg DMA2_IT_TE1: DMA2 Channel1 transfer error interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   807    *     @arg DMA2_IT_GL2: DMA2 Channel2 global interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   808    *     @arg DMA2_IT_TC2: DMA2 Channel2 transfer complete interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   809    *     @arg DMA2_IT_HT2: DMA2 Channel2 half transfer interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   810    *     @arg DMA2_IT_TE2: DMA2 Channel2 transfer error interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   811    *     @arg DMA2_IT_GL3: DMA2 Channel3 global interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   812    *     @arg DMA2_IT_TC3: DMA2 Channel3 transfer complete interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   813    *     @arg DMA2_IT_HT3: DMA2 Channel3 half transfer interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   814    *     @arg DMA2_IT_TE3: DMA2 Channel3 transfer error interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   815    *     @arg DMA2_IT_GL4: DMA2 Channel4 global interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   816    *     @arg DMA2_IT_TC4: DMA2 Channel4 transfer complete interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   817    *     @arg DMA2_IT_HT4: DMA2 Channel4 half transfer interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   818    *     @arg DMA2_IT_TE4: DMA2 Channel4 transfer error interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   819    *     @arg DMA2_IT_GL5: DMA2 Channel5 global interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   820    *     @arg DMA2_IT_TC5: DMA2 Channel5 transfer complete interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   821    *     @arg DMA2_IT_HT5: DMA2 Channel5 half transfer interrupt.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   822    *     @arg DMA2_IT_TE5: DMA2 Channel5 transfer error interrupt.   
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   823    *     
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   824    * @note
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   825    *    Clearing the Global interrupt (DMAy_IT_GLx) results in clearing all other 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   826    *    interrupts relative to the same channel (Transfer Complete, Half-transfer 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   827    *    Complete and Transfer Error interrupts: DMAy_IT_TCx, DMAy_IT_HTx and 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   828    *    DMAy_IT_TEx).  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   829    *        
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   830    * @retval None
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   831    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   832  void DMA_ClearITPendingBit(uint32_t DMAy_IT)
+; Function DMA_ClearITPendingBit
+.L130:
+	.thumb
+	.align	4
+DMA_ClearITPendingBit:	.type	func
+
+.L61:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   833  {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   834    /* Check the parameters */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   835    assert_param(IS_DMA_CLEAR_IT(DMAy_IT));
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   836  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   837    /* Calculate the used DMAy */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   838    if ((DMAy_IT & FLAG_MASK) == (uint32_t)RESET)
+	tst	r0,#268435456
+.L342:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   839    {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   840      /* Clear the selected DMAy interrupt pending bits */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   841      DMA1->IFCR = DMAy_IT;
+	ittee	eq
+	movweq	r1,#@lsh(1073897476)
+	movteq	r1,#@msh(1073897476)
+.L343:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   842    }
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   843    else
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   844    {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   845      /* Clear the selected DMAy interrupt pending bits */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   846      DMA2->IFCR = DMAy_IT;
+	movwne	r1,#@lsh(1073898500)
+	movtne	r1,#@msh(1073898500)
+.L39:
+	str	r0,[r1,#0]
+.L344:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   847    }  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   848  }
+	bx	lr
+.L131:
+	.size	DMA_ClearITPendingBit,$-DMA_ClearITPendingBit
+	; End of function
+	.endsec	; End of section
+
+	.calls	'DMA_DeInit','',0
+	.calls	'DMA_Init','',4
+	.calls	'DMA_StructInit','',0
+	.calls	'DMA_Cmd','',0
+	.calls	'DMA_SetCurrDataCounter','',0
+	.calls	'DMA_GetCurrDataCounter','',0
+	.calls	'DMA_ITConfig','',0
+	.calls	'DMA_GetFlagStatus','',0
+	.calls	'DMA_ClearFlag','',0
+	.calls	'DMA_GetITStatus','',0
+	.calls	'DMA_ClearITPendingBit','',0
+	.section	.debug_info
+.L63:
+	.dw	2528
+	.dh	3
+	.dw	.L64
+	.db	4
+.L62:
+	.db	1
+	.dw	.L185,.L186,.L187
+	.db	12,1
+	.dw	.L65
+	.db	2
+	.db	'NVIC_SetPriority',0,3,1,246,7,22,1,1,3
+	.db	'IRQn',0,2,171,1,14,4,4
+	.db	'NonMaskableInt_IRQn',0,114,4
+	.db	'MemoryManagement_IRQn',0,116,4
+	.db	'BusFault_IRQn',0,117,4
+	.db	'UsageFault_IRQn',0,118,4
+	.db	'SVC_IRQn',0,123,4
+	.db	'DebugMonitor_IRQn',0,124,4
+	.db	'PendSV_IRQn',0,126,4
+	.db	'SysTick_IRQn',0,127,4
+	.db	'WWDG_IRQn',0,0,4
+	.db	'PVD_IRQn',0,1,4
+	.db	'TAMPER_STAMP_IRQn',0,2,4
+	.db	'RTC_WKUP_IRQn',0,3,4
+	.db	'FLASH_IRQn',0,4,4
+	.db	'RCC_IRQn',0,5,4
+	.db	'EXTI0_IRQn',0,6,4
+	.db	'EXTI1_IRQn',0,7,4
+	.db	'EXTI2_IRQn',0,8,4
+	.db	'EXTI3_IRQn',0,9,4
+	.db	'EXTI4_IRQn',0,10,4
+	.db	'DMA1_Channel1_IRQn',0,11,4
+	.db	'DMA1_Channel2_IRQn',0,12,4
+	.db	'DMA1_Channel3_IRQn',0,13,4
+	.db	'DMA1_Channel4_IRQn',0,14,4
+	.db	'DMA1_Channel5_IRQn',0,15,4
+	.db	'DMA1_Channel6_IRQn',0,16,4
+	.db	'DMA1_Channel7_IRQn',0,17,4
+	.db	'ADC1_IRQn',0,18,4
+	.db	'USB_HP_IRQn',0,19,4
+	.db	'USB_LP_IRQn',0,20,4
+	.db	'DAC_IRQn',0,21,4
+	.db	'COMP_IRQn',0,22,4
+	.db	'EXTI9_5_IRQn',0,23,4
+	.db	'LCD_IRQn',0,24,4
+	.db	'TIM9_IRQn',0,25,4
+	.db	'TIM10_IRQn',0,26,4
+	.db	'TIM11_IRQn',0,27,4
+	.db	'TIM2_IRQn',0,28,4
+	.db	'TIM3_IRQn',0,29,4
+	.db	'TIM4_IRQn',0,30,4
+	.db	'I2C1_EV_IRQn',0,31,4
+	.db	'I2C1_ER_IRQn',0,32,4
+	.db	'I2C2_EV_IRQn',0,33,4
+	.db	'I2C2_ER_IRQn',0,34,4
+	.db	'SPI1_IRQn',0,35,4
+	.db	'SPI2_IRQn',0,36,4
+	.db	'USART1_IRQn',0,37,4
+	.db	'USART2_IRQn',0,38,4
+	.db	'USART3_IRQn',0,39,4
+	.db	'EXTI15_10_IRQn',0,40,4
+	.db	'RTC_Alarm_IRQn',0,41,4
+	.db	'USB_FS_WKUP_IRQn',0,42,4
+	.db	'TIM6_IRQn',0,43,4
+	.db	'TIM7_IRQn',0,44,0,5
+	.db	'IRQn',0,1,246,7,49
+	.dw	55
+.L137:
+	.db	6
+	.db	'unsigned int',0,4,7,5
+	.db	'priority',0,1,246,7,64
+	.dw	882
+	.db	7,0,8
+	.dw	30
+	.db	9
+	.dw	868
+	.db	9
+	.dw	898
+	.db	7,0,10,2,192,3,9,16,11
+	.dw	882
+	.db	12
+	.db	'CCR',0,4
+	.dw	941
+	.db	2,35,0,11
+	.dw	882
+	.db	12
+	.db	'CNDTR',0,4
+	.dw	959
+	.db	2,35,4,11
+	.dw	882
+	.db	12
+	.db	'CPAR',0,4
+	.dw	979
+	.db	2,35,8,11
+	.dw	882
+	.db	12
+	.db	'CMAR',0,4
+	.dw	998
+	.db	2,35,12,0
+.L132:
+	.db	13
+	.dw	935
+	.db	10,3,54,9,44,12
+	.db	'DMA_PeripheralBaseAddr',0,4
+	.dw	882
+	.db	2,35,0,12
+	.db	'DMA_MemoryBaseAddr',0,4
+	.dw	882
+	.db	2,35,4,12
+	.db	'DMA_DIR',0,4
+	.dw	882
+	.db	2,35,8,12
+	.db	'DMA_BufferSize',0,4
+	.dw	882
+	.db	2,35,12,12
+	.db	'DMA_PeripheralInc',0,4
+	.dw	882
+	.db	2,35,16,12
+	.db	'DMA_MemoryInc',0,4
+	.dw	882
+	.db	2,35,20,12
+	.db	'DMA_PeripheralDataSize',0,4
+	.dw	882
+	.db	2,35,24,12
+	.db	'DMA_MemoryDataSize',0,4
+	.dw	882
+	.db	2,35,28,12
+	.db	'DMA_Mode',0,4
+	.dw	882
+	.db	2,35,32,12
+	.db	'DMA_Priority',0,4
+	.dw	882
+	.db	2,35,36,12
+	.db	'DMA_M2M',0,4
+	.dw	882
+	.db	2,35,40,0
+.L135:
+	.db	13
+	.dw	1023
+.L141:
+	.db	14,2,148,2,9,4,4
+	.db	'DISABLE',0,0,4
+	.db	'ENABLE',0,1,0
+.L144:
+	.db	6
+	.db	'unsigned short int',0,2,7
+.L150:
+	.db	14,2,146,2,9,4,4
+	.db	'RESET',0,0,4
+	.db	'SET',0,1,0,15
+	.db	'void',0,13
+	.dw	1371
+	.db	16
+	.db	'__prof_adm',0,4,1,1
+	.dw	1377
+	.db	17,1,13
+	.dw	1401
+	.db	16
+	.db	'__codeptr',0,4,1,1
+	.dw	1403
+	.db	16
+	.db	'IRQn_Type',0,2,132,2,3
+	.dw	55
+	.db	6
+	.db	'unsigned char',0,1,8,16
+	.db	'uint8_t',0,5,24,33
+	.dw	1445
+	.db	16
+	.db	'uint16_t',0,5,26,33
+	.dw	1328
+	.db	6
+	.db	'int',0,4,5,16
+	.db	'int32_t',0,5,27,33
+	.dw	1495
+	.db	16
+	.db	'uint32_t',0,5,28,33
+	.dw	882
+	.db	16
+	.db	'FlagStatus',0,2,146,2,40
+	.dw	1350
+	.db	16
+	.db	'ITStatus',0,2,146,2,52
+	.dw	1350
+	.db	16
+	.db	'FunctionalState',0,2,148,2,47
+	.dw	1302
+	.db	16
+	.db	'DMA_Channel_TypeDef',0,2,198,3,3
+	.dw	935
+	.db	14,6,54,9,4,4
+	.db	'EXTI_Mode_Interrupt',0,0,4
+	.db	'EXTI_Mode_Event',0,4,0,16
+	.db	'EXTIMode_TypeDef',0,6,58,2
+	.dw	1627
+	.db	14,6,66,9,4,4
+	.db	'EXTI_Trigger_Rising',0,8,4
+	.db	'EXTI_Trigger_Falling',0,12,4
+	.db	'EXTI_Trigger_Rising_Falling',0,16,0,16
+	.db	'EXTITrigger_TypeDef',0,6,71,2
+	.dw	1698
+	.db	10,7,54,9,28,12
+	.db	'FSMC_AddressSetupTime',0,4
+	.dw	882
+	.db	2,35,0,12
+	.db	'FSMC_AddressHoldTime',0,4
+	.dw	882
+	.db	2,35,4,12
+	.db	'FSMC_DataSetupTime',0,4
+	.dw	882
+	.db	2,35,8,12
+	.db	'FSMC_BusTurnAroundDuration',0,4
+	.dw	882
+	.db	2,35,12,12
+	.db	'FSMC_CLKDivision',0,4
+	.dw	882
+	.db	2,35,16,12
+	.db	'FSMC_DataLatency',0,4
+	.dw	882
+	.db	2,35,20,12
+	.db	'FSMC_AccessMode',0,4
+	.dw	882
+	.db	2,35,24,0,16
+	.db	'FSMC_NORSRAMTimingInitTypeDef',0,7,90,2
+	.dw	1807
+	.db	14,8,62,9,4,4
+	.db	'GPIO_Mode_IN',0,0,4
+	.db	'GPIO_Mode_OUT',0,1,4
+	.db	'GPIO_Mode_AF',0,2,4
+	.db	'GPIO_Mode_AN',0,3,0,16
+	.db	'GPIOMode_TypeDef',0,8,68,2
+	.dw	2053
+	.db	14,8,78,9,4,4
+	.db	'GPIO_OType_PP',0,0,4
+	.db	'GPIO_OType_OD',0,1,0,16
+	.db	'GPIOOType_TypeDef',0,8,81,2
+	.dw	2145
+	.db	14,8,91,9,4,4
+	.db	'GPIO_Speed_400KHz',0,0,4
+	.db	'GPIO_Speed_2MHz',0,1,4
+	.db	'GPIO_Speed_10MHz',0,2,4
+	.db	'GPIO_Speed_40MHz',0,3,0,16
+	.db	'GPIOSpeed_TypeDef',0,8,97,2
+	.dw	2209
+	.db	14,8,107,9,4,4
+	.db	'GPIO_PuPd_NOPULL',0,0,4
+	.db	'GPIO_PuPd_UP',0,1,4
+	.db	'GPIO_PuPd_DOWN',0,2,0,16
+	.db	'GPIOPuPd_TypeDef',0,8,111,2
+	.dw	2317
+	.db	10,9,68,9,4,12
+	.db	'RTC_Hours',0,1
+	.dw	1445
+	.db	2,35,0,12
+	.db	'RTC_Minutes',0,1
+	.dw	1445
+	.db	2,35,1,12
+	.db	'RTC_Seconds',0,1
+	.dw	1445
+	.db	2,35,2,12
+	.db	'RTC_H12',0,1
+	.dw	1445
+	.db	2,35,3,0,16
+	.db	'RTC_TimeTypeDef',0,9,83,2
+	.dw	2399
+	.db	16
+	.db	'DMA_InitTypeDef',0,3,89,2
+	.dw	1023
+	.db	0
+	.endsec	; End of section
+
+	.section	.debug_abbrev
+.L64:
+	.db	1,17,1,3,14,37,14,27,14,19,15,128,70,12,16,6,0,0,2,46,1,3,8,32,13,58,15,59,15,57,15,54,15,39,12,0,0,3
+	.db	4,1,3,8,58,15,59,15,57,15,11,15,0,0,4,40,0,3,8,28,13,0,0,5,5,0,3,8,58,15,59,15,57,15,73,19,0,0,6,36,0
+	.db	3,8,11,15,62,15,0,0,7,11,0,0,0,8,46,1,49,19,0,0,9,5,0,49,19,0,0,10,19,1,58,15,59,15,57,15,11,15,0,0,11
+	.db	53,0,73,19,0,0,12,13,0,3,8,11,15,73,19,56,9,0,0,13,15,0,73,19,0,0,14,4,1,58,15,59,15,57,15,11,15,0,0,15
+	.db	59,0,3,8,0,0,16,22,0,3,8,58,15,59,15,57,15,73,19,0,0,17,21,0,54,15,0,0,0
+	.endsec	; End of section
+
+	.section	.debug_line
+.L65:
+	.dw	.L189-.L188
+.L188:
+	.dh	3
+	.dw	.L191-.L190
+.L190:
+	.db	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.db	'..\\..\\..\\..\\..\\..\\Libraries\\CMSIS\\Include',0
+	.db	'..\\..\\..\\..\\..\\..\\Libraries\\CMSIS\\Device\\ST\\STM32L1xx\\Include',0
+	.db	'..\\..\\..\\..\\..\\..\\Libraries\\STM32L1xx_StdPeriph_Driver\\inc',0
+	.db	'C:\\Program Files\\TASKING\\carm v4.4r1\\include\\',0,0
+	.db	'core_cm3.h',0,1,0,0
+	.db	'stm32l1xx.h',0,2,0,0
+	.db	'stm32l1xx_dma.h',0,3,0,0
+	.db	'C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c',0
+	.db	0,0,0
+	.db	'stdint.h',0,4,0,0
+	.db	'stm32l1xx_exti.h',0,3,0,0
+	.db	'stm32l1xx_fsmc.h',0,3,0,0
+	.db	'stm32l1xx_gpio.h',0,3,0,0
+	.db	'stm32l1xx_rtc.h',0,3,0,0,0
+.L191:
+.L189:
+	.endsec	; End of section
+
+	.section	.debug_info ,cluster('$group_DMA_DeInit')
+.L66:
+	.dw	104
+	.dh	3
+	.dw	.L67
+	.db	4,1
+	.dw	.L185,.L186,.L187
+	.db	12,1
+	.dw	.L69,.L68
+	.db	2
+	.dw	.L62
+	.db	3
+	.db	'DMA_DeInit',0,1,144,1,6,1,1,1
+	.dw	.L41,.L71,.L40
+	.db	4
+	.db	'DMAy_Channelx',0,1,144,1,38
+	.dw	.L132,.L133
+	.db	5
+	.dw	.L41,.L71
+	.db	0,0
+	.endsec	; End of section
+
+	.section	.debug_abbrev ,cluster('$group_DMA_DeInit')
+.L67:
+	.db	1,17,1,3,14,37,14,27,14,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54
+	.db	15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.endsec	; End of section
+
+	.section	.debug_line ,cluster('$group_DMA_DeInit')
+.L68:
+	.dw	.L193-.L192
+.L192:
+	.dh	3
+	.dw	.L195-.L194
+.L194:
+	.db	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.db	'C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c',0
+	.db	0,0,0,0
+.L195:
+	.db	5,16,7,0,5,2
+	.dw	.L41
+	.db	3,149,1,1,5,25,9
+	.dh	.L196-.L41
+	.db	1,5,22,9
+	.dh	.L197-.L196
+	.db	1,5,25,9
+	.dh	.L198-.L197
+	.db	3,3,1,5,23,9
+	.dh	.L199-.L198
+	.db	1,5,24,9
+	.dh	.L200-.L199
+	.db	3,3,1,9
+	.dh	.L201-.L200
+	.db	3,3,1,5,23,9
+	.dh	.L202-.L201
+	.db	3,3,1,5,24,9
+	.dh	.L203-.L202
+	.db	3,2,1,5,3,9
+	.dh	.L204-.L203
+	.db	1,5,9,9
+	.dh	.L205-.L204
+	.db	3,3,1,5,16,9
+	.dh	.L206-.L205
+	.db	1,5,40,9
+	.dh	.L207-.L206
+	.db	1,5,29,9
+	.dh	.L2-.L207
+	.db	3,2,1,5,8,9
+	.dh	.L208-.L2
+	.db	1,5,9,9
+	.dh	.L209-.L208
+	.db	3,3,1,5,16,9
+	.dh	.L210-.L209
+	.db	1,5,40,9
+	.dh	.L211-.L210
+	.db	1,5,29,9
+	.dh	.L4-.L211
+	.db	3,2,1,5,8,9
+	.dh	.L212-.L4
+	.db	1,5,9,9
+	.dh	.L213-.L212
+	.db	3,3,1,5,16,9
+	.dh	.L214-.L213
+	.db	1,5,40,9
+	.dh	.L215-.L214
+	.db	1,5,29,9
+	.dh	.L6-.L215
+	.db	3,2,1,5,8,9
+	.dh	.L216-.L6
+	.db	1,5,9,9
+	.dh	.L217-.L216
+	.db	3,3,1,5,16,9
+	.dh	.L218-.L217
+	.db	1,5,40,9
+	.dh	.L219-.L218
+	.db	1,5,29,9
+	.dh	.L8-.L219
+	.db	3,2,1,5,8,9
+	.dh	.L220-.L8
+	.db	1,5,9,9
+	.dh	.L221-.L220
+	.db	3,3,1,5,40,9
+	.dh	.L222-.L221
+	.db	1,5,29,9
+	.dh	.L10-.L222
+	.db	3,2,1,5,8,9
+	.dh	.L223-.L10
+	.db	1,5,9,9
+	.dh	.L224-.L223
+	.db	3,3,1,5,16,9
+	.dh	.L225-.L224
+	.db	1,5,40,9
+	.dh	.L226-.L225
+	.db	1,5,29,9
+	.dh	.L12-.L226
+	.db	3,2,1,5,8,9
+	.dh	.L227-.L12
+	.db	1,5,9,9
+	.dh	.L228-.L227
+	.db	3,3,1,5,16,9
+	.dh	.L229-.L228
+	.db	1,5,40,9
+	.dh	.L230-.L229
+	.db	1,5,29,9
+	.dh	.L14-.L230
+	.db	3,2,1,5,8,9
+	.dh	.L231-.L14
+	.db	1,5,9,9
+	.dh	.L232-.L231
+	.db	3,3,1,5,16,9
+	.dh	.L233-.L232
+	.db	1,5,40,9
+	.dh	.L234-.L233
+	.db	1,5,29,9
+	.dh	.L16-.L234
+	.db	3,2,1,5,8,9
+	.dh	.L235-.L16
+	.db	1,5,9,9
+	.dh	.L236-.L235
+	.db	3,3,1,5,16,9
+	.dh	.L237-.L236
+	.db	1,5,40,9
+	.dh	.L238-.L237
+	.db	1,5,29,9
+	.dh	.L18-.L238
+	.db	3,2,1,5,8,9
+	.dh	.L239-.L18
+	.db	1,5,9,9
+	.dh	.L240-.L239
+	.db	3,3,1,5,16,9
+	.dh	.L241-.L240
+	.db	1,5,40,9
+	.dh	.L242-.L241
+	.db	1,5,29,9
+	.dh	.L20-.L242
+	.db	3,2,1,5,8,9
+	.dh	.L243-.L20
+	.db	1,5,9,9
+	.dh	.L244-.L243
+	.db	3,3,1,5,16,9
+	.dh	.L245-.L244
+	.db	1,5,40,9
+	.dh	.L246-.L245
+	.db	1,5,26,9
+	.dh	.L22-.L246
+	.db	3,4,1,5,5,9
+	.dh	.L247-.L22
+	.db	1,5,11,9
+	.dh	.L248-.L247
+	.db	3,3,1,5,18,9
+	.dh	.L249-.L248
+	.db	1,5,1,9
+	.dh	.L24-.L249
+	.db	3,3,1,7,9
+	.dh	.L71-.L24
+	.db	0,1,1
+.L193:
+	.endsec	; End of section
+
+	.section	.debug_ranges ,cluster('$group_DMA_DeInit')
+.L69:
+	.dw	-1,.L70,0,.L71-.L70,0,0
+	.endsec	; End of section
+
+	.section	.debug_info ,cluster('$group_DMA_Init')
+.L72:
+	.dw	151
+	.dh	3
+	.dw	.L73
+	.db	4,1
+	.dw	.L185,.L186,.L187
+	.db	12,1
+	.dw	.L75,.L74
+	.db	2
+	.dw	.L62
+	.db	3
+	.db	'DMA_Init',0,1,238,1,6,1,1,1
+	.dw	.L43,.L77,.L42
+	.db	4
+	.db	'DMAy_Channelx',0,1,238,1,36
+	.dw	.L132,.L134
+	.db	4
+	.db	'DMA_InitStruct',0,1,238,1,68
+	.dw	.L135,.L136
+	.db	5
+	.dw	.L43,.L77
+	.db	6
+	.db	'tmpreg',0,1,240,1,12
+	.dw	.L137,.L138
+	.db	0,0,0
+	.endsec	; End of section
+
+	.section	.debug_abbrev ,cluster('$group_DMA_Init')
+.L73:
+	.db	1,17,1,3,14,37,14,27,14,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54
+	.db	15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52
+	.db	0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.endsec	; End of section
+
+	.section	.debug_line ,cluster('$group_DMA_Init')
+.L74:
+	.dw	.L251-.L250
+.L250:
+	.dh	3
+	.dw	.L253-.L252
+.L252:
+	.db	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.db	'C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c',0
+	.db	0,0,0,0
+.L253:
+	.db	5,6,7,0,5,2
+	.dw	.L43
+	.db	3,237,1,1,5,25,9
+	.dh	.L173-.L43
+	.db	3,18,1,5,6,9
+	.dh	.L172-.L173
+	.db	3,110,1,5,10,9
+	.dh	.L174-.L172
+	.db	3,20,1,5,27,9
+	.dh	.L254-.L174
+	.db	3,10,1,5,53,9
+	.dh	.L255-.L254
+	.db	1,5,37,9
+	.dh	.L171-.L255
+	.db	1,5,27,9
+	.dh	.L256-.L171
+	.db	3,1,1,5,64,9
+	.dh	.L257-.L256
+	.db	3,127,1,5,63,9
+	.dh	.L258-.L257
+	.db	3,1,1,5,47,9
+	.dh	.L259-.L258
+	.db	1,5,27,9
+	.dh	.L260-.L259
+	.db	3,1,1,5,79,9
+	.dh	.L261-.L260
+	.db	3,127,1,5,68,9
+	.dh	.L262-.L261
+	.db	3,1,1,5,52,9
+	.dh	.L263-.L262
+	.db	1,5,27,9
+	.dh	.L264-.L263
+	.db	3,1,1,5,89,9
+	.dh	.L265-.L264
+	.db	3,127,1,5,58,9
+	.dh	.L266-.L265
+	.db	3,1,1,5,42,9
+	.dh	.L267-.L266
+	.db	1,5,10,9
+	.dh	.L268-.L267
+	.db	3,125,1,5,22,9
+	.dh	.L175-.L268
+	.db	3,6,1,5,40,9
+	.dh	.L269-.L175
+	.db	3,4,1,5,24,9
+	.dh	.L270-.L269
+	.db	1,5,39,9
+	.dh	.L271-.L270
+	.db	3,4,1,5,23,9
+	.dh	.L272-.L271
+	.db	1,5,39,9
+	.dh	.L273-.L272
+	.db	3,4,1,5,23,9
+	.dh	.L274-.L273
+	.db	1,5,1,9
+	.dh	.L275-.L274
+	.db	3,1,1,9
+	.dh	.L77-.L275
+	.db	0,1,1
+.L251:
+	.endsec	; End of section
+
+	.section	.debug_ranges ,cluster('$group_DMA_Init')
+.L75:
+	.dw	-1,.L76,0,.L77-.L76,0,0
+	.endsec	; End of section
+
+	.section	.debug_info ,cluster('$group_DMA_StructInit')
+.L78:
+	.dw	109
+	.dh	3
+	.dw	.L79
+	.db	4,1
+	.dw	.L185,.L186,.L187
+	.db	12,1
+	.dw	.L81,.L80
+	.db	2
+	.dw	.L62
+	.db	3
+	.db	'DMA_StructInit',0,1,167,2,6,1,1,1
+	.dw	.L45,.L83,.L44
+	.db	4
+	.db	'DMA_InitStruct',0,1,167,2,38
+	.dw	.L135,.L139
+	.db	5
+	.dw	.L45,.L83
+	.db	0,0
+	.endsec	; End of section
+
+	.section	.debug_abbrev ,cluster('$group_DMA_StructInit')
+.L79:
+	.db	1,17,1,3,14,37,14,27,14,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54
+	.db	15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.endsec	; End of section
+
+	.section	.debug_line ,cluster('$group_DMA_StructInit')
+.L80:
+	.dw	.L277-.L276
+.L276:
+	.dh	3
+	.dw	.L279-.L278
+.L278:
+	.db	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.db	'C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c',0
+	.db	0,0,0,0
+.L279:
+	.db	5,44,7,0,5,2
+	.dw	.L45
+	.db	3,170,2,1,5,42,9
+	.dh	.L280-.L45
+	.db	1,5,38,9
+	.dh	.L281-.L280
+	.db	3,2,1,5,27,9
+	.dh	.L282-.L281
+	.db	3,2,1,5,34,9
+	.dh	.L283-.L282
+	.db	3,2,1,5,37,9
+	.dh	.L284-.L283
+	.db	3,2,1,5,33,9
+	.dh	.L285-.L284
+	.db	3,2,1,5,42,9
+	.dh	.L286-.L285
+	.db	3,2,1,5,38,9
+	.dh	.L287-.L286
+	.db	3,2,1,5,28,9
+	.dh	.L288-.L287
+	.db	3,2,1,5,32,9
+	.dh	.L289-.L288
+	.db	3,2,1,5,27,9
+	.dh	.L290-.L289
+	.db	3,2,1,5,1,9
+	.dh	.L291-.L290
+	.db	3,1,1,7,9
+	.dh	.L83-.L291
+	.db	0,1,1
+.L277:
+	.endsec	; End of section
+
+	.section	.debug_ranges ,cluster('$group_DMA_StructInit')
+.L81:
+	.dw	-1,.L82,0,.L83-.L82,0,0
+	.endsec	; End of section
+
+	.section	.debug_info ,cluster('$group_DMA_Cmd')
+.L84:
+	.dw	123
+	.dh	3
+	.dw	.L85
+	.db	4,1
+	.dw	.L185,.L186,.L187
+	.db	12,1
+	.dw	.L87,.L86
+	.db	2
+	.dw	.L62
+	.db	3
+	.db	'DMA_Cmd',0,1,202,2,6,1,1,1
+	.dw	.L47,.L89,.L46
+	.db	4
+	.db	'DMAy_Channelx',0,1,202,2,35
+	.dw	.L132,.L140
+	.db	4
+	.db	'NewState',0,1,202,2,66
+	.dw	.L141,.L142
+	.db	5
+	.dw	.L47,.L89
+	.db	0,0
+	.endsec	; End of section
+
+	.section	.debug_abbrev ,cluster('$group_DMA_Cmd')
+.L85:
+	.db	1,17,1,3,14,37,14,27,14,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54
+	.db	15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.endsec	; End of section
+
+	.section	.debug_line ,cluster('$group_DMA_Cmd')
+.L86:
+	.dw	.L293-.L292
+.L292:
+	.dh	3
+	.dw	.L295-.L294
+.L294:
+	.db	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.db	'C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c',0
+	.db	0,0,0,0
+.L295:
+	.db	5,3,7,0,5,2
+	.dw	.L47
+	.db	3,207,2,1,5,18,7,9
+	.dh	.L296-.L47
+	.db	3,3,1,5,24,9
+	.dh	.L176-.L296
+	.db	1,5,38,9
+	.dh	.L297-.L176
+	.db	1,5,18,9
+	.dh	.L25-.L297
+	.db	3,5,1,5,27,9
+	.dh	.L177-.L25
+	.db	1,5,24,9
+	.dh	.L298-.L177
+	.db	1,5,1,9
+	.dh	.L299-.L298
+	.db	3,2,1,7,9
+	.dh	.L89-.L299
+	.db	0,1,1
+.L293:
+	.endsec	; End of section
+
+	.section	.debug_ranges ,cluster('$group_DMA_Cmd')
+.L87:
+	.dw	-1,.L88,0,.L89-.L88,0,0
+	.endsec	; End of section
+
+	.section	.debug_info ,cluster('$group_DMA_SetCurrDataCounter')
+.L90:
+	.dw	140
+	.dh	3
+	.dw	.L91
+	.db	4,1
+	.dw	.L185,.L186,.L187
+	.db	12,1
+	.dw	.L93,.L92
+	.db	2
+	.dw	.L62
+	.db	3
+	.db	'DMA_SetCurrDataCounter',0,1,133,3,6,1,1,1
+	.dw	.L49,.L95,.L48
+	.db	4
+	.db	'DMAy_Channelx',0,1,133,3,50
+	.dw	.L132,.L143
+	.db	4
+	.db	'DataNumber',0,1,133,3,74
+	.dw	.L144,.L145
+	.db	5
+	.dw	.L49,.L95
+	.db	0,0
+	.endsec	; End of section
+
+	.section	.debug_abbrev ,cluster('$group_DMA_SetCurrDataCounter')
+.L91:
+	.db	1,17,1,3,14,37,14,27,14,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54
+	.db	15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.endsec	; End of section
+
+	.section	.debug_line ,cluster('$group_DMA_SetCurrDataCounter')
+.L92:
+	.dw	.L301-.L300
+.L300:
+	.dh	3
+	.dw	.L303-.L302
+.L302:
+	.db	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.db	'C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c',0
+	.db	0,0,0,0
+.L303:
+	.db	5,24,7,0,5,2
+	.dw	.L49
+	.db	3,139,3,1,5,1,9
+	.dh	.L304-.L49
+	.db	3,1,1,7,9
+	.dh	.L95-.L304
+	.db	0,1,1
+.L301:
+	.endsec	; End of section
+
+	.section	.debug_ranges ,cluster('$group_DMA_SetCurrDataCounter')
+.L93:
+	.dw	-1,.L94,0,.L95-.L94,0,0
+	.endsec	; End of section
+
+	.section	.debug_info ,cluster('$group_DMA_GetCurrDataCounter')
+.L96:
+	.dw	120
+	.dh	3
+	.dw	.L97
+	.db	4,1
+	.dw	.L185,.L186,.L187
+	.db	12,1
+	.dw	.L99,.L98
+	.db	2
+	.dw	.L62
+	.db	3
+	.db	'DMA_GetCurrDataCounter',0,1,151,3,10
+	.dw	.L144
+	.db	1,1,1
+	.dw	.L51,.L101,.L50
+	.db	4
+	.db	'DMAy_Channelx',0,1,151,3,54
+	.dw	.L132,.L146
+	.db	5
+	.dw	.L51,.L101
+	.db	0,0
+	.endsec	; End of section
+
+	.section	.debug_abbrev ,cluster('$group_DMA_GetCurrDataCounter')
+.L97:
+	.db	1,17,1,3,14,37,14,27,14,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73
+	.db	16,54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0
+	.db	0
+	.endsec	; End of section
+
+	.section	.debug_line ,cluster('$group_DMA_GetCurrDataCounter')
+.L98:
+	.dw	.L306-.L305
+.L305:
+	.dh	3
+	.dw	.L308-.L307
+.L307:
+	.db	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.db	'C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c',0
+	.db	0,0,0,0
+.L308:
+	.db	5,35,7,0,5,2
+	.dw	.L51
+	.db	3,155,3,1,5,11,9
+	.dh	.L309-.L51
+	.db	1,5,1,9
+	.dh	.L178-.L309
+	.db	3,1,1,7,9
+	.dh	.L101-.L178
+	.db	0,1,1
+.L306:
+	.endsec	; End of section
+
+	.section	.debug_ranges ,cluster('$group_DMA_GetCurrDataCounter')
+.L99:
+	.dw	-1,.L100,0,.L101-.L100,0,0
+	.endsec	; End of section
+
+	.section	.debug_info ,cluster('$group_DMA_ITConfig')
+.L102:
+	.dw	148
+	.dh	3
+	.dw	.L103
+	.db	4,1
+	.dw	.L185,.L186,.L187
+	.db	12,1
+	.dw	.L105,.L104
+	.db	2
+	.dw	.L62
+	.db	3
+	.db	'DMA_ITConfig',0,1,226,3,6,1,1,1
+	.dw	.L53,.L107,.L52
+	.db	4
+	.db	'DMAy_Channelx',0,1,226,3,40
+	.dw	.L132,.L147
+	.db	4
+	.db	'DMA_IT',0,1,226,3,64
+	.dw	.L137,.L148
+	.db	4
+	.db	'NewState',0,1,226,3,88
+	.dw	.L141,.L149
+	.db	5
+	.dw	.L53,.L107
+	.db	0,0
+	.endsec	; End of section
+
+	.section	.debug_abbrev ,cluster('$group_DMA_ITConfig')
+.L103:
+	.db	1,17,1,3,14,37,14,27,14,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54
+	.db	15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.endsec	; End of section
+
+	.section	.debug_line ,cluster('$group_DMA_ITConfig')
+.L104:
+	.dw	.L311-.L310
+.L310:
+	.dh	3
+	.dw	.L313-.L312
+.L312:
+	.db	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.db	'C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c',0
+	.db	0,0,0,0
+.L313:
+	.db	5,3,7,0,5,2
+	.dw	.L53
+	.db	3,232,3,1,5,18,7,9
+	.dh	.L314-.L53
+	.db	3,3,1,5,24,9
+	.dh	.L179-.L314
+	.db	1,5,33,9
+	.dh	.L315-.L179
+	.db	1,5,18,9
+	.dh	.L28-.L315
+	.db	3,5,1,5,24,9
+	.dh	.L180-.L28
+	.db	1,5,1,9
+	.dh	.L316-.L180
+	.db	3,2,1,7,9
+	.dh	.L107-.L316
+	.db	0,1,1
+.L311:
+	.endsec	; End of section
+
+	.section	.debug_ranges ,cluster('$group_DMA_ITConfig')
+.L105:
+	.dw	-1,.L106,0,.L107-.L106,0,0
+	.endsec	; End of section
+
+	.section	.debug_info ,cluster('$group_DMA_GetFlagStatus')
+.L108:
+	.dw	132
+	.dh	3
+	.dw	.L109
+	.db	4,1
+	.dw	.L185,.L186,.L187
+	.db	12,1
+	.dw	.L111,.L110
+	.db	2
+	.dw	.L62
+	.db	3
+	.db	'DMA_GetFlagStatus',0,1,178,4,12
+	.dw	.L150
+	.db	1,1,1
+	.dw	.L55,.L113,.L54
+	.db	4
+	.db	'DMAy_FLAG',0,1,178,4,39
+	.dw	.L137,.L151
+	.db	5
+	.dw	.L55,.L113
+	.db	6
+	.db	'tmpreg',0,1,181,4,12
+	.dw	.L137,.L152
+	.db	0,0,0
+	.endsec	; End of section
+
+	.section	.debug_abbrev ,cluster('$group_DMA_GetFlagStatus')
+.L109:
+	.db	1,17,1,3,14,37,14,27,14,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73
+	.db	16,54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0
+	.db	6,52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.endsec	; End of section
+
+	.section	.debug_line ,cluster('$group_DMA_GetFlagStatus')
+.L110:
+	.dw	.L318-.L317
+.L317:
+	.dh	3
+	.dw	.L320-.L319
+.L319:
+	.db	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.db	'C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c',0
+	.db	0,0,0,0
+.L320:
+	.db	5,3,7,0,5,2
+	.dw	.L55
+	.db	3,186,4,1,5,18,9
+	.dh	.L321-.L55
+	.db	3,3,1,9
+	.dh	.L322-.L321
+	.db	3,5,1,5,15,9
+	.dh	.L182-.L322
+	.db	3,4,1,5,28,9
+	.dh	.L181-.L182
+	.db	1,5,1,9
+	.dh	.L323-.L181
+	.db	3,13,1,7,9
+	.dh	.L113-.L323
+	.db	0,1,1
+.L318:
+	.endsec	; End of section
+
+	.section	.debug_ranges ,cluster('$group_DMA_GetFlagStatus')
+.L111:
+	.dw	-1,.L112,0,.L113-.L112,0,0
+	.endsec	; End of section
+
+	.section	.debug_info ,cluster('$group_DMA_ClearFlag')
+.L114:
+	.dw	103
+	.dh	3
+	.dw	.L115
+	.db	4,1
+	.dw	.L185,.L186,.L187
+	.db	12,1
+	.dw	.L117,.L116
+	.db	2
+	.dw	.L62
+	.db	3
+	.db	'DMA_ClearFlag',0,1,146,5,6,1,1,1
+	.dw	.L57,.L119,.L56
+	.db	4
+	.db	'DMAy_FLAG',0,1,146,5,29
+	.dw	.L137,.L153
+	.db	5
+	.dw	.L57,.L119
+	.db	0,0
+	.endsec	; End of section
+
+	.section	.debug_abbrev ,cluster('$group_DMA_ClearFlag')
+.L115:
+	.db	1,17,1,3,14,37,14,27,14,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54
+	.db	15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.endsec	; End of section
+
+	.section	.debug_line ,cluster('$group_DMA_ClearFlag')
+.L116:
+	.dw	.L325-.L324
+.L324:
+	.dh	3
+	.dw	.L327-.L326
+.L326:
+	.db	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.db	'C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c',0
+	.db	0,0,0,0
+.L327:
+	.db	5,3,7,0,5,2
+	.dw	.L57
+	.db	3,150,5,1,5,9,9
+	.dh	.L328-.L57
+	.db	3,3,1,9
+	.dh	.L329-.L328
+	.db	3,5,1,5,16,9
+	.dh	.L34-.L329
+	.db	1,5,1,9
+	.dh	.L330-.L34
+	.db	3,2,1,7,9
+	.dh	.L119-.L330
+	.db	0,1,1
+.L325:
+	.endsec	; End of section
+
+	.section	.debug_ranges ,cluster('$group_DMA_ClearFlag')
+.L117:
+	.dw	-1,.L118,0,.L119-.L118,0,0
+	.endsec	; End of section
+
+	.section	.debug_info ,cluster('$group_DMA_GetITStatus')
+.L120:
+	.dw	128
+	.dh	3
+	.dw	.L121
+	.db	4,1
+	.dw	.L185,.L186,.L187
+	.db	12,1
+	.dw	.L123,.L122
+	.db	2
+	.dw	.L62
+	.db	3
+	.db	'DMA_GetITStatus',0,1,224,5,10
+	.dw	.L150
+	.db	1,1,1
+	.dw	.L59,.L125,.L58
+	.db	4
+	.db	'DMAy_IT',0,1,224,5,35
+	.dw	.L137,.L154
+	.db	5
+	.dw	.L59,.L125
+	.db	6
+	.db	'tmpreg',0,1,227,5,12
+	.dw	.L137,.L155
+	.db	0,0,0
+	.endsec	; End of section
+
+	.section	.debug_abbrev ,cluster('$group_DMA_GetITStatus')
+.L121:
+	.db	1,17,1,3,14,37,14,27,14,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73
+	.db	16,54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0
+	.db	6,52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.endsec	; End of section
+
+	.section	.debug_line ,cluster('$group_DMA_GetITStatus')
+.L122:
+	.dw	.L332-.L331
+.L331:
+	.dh	3
+	.dw	.L334-.L333
+.L333:
+	.db	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.db	'C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c',0
+	.db	0,0,0,0
+.L334:
+	.db	5,3,7,0,5,2
+	.dw	.L59
+	.db	3,232,5,1,5,18,9
+	.dh	.L335-.L59
+	.db	3,3,1,9
+	.dh	.L336-.L335
+	.db	3,5,1,5,15,9
+	.dh	.L184-.L336
+	.db	3,4,1,5,26,9
+	.dh	.L183-.L184
+	.db	1,5,1,9
+	.dh	.L337-.L183
+	.db	3,12,1,7,9
+	.dh	.L125-.L337
+	.db	0,1,1
+.L332:
+	.endsec	; End of section
+
+	.section	.debug_ranges ,cluster('$group_DMA_GetITStatus')
+.L123:
+	.dw	-1,.L124,0,.L125-.L124,0,0
+	.endsec	; End of section
+
+	.section	.debug_info ,cluster('$group_DMA_ClearITPendingBit')
+.L126:
+	.dw	109
+	.dh	3
+	.dw	.L127
+	.db	4,1
+	.dw	.L185,.L186,.L187
+	.db	12,1
+	.dw	.L129,.L128
+	.db	2
+	.dw	.L62
+	.db	3
+	.db	'DMA_ClearITPendingBit',0,1,192,6,6,1,1,1
+	.dw	.L61,.L131,.L60
+	.db	4
+	.db	'DMAy_IT',0,1,192,6,37
+	.dw	.L137,.L156
+	.db	5
+	.dw	.L61,.L131
+	.db	0,0
+	.endsec	; End of section
+
+	.section	.debug_abbrev ,cluster('$group_DMA_ClearITPendingBit')
+.L127:
+	.db	1,17,1,3,14,37,14,27,14,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54
+	.db	15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.endsec	; End of section
+
+	.section	.debug_line ,cluster('$group_DMA_ClearITPendingBit')
+.L128:
+	.dw	.L339-.L338
+.L338:
+	.dh	3
+	.dw	.L341-.L340
+.L340:
+	.db	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.db	'C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c',0
+	.db	0,0,0,0
+.L341:
+	.db	5,3,7,0,5,2
+	.dw	.L61
+	.db	3,197,6,1,5,9,9
+	.dh	.L342-.L61
+	.db	3,3,1,9
+	.dh	.L343-.L342
+	.db	3,5,1,5,16,9
+	.dh	.L39-.L343
+	.db	1,5,1,9
+	.dh	.L344-.L39
+	.db	3,2,1,7,9
+	.dh	.L131-.L344
+	.db	0,1,1
+.L339:
+	.endsec	; End of section
+
+	.section	.debug_ranges ,cluster('$group_DMA_ClearITPendingBit')
+.L129:
+	.dw	-1,.L130,0,.L131-.L130,0,0
+	.endsec	; End of section
+
+	.section	.debug_str
+.L185:
+	.db	'C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c',0
+.L186:
+	.db	'TASKING VX-toolset for ARM Cortex: C compiler',0
+.L187:
+	.db	'C:\\Users\\hmidenen\\Desktop\\Sanity Check\\AN2668_FW_V3.0.0\\Project\\ADCOversampling-STM32L\\TriangularDitherMethod\\TASKING\\STM32L152-EVAL\\Debug\\',0
+	.endsec	; End of section
+
+	.section	.debug_loc ,cluster('$group_DMA_ClearFlag')
+.L56:
+	.dw	-1,.L57,0,.L119-.L57
+	.dh	2
+	.db	125,0
+	.dw	0,0
+.L153:
+	.dw	-1,.L57,0,.L119-.L57
+	.dh	1
+	.db	80
+	.dw	0,0
+	.endsec	; End of section
+
+	.section	.debug_loc ,cluster('$group_DMA_ClearITPendingBit')
+.L60:
+	.dw	-1,.L61,0,.L131-.L61
+	.dh	2
+	.db	125,0
+	.dw	0,0
+.L156:
+	.dw	-1,.L61,0,.L131-.L61
+	.dh	1
+	.db	80
+	.dw	0,0
+	.endsec	; End of section
+
+	.section	.debug_loc ,cluster('$group_DMA_Cmd')
+.L46:
+	.dw	-1,.L47,0,.L89-.L47
+	.dh	2
+	.db	125,0
+	.dw	0,0
+.L140:
+	.dw	-1,.L47,0,.L89-.L47
+	.dh	1
+	.db	80
+	.dw	0,0
+.L142:
+	.dw	-1,.L47,0,.L176-.L47
+	.dh	1
+	.db	81
+	.dw	.L25-.L47,.L177-.L47
+	.dh	1
+	.db	81
+	.dw	0,0
+	.endsec	; End of section
+
+	.section	.debug_loc ,cluster('$group_DMA_DeInit')
+.L40:
+	.dw	-1,.L41,0,.L71-.L41
+	.dh	2
+	.db	125,0
+	.dw	0,0
+.L133:
+	.dw	-1,.L41,0,.L157-.L41
+	.dh	1
+	.db	80
+	.dw	.L2-.L41,.L158-.L41
+	.dh	1
+	.db	80
+	.dw	.L4-.L41,.L159-.L41
+	.dh	1
+	.db	80
+	.dw	.L6-.L41,.L160-.L41
+	.dh	1
+	.db	80
+	.dw	.L8-.L41,.L161-.L41
+	.dh	1
+	.db	80
+	.dw	.L10-.L41,.L162-.L41
+	.dh	1
+	.db	80
+	.dw	.L12-.L41,.L163-.L41
+	.dh	1
+	.db	80
+	.dw	.L14-.L41,.L164-.L41
+	.dh	1
+	.db	80
+	.dw	.L16-.L41,.L165-.L41
+	.dh	1
+	.db	80
+	.dw	.L18-.L41,.L166-.L41
+	.dh	1
+	.db	80
+	.dw	.L20-.L41,.L167-.L41
+	.dh	1
+	.db	80
+	.dw	.L22-.L41,.L168-.L41
+	.dh	1
+	.db	80
+	.dw	0,0
+	.endsec	; End of section
+
+	.section	.debug_loc ,cluster('$group_DMA_GetCurrDataCounter')
+.L50:
+	.dw	-1,.L51,0,.L101-.L51
+	.dh	2
+	.db	125,0
+	.dw	0,0
+.L146:
+	.dw	-1,.L51,0,.L178-.L51
+	.dh	1
+	.db	80
+	.dw	0,0
+	.endsec	; End of section
+
+	.section	.debug_loc ,cluster('$group_DMA_GetFlagStatus')
+.L54:
+	.dw	-1,.L55,0,.L113-.L55
+	.dh	2
+	.db	125,0
+	.dw	0,0
+.L151:
+	.dw	-1,.L55,0,.L181-.L55
+	.dh	1
+	.db	80
+	.dw	0,0
+.L152:
+	.dw	-1,.L55,.L182-.L55,.L113-.L55
+	.dh	1
+	.db	81
+	.dw	0,0
+	.endsec	; End of section
+
+	.section	.debug_loc ,cluster('$group_DMA_GetITStatus')
+.L58:
+	.dw	-1,.L59,0,.L125-.L59
+	.dh	2
+	.db	125,0
+	.dw	0,0
+.L154:
+	.dw	-1,.L59,0,.L183-.L59
+	.dh	1
+	.db	80
+	.dw	0,0
+.L155:
+	.dw	-1,.L59,.L184-.L59,.L125-.L59
+	.dh	1
+	.db	81
+	.dw	0,0
+	.endsec	; End of section
+
+	.section	.debug_loc ,cluster('$group_DMA_ITConfig')
+.L148:
+	.dw	-1,.L53,0,.L107-.L53
+	.dh	1
+	.db	81
+	.dw	0,0
+.L52:
+	.dw	-1,.L53,0,.L107-.L53
+	.dh	2
+	.db	125,0
+	.dw	0,0
+.L147:
+	.dw	-1,.L53,0,.L107-.L53
+	.dh	1
+	.db	80
+	.dw	0,0
+.L149:
+	.dw	-1,.L53,0,.L179-.L53
+	.dh	1
+	.db	82
+	.dw	.L28-.L53,.L180-.L53
+	.dh	1
+	.db	82
+	.dw	0,0
+	.endsec	; End of section
+
+	.section	.debug_loc ,cluster('$group_DMA_Init')
+.L42:
+	.dw	-1,.L43,0,.L169-.L43
+	.dh	2
+	.db	125,0
+	.dw	.L169-.L43,.L170-.L43
+	.dh	2
+	.db	125,4
+	.dw	.L170-.L43,.L77-.L43
+	.dh	2
+	.db	125,0
+	.dw	0,0
+.L136:
+	.dw	-1,.L43,0,.L171-.L43
+	.dh	1
+	.db	81
+	.dw	.L174-.L43,.L77-.L43
+	.dh	1
+	.db	82
+	.dw	0,0
+.L134:
+	.dw	-1,.L43,0,.L172-.L43
+	.dh	1
+	.db	80
+	.dw	.L173-.L43,.L77-.L43
+	.dh	1
+	.db	83
+	.dw	0,0
+.L138:
+	.dw	-1,.L43,.L175-.L43,.L170-.L43
+	.dh	1
+	.db	84
+	.dw	0,0
+	.endsec	; End of section
+
+	.section	.debug_loc ,cluster('$group_DMA_SetCurrDataCounter')
+.L48:
+	.dw	-1,.L49,0,.L95-.L49
+	.dh	2
+	.db	125,0
+	.dw	0,0
+.L143:
+	.dw	-1,.L49,0,.L95-.L49
+	.dh	1
+	.db	80
+	.dw	0,0
+.L145:
+	.dw	-1,.L49,0,.L95-.L49
+	.dh	1
+	.db	81
+	.dw	0,0
+	.endsec	; End of section
+
+	.section	.debug_loc ,cluster('$group_DMA_StructInit')
+.L139:
+	.dw	-1,.L45,0,.L83-.L45
+	.dh	1
+	.db	80
+	.dw	0,0
+.L44:
+	.dw	-1,.L45,0,.L83-.L45
+	.dh	2
+	.db	125,0
+	.dw	0,0
+	.endsec	; End of section
+
+	.section	.debug_frame
+.L345:
+	.dw	64
+	.dw	-1
+	.db	3,0,2,2,14,12,13,0,8,4,8,5,8,6,8,7,8,8,8,9,8,10,8,11,8,13,8,14,8,15,8,128,1,8,136,2,8,137,2,8,138,2,8
+	.db	139,2,8,140,2,8,141,2,8,142,2,8,143,2,0,0,0
+	.endsec	; End of section
+
+	.section	.debug_frame ,cluster('$group_DMA_DeInit')
+	.dw	40
+	.dw	.L345,.L41,.L71-.L41
+	.db	8,3,8,128,2,8,129,2,8,130,2,8,131,2,8,132,2,8,133,2,8,134,2,8,135,2,0,0
+	.endsec	; End of section
+
+	.section	.debug_frame ,cluster('$group_DMA_Init')
+	.dw	64
+	.dw	.L345,.L43,.L77-.L43
+	.db	8,128,2,8,129,2,8,130,2,8,131,2,8,132,2,8,133,2,8,134,2,8,135,2,4
+	.dw	(.L169-.L43)/2
+	.db	19,2,22,13,3,19,125,4,17,4,126,4
+	.dw	(.L170-.L169)/2
+	.db	19,0,8,13,196,0,0
+	.endsec	; End of section
+
+	.section	.debug_frame ,cluster('$group_DMA_StructInit')
+	.dw	40
+	.dw	.L345,.L45,.L83-.L45
+	.db	8,2,8,3,8,128,2,8,129,2,8,130,2,8,131,2,8,132,2,8,133,2,8,134,2,8,135,2
+	.endsec	; End of section
+
+	.section	.debug_frame ,cluster('$group_DMA_Cmd')
+	.dw	40
+	.dw	.L345,.L47,.L89-.L47
+	.db	8,3,8,128,2,8,129,2,8,130,2,8,131,2,8,132,2,8,133,2,8,134,2,8,135,2,0,0
+	.endsec	; End of section
+
+	.section	.debug_frame ,cluster('$group_DMA_SetCurrDataCounter')
+	.dw	40
+	.dw	.L345,.L49,.L95-.L49
+	.db	8,2,8,3,8,128,2,8,129,2,8,130,2,8,131,2,8,132,2,8,133,2,8,134,2,8,135,2
+	.endsec	; End of section
+
+	.section	.debug_frame ,cluster('$group_DMA_GetCurrDataCounter')
+	.dw	44
+	.dw	.L345,.L51,.L101-.L51
+	.db	8,1,8,2,8,3,8,128,2,8,129,2,8,130,2,8,131,2,8,132,2,8,133,2,8,134,2,8,135,2,0,0
+	.endsec	; End of section
+
+	.section	.debug_frame ,cluster('$group_DMA_ITConfig')
+	.dw	40
+	.dw	.L345,.L53,.L107-.L53
+	.db	8,3,8,128,2,8,129,2,8,130,2,8,131,2,8,132,2,8,133,2,8,134,2,8,135,2,0,0
+	.endsec	; End of section
+
+	.section	.debug_frame ,cluster('$group_DMA_GetFlagStatus')
+	.dw	40
+	.dw	.L345,.L55,.L113-.L55
+	.db	8,2,8,3,8,128,2,8,129,2,8,130,2,8,131,2,8,132,2,8,133,2,8,134,2,8,135,2
+	.endsec	; End of section
+
+	.section	.debug_frame ,cluster('$group_DMA_ClearFlag')
+	.dw	40
+	.dw	.L345,.L57,.L119-.L57
+	.db	8,2,8,3,8,128,2,8,129,2,8,130,2,8,131,2,8,132,2,8,133,2,8,134,2,8,135,2
+	.endsec	; End of section
+
+	.section	.debug_frame ,cluster('$group_DMA_GetITStatus')
+	.dw	40
+	.dw	.L345,.L59,.L125-.L59
+	.db	8,2,8,3,8,128,2,8,129,2,8,130,2,8,131,2,8,132,2,8,133,2,8,134,2,8,135,2
+	.endsec	; End of section
+
+	.section	.debug_frame ,cluster('$group_DMA_ClearITPendingBit')
+	.dw	40
+	.dw	.L345,.L61,.L131-.L61
+	.db	8,2,8,3,8,128,2,8,129,2,8,130,2,8,131,2,8,132,2,8,133,2,8,134,2,8,135,2
+	.endsec	; End of section
+
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   849  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   850  /**
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   851    * @}
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   852    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   853  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   854  /**
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   855    * @}
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   856    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   857  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   858  /**
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   859    * @}
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   860    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   861  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   862  /**
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   863    * @}
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   864    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   865  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c	   866  /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
+
+	; Module end
+	.end

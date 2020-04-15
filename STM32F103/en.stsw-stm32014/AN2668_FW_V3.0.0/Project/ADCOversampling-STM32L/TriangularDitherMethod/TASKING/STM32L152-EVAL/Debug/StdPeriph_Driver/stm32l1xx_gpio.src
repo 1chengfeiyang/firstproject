@@ -1,0 +1,3114 @@
+	; TASKING VX-toolset for ARM Cortex: C compiler v4.4r1 Build 765 SN 00123456
+	; Options: -f cc7176a --dep-file=StdPeriph_Driver\.stm32l1xx_gpio.obj.d -CARMv7M -D__PROC_STM32L152VB__ -DVECT_TAB_FLASH -DUSE_STDPERIPH_DRIVER -DUSE_STM32L152_EVAL -DSTM32L1XX_MD -I..\..\..\inc -I..\..\..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc -I..\..\..\..\..\..\Libraries\CMSIS\Device\ST\STM32L1xx\Include -I..\..\..\..\..\..\Libraries\CMSIS\Include -g -t4 -w557 -w529 -w588 --make-target=StdPeriph_Driver\stm32l1xx_gpio.obj --language=-gcc,-volatile,+strings -O3 --source --compact-max-size=200 -o StdPeriph_Driver\stm32l1xx_gpio.src
+	; Module start
+	;.ident 'TASKING VX-toolset for ARM Cortex: C compiler v4.4r1 Build 765 SN 00123456'
+	.source 'C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c'
+
+	.section	.text ,cluster('$group_GPIO_DeInit')
+	.global	GPIO_DeInit
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	     1  /**
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	     2    ******************************************************************************
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	     3    * @file    stm32l1xx_gpio.c
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	     4    * @author  MCD Application Team
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	     5    * @version V1.1.1
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	     6    * @date    05-March-2012
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	     7    * @brief   This file provides firmware functions to manage the following 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	     8    *          functionalities of the GPIO peripheral:           
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	     9    *           + Initialization and Configuration
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    10    *           + GPIO Read and Write
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    11    *           + GPIO Alternate functions configuration
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    12    * 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    13    *  @verbatim
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    14      ===========================================================================
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    15                           ##### How to use this driver #####
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    16      ===========================================================================
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    17        [..]
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    18        (#) Enable the GPIO AHB clock using RCC_AHBPeriphClockCmd()
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    19        (#) Configure the GPIO pin(s) using GPIO_Init()
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    20            Four possible configuration are available for each pin:
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    21           (++) Input: Floating, Pull-up, Pull-down.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    22           (++) Output: Push-Pull (Pull-up, Pull-down or no Pull)
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    23                Open Drain (Pull-up, Pull-down or no Pull).
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    24                In output mode, the speed is configurable: Very Low, Low,
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    25                Medium or High.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    26           (++) Alternate Function: Push-Pull (Pull-up, Pull-down or no Pull)
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    27                Open Drain (Pull-up, Pull-down or no Pull).
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    28           (++) Analog: required mode when a pin is to be used as ADC channel,
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    29                DAC output or comparator input.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    30        (#) Peripherals alternate function:
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    31            (++) For ADC, DAC and comparators, configure the desired pin in 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    32                 analog mode using GPIO_InitStruct->GPIO_Mode = GPIO_Mode_AN
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    33            (++) For other peripherals (TIM, USART...):
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    34                (+++) Connect the pin to the desired peripherals' Alternate 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    35                      Function (AF) using GPIO_PinAFConfig() function.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    36                (+++) Configure the desired pin in alternate function mode using
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    37                      GPIO_InitStruct->GPIO_Mode = GPIO_Mode_AF
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    38                (+++) Select the type, pull-up/pull-down and output speed via 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    39                      GPIO_PuPd, GPIO_OType and GPIO_Speed members.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    40                (+++) Call GPIO_Init() function.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    41        (#) To get the level of a pin configured in input mode use GPIO_ReadInputDataBit()
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    42        (#) To set/reset the level of a pin configured in output mode use
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    43            GPIO_SetBits()/GPIO_ResetBits()
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    44        (#) During and just after reset, the alternate functions are not 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    45            active and the GPIO pins are configured in input floating mode
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    46            (except JTAG pins).
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    47        (#) The LSE oscillator pins OSC32_IN and OSC32_OUT can be used as 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    48            general-purpose (PC14 and PC15, respectively) when the LSE
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    49            oscillator is off. The LSE has priority over the GPIO function.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    50        (#) The HSE oscillator pins OSC_IN/OSC_OUT can be used as 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    51            general-purpose PH0 and PH1, respectively, when the HSE 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    52            oscillator is off. The HSE has priority over the GPIO function.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    53      @endverbatim
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    54    *
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    55    ******************************************************************************
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    56    * @attention
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    57    *
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    58    * <h2><center>&copy; COPYRIGHT 2012 STMicroelectronics</center></h2>
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    59    *
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    60    * Licensed under MCD-ST Liberty SW License Agreement V2, (the "License");
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    61    * You may not use this file except in compliance with the License.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    62    * You may obtain a copy of the License at:
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    63    *
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    64    *        http://www.st.com/software_license_agreement_liberty_v2
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    65    *
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    66    * Unless required by applicable law or agreed to in writing, software 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    67    * distributed under the License is distributed on an "AS IS" BASIS, 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    68    * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    69    * See the License for the specific language governing permissions and
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    70    * limitations under the License.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    71    *
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    72    ******************************************************************************
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    73    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    74  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    75  /* Includes ------------------------------------------------------------------*/
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    76  #include "stm32l1xx_gpio.h"
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    77  #include "stm32l1xx_rcc.h"
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    78  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    79  /** @addtogroup STM32L1xx_StdPeriph_Driver
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    80    * @{
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    81    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    82  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    83  /** @defgroup GPIO 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    84    * @brief GPIO driver modules
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    85    * @{
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    86    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    87  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    88  /* Private typedef -----------------------------------------------------------*/
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    89  /* Private define ------------------------------------------------------------*/
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    90  /* Private macro -------------------------------------------------------------*/
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    91  /* Private variables ---------------------------------------------------------*/
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    92  /* Private function prototypes -----------------------------------------------*/
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    93  /* Private functions ---------------------------------------------------------*/
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    94  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    95  /** @defgroup GPIO_Private_Functions
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    96    * @{
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    97    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    98  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	    99  /** @defgroup GPIO_Group1 Initialization and Configuration
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   100   *  @brief   Initialization and Configuration
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   101   *
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   102  @verbatim   
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   103   ===============================================================================
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   104                      ##### Initialization and Configuration #####
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   105   ===============================================================================
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   106  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   107  @endverbatim
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   108    * @{
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   109    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   110  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   111  /**
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   112    * @brief  Deinitializes the GPIOx peripheral registers to their default reset 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   113    *         values.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   114    *         By default, The GPIO pins are configured in input floating mode
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   115    *         (except JTAG pins).
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   116    * @param  GPIOx: where x can be (A..H) to select the GPIO peripheral.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   117    * @retval None
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   118    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   119  void GPIO_DeInit(GPIO_TypeDef* GPIOx)
+; Function GPIO_DeInit
+.L63:
+	.thumb
+	.align	4
+GPIO_DeInit:	.type	func
+
+.L28:
+	push	{lr}
+.L181:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   120  {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   121    /* Check the parameters */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   122    assert_param(IS_GPIO_ALL_PERIPH(GPIOx));
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   123  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   124    if(GPIOx == GPIOA)
+	movw	r1,#@lsh(1073872896)
+	movt	r1,#@msh(1073872896)
+.L216:
+	cmp	r0,r1
+	bne	.L2
+.L217:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   125    {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   126      RCC_AHBPeriphResetCmd(RCC_AHBPeriph_GPIOA, ENABLE);
+	movs	r0,#1
+.L182:
+	mov	r1,r0
+	bl	RCC_AHBPeriphResetCmd
+.L218:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   127      RCC_AHBPeriphResetCmd(RCC_AHBPeriph_GPIOA, DISABLE);  
+	movs	r0,#1
+.L219:
+	b	.L3
+.L2:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   128    }
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   129    else if(GPIOx == GPIOB)
+	movw	r1,#@lsh(1073873920)
+	movt	r1,#@msh(1073873920)
+.L220:
+	cmp	r0,r1
+	bne	.L4
+.L221:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   130    {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   131      RCC_AHBPeriphResetCmd(RCC_AHBPeriph_GPIOB, ENABLE);
+	movs	r1,#1
+.L222:
+	movs	r0,#2
+.L183:
+	bl	RCC_AHBPeriphResetCmd
+.L223:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   132      RCC_AHBPeriphResetCmd(RCC_AHBPeriph_GPIOB, DISABLE);
+	movs	r0,#2
+.L224:
+	b	.L5
+.L4:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   133    }
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   134    else if(GPIOx == GPIOC)
+	movw	r1,#@lsh(1073874944)
+	movt	r1,#@msh(1073874944)
+.L225:
+	cmp	r0,r1
+	bne	.L6
+.L226:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   135    {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   136      RCC_AHBPeriphResetCmd(RCC_AHBPeriph_GPIOC, ENABLE);
+	movs	r1,#1
+.L227:
+	movs	r0,#4
+.L184:
+	bl	RCC_AHBPeriphResetCmd
+.L228:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   137      RCC_AHBPeriphResetCmd(RCC_AHBPeriph_GPIOC, DISABLE);
+	movs	r0,#4
+.L229:
+	b	.L7
+.L6:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   138    }
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   139    else if(GPIOx == GPIOD)
+	movw	r1,#@lsh(1073875968)
+	movt	r1,#@msh(1073875968)
+.L230:
+	cmp	r0,r1
+	bne	.L8
+.L231:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   140    {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   141      RCC_AHBPeriphResetCmd(RCC_AHBPeriph_GPIOD, ENABLE);
+	movs	r1,#1
+.L232:
+	movs	r0,#8
+.L185:
+	bl	RCC_AHBPeriphResetCmd
+.L233:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   142      RCC_AHBPeriphResetCmd(RCC_AHBPeriph_GPIOD, DISABLE);
+	movs	r0,#8
+.L234:
+	b	.L9
+.L8:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   143    }
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   144    else if(GPIOx == GPIOE)
+	movw	r1,#@lsh(1073876992)
+	movt	r1,#@msh(1073876992)
+.L235:
+	cmp	r0,r1
+	bne	.L10
+.L236:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   145    {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   146      RCC_AHBPeriphResetCmd(RCC_AHBPeriph_GPIOE, ENABLE);
+	movs	r1,#1
+.L237:
+	movs	r0,#16
+.L186:
+	bl	RCC_AHBPeriphResetCmd
+.L238:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   147      RCC_AHBPeriphResetCmd(RCC_AHBPeriph_GPIOE, DISABLE);
+	movs	r0,#16
+.L239:
+	b	.L11
+.L10:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   148    }
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   149    else if(GPIOx == GPIOF)
+	movw	r1,#@lsh(1073879040)
+	movt	r1,#@msh(1073879040)
+.L240:
+	cmp	r0,r1
+	bne	.L12
+.L241:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   150    {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   151      RCC_AHBPeriphResetCmd(RCC_AHBPeriph_GPIOF, ENABLE);
+	movs	r1,#1
+.L242:
+	movs	r0,#64
+.L187:
+	bl	RCC_AHBPeriphResetCmd
+.L243:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   152      RCC_AHBPeriphResetCmd(RCC_AHBPeriph_GPIOF, DISABLE);
+	movs	r0,#64
+.L244:
+	b	.L13
+.L12:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   153    }
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   154    else if(GPIOx == GPIOG)
+	movw	r1,#@lsh(1073880064)
+	movt	r1,#@msh(1073880064)
+.L245:
+	cmp	r0,r1
+	bne	.L14
+.L246:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   155    {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   156      RCC_AHBPeriphResetCmd(RCC_AHBPeriph_GPIOG, ENABLE);
+	movs	r1,#1
+.L247:
+	movs	r0,#128
+.L188:
+	bl	RCC_AHBPeriphResetCmd
+.L248:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   157      RCC_AHBPeriphResetCmd(RCC_AHBPeriph_GPIOG, DISABLE);
+	movs	r0,#128
+.L249:
+	b	.L15
+.L14:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   158    }   
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   159    else
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   160    {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   161      if(GPIOx == GPIOH)
+	movw	r1,#@lsh(1073878016)
+	movt	r1,#@msh(1073878016)
+.L250:
+	cmp	r0,r1
+	it	ne
+	popne	{pc}
+.L251:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   162      {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   163        RCC_AHBPeriphResetCmd(RCC_AHBPeriph_GPIOH, ENABLE);
+	movs	r1,#1
+.L252:
+	movs	r0,#32
+.L189:
+	bl	RCC_AHBPeriphResetCmd
+.L253:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   164        RCC_AHBPeriphResetCmd(RCC_AHBPeriph_GPIOH, DISABLE);
+	movs	r0,#32
+.L3:
+.L5:
+.L7:
+.L9:
+.L11:
+.L13:
+.L15:
+	movs	r1,#0
+	bl	RCC_AHBPeriphResetCmd
+.L16:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   165      }
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   166    }
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   167  }
+	pop	{pc}
+.L64:
+	.size	GPIO_DeInit,$-GPIO_DeInit
+	; End of function
+	.endsec	; End of section
+
+	.section	.text ,cluster('$group_GPIO_Init')
+	.global	GPIO_Init
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   168  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   169  /**
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   170    * @brief  Initializes the GPIOx peripheral according to the specified 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   171    *         parameters in the GPIO_InitStruct.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   172    * @param  GPIOx: where x can be (A..H) to select the GPIO peripheral.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   173    * @param  GPIO_InitStruct: pointer to a GPIO_InitTypeDef structure that 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   174    *         contains the configuration information for the specified GPIO
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   175    *         peripheral.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   176  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   177    * @retval None
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   178    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   179  void GPIO_Init(GPIO_TypeDef* GPIOx, GPIO_InitTypeDef* GPIO_InitStruct)
+; Function GPIO_Init
+.L69:
+	.thumb
+	.align	4
+GPIO_Init:	.type	func
+
+.L30:
+	push	{r4,r5,lr}
+.L190:
+	mov	r2,r0
+.L191:
+	mov	r3,r1
+.L192:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   180  {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   181    uint32_t pinpos = 0x00, pos = 0x00 , currentpin = 0x00;
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   182    
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   183    /* Check the parameters */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   184    assert_param(IS_GPIO_ALL_PERIPH(GPIOx));
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   185    assert_param(IS_GPIO_PIN(GPIO_InitStruct->GPIO_Pin));
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   186    assert_param(IS_GPIO_MODE(GPIO_InitStruct->GPIO_Mode));
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   187    assert_param(IS_GPIO_PUPD(GPIO_InitStruct->GPIO_PuPd));
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   188  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   189    /* -------------------------Configure the port pins---------------- */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   190    /*-- GPIO Mode Configuration --*/
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   191    for (pinpos = 0x00; pinpos < 0x10; pinpos++)
+	movs	r4,#0
+.L17:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   192    {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   193      pos = ((uint32_t)0x01) << pinpos;
+	movs	r0,#1
+.L258:
+	movs	r1,r0,lsl r4
+.L193:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   194  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   195      /* Get the port pins position */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   196      currentpin = (GPIO_InitStruct->GPIO_Pin) & pos;
+	ldr	r0,[r3,#0]
+.L259:
+	ands	r0,r0,r1
+.L260:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   197  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   198      if (currentpin == pos)
+	cmp	r0,r1
+	bne	.L18
+.L261:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   199      {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   200        GPIOx->MODER  &= ~(GPIO_MODER_MODER0 << (pinpos * 2));
+	movs	lr,r4,lsl #1
+.L262:
+	movs	r0,#3
+.L263:
+	movs	r0,r0,lsl lr
+.L264:
+	mvn	r5,r0
+.L265:
+	ldr	r0,[r2,#0]
+.L266:
+	ands	r0,r0,r5
+	str	r0,[r2,#0]
+.L267:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   201  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   202        GPIOx->MODER |= (((uint32_t)GPIO_InitStruct->GPIO_Mode) << (pinpos * 2));
+	ldr	r1,[r3,#4]
+.L194:
+	ldr	r0,[r2,#0]
+.L268:
+	movs	r1,r1,lsl lr
+.L269:
+	orrs	r0,r0,r1
+	str	r0,[r2,#0]
+.L270:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   203  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   204        if ((GPIO_InitStruct->GPIO_Mode == GPIO_Mode_OUT) || (GPIO_InitStruct->GPIO_Mode == GPIO_Mode_AF))
+	ldr	r0,[r3,#4]
+.L271:
+	cmp	r0,#1
+	beq	.L19
+.L272:
+	cmp	r0,#2
+	bne	.L20
+.L19:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   205        {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   206          /* Check Speed mode parameters */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   207          assert_param(IS_GPIO_SPEED(GPIO_InitStruct->GPIO_Speed));
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   208  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   209          /* Speed mode configuration */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   210          GPIOx->OSPEEDR &= ~(GPIO_OSPEEDER_OSPEEDR0 << (pinpos * 2));
+	ldr	r0,[r2,#8]
+.L273:
+	ands	r0,r0,r5
+	str	r0,[r2,#8]
+.L274:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   211          GPIOx->OSPEEDR |= ((uint32_t)(GPIO_InitStruct->GPIO_Speed) << (pinpos * 2));
+	ldr	r1,[r3,#8]
+.L275:
+	ldr	r0,[r2,#8]
+.L276:
+	movs	r1,r1,lsl lr
+.L277:
+	orrs	r0,r0,r1
+	str	r0,[r2,#8]
+.L278:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   212  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   213          /*Check Output mode parameters */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   214          assert_param(IS_GPIO_OTYPE(GPIO_InitStruct->GPIO_OType));
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   215  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   216          /* Output mode configuration */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   217          GPIOx->OTYPER  &= ~((GPIO_OTYPER_OT_0) << ((uint16_t)pinpos)) ;
+	movs	r1,#1
+.L279:
+	movs	r1,r1,lsl r4
+.L280:
+	ldrh	r0,[r2,#4]
+.L281:
+	bics	r0,r0,r1
+	strh	r0,[r2,#4]
+.L282:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   218          GPIOx->OTYPER |= (uint16_t)(((uint16_t)GPIO_InitStruct->GPIO_OType) << ((uint16_t)pinpos));
+	ldr	r1,[r3,#12]
+.L283:
+	ldrh	r0,[r2,#4]
+.L284:
+	uxth	r1,r1
+.L285:
+	movs	r1,r1,lsl r4
+.L286:
+	uxth	r1,r1
+.L287:
+	orrs	r0,r0,r1
+	strh	r0,[r2,#4]
+.L20:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   219        }
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   220  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   221        /* Pull-up Pull down resistor configuration */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   222        GPIOx->PUPDR &= ~(GPIO_PUPDR_PUPDR0 << ((uint16_t)pinpos * 2));
+	movs	r5,r4,lsl #1
+.L288:
+	movs	r1,#3
+.L289:
+	ldr	r0,[r2,#12]
+.L290:
+	movs	r1,r1,lsl r5
+.L291:
+	bics	r0,r0,r1
+	str	r0,[r2,#12]
+.L292:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   223        GPIOx->PUPDR |= (((uint32_t)GPIO_InitStruct->GPIO_PuPd) << (pinpos * 2));
+	ldr	r1,[r3,#16]
+.L293:
+	ldr	r0,[r2,#12]
+.L294:
+	movs	r1,r1,lsl lr
+.L295:
+	orrs	r0,r0,r1
+	str	r0,[r2,#12]
+.L18:
+	adds	r4,r4,#1
+.L296:
+	cmp	r4,#16
+	blo	.L17
+.L297:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   224      }
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   225    }
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   226  }
+	pop	{r4,r5,pc}
+.L70:
+	.size	GPIO_Init,$-GPIO_Init
+	; End of function
+	.endsec	; End of section
+
+	.section	.text ,cluster('$group_GPIO_StructInit')
+	.global	GPIO_StructInit
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   227  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   228  /**
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   229    * @brief  Fills each GPIO_InitStruct member with its default value.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   230    * @param  GPIO_InitStruct : pointer to a GPIO_InitTypeDef structure which will 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   231    *         be initialized.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   232    * @retval None
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   233    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   234  void GPIO_StructInit(GPIO_InitTypeDef* GPIO_InitStruct)
+; Function GPIO_StructInit
+.L75:
+	.thumb
+	.align	4
+GPIO_StructInit:	.type	func
+
+.L32:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   235  {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   236    /* Reset GPIO init structure parameters values */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   237    GPIO_InitStruct->GPIO_Pin  = GPIO_Pin_All;
+	movw	r1,#@lsh(65535)
+.L302:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   238    GPIO_InitStruct->GPIO_Mode = GPIO_Mode_IN;
+	movs	r2,#0
+.L303:
+	stmia	r0,{r1,r2}
+.L304:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   239    GPIO_InitStruct->GPIO_Speed = GPIO_Speed_400KHz;
+	str	r2,[r0,#8]
+.L305:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   240    GPIO_InitStruct->GPIO_OType = GPIO_OType_PP;
+	str	r2,[r0,#12]
+.L306:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   241    GPIO_InitStruct->GPIO_PuPd = GPIO_PuPd_NOPULL;
+	str	r2,[r0,#16]
+.L307:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   242  }
+	bx	lr
+.L76:
+	.size	GPIO_StructInit,$-GPIO_StructInit
+	; End of function
+	.endsec	; End of section
+
+	.section	.text ,cluster('$group_GPIO_PinLockConfig')
+	.global	GPIO_PinLockConfig
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   243  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   244  /**
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   245    * @brief  Locks GPIO Pins configuration registers.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   246    *         The locked registers are GPIOx_MODER, GPIOx_OTYPER, GPIOx_OSPEEDR,
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   247    *         GPIOx_PUPDR, GPIOx_AFRL and GPIOx_AFRH.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   248    *         The configuration of the locked GPIO pins can no longer be modified
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   249    *         until the next reset.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   250    * @param  GPIOx: where x can be (A..H) to select the GPIO peripheral.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   251    * @param  GPIO_Pin: specifies the port bit to be written.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   252    *   This parameter can be any combination of GPIO_Pin_x where x can be (0..15).
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   253    * @retval None
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   254    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   255  void GPIO_PinLockConfig(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin)
+; Function GPIO_PinLockConfig
+.L81:
+	.thumb
+	.align	4
+GPIO_PinLockConfig:	.type	func
+
+.L34:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   256  {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   257    __IO uint32_t tmp = 0x00010000;
+	movs	r2,#65536
+.L312:
+	str	r2,[sp,#-4]!
+.L195:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   258    
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   259    /* Check the parameters */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   260    assert_param(IS_GPIO_ALL_PERIPH(GPIOx));
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   261    assert_param(IS_GPIO_PIN(GPIO_Pin));
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   262    
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   263    tmp |= GPIO_Pin;
+	ldr	r2,[sp,#0]
+.L313:
+	orrs	r2,r2,r1
+	str	r2,[sp,#0]
+.L314:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   264    /* Set LCKK bit */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   265    GPIOx->LCKR = tmp;
+	ldr	r2,[sp,#0]
+.L315:
+	str	r2,[r0,#28]
+.L316:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   266    /* Reset LCKK bit */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   267    GPIOx->LCKR =  GPIO_Pin;
+	str	r1,[r0,#28]
+.L317:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   268    /* Set LCKK bit */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   269    GPIOx->LCKR = tmp;
+	ldr	r1,[sp,#0]
+.L197:
+	str	r1,[r0,#28]
+.L318:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   270    /* Read LCKK bit*/
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   271    tmp = GPIOx->LCKR;
+	ldr	r1,[r0,#28]
+.L319:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   272    /* Read LCKK bit*/
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   273    tmp = GPIOx->LCKR;
+	ldr	r0,[r0,#28]
+.L320:
+	str	r1,[sp,#0]
+.L321:
+	str	r0,[sp],#4
+.L196:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   274  }
+	bx	lr
+.L82:
+	.size	GPIO_PinLockConfig,$-GPIO_PinLockConfig
+	; End of function
+	.endsec	; End of section
+
+	.section	.text ,cluster('$group_GPIO_ReadInputDataBit')
+	.global	GPIO_ReadInputDataBit
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   275  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   276  /**
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   277    * @}
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   278    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   279  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   280  /** @defgroup GPIO_Group2 GPIO Read and Write
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   281   *  @brief   GPIO Read and Write
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   282   *
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   283  @verbatim   
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   284   ===============================================================================
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   285                        ##### GPIO Read and Write #####
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   286   ===============================================================================  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   287  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   288  @endverbatim
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   289    * @{
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   290    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   291  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   292  /**
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   293    * @brief  Reads the specified input port pin.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   294    * @param  GPIOx: where x can be (A..H) to select the GPIO peripheral.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   295    * @param  GPIO_Pin: specifies the port bit to read.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   296    *   This parameter can be GPIO_Pin_x where x can be (0..15).
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   297    * @retval The input port pin value.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   298    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   299  uint8_t GPIO_ReadInputDataBit(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin)
+; Function GPIO_ReadInputDataBit
+.L87:
+	.thumb
+	.align	4
+GPIO_ReadInputDataBit:	.type	func
+
+.L36:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   300  {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   301    uint8_t bitstatus = 0x00;
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   302    
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   303    /* Check the parameters */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   304    assert_param(IS_GPIO_ALL_PERIPH(GPIOx));
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   305    assert_param(IS_GET_GPIO_PIN(GPIO_Pin));
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   306  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   307    if ((GPIOx->IDR & GPIO_Pin) != (uint32_t)Bit_RESET)
+	ldrh	r2,[r0,#16]
+.L326:
+	ands	r0,r2,r1
+.L198:
+	it	ne
+	movne	r0,#1
+.L327:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   308    {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   309      bitstatus = (uint8_t)Bit_SET;
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   310    }
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   311    else
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   312    {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   313      bitstatus = (uint8_t)Bit_RESET;
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   314    }
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   315    return bitstatus;
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   316  }
+	bx	lr
+.L88:
+	.size	GPIO_ReadInputDataBit,$-GPIO_ReadInputDataBit
+	; End of function
+	.endsec	; End of section
+
+	.section	.text ,cluster('$group_GPIO_ReadInputData')
+	.global	GPIO_ReadInputData
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   317  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   318  /**
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   319    * @brief  Reads the specified GPIO input data port.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   320    * @param  GPIOx: where x can be (A..H) to select the GPIO peripheral.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   321    * @retval GPIO input data port value.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   322    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   323  uint16_t GPIO_ReadInputData(GPIO_TypeDef* GPIOx)
+; Function GPIO_ReadInputData
+.L93:
+	.thumb
+	.align	4
+GPIO_ReadInputData:	.type	func
+
+.L38:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   324  {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   325    /* Check the parameters */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   326    assert_param(IS_GPIO_ALL_PERIPH(GPIOx));
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   327    
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   328    return ((uint16_t)GPIOx->IDR);
+	ldrh	r0,[r0,#16]
+.L332:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   329  }
+	bx	lr
+.L94:
+	.size	GPIO_ReadInputData,$-GPIO_ReadInputData
+	; End of function
+	.endsec	; End of section
+
+	.section	.text ,cluster('$group_GPIO_ReadOutputDataBit')
+	.global	GPIO_ReadOutputDataBit
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   330  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   331  /**
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   332    * @brief  Reads the specified output data port bit.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   333    * @param  GPIOx: where x can be (A..H) to select the GPIO peripheral.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   334    * @param  GPIO_Pin: Specifies the port bit to read.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   335    *   This parameter can be GPIO_Pin_x where x can be (0..15).
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   336    * @retval The output port pin value.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   337    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   338  uint8_t GPIO_ReadOutputDataBit(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin)
+; Function GPIO_ReadOutputDataBit
+.L99:
+	.thumb
+	.align	4
+GPIO_ReadOutputDataBit:	.type	func
+
+.L40:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   339  {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   340    uint8_t bitstatus = 0x00;
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   341  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   342    /* Check the parameters */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   343    assert_param(IS_GPIO_ALL_PERIPH(GPIOx));
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   344    assert_param(IS_GET_GPIO_PIN(GPIO_Pin));
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   345    
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   346    if ((GPIOx->ODR & GPIO_Pin) != (uint32_t)Bit_RESET)
+	ldrh	r2,[r0,#20]
+.L337:
+	ands	r0,r2,r1
+.L199:
+	it	ne
+	movne	r0,#1
+.L338:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   347    {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   348      bitstatus = (uint8_t)Bit_SET;
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   349    }
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   350    else
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   351    {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   352      bitstatus = (uint8_t)Bit_RESET;
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   353    }
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   354    return bitstatus;
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   355  }
+	bx	lr
+.L100:
+	.size	GPIO_ReadOutputDataBit,$-GPIO_ReadOutputDataBit
+	; End of function
+	.endsec	; End of section
+
+	.section	.text ,cluster('$group_GPIO_ReadOutputData')
+	.global	GPIO_ReadOutputData
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   356  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   357  /**
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   358    * @brief  Reads the specified GPIO output data port.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   359    * @param  GPIOx: where x can be (A..H) to select the GPIO peripheral.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   360    * @retval GPIO output data port value.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   361    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   362  uint16_t GPIO_ReadOutputData(GPIO_TypeDef* GPIOx)
+; Function GPIO_ReadOutputData
+.L105:
+	.thumb
+	.align	4
+GPIO_ReadOutputData:	.type	func
+
+.L42:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   363  {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   364    /* Check the parameters */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   365    assert_param(IS_GPIO_ALL_PERIPH(GPIOx));
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   366    
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   367    return ((uint16_t)GPIOx->ODR);
+	ldrh	r0,[r0,#20]
+.L343:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   368  }
+	bx	lr
+.L106:
+	.size	GPIO_ReadOutputData,$-GPIO_ReadOutputData
+	; End of function
+	.endsec	; End of section
+
+	.section	.text ,cluster('$group_GPIO_SetBits')
+	.global	GPIO_SetBits
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   369  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   370  /**
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   371    * @brief  Sets the selected data port bits.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   372    * @param  GPIOx: where x can be (A..H) to select the GPIO peripheral.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   373    * @param  GPIO_Pin: specifies the port bits to be written.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   374    *   This parameter can be any combination of GPIO_Pin_x where x can be (0..15).
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   375    * @note  This functions uses GPIOx_BSRR register to allow atomic read/modify 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   376    *        accesses. In this way, there is no risk of an IRQ occurring between
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   377    *        the read and the modify access.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   378    * @retval None
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   379    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   380  void GPIO_SetBits(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin)
+; Function GPIO_SetBits
+.L111:
+	.thumb
+	.align	4
+GPIO_SetBits:	.type	func
+
+.L44:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   381  {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   382    /* Check the parameters */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   383    assert_param(IS_GPIO_ALL_PERIPH(GPIOx));
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   384    assert_param(IS_GPIO_PIN(GPIO_Pin));
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   385    
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   386    GPIOx->BSRRL = GPIO_Pin;
+	strh	r1,[r0,#24]
+.L348:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   387  }
+	bx	lr
+.L112:
+	.size	GPIO_SetBits,$-GPIO_SetBits
+	; End of function
+	.endsec	; End of section
+
+	.section	.text ,cluster('$group_GPIO_ResetBits')
+	.global	GPIO_ResetBits
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   388  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   389  /**
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   390    * @brief  Clears the selected data port bits.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   391    * @param  GPIOx: where x can be (A..H) to select the GPIO peripheral.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   392    * @param  GPIO_Pin: specifies the port bits to be written.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   393    *   This parameter can be any combination of GPIO_Pin_x where x can be (0..15).
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   394    * @note  This functions uses GPIOx_BSRR register to allow atomic read/modify 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   395    *        accesses. In this way, there is no risk of an IRQ occurring between
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   396    *        the read and the modify access.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   397    * @retval None
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   398    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   399  void GPIO_ResetBits(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin)
+; Function GPIO_ResetBits
+.L117:
+	.thumb
+	.align	4
+GPIO_ResetBits:	.type	func
+
+.L46:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   400  {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   401    /* Check the parameters */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   402    assert_param(IS_GPIO_ALL_PERIPH(GPIOx));
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   403    assert_param(IS_GPIO_PIN(GPIO_Pin));
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   404    
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   405    GPIOx->BSRRH = GPIO_Pin;
+	strh	r1,[r0,#26]
+.L353:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   406  }
+	bx	lr
+.L118:
+	.size	GPIO_ResetBits,$-GPIO_ResetBits
+	; End of function
+	.endsec	; End of section
+
+	.section	.text ,cluster('$group_GPIO_WriteBit')
+	.global	GPIO_WriteBit
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   407  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   408  /**
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   409    * @brief  Sets or clears the selected data port bit.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   410    * @param  GPIOx: where x can be (A..H) to select the GPIO peripheral.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   411    * @param  GPIO_Pin: specifies the port bit to be written.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   412    *   This parameter can be one of GPIO_Pin_x where x can be (0..15).
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   413    * @param  BitVal: specifies the value to be written to the selected bit.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   414    *   This parameter can be one of the BitAction enum values:
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   415    *     @arg Bit_RESET: to clear the port pin
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   416    *     @arg Bit_SET: to set the port pin
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   417    * @retval None
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   418    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   419  void GPIO_WriteBit(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, BitAction BitVal)
+; Function GPIO_WriteBit
+.L123:
+	.thumb
+	.align	4
+GPIO_WriteBit:	.type	func
+
+.L48:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   420  {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   421    /* Check the parameters */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   422    assert_param(IS_GPIO_ALL_PERIPH(GPIOx));
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   423    assert_param(IS_GET_GPIO_PIN(GPIO_Pin));
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   424    assert_param(IS_GPIO_BIT_ACTION(BitVal));
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   425    
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   426    if (BitVal != Bit_RESET)
+	cbz	r2,.L25
+.L358:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   427    {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   428      GPIOx->BSRRL = GPIO_Pin;
+	strh	r1,[r0,#24]
+.L359:
+	bx	lr
+.L25:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   429    }
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   430    else
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   431    {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   432      GPIOx->BSRRH = GPIO_Pin ;
+	strh	r1,[r0,#26]
+.L26:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   433    }
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   434  }
+	bx	lr
+.L124:
+	.size	GPIO_WriteBit,$-GPIO_WriteBit
+	; End of function
+	.endsec	; End of section
+
+	.section	.text ,cluster('$group_GPIO_Write')
+	.global	GPIO_Write
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   435  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   436  /**
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   437    * @brief  Writes data to the specified GPIO data port.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   438    * @param  GPIOx: where x can be (A..H) to select the GPIO peripheral.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   439    * @param  PortVal: specifies the value to be written to the port output data 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   440    *                  register.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   441    * @retval None
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   442    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   443  void GPIO_Write(GPIO_TypeDef* GPIOx, uint16_t PortVal)
+; Function GPIO_Write
+.L129:
+	.thumb
+	.align	4
+GPIO_Write:	.type	func
+
+.L50:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   444  {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   445    /* Check the parameters */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   446    assert_param(IS_GPIO_ALL_PERIPH(GPIOx));
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   447    
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   448    GPIOx->ODR = PortVal;
+	strh	r1,[r0,#20]
+.L364:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   449  }
+	bx	lr
+.L130:
+	.size	GPIO_Write,$-GPIO_Write
+	; End of function
+	.endsec	; End of section
+
+	.section	.text ,cluster('$group_GPIO_ToggleBits')
+	.global	GPIO_ToggleBits
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   450  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   451  /**
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   452    * @brief  Toggles the specified GPIO pins..
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   453    * @param  GPIOx: where x can be (A..H) to select the GPIO peripheral.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   454    * @param  GPIO_Pin: Specifies the pins to be toggled.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   455    * @retval None
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   456    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   457  void GPIO_ToggleBits(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin)
+; Function GPIO_ToggleBits
+.L135:
+	.thumb
+	.align	4
+GPIO_ToggleBits:	.type	func
+
+.L52:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   458  {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   459    /* Check the parameters */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   460    assert_param(IS_GPIO_ALL_PERIPH(GPIOx));
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   461  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   462    GPIOx->ODR ^= GPIO_Pin;
+	ldrh	r2,[r0,#20]
+.L369:
+	eors	r2,r2,r1
+	strh	r2,[r0,#20]
+.L370:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   463  }
+	bx	lr
+.L136:
+	.size	GPIO_ToggleBits,$-GPIO_ToggleBits
+	; End of function
+	.endsec	; End of section
+
+	.section	.text ,cluster('$group_GPIO_PinAFConfig')
+	.global	GPIO_PinAFConfig
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   464  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   465  /**
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   466    * @}
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   467    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   468  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   469  /** @defgroup GPIO_Group3 GPIO Alternate functions configuration functions
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   470   *  @brief   GPIO Alternate functions configuration functions
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   471   *
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   472  @verbatim   
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   473   ===============================================================================
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   474            ##### GPIO Alternate functions configuration functions #####
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   475   ===============================================================================  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   476  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   477  @endverbatim
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   478    * @{
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   479    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   480  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   481  /**
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   482    * @brief  Changes the mapping of the specified pin.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   483    * @param  GPIOx: where x can be (A..H) to select the GPIO peripheral.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   484    * @param  GPIO_PinSource: specifies the pin for the Alternate function.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   485    *   This parameter can be GPIO_PinSourcex where x can be (0..15).
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   486    * @param  GPIO_AFSelection: selects the pin to used as Alternat function.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   487    *   This parameter can be one of the following values:
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   488    *     @arg GPIO_AF_RTC_50Hz: RTC 50/60 Hz synchronization
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   489    *     @arg GPIO_AF_MCO: Microcontroller clock output
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   490    *     @arg GPIO_AF_RTC_AF1: Time stamp, Tamper, Alarm A out, Alarm B out,
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   491    *                           512 Hz clock output (with an LSE oscillator of 32.768 kHz)
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   492    *     @arg GPIO_AF_WKUP: wakeup
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   493    *     @arg GPIO_AF_SWJ: SWJ (SW and JTAG)
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   494    *     @arg GPIO_AF_TRACE: Connect TRACE pins to AF0 (default after reset)
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   495    *     @arg GPIO_AF_TIM2c: Connect TIM2 pins to AF1
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   496    *     @arg GPIO_AF_TIM3: Connect TIM3 pins to AF2
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   497    *     @arg GPIO_AF_TIM4: Connect TIM4 pins to AF2
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   498    *     @arg GPIO_AF_TIM5: Connect TIM5 pins to AF2
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   499    *     @arg GPIO_AF_TIM9: Connect TIM9 pins to AF3
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   500    *     @arg GPIO_AF_TIM10: Connect TIM10 pins to AF3
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   501    *     @arg GPIO_AF_TIM11: Connect TIM11 pins to AF3
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   502    *     @arg GPIO_AF_I2C1: Connect I2C1 pins to AF4
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   503    *     @arg GPIO_AF_I2C2: Connect I2C2 pins to AF4
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   504    *     @arg GPIO_AF_SPI1: Connect SPI1 pins to AF5
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   505    *     @arg GPIO_AF_SPI2: Connect SPI2/I2S2 pins to AF5
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   506    *     @arg GPIO_AF_SPI3: Connect SPI3/I2S3 pins to AF6
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   507    *     @arg GPIO_AF_USART1: Connect USART1 pins to AF7
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   508    *     @arg GPIO_AF_USART2: Connect USART2 pins to AF7
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   509    *     @arg GPIO_AF_USART3: Connect USART3 pins to AF7
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   510    *     @arg GPIO_AF_UART4: Connect UART4 pins to AF8
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   511    *     @arg GPIO_AF_UART5: Connect UART5 pins to AF8
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   512    *     @arg GPIO_AF_USB: Connect USB pins to AF10
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   513    *     @arg GPIO_AF_LCD: Connect LCD pins to AF11
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   514    *     @arg GPIO_AF_FSMC: Connect FSMC pins to AF12
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   515    *     @arg GPIO_AF_SDIO: Connect SDIO pins to AF12
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   516    *     @arg GPIO_AF_RI: Connect RI pins to AF14
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   517    *     @arg GPIO_AF_EVENTOUT: Cortex-M3 EVENTOUT signal
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   518    * @note The pin should already been configured in Alternate Function mode(AF)
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   519    *        using GPIO_InitStruct->GPIO_Mode = GPIO_Mode_AF
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   520    * @note Please refer to the Alternate function mapping table in the device 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   521    *        datasheet for the detailed mapping of the system and peripherals'
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   522    *        alternate function I/O pins.  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   523    * @note EVENTOUT is not mapped on PH0, PH1 and PH2.  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   524    * @retval None
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   525    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   526  void GPIO_PinAFConfig(GPIO_TypeDef* GPIOx, uint16_t GPIO_PinSource, uint8_t GPIO_AF)
+; Function GPIO_PinAFConfig
+.L141:
+	.thumb
+	.align	4
+GPIO_PinAFConfig:	.type	func
+
+.L54:
+	push	{r4,lr}
+.L200:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   527  {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   528    uint32_t temp = 0x00;
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   529    uint32_t temp_2 = 0x00;
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   530    
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   531    /* Check the parameters */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   532    assert_param(IS_GPIO_ALL_PERIPH(GPIOx));
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   533    assert_param(IS_GPIO_PIN_SOURCE(GPIO_PinSource));
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   534    assert_param(IS_GPIO_AF(GPIO_AF));
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   535    
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   536    temp = ((uint32_t)(GPIO_AF) << ((uint32_t)((uint32_t)GPIO_PinSource & (uint32_t)0x07) * 4)) ;
+	ands	r3,r1,#7
+.L375:
+	movs	r3,r3,lsl #2
+.L376:
+	movs	r2,r2,lsl r3
+.L201:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   537    GPIOx->AFR[GPIO_PinSource >> 0x03] &= ~((uint32_t)0xF << ((uint32_t)((uint32_t)GPIO_PinSource & (uint32_t)0x07) * 4)) ;
+	adds	r0,r0,#32
+.L203:
+	movs	lr,r1,asr #3
+.L377:
+	ldr	r1,[r0,lr,lsl #2]
+.L202:
+	movs	r4,#15
+.L378:
+	movs	r3,r4,lsl r3
+.L379:
+	bics	r1,r1,r3
+	str	r1,[r0,lr,lsl #2]
+.L380:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   538    temp_2 = GPIOx->AFR[GPIO_PinSource >> 0x03] | temp;
+	ldr	r1,[r0,lr,lsl #2]
+.L381:
+	orrs	r1,r1,r2
+.L204:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   539    GPIOx->AFR[GPIO_PinSource >> 0x03] = temp_2;
+	str	r1,[r0,lr,lsl #2]
+.L382:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   540  }
+	pop	{r4,pc}
+.L142:
+	.size	GPIO_PinAFConfig,$-GPIO_PinAFConfig
+	; End of function
+	.endsec	; End of section
+
+	.calls	'GPIO_DeInit','RCC_AHBPeriphResetCmd'
+	.calls	'GPIO_DeInit','',4
+	.calls	'GPIO_Init','',12
+	.calls	'GPIO_StructInit','',0
+	.calls	'GPIO_PinLockConfig','',4
+	.calls	'GPIO_ReadInputDataBit','',0
+	.calls	'GPIO_ReadInputData','',0
+	.calls	'GPIO_ReadOutputDataBit','',0
+	.calls	'GPIO_ReadOutputData','',0
+	.calls	'GPIO_SetBits','',0
+	.calls	'GPIO_ResetBits','',0
+	.calls	'GPIO_WriteBit','',0
+	.calls	'GPIO_Write','',0
+	.calls	'GPIO_ToggleBits','',0
+	.calls	'GPIO_PinAFConfig','',8
+	.extern	RCC_AHBPeriphResetCmd
+	.section	.debug_info
+.L56:
+	.dw	2640
+	.dh	3
+	.dw	.L57
+	.db	4
+.L55:
+	.db	1
+	.dw	.L205,.L206,.L207
+	.db	12,1
+	.dw	.L58
+	.db	2
+	.db	'NVIC_SetPriority',0,3,1,246,7,22,1,1,3
+	.db	'IRQn',0,2,171,1,14,4,4
+	.db	'NonMaskableInt_IRQn',0,114,4
+	.db	'MemoryManagement_IRQn',0,116,4
+	.db	'BusFault_IRQn',0,117,4
+	.db	'UsageFault_IRQn',0,118,4
+	.db	'SVC_IRQn',0,123,4
+	.db	'DebugMonitor_IRQn',0,124,4
+	.db	'PendSV_IRQn',0,126,4
+	.db	'SysTick_IRQn',0,127,4
+	.db	'WWDG_IRQn',0,0,4
+	.db	'PVD_IRQn',0,1,4
+	.db	'TAMPER_STAMP_IRQn',0,2,4
+	.db	'RTC_WKUP_IRQn',0,3,4
+	.db	'FLASH_IRQn',0,4,4
+	.db	'RCC_IRQn',0,5,4
+	.db	'EXTI0_IRQn',0,6,4
+	.db	'EXTI1_IRQn',0,7,4
+	.db	'EXTI2_IRQn',0,8,4
+	.db	'EXTI3_IRQn',0,9,4
+	.db	'EXTI4_IRQn',0,10,4
+	.db	'DMA1_Channel1_IRQn',0,11,4
+	.db	'DMA1_Channel2_IRQn',0,12,4
+	.db	'DMA1_Channel3_IRQn',0,13,4
+	.db	'DMA1_Channel4_IRQn',0,14,4
+	.db	'DMA1_Channel5_IRQn',0,15,4
+	.db	'DMA1_Channel6_IRQn',0,16,4
+	.db	'DMA1_Channel7_IRQn',0,17,4
+	.db	'ADC1_IRQn',0,18,4
+	.db	'USB_HP_IRQn',0,19,4
+	.db	'USB_LP_IRQn',0,20,4
+	.db	'DAC_IRQn',0,21,4
+	.db	'COMP_IRQn',0,22,4
+	.db	'EXTI9_5_IRQn',0,23,4
+	.db	'LCD_IRQn',0,24,4
+	.db	'TIM9_IRQn',0,25,4
+	.db	'TIM10_IRQn',0,26,4
+	.db	'TIM11_IRQn',0,27,4
+	.db	'TIM2_IRQn',0,28,4
+	.db	'TIM3_IRQn',0,29,4
+	.db	'TIM4_IRQn',0,30,4
+	.db	'I2C1_EV_IRQn',0,31,4
+	.db	'I2C1_ER_IRQn',0,32,4
+	.db	'I2C2_EV_IRQn',0,33,4
+	.db	'I2C2_ER_IRQn',0,34,4
+	.db	'SPI1_IRQn',0,35,4
+	.db	'SPI2_IRQn',0,36,4
+	.db	'USART1_IRQn',0,37,4
+	.db	'USART2_IRQn',0,38,4
+	.db	'USART3_IRQn',0,39,4
+	.db	'EXTI15_10_IRQn',0,40,4
+	.db	'RTC_Alarm_IRQn',0,41,4
+	.db	'USB_FS_WKUP_IRQn',0,42,4
+	.db	'TIM6_IRQn',0,43,4
+	.db	'TIM7_IRQn',0,44,0,5
+	.db	'IRQn',0,1,246,7,49
+	.dw	55
+.L148:
+	.db	6
+	.db	'unsigned int',0,4,7,5
+	.db	'priority',0,1,246,7,64
+	.dw	882
+	.db	7,0,8
+	.dw	30
+	.db	9
+	.dw	868
+	.db	9
+	.dw	898
+	.db	7,0,10
+	.db	'RCC_AHBPeriphResetCmd',0,3,203,3,6,1,1,1,1,5
+	.db	'RCC_AHBPeriph',0,3,203,3,37
+	.dw	882
+	.db	11,2,148,2,9,4,4
+	.db	'DISABLE',0,0,4
+	.db	'ENABLE',0,1,0,5
+	.db	'NewState',0,3,203,3,68
+	.dw	989
+	.db	0,12,2,161,4,9,44,13
+	.dw	882
+	.db	14
+	.db	'MODER',0,4
+	.dw	1040
+	.db	2,35,0
+.L153:
+	.db	6
+	.db	'unsigned short int',0,2,7,13
+	.dw	1060
+	.db	14
+	.db	'OTYPER',0,2
+	.dw	1082
+	.db	2,35,4,14
+	.db	'RESERVED0',0,2
+	.dw	1060
+	.db	2,35,6,13
+	.dw	882
+	.db	14
+	.db	'OSPEEDR',0,4
+	.dw	1122
+	.db	2,35,8,13
+	.dw	882
+	.db	14
+	.db	'PUPDR',0,4
+	.dw	1144
+	.db	2,35,12,13
+	.dw	1060
+	.db	14
+	.db	'IDR',0,2
+	.dw	1164
+	.db	2,35,16,14
+	.db	'RESERVED1',0,2
+	.dw	1060
+	.db	2,35,18,13
+	.dw	1060
+	.db	14
+	.db	'ODR',0,2
+	.dw	1201
+	.db	2,35,20,14
+	.db	'RESERVED2',0,2
+	.dw	1060
+	.db	2,35,22,13
+	.dw	1060
+	.db	14
+	.db	'BSRRL',0,2
+	.dw	1238
+	.db	2,35,24,13
+	.dw	1060
+	.db	14
+	.db	'BSRRH',0,2
+	.dw	1258
+	.db	2,35,26,13
+	.dw	882
+	.db	14
+	.db	'LCKR',0,4
+	.dw	1278
+	.db	2,35,28,15,8
+	.dw	882
+	.db	16,1,0,13
+	.dw	1297
+	.db	14
+	.db	'AFR',0,8
+	.dw	1306
+	.db	2,35,32,13
+	.dw	1060
+	.db	14
+	.db	'BRR',0,2
+	.dw	1324
+	.db	2,35,40,14
+	.db	'RESERVED3',0,2
+	.dw	1060
+	.db	2,35,42,0
+.L143:
+	.db	17
+	.dw	1034
+	.db	12,4,134,1,9,20,14
+	.db	'GPIO_Pin',0,4
+	.dw	882
+	.db	2,35,0,11,4,62,9,4,4
+	.db	'GPIO_Mode_IN',0,0,4
+	.db	'GPIO_Mode_OUT',0,1,4
+	.db	'GPIO_Mode_AF',0,2,4
+	.db	'GPIO_Mode_AN',0,3,0,14
+	.db	'GPIO_Mode',0,4
+	.dw	1391
+	.db	2,35,4,11,4,91,9,4,4
+	.db	'GPIO_Speed_400KHz',0,0,4
+	.db	'GPIO_Speed_2MHz',0,1,4
+	.db	'GPIO_Speed_10MHz',0,2,4
+	.db	'GPIO_Speed_40MHz',0,3,0,14
+	.db	'GPIO_Speed',0,4
+	.dw	1477
+	.db	2,35,8,11,4,78,9,4,4
+	.db	'GPIO_OType_PP',0,0,4
+	.db	'GPIO_OType_OD',0,1,0,14
+	.db	'GPIO_OType',0,4
+	.dw	1579
+	.db	2,35,12,11,4,107,9,4,4
+	.db	'GPIO_PuPd_NOPULL',0,0,4
+	.db	'GPIO_PuPd_UP',0,1,4
+	.db	'GPIO_PuPd_DOWN',0,2,0,14
+	.db	'GPIO_PuPd',0,4
+	.dw	1637
+	.db	2,35,16,0
+.L146:
+	.db	17
+	.dw	1367
+.L155:
+	.db	13
+	.dw	882
+.L157:
+	.db	6
+	.db	'unsigned char',0,1,8
+.L170:
+	.db	11,4,121,9,4,4
+	.db	'Bit_RESET',0,0,4
+	.db	'Bit_SET',0,1,0,18
+	.db	'void',0,17
+	.dw	1769
+	.db	19
+	.db	'__prof_adm',0,5,1,1
+	.dw	1775
+	.db	20,1,17
+	.dw	1799
+	.db	19
+	.db	'__codeptr',0,5,1,1
+	.dw	1801
+	.db	19
+	.db	'IRQn_Type',0,2,132,2,3
+	.dw	55
+	.db	19
+	.db	'uint8_t',0,6,24,33
+	.dw	1724
+	.db	19
+	.db	'uint16_t',0,6,26,33
+	.dw	1060
+	.db	6
+	.db	'int',0,4,5,19
+	.db	'int32_t',0,6,27,33
+	.dw	1876
+	.db	19
+	.db	'uint32_t',0,6,28,33
+	.dw	882
+	.db	19
+	.db	'FunctionalState',0,2,148,2,47
+	.dw	989
+	.db	19
+	.db	'GPIO_TypeDef',0,2,178,4,3
+	.dw	1034
+	.db	11,7,54,9,4,4
+	.db	'EXTI_Mode_Interrupt',0,0,4
+	.db	'EXTI_Mode_Event',0,4,0,19
+	.db	'EXTIMode_TypeDef',0,7,58,2
+	.dw	1963
+	.db	11,7,66,9,4,4
+	.db	'EXTI_Trigger_Rising',0,8,4
+	.db	'EXTI_Trigger_Falling',0,12,4
+	.db	'EXTI_Trigger_Rising_Falling',0,16,0,19
+	.db	'EXTITrigger_TypeDef',0,7,71,2
+	.dw	2034
+	.db	12,8,54,9,28,14
+	.db	'FSMC_AddressSetupTime',0,4
+	.dw	882
+	.db	2,35,0,14
+	.db	'FSMC_AddressHoldTime',0,4
+	.dw	882
+	.db	2,35,4,14
+	.db	'FSMC_DataSetupTime',0,4
+	.dw	882
+	.db	2,35,8,14
+	.db	'FSMC_BusTurnAroundDuration',0,4
+	.dw	882
+	.db	2,35,12,14
+	.db	'FSMC_CLKDivision',0,4
+	.dw	882
+	.db	2,35,16,14
+	.db	'FSMC_DataLatency',0,4
+	.dw	882
+	.db	2,35,20,14
+	.db	'FSMC_AccessMode',0,4
+	.dw	882
+	.db	2,35,24,0,19
+	.db	'FSMC_NORSRAMTimingInitTypeDef',0,8,90,2
+	.dw	2143
+	.db	12,9,68,9,4,14
+	.db	'RTC_Hours',0,1
+	.dw	1724
+	.db	2,35,0,14
+	.db	'RTC_Minutes',0,1
+	.dw	1724
+	.db	2,35,1,14
+	.db	'RTC_Seconds',0,1
+	.dw	1724
+	.db	2,35,2,14
+	.db	'RTC_H12',0,1
+	.dw	1724
+	.db	2,35,3,0,19
+	.db	'RTC_TimeTypeDef',0,9,83,2
+	.dw	2389
+	.db	19
+	.db	'GPIOMode_TypeDef',0,4,68,2
+	.dw	1391
+	.db	19
+	.db	'GPIOOType_TypeDef',0,4,81,2
+	.dw	1579
+	.db	19
+	.db	'GPIOSpeed_TypeDef',0,4,97,2
+	.dw	1477
+	.db	19
+	.db	'GPIOPuPd_TypeDef',0,4,111,2
+	.dw	1637
+	.db	19
+	.db	'BitAction',0,4,124,2
+	.dw	1741
+	.db	19
+	.db	'GPIO_InitTypeDef',0,4,150,1,2
+	.dw	1367
+	.db	0
+	.endsec	; End of section
+
+	.section	.debug_abbrev
+.L57:
+	.db	1,17,1,3,14,37,14,27,14,19,15,128,70,12,16,6,0,0,2,46,1,3,8,32,13,58,15,59,15,57,15,54,15,39,12,0,0,3
+	.db	4,1,3,8,58,15,59,15,57,15,11,15,0,0,4,40,0,3,8,28,13,0,0,5,5,0,3,8,58,15,59,15,57,15,73,19,0,0,6,36,0
+	.db	3,8,11,15,62,15,0,0,7,11,0,0,0,8,46,1,49,19,0,0,9,5,0,49,19,0,0,10,46,1,3,8,58,15,59,15,57,15,54,15,39
+	.db	12,63,12,60,12,0,0,11,4,1,58,15,59,15,57,15,11,15,0,0,12,19,1,58,15,59,15,57,15,11,15,0,0,13,53,0,73,19
+	.db	0,0,14,13,0,3,8,11,15,73,19,56,9,0,0,15,1,1,11,15,73,19,0,0,16,33,0,47,15,0,0,17,15,0,73,19,0,0,18,59
+	.db	0,3,8,0,0,19,22,0,3,8,58,15,59,15,57,15,73,19,0,0,20,21,0,54,15,0,0,0
+	.endsec	; End of section
+
+	.section	.debug_line
+.L58:
+	.dw	.L209-.L208
+.L208:
+	.dh	3
+	.dw	.L211-.L210
+.L210:
+	.db	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.db	'..\\..\\..\\..\\..\\..\\Libraries\\CMSIS\\Include',0
+	.db	'..\\..\\..\\..\\..\\..\\Libraries\\CMSIS\\Device\\ST\\STM32L1xx\\Include',0
+	.db	'..\\..\\..\\..\\..\\..\\Libraries\\STM32L1xx_StdPeriph_Driver\\inc',0
+	.db	'C:\\Program Files\\TASKING\\carm v4.4r1\\include\\',0,0
+	.db	'core_cm3.h',0,1,0,0
+	.db	'stm32l1xx.h',0,2,0,0
+	.db	'stm32l1xx_rcc.h',0,3,0,0
+	.db	'stm32l1xx_gpio.h',0,3,0,0
+	.db	'C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c',0
+	.db	0,0,0
+	.db	'stdint.h',0,4,0,0
+	.db	'stm32l1xx_exti.h',0,3,0,0
+	.db	'stm32l1xx_fsmc.h',0,3,0,0
+	.db	'stm32l1xx_rtc.h',0,3,0,0,0
+.L211:
+.L209:
+	.endsec	; End of section
+
+	.section	.debug_info ,cluster('$group_GPIO_DeInit')
+.L59:
+	.dw	95
+	.dh	3
+	.dw	.L60
+	.db	4,1
+	.dw	.L205,.L206,.L207
+	.db	12,1
+	.dw	.L62,.L61
+	.db	2
+	.dw	.L55
+	.db	3
+	.db	'GPIO_DeInit',0,1,119,6,1,1,1
+	.dw	.L28,.L64,.L27
+	.db	4
+	.db	'GPIOx',0,1,119,32
+	.dw	.L143,.L144
+	.db	5
+	.dw	.L28,.L64
+	.db	0,0
+	.endsec	; End of section
+
+	.section	.debug_abbrev ,cluster('$group_GPIO_DeInit')
+.L60:
+	.db	1,17,1,3,14,37,14,27,14,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54
+	.db	15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.endsec	; End of section
+
+	.section	.debug_line ,cluster('$group_GPIO_DeInit')
+.L61:
+	.dw	.L213-.L212
+.L212:
+	.dh	3
+	.dw	.L215-.L214
+.L214:
+	.db	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.db	'C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c',0
+	.db	0,0,0,0
+.L215:
+	.db	5,6,7,0,5,2
+	.dw	.L28
+	.db	3,246,0,1,5,15,9
+	.dh	.L181-.L28
+	.db	3,5,1,5,3,9
+	.dh	.L216-.L181
+	.db	1,5,27,9
+	.dh	.L217-.L216
+	.db	3,2,1,5,48,9
+	.dh	.L182-.L217
+	.db	1,5,27,9
+	.dh	.L218-.L182
+	.db	3,1,1,5,55,9
+	.dh	.L219-.L218
+	.db	3,127,1,5,20,9
+	.dh	.L2-.L219
+	.db	3,3,1,5,8,9
+	.dh	.L220-.L2
+	.db	1,5,48,9
+	.dh	.L221-.L220
+	.db	3,2,1,5,27,9
+	.dh	.L222-.L221
+	.db	1,5,48,9
+	.dh	.L183-.L222
+	.db	1,5,27,9
+	.dh	.L223-.L183
+	.db	3,1,1,5,55,9
+	.dh	.L224-.L223
+	.db	3,127,1,5,20,9
+	.dh	.L4-.L224
+	.db	3,3,1,5,8,9
+	.dh	.L225-.L4
+	.db	1,5,48,9
+	.dh	.L226-.L225
+	.db	3,2,1,5,27,9
+	.dh	.L227-.L226
+	.db	1,5,48,9
+	.dh	.L184-.L227
+	.db	1,5,27,9
+	.dh	.L228-.L184
+	.db	3,1,1,5,55,9
+	.dh	.L229-.L228
+	.db	3,127,1,5,20,9
+	.dh	.L6-.L229
+	.db	3,3,1,5,8,9
+	.dh	.L230-.L6
+	.db	1,5,48,9
+	.dh	.L231-.L230
+	.db	3,2,1,5,27,9
+	.dh	.L232-.L231
+	.db	1,5,48,9
+	.dh	.L185-.L232
+	.db	1,5,27,9
+	.dh	.L233-.L185
+	.db	3,1,1,5,55,9
+	.dh	.L234-.L233
+	.db	3,127,1,5,20,9
+	.dh	.L8-.L234
+	.db	3,3,1,5,8,9
+	.dh	.L235-.L8
+	.db	1,5,48,9
+	.dh	.L236-.L235
+	.db	3,2,1,5,27,9
+	.dh	.L237-.L236
+	.db	1,5,48,9
+	.dh	.L186-.L237
+	.db	1,5,27,9
+	.dh	.L238-.L186
+	.db	3,1,1,5,55,9
+	.dh	.L239-.L238
+	.db	3,127,1,5,20,9
+	.dh	.L10-.L239
+	.db	3,3,1,5,8,9
+	.dh	.L240-.L10
+	.db	1,5,48,9
+	.dh	.L241-.L240
+	.db	3,2,1,5,27,9
+	.dh	.L242-.L241
+	.db	1,5,48,9
+	.dh	.L187-.L242
+	.db	1,5,27,9
+	.dh	.L243-.L187
+	.db	3,1,1,5,55,9
+	.dh	.L244-.L243
+	.db	3,127,1,5,20,9
+	.dh	.L12-.L244
+	.db	3,3,1,5,8,9
+	.dh	.L245-.L12
+	.db	1,5,48,9
+	.dh	.L246-.L245
+	.db	3,2,1,5,27,9
+	.dh	.L247-.L246
+	.db	1,5,48,9
+	.dh	.L188-.L247
+	.db	1,5,27,9
+	.dh	.L248-.L188
+	.db	3,1,1,5,55,9
+	.dh	.L249-.L248
+	.db	3,127,1,5,17,9
+	.dh	.L14-.L249
+	.db	3,5,1,5,5,9
+	.dh	.L250-.L14
+	.db	1,5,50,9
+	.dh	.L251-.L250
+	.db	3,2,1,5,29,9
+	.dh	.L252-.L251
+	.db	1,5,50,9
+	.dh	.L189-.L252
+	.db	1,5,29,9
+	.dh	.L253-.L189
+	.db	3,1,1,5,50,9
+	.dh	.L15-.L253
+	.db	1,5,1,9
+	.dh	.L16-.L15
+	.db	3,3,1,7,9
+	.dh	.L64-.L16
+	.db	0,1,1
+.L213:
+	.endsec	; End of section
+
+	.section	.debug_ranges ,cluster('$group_GPIO_DeInit')
+.L62:
+	.dw	-1,.L63,0,.L64-.L63,0,0
+	.endsec	; End of section
+
+	.section	.debug_info ,cluster('$group_GPIO_Init')
+.L65:
+	.dw	162
+	.dh	3
+	.dw	.L66
+	.db	4,1
+	.dw	.L205,.L206,.L207
+	.db	12,1
+	.dw	.L68,.L67
+	.db	2
+	.dw	.L55
+	.db	3
+	.db	'GPIO_Init',0,1,179,1,6,1,1,1
+	.dw	.L30,.L70,.L29
+	.db	4
+	.db	'GPIOx',0,1,179,1,30
+	.dw	.L143,.L145
+	.db	4
+	.db	'GPIO_InitStruct',0,1,179,1,55
+	.dw	.L146,.L147
+	.db	5
+	.dw	.L30,.L70
+	.db	6
+	.db	'pinpos',0,1,181,1,12
+	.dw	.L148,.L149
+	.db	6
+	.db	'pos',0,1,181,1,27
+	.dw	.L148,.L150
+	.db	0,0,0
+	.endsec	; End of section
+
+	.section	.debug_abbrev ,cluster('$group_GPIO_Init')
+.L66:
+	.db	1,17,1,3,14,37,14,27,14,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54
+	.db	15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52
+	.db	0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.endsec	; End of section
+
+	.section	.debug_line ,cluster('$group_GPIO_Init')
+.L67:
+	.dw	.L255-.L254
+.L254:
+	.dh	3
+	.dw	.L257-.L256
+.L256:
+	.db	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.db	'C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c',0
+	.db	0,0,0,0
+.L257:
+	.db	5,6,7,0,5,2
+	.dw	.L30
+	.db	3,178,1,1,5,17,9
+	.dh	.L192-.L30
+	.db	3,12,1,5,12,9
+	.dh	.L17-.L192
+	.db	3,2,1,5,28,9
+	.dh	.L258-.L17
+	.db	1,5,34,9
+	.dh	.L193-.L258
+	.db	3,3,1,5,46,9
+	.dh	.L259-.L193
+	.db	1,5,5,9
+	.dh	.L260-.L259
+	.db	3,2,1,5,48,9
+	.dh	.L261-.L260
+	.db	3,2,1,5,26,9
+	.dh	.L262-.L261
+	.db	1,5,44,9
+	.dh	.L263-.L262
+	.db	1,5,24,9
+	.dh	.L264-.L263
+	.db	1,5,12,9
+	.dh	.L265-.L264
+	.db	1,5,21,9
+	.dh	.L266-.L265
+	.db	1,5,50,9
+	.dh	.L267-.L266
+	.db	3,2,1,5,12,9
+	.dh	.L194-.L267
+	.db	1,5,63,9
+	.dh	.L268-.L194
+	.db	1,5,20,9
+	.dh	.L269-.L268
+	.db	1,5,27,9
+	.dh	.L270-.L269
+	.db	3,2,1,5,11,9
+	.dh	.L271-.L270
+	.db	1,5,88,9
+	.dh	.L272-.L271
+	.db	1,5,14,9
+	.dh	.L19-.L272
+	.db	3,6,1,5,24,9
+	.dh	.L273-.L19
+	.db	1,5,54,9
+	.dh	.L274-.L273
+	.db	3,1,1,5,14,9
+	.dh	.L275-.L274
+	.db	1,5,68,9
+	.dh	.L276-.L275
+	.db	1,5,24,9
+	.dh	.L277-.L276
+	.db	1,5,30,9
+	.dh	.L278-.L277
+	.db	3,6,1,5,48,9
+	.dh	.L279-.L278
+	.db	1,5,14,9
+	.dh	.L280-.L279
+	.db	1,5,24,9
+	.dh	.L281-.L280
+	.db	1,5,63,9
+	.dh	.L282-.L281
+	.db	3,1,1,5,14,9
+	.dh	.L283-.L282
+	.db	1,5,38,9
+	.dh	.L284-.L283
+	.db	1,5,77,9
+	.dh	.L285-.L284
+	.db	1,5,26,9
+	.dh	.L286-.L285
+	.db	1,5,23,9
+	.dh	.L287-.L286
+	.db	1,5,47,9
+	.dh	.L20-.L287
+	.db	3,4,1,5,25,9
+	.dh	.L288-.L20
+	.db	1,5,12,9
+	.dh	.L289-.L288
+	.db	1,5,43,9
+	.dh	.L290-.L289
+	.db	1,5,20,9
+	.dh	.L291-.L290
+	.db	1,5,50,9
+	.dh	.L292-.L291
+	.db	3,1,1,5,12,9
+	.dh	.L293-.L292
+	.db	1,5,63,9
+	.dh	.L294-.L293
+	.db	1,5,20,9
+	.dh	.L295-.L294
+	.db	1,5,44,9
+	.dh	.L18-.L295
+	.db	3,96,1,5,36,9
+	.dh	.L296-.L18
+	.db	1,5,1,9
+	.dh	.L297-.L296
+	.db	3,35,1,7,9
+	.dh	.L70-.L297
+	.db	0,1,1
+.L255:
+	.endsec	; End of section
+
+	.section	.debug_ranges ,cluster('$group_GPIO_Init')
+.L68:
+	.dw	-1,.L69,0,.L70-.L69,0,0
+	.endsec	; End of section
+
+	.section	.debug_info ,cluster('$group_GPIO_StructInit')
+.L71:
+	.dw	111
+	.dh	3
+	.dw	.L72
+	.db	4,1
+	.dw	.L205,.L206,.L207
+	.db	12,1
+	.dw	.L74,.L73
+	.db	2
+	.dw	.L55
+	.db	3
+	.db	'GPIO_StructInit',0,1,234,1,6,1,1,1
+	.dw	.L32,.L76,.L31
+	.db	4
+	.db	'GPIO_InitStruct',0,1,234,1,40
+	.dw	.L146,.L151
+	.db	5
+	.dw	.L32,.L76
+	.db	0,0
+	.endsec	; End of section
+
+	.section	.debug_abbrev ,cluster('$group_GPIO_StructInit')
+.L72:
+	.db	1,17,1,3,14,37,14,27,14,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54
+	.db	15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.endsec	; End of section
+
+	.section	.debug_line ,cluster('$group_GPIO_StructInit')
+.L73:
+	.dw	.L299-.L298
+.L298:
+	.dh	3
+	.dw	.L301-.L300
+.L300:
+	.db	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.db	'C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c',0
+	.db	0,0,0,0
+.L301:
+	.db	5,32,7,0,5,2
+	.dw	.L32
+	.db	3,236,1,1,9
+	.dh	.L302-.L32
+	.db	3,1,1,5,30,9
+	.dh	.L303-.L302
+	.db	1,5,31,9
+	.dh	.L304-.L303
+	.db	3,1,1,9
+	.dh	.L305-.L304
+	.db	3,1,1,5,30,9
+	.dh	.L306-.L305
+	.db	3,1,1,5,1,9
+	.dh	.L307-.L306
+	.db	3,1,1,7,9
+	.dh	.L76-.L307
+	.db	0,1,1
+.L299:
+	.endsec	; End of section
+
+	.section	.debug_ranges ,cluster('$group_GPIO_StructInit')
+.L74:
+	.dw	-1,.L75,0,.L76-.L75,0,0
+	.endsec	; End of section
+
+	.section	.debug_info ,cluster('$group_GPIO_PinLockConfig')
+.L77:
+	.dw	144
+	.dh	3
+	.dw	.L78
+	.db	4,1
+	.dw	.L205,.L206,.L207
+	.db	12,1
+	.dw	.L80,.L79
+	.db	2
+	.dw	.L55
+	.db	3
+	.db	'GPIO_PinLockConfig',0,1,255,1,6,1,1,1
+	.dw	.L34,.L82,.L33
+	.db	4
+	.db	'GPIOx',0,1,255,1,39
+	.dw	.L143,.L152
+	.db	4
+	.db	'GPIO_Pin',0,1,255,1,55
+	.dw	.L153,.L154
+	.db	5
+	.dw	.L34,.L82
+	.db	6
+	.db	'tmp',0,1,129,2,17
+	.dw	.L155,.L156
+	.db	0,0,0
+	.endsec	; End of section
+
+	.section	.debug_abbrev ,cluster('$group_GPIO_PinLockConfig')
+.L78:
+	.db	1,17,1,3,14,37,14,27,14,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54
+	.db	15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52
+	.db	0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.endsec	; End of section
+
+	.section	.debug_line ,cluster('$group_GPIO_PinLockConfig')
+.L79:
+	.dw	.L309-.L308
+.L308:
+	.dh	3
+	.dw	.L311-.L310
+.L310:
+	.db	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.db	'C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c',0
+	.db	0,0,0,0
+.L311:
+	.db	5,23,7,0,5,2
+	.dw	.L34
+	.db	3,128,2,1,5,21,9
+	.dh	.L312-.L34
+	.db	1,5,3,9
+	.dh	.L195-.L312
+	.db	3,6,1,5,7,9
+	.dh	.L313-.L195
+	.db	1,5,17,9
+	.dh	.L314-.L313
+	.db	3,2,1,5,15,9
+	.dh	.L315-.L314
+	.db	1,9
+	.dh	.L316-.L315
+	.db	3,2,1,5,17,9
+	.dh	.L317-.L316
+	.db	3,2,1,5,15,9
+	.dh	.L197-.L317
+	.db	1,5,14,9
+	.dh	.L318-.L197
+	.db	3,2,1,9
+	.dh	.L319-.L318
+	.db	3,2,1,5,7,9
+	.dh	.L320-.L319
+	.db	3,126,1,9
+	.dh	.L321-.L320
+	.db	3,2,1,5,1,9
+	.dh	.L196-.L321
+	.db	3,1,1,7,9
+	.dh	.L82-.L196
+	.db	0,1,1
+.L309:
+	.endsec	; End of section
+
+	.section	.debug_ranges ,cluster('$group_GPIO_PinLockConfig')
+.L80:
+	.dw	-1,.L81,0,.L82-.L81,0,0
+	.endsec	; End of section
+
+	.section	.debug_info ,cluster('$group_GPIO_ReadInputDataBit')
+.L83:
+	.dw	133
+	.dh	3
+	.dw	.L84
+	.db	4,1
+	.dw	.L205,.L206,.L207
+	.db	12,1
+	.dw	.L86,.L85
+	.db	2
+	.dw	.L55
+	.db	3
+	.db	'GPIO_ReadInputDataBit',0,1,171,2,9
+	.dw	.L157
+	.db	1,1,1
+	.dw	.L36,.L88,.L35
+	.db	4
+	.db	'GPIOx',0,1,171,2,45
+	.dw	.L143,.L158
+	.db	4
+	.db	'GPIO_Pin',0,1,171,2,61
+	.dw	.L153,.L159
+	.db	5
+	.dw	.L36,.L88
+	.db	0,0
+	.endsec	; End of section
+
+	.section	.debug_abbrev ,cluster('$group_GPIO_ReadInputDataBit')
+.L84:
+	.db	1,17,1,3,14,37,14,27,14,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73
+	.db	16,54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0
+	.db	0
+	.endsec	; End of section
+
+	.section	.debug_line ,cluster('$group_GPIO_ReadInputDataBit')
+.L85:
+	.dw	.L323-.L322
+.L322:
+	.dh	3
+	.dw	.L325-.L324
+.L324:
+	.db	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.db	'C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c',0
+	.db	0,0,0,0
+.L325:
+	.db	5,13,7,0,5,2
+	.dw	.L36
+	.db	3,178,2,1,5,19,9
+	.dh	.L326-.L36
+	.db	1,5,31,9
+	.dh	.L198-.L326
+	.db	1,5,1,9
+	.dh	.L327-.L198
+	.db	3,9,1,7,9
+	.dh	.L88-.L327
+	.db	0,1,1
+.L323:
+	.endsec	; End of section
+
+	.section	.debug_ranges ,cluster('$group_GPIO_ReadInputDataBit')
+.L86:
+	.dw	-1,.L87,0,.L88-.L87,0,0
+	.endsec	; End of section
+
+	.section	.debug_info ,cluster('$group_GPIO_ReadInputData')
+.L89:
+	.dw	108
+	.dh	3
+	.dw	.L90
+	.db	4,1
+	.dw	.L205,.L206,.L207
+	.db	12,1
+	.dw	.L92,.L91
+	.db	2
+	.dw	.L55
+	.db	3
+	.db	'GPIO_ReadInputData',0,1,195,2,10
+	.dw	.L153
+	.db	1,1,1
+	.dw	.L38,.L94,.L37
+	.db	4
+	.db	'GPIOx',0,1,195,2,43
+	.dw	.L143,.L160
+	.db	5
+	.dw	.L38,.L94
+	.db	0,0
+	.endsec	; End of section
+
+	.section	.debug_abbrev ,cluster('$group_GPIO_ReadInputData')
+.L90:
+	.db	1,17,1,3,14,37,14,27,14,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73
+	.db	16,54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0
+	.db	0
+	.endsec	; End of section
+
+	.section	.debug_line ,cluster('$group_GPIO_ReadInputData')
+.L91:
+	.dw	.L329-.L328
+.L328:
+	.dh	3
+	.dw	.L331-.L330
+.L330:
+	.db	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.db	'C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c',0
+	.db	0,0,0,0
+.L331:
+	.db	5,26,7,0,5,2
+	.dw	.L38
+	.db	3,199,2,1,5,1,9
+	.dh	.L332-.L38
+	.db	3,1,1,7,9
+	.dh	.L94-.L332
+	.db	0,1,1
+.L329:
+	.endsec	; End of section
+
+	.section	.debug_ranges ,cluster('$group_GPIO_ReadInputData')
+.L92:
+	.dw	-1,.L93,0,.L94-.L93,0,0
+	.endsec	; End of section
+
+	.section	.debug_info ,cluster('$group_GPIO_ReadOutputDataBit')
+.L95:
+	.dw	134
+	.dh	3
+	.dw	.L96
+	.db	4,1
+	.dw	.L205,.L206,.L207
+	.db	12,1
+	.dw	.L98,.L97
+	.db	2
+	.dw	.L55
+	.db	3
+	.db	'GPIO_ReadOutputDataBit',0,1,210,2,9
+	.dw	.L157
+	.db	1,1,1
+	.dw	.L40,.L100,.L39
+	.db	4
+	.db	'GPIOx',0,1,210,2,46
+	.dw	.L143,.L161
+	.db	4
+	.db	'GPIO_Pin',0,1,210,2,62
+	.dw	.L153,.L162
+	.db	5
+	.dw	.L40,.L100
+	.db	0,0
+	.endsec	; End of section
+
+	.section	.debug_abbrev ,cluster('$group_GPIO_ReadOutputDataBit')
+.L96:
+	.db	1,17,1,3,14,37,14,27,14,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73
+	.db	16,54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0
+	.db	0
+	.endsec	; End of section
+
+	.section	.debug_line ,cluster('$group_GPIO_ReadOutputDataBit')
+.L97:
+	.dw	.L334-.L333
+.L333:
+	.dh	3
+	.dw	.L336-.L335
+.L335:
+	.db	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.db	'C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c',0
+	.db	0,0,0,0
+.L336:
+	.db	5,13,7,0,5,2
+	.dw	.L40
+	.db	3,217,2,1,5,19,9
+	.dh	.L337-.L40
+	.db	1,5,31,9
+	.dh	.L199-.L337
+	.db	1,5,1,9
+	.dh	.L338-.L199
+	.db	3,9,1,7,9
+	.dh	.L100-.L338
+	.db	0,1,1
+.L334:
+	.endsec	; End of section
+
+	.section	.debug_ranges ,cluster('$group_GPIO_ReadOutputDataBit')
+.L98:
+	.dw	-1,.L99,0,.L100-.L99,0,0
+	.endsec	; End of section
+
+	.section	.debug_info ,cluster('$group_GPIO_ReadOutputData')
+.L101:
+	.dw	109
+	.dh	3
+	.dw	.L102
+	.db	4,1
+	.dw	.L205,.L206,.L207
+	.db	12,1
+	.dw	.L104,.L103
+	.db	2
+	.dw	.L55
+	.db	3
+	.db	'GPIO_ReadOutputData',0,1,234,2,10
+	.dw	.L153
+	.db	1,1,1
+	.dw	.L42,.L106,.L41
+	.db	4
+	.db	'GPIOx',0,1,234,2,44
+	.dw	.L143,.L163
+	.db	5
+	.dw	.L42,.L106
+	.db	0,0
+	.endsec	; End of section
+
+	.section	.debug_abbrev ,cluster('$group_GPIO_ReadOutputData')
+.L102:
+	.db	1,17,1,3,14,37,14,27,14,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73
+	.db	16,54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0
+	.db	0
+	.endsec	; End of section
+
+	.section	.debug_line ,cluster('$group_GPIO_ReadOutputData')
+.L103:
+	.dw	.L340-.L339
+.L339:
+	.dh	3
+	.dw	.L342-.L341
+.L341:
+	.db	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.db	'C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c',0
+	.db	0,0,0,0
+.L342:
+	.db	5,26,7,0,5,2
+	.dw	.L42
+	.db	3,238,2,1,5,1,9
+	.dh	.L343-.L42
+	.db	3,1,1,7,9
+	.dh	.L106-.L343
+	.db	0,1,1
+.L340:
+	.endsec	; End of section
+
+	.section	.debug_ranges ,cluster('$group_GPIO_ReadOutputData')
+.L104:
+	.dw	-1,.L105,0,.L106-.L105,0,0
+	.endsec	; End of section
+
+	.section	.debug_info ,cluster('$group_GPIO_SetBits')
+.L107:
+	.dw	120
+	.dh	3
+	.dw	.L108
+	.db	4,1
+	.dw	.L205,.L206,.L207
+	.db	12,1
+	.dw	.L110,.L109
+	.db	2
+	.dw	.L55
+	.db	3
+	.db	'GPIO_SetBits',0,1,252,2,6,1,1,1
+	.dw	.L44,.L112,.L43
+	.db	4
+	.db	'GPIOx',0,1,252,2,33
+	.dw	.L143,.L164
+	.db	4
+	.db	'GPIO_Pin',0,1,252,2,49
+	.dw	.L153,.L165
+	.db	5
+	.dw	.L44,.L112
+	.db	0,0
+	.endsec	; End of section
+
+	.section	.debug_abbrev ,cluster('$group_GPIO_SetBits')
+.L108:
+	.db	1,17,1,3,14,37,14,27,14,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54
+	.db	15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.endsec	; End of section
+
+	.section	.debug_line ,cluster('$group_GPIO_SetBits')
+.L109:
+	.dw	.L345-.L344
+.L344:
+	.dh	3
+	.dw	.L347-.L346
+.L346:
+	.db	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.db	'C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c',0
+	.db	0,0,0,0
+.L347:
+	.db	5,16,7,0,5,2
+	.dw	.L44
+	.db	3,129,3,1,5,1,9
+	.dh	.L348-.L44
+	.db	3,1,1,7,9
+	.dh	.L112-.L348
+	.db	0,1,1
+.L345:
+	.endsec	; End of section
+
+	.section	.debug_ranges ,cluster('$group_GPIO_SetBits')
+.L110:
+	.dw	-1,.L111,0,.L112-.L111,0,0
+	.endsec	; End of section
+
+	.section	.debug_info ,cluster('$group_GPIO_ResetBits')
+.L113:
+	.dw	122
+	.dh	3
+	.dw	.L114
+	.db	4,1
+	.dw	.L205,.L206,.L207
+	.db	12,1
+	.dw	.L116,.L115
+	.db	2
+	.dw	.L55
+	.db	3
+	.db	'GPIO_ResetBits',0,1,143,3,6,1,1,1
+	.dw	.L46,.L118,.L45
+	.db	4
+	.db	'GPIOx',0,1,143,3,35
+	.dw	.L143,.L166
+	.db	4
+	.db	'GPIO_Pin',0,1,143,3,51
+	.dw	.L153,.L167
+	.db	5
+	.dw	.L46,.L118
+	.db	0,0
+	.endsec	; End of section
+
+	.section	.debug_abbrev ,cluster('$group_GPIO_ResetBits')
+.L114:
+	.db	1,17,1,3,14,37,14,27,14,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54
+	.db	15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.endsec	; End of section
+
+	.section	.debug_line ,cluster('$group_GPIO_ResetBits')
+.L115:
+	.dw	.L350-.L349
+.L349:
+	.dh	3
+	.dw	.L352-.L351
+.L351:
+	.db	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.db	'C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c',0
+	.db	0,0,0,0
+.L352:
+	.db	5,16,7,0,5,2
+	.dw	.L46
+	.db	3,148,3,1,5,1,9
+	.dh	.L353-.L46
+	.db	3,1,1,7,9
+	.dh	.L118-.L353
+	.db	0,1,1
+.L350:
+	.endsec	; End of section
+
+	.section	.debug_ranges ,cluster('$group_GPIO_ResetBits')
+.L116:
+	.dw	-1,.L117,0,.L118-.L117,0,0
+	.endsec	; End of section
+
+	.section	.debug_info ,cluster('$group_GPIO_WriteBit')
+.L119:
+	.dw	141
+	.dh	3
+	.dw	.L120
+	.db	4,1
+	.dw	.L205,.L206,.L207
+	.db	12,1
+	.dw	.L122,.L121
+	.db	2
+	.dw	.L55
+	.db	3
+	.db	'GPIO_WriteBit',0,1,163,3,6,1,1,1
+	.dw	.L48,.L124,.L47
+	.db	4
+	.db	'GPIOx',0,1,163,3,34
+	.dw	.L143,.L168
+	.db	4
+	.db	'GPIO_Pin',0,1,163,3,50
+	.dw	.L153,.L169
+	.db	4
+	.db	'BitVal',0,1,163,3,70
+	.dw	.L170,.L171
+	.db	5
+	.dw	.L48,.L124
+	.db	0,0
+	.endsec	; End of section
+
+	.section	.debug_abbrev ,cluster('$group_GPIO_WriteBit')
+.L120:
+	.db	1,17,1,3,14,37,14,27,14,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54
+	.db	15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.endsec	; End of section
+
+	.section	.debug_line ,cluster('$group_GPIO_WriteBit')
+.L121:
+	.dw	.L355-.L354
+.L354:
+	.dh	3
+	.dw	.L357-.L356
+.L356:
+	.db	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.db	'C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c',0
+	.db	0,0,0,0
+.L357:
+	.db	5,3,7,0,5,2
+	.dw	.L48
+	.db	3,169,3,1,5,18,7,9
+	.dh	.L358-.L48
+	.db	3,2,1,5,28,9
+	.dh	.L359-.L358
+	.db	1,5,18,7,9
+	.dh	.L25-.L359
+	.db	3,4,1,5,1,9
+	.dh	.L26-.L25
+	.db	3,2,1,7,9
+	.dh	.L124-.L26
+	.db	0,1,1
+.L355:
+	.endsec	; End of section
+
+	.section	.debug_ranges ,cluster('$group_GPIO_WriteBit')
+.L122:
+	.dw	-1,.L123,0,.L124-.L123,0,0
+	.endsec	; End of section
+
+	.section	.debug_info ,cluster('$group_GPIO_Write')
+.L125:
+	.dw	117
+	.dh	3
+	.dw	.L126
+	.db	4,1
+	.dw	.L205,.L206,.L207
+	.db	12,1
+	.dw	.L128,.L127
+	.db	2
+	.dw	.L55
+	.db	3
+	.db	'GPIO_Write',0,1,187,3,6,1,1,1
+	.dw	.L50,.L130,.L49
+	.db	4
+	.db	'GPIOx',0,1,187,3,31
+	.dw	.L143,.L172
+	.db	4
+	.db	'PortVal',0,1,187,3,47
+	.dw	.L153,.L173
+	.db	5
+	.dw	.L50,.L130
+	.db	0,0
+	.endsec	; End of section
+
+	.section	.debug_abbrev ,cluster('$group_GPIO_Write')
+.L126:
+	.db	1,17,1,3,14,37,14,27,14,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54
+	.db	15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.endsec	; End of section
+
+	.section	.debug_line ,cluster('$group_GPIO_Write')
+.L127:
+	.dw	.L361-.L360
+.L360:
+	.dh	3
+	.dw	.L363-.L362
+.L362:
+	.db	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.db	'C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c',0
+	.db	0,0,0,0
+.L363:
+	.db	5,14,7,0,5,2
+	.dw	.L50
+	.db	3,191,3,1,5,1,9
+	.dh	.L364-.L50
+	.db	3,1,1,7,9
+	.dh	.L130-.L364
+	.db	0,1,1
+.L361:
+	.endsec	; End of section
+
+	.section	.debug_ranges ,cluster('$group_GPIO_Write')
+.L128:
+	.dw	-1,.L129,0,.L130-.L129,0,0
+	.endsec	; End of section
+
+	.section	.debug_info ,cluster('$group_GPIO_ToggleBits')
+.L131:
+	.dw	123
+	.dh	3
+	.dw	.L132
+	.db	4,1
+	.dw	.L205,.L206,.L207
+	.db	12,1
+	.dw	.L134,.L133
+	.db	2
+	.dw	.L55
+	.db	3
+	.db	'GPIO_ToggleBits',0,1,201,3,6,1,1,1
+	.dw	.L52,.L136,.L51
+	.db	4
+	.db	'GPIOx',0,1,201,3,36
+	.dw	.L143,.L174
+	.db	4
+	.db	'GPIO_Pin',0,1,201,3,52
+	.dw	.L153,.L175
+	.db	5
+	.dw	.L52,.L136
+	.db	0,0
+	.endsec	; End of section
+
+	.section	.debug_abbrev ,cluster('$group_GPIO_ToggleBits')
+.L132:
+	.db	1,17,1,3,14,37,14,27,14,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54
+	.db	15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.endsec	; End of section
+
+	.section	.debug_line ,cluster('$group_GPIO_ToggleBits')
+.L133:
+	.dw	.L366-.L365
+.L365:
+	.dh	3
+	.dw	.L368-.L367
+.L367:
+	.db	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.db	'C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c',0
+	.db	0,0,0,0
+.L368:
+	.db	5,8,7,0,5,2
+	.dw	.L52
+	.db	3,205,3,1,5,14,9
+	.dh	.L369-.L52
+	.db	1,5,1,9
+	.dh	.L370-.L369
+	.db	3,1,1,7,9
+	.dh	.L136-.L370
+	.db	0,1,1
+.L366:
+	.endsec	; End of section
+
+	.section	.debug_ranges ,cluster('$group_GPIO_ToggleBits')
+.L134:
+	.dw	-1,.L135,0,.L136-.L135,0,0
+	.endsec	; End of section
+
+	.section	.debug_info ,cluster('$group_GPIO_PinAFConfig')
+.L137:
+	.dw	190
+	.dh	3
+	.dw	.L138
+	.db	4,1
+	.dw	.L205,.L206,.L207
+	.db	12,1
+	.dw	.L140,.L139
+	.db	2
+	.dw	.L55
+	.db	3
+	.db	'GPIO_PinAFConfig',0,1,142,4,6,1,1,1
+	.dw	.L54,.L142,.L53
+	.db	4
+	.db	'GPIOx',0,1,142,4,37
+	.dw	.L143,.L176
+	.db	4
+	.db	'GPIO_PinSource',0,1,142,4,53
+	.dw	.L153,.L177
+	.db	4
+	.db	'GPIO_AF',0,1,142,4,77
+	.dw	.L157,.L178
+	.db	5
+	.dw	.L54,.L142
+	.db	6
+	.db	'temp',0,1,144,4,12
+	.dw	.L148,.L179
+	.db	6
+	.db	'temp_2',0,1,145,4,12
+	.dw	.L148,.L180
+	.db	0,0,0
+	.endsec	; End of section
+
+	.section	.debug_abbrev ,cluster('$group_GPIO_PinAFConfig')
+.L138:
+	.db	1,17,1,3,14,37,14,27,14,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54
+	.db	15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52
+	.db	0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.endsec	; End of section
+
+	.section	.debug_line ,cluster('$group_GPIO_PinAFConfig')
+.L139:
+	.dw	.L372-.L371
+.L371:
+	.dh	3
+	.dw	.L374-.L373
+.L373:
+	.db	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.db	'C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c',0
+	.db	0,0,0,0
+.L374:
+	.db	5,6,7,0,5,2
+	.dw	.L54
+	.db	3,141,4,1,5,46,9
+	.dh	.L200-.L54
+	.db	3,10,1,5,71,9
+	.dh	.L375-.L200
+	.db	1,5,31,9
+	.dh	.L376-.L375
+	.db	1,5,8,9
+	.dh	.L201-.L376
+	.db	3,1,1,5,29,9
+	.dh	.L203-.L201
+	.db	1,5,13,9
+	.dh	.L377-.L203
+	.db	1,5,43,9
+	.dh	.L202-.L377
+	.db	1,5,57,9
+	.dh	.L378-.L202
+	.db	1,5,38,9
+	.dh	.L379-.L378
+	.db	1,5,22,9
+	.dh	.L380-.L379
+	.db	3,1,1,5,47,9
+	.dh	.L381-.L380
+	.db	1,5,38,9
+	.dh	.L204-.L381
+	.db	3,1,1,5,1,9
+	.dh	.L382-.L204
+	.db	3,1,1,7,9
+	.dh	.L142-.L382
+	.db	0,1,1
+.L372:
+	.endsec	; End of section
+
+	.section	.debug_ranges ,cluster('$group_GPIO_PinAFConfig')
+.L140:
+	.dw	-1,.L141,0,.L142-.L141,0,0
+	.endsec	; End of section
+
+	.section	.debug_str
+.L206:
+	.db	'TASKING VX-toolset for ARM Cortex: C compiler',0
+.L205:
+	.db	'C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c',0
+.L207:
+	.db	'C:\\Users\\hmidenen\\Desktop\\Sanity Check\\AN2668_FW_V3.0.0\\Project\\ADCOversampling-STM32L\\TriangularDitherMethod\\TASKING\\STM32L152-EVAL\\Debug\\',0
+	.endsec	; End of section
+
+	.section	.debug_loc ,cluster('$group_GPIO_DeInit')
+.L27:
+	.dw	-1,.L28,0,.L181-.L28
+	.dh	2
+	.db	125,0
+	.dw	.L181-.L28,.L64-.L28
+	.dh	2
+	.db	125,4
+	.dw	.L64-.L28,.L64-.L28
+	.dh	2
+	.db	125,0
+	.dw	0,0
+.L144:
+	.dw	-1,.L28,0,.L182-.L28
+	.dh	1
+	.db	80
+	.dw	.L2-.L28,.L183-.L28
+	.dh	1
+	.db	80
+	.dw	.L4-.L28,.L184-.L28
+	.dh	1
+	.db	80
+	.dw	.L6-.L28,.L185-.L28
+	.dh	1
+	.db	80
+	.dw	.L8-.L28,.L186-.L28
+	.dh	1
+	.db	80
+	.dw	.L10-.L28,.L187-.L28
+	.dh	1
+	.db	80
+	.dw	.L12-.L28,.L188-.L28
+	.dh	1
+	.db	80
+	.dw	.L14-.L28,.L189-.L28
+	.dh	1
+	.db	80
+	.dw	0,0
+	.endsec	; End of section
+
+	.section	.debug_loc ,cluster('$group_GPIO_Init')
+.L29:
+	.dw	-1,.L30,0,.L190-.L30
+	.dh	2
+	.db	125,0
+	.dw	.L190-.L30,.L70-.L30
+	.dh	2
+	.db	125,12
+	.dw	.L70-.L30,.L70-.L30
+	.dh	2
+	.db	125,0
+	.dw	0,0
+.L147:
+	.dw	-1,.L30,0,.L17-.L30
+	.dh	1
+	.db	81
+	.dw	.L192-.L30,.L70-.L30
+	.dh	1
+	.db	83
+	.dw	0,0
+.L145:
+	.dw	-1,.L30,0,.L17-.L30
+	.dh	1
+	.db	80
+	.dw	.L191-.L30,.L70-.L30
+	.dh	1
+	.db	82
+	.dw	0,0
+.L149:
+	.dw	-1,.L30,.L17-.L30,.L70-.L30
+	.dh	1
+	.db	84
+	.dw	0,0
+.L150:
+	.dw	-1,.L30,.L193-.L30,.L194-.L30
+	.dh	1
+	.db	81
+	.dw	0,0
+	.endsec	; End of section
+
+	.section	.debug_loc ,cluster('$group_GPIO_PinAFConfig')
+.L178:
+	.dw	-1,.L54,0,.L201-.L54
+	.dh	1
+	.db	82
+	.dw	0,0
+.L53:
+	.dw	-1,.L54,0,.L200-.L54
+	.dh	2
+	.db	125,0
+	.dw	.L200-.L54,.L142-.L54
+	.dh	2
+	.db	125,8
+	.dw	.L142-.L54,.L142-.L54
+	.dh	2
+	.db	125,0
+	.dw	0,0
+.L177:
+	.dw	-1,.L54,0,.L202-.L54
+	.dh	1
+	.db	81
+	.dw	0,0
+.L176:
+	.dw	-1,.L54,0,.L203-.L54
+	.dh	1
+	.db	80
+	.dw	0,0
+.L179:
+	.dw	-1,.L54,.L201-.L54,.L142-.L54
+	.dh	1
+	.db	82
+	.dw	0,0
+.L180:
+	.dw	-1,.L54,.L204-.L54,.L142-.L54
+	.dh	1
+	.db	81
+	.dw	0,0
+	.endsec	; End of section
+
+	.section	.debug_loc ,cluster('$group_GPIO_PinLockConfig')
+.L154:
+	.dw	-1,.L34,0,.L197-.L34
+	.dh	1
+	.db	81
+	.dw	0,0
+.L33:
+	.dw	-1,.L34,0,.L195-.L34
+	.dh	2
+	.db	125,0
+	.dw	.L195-.L34,.L196-.L34
+	.dh	2
+	.db	125,4
+	.dw	.L196-.L34,.L82-.L34
+	.dh	2
+	.db	125,0
+	.dw	0,0
+.L152:
+	.dw	-1,.L34,0,.L82-.L34
+	.dh	1
+	.db	80
+	.dw	0,0
+.L156:
+	.dw	-1,.L34,0,.L82-.L34
+	.dh	2
+	.db	145,124
+	.dw	0,0
+	.endsec	; End of section
+
+	.section	.debug_loc ,cluster('$group_GPIO_ReadInputData')
+.L37:
+	.dw	-1,.L38,0,.L94-.L38
+	.dh	2
+	.db	125,0
+	.dw	0,0
+.L160:
+	.dw	-1,.L38,0,.L94-.L38
+	.dh	1
+	.db	80
+	.dw	0,0
+	.endsec	; End of section
+
+	.section	.debug_loc ,cluster('$group_GPIO_ReadInputDataBit')
+.L159:
+	.dw	-1,.L36,0,.L88-.L36
+	.dh	1
+	.db	81
+	.dw	0,0
+.L35:
+	.dw	-1,.L36,0,.L88-.L36
+	.dh	2
+	.db	125,0
+	.dw	0,0
+.L158:
+	.dw	-1,.L36,0,.L198-.L36
+	.dh	1
+	.db	80
+	.dw	0,0
+	.endsec	; End of section
+
+	.section	.debug_loc ,cluster('$group_GPIO_ReadOutputData')
+.L41:
+	.dw	-1,.L42,0,.L106-.L42
+	.dh	2
+	.db	125,0
+	.dw	0,0
+.L163:
+	.dw	-1,.L42,0,.L106-.L42
+	.dh	1
+	.db	80
+	.dw	0,0
+	.endsec	; End of section
+
+	.section	.debug_loc ,cluster('$group_GPIO_ReadOutputDataBit')
+.L162:
+	.dw	-1,.L40,0,.L100-.L40
+	.dh	1
+	.db	81
+	.dw	0,0
+.L39:
+	.dw	-1,.L40,0,.L100-.L40
+	.dh	2
+	.db	125,0
+	.dw	0,0
+.L161:
+	.dw	-1,.L40,0,.L199-.L40
+	.dh	1
+	.db	80
+	.dw	0,0
+	.endsec	; End of section
+
+	.section	.debug_loc ,cluster('$group_GPIO_ResetBits')
+.L167:
+	.dw	-1,.L46,0,.L118-.L46
+	.dh	1
+	.db	81
+	.dw	0,0
+.L45:
+	.dw	-1,.L46,0,.L118-.L46
+	.dh	2
+	.db	125,0
+	.dw	0,0
+.L166:
+	.dw	-1,.L46,0,.L118-.L46
+	.dh	1
+	.db	80
+	.dw	0,0
+	.endsec	; End of section
+
+	.section	.debug_loc ,cluster('$group_GPIO_SetBits')
+.L165:
+	.dw	-1,.L44,0,.L112-.L44
+	.dh	1
+	.db	81
+	.dw	0,0
+.L43:
+	.dw	-1,.L44,0,.L112-.L44
+	.dh	2
+	.db	125,0
+	.dw	0,0
+.L164:
+	.dw	-1,.L44,0,.L112-.L44
+	.dh	1
+	.db	80
+	.dw	0,0
+	.endsec	; End of section
+
+	.section	.debug_loc ,cluster('$group_GPIO_StructInit')
+.L151:
+	.dw	-1,.L32,0,.L76-.L32
+	.dh	1
+	.db	80
+	.dw	0,0
+.L31:
+	.dw	-1,.L32,0,.L76-.L32
+	.dh	2
+	.db	125,0
+	.dw	0,0
+	.endsec	; End of section
+
+	.section	.debug_loc ,cluster('$group_GPIO_ToggleBits')
+.L175:
+	.dw	-1,.L52,0,.L136-.L52
+	.dh	1
+	.db	81
+	.dw	0,0
+.L51:
+	.dw	-1,.L52,0,.L136-.L52
+	.dh	2
+	.db	125,0
+	.dw	0,0
+.L174:
+	.dw	-1,.L52,0,.L136-.L52
+	.dh	1
+	.db	80
+	.dw	0,0
+	.endsec	; End of section
+
+	.section	.debug_loc ,cluster('$group_GPIO_Write')
+.L49:
+	.dw	-1,.L50,0,.L130-.L50
+	.dh	2
+	.db	125,0
+	.dw	0,0
+.L172:
+	.dw	-1,.L50,0,.L130-.L50
+	.dh	1
+	.db	80
+	.dw	0,0
+.L173:
+	.dw	-1,.L50,0,.L130-.L50
+	.dh	1
+	.db	81
+	.dw	0,0
+	.endsec	; End of section
+
+	.section	.debug_loc ,cluster('$group_GPIO_WriteBit')
+.L171:
+	.dw	-1,.L48,0,.L124-.L48
+	.dh	1
+	.db	82
+	.dw	0,0
+.L169:
+	.dw	-1,.L48,0,.L124-.L48
+	.dh	1
+	.db	81
+	.dw	0,0
+.L47:
+	.dw	-1,.L48,0,.L124-.L48
+	.dh	2
+	.db	125,0
+	.dw	0,0
+.L168:
+	.dw	-1,.L48,0,.L124-.L48
+	.dh	1
+	.db	80
+	.dw	0,0
+	.endsec	; End of section
+
+	.section	.debug_frame
+.L383:
+	.dw	64
+	.dw	-1
+	.db	3,0,2,2,14,12,13,0,8,4,8,5,8,6,8,7,8,8,8,9,8,10,8,11,8,13,8,14,8,15,8,128,1,8,136,2,8,137,2,8,138,2,8
+	.db	139,2,8,140,2,8,141,2,8,142,2,8,143,2,0,0,0
+	.endsec	; End of section
+
+	.section	.debug_frame ,cluster('$group_GPIO_DeInit')
+	.dw	40
+	.dw	.L383,.L28,.L64-.L28
+	.db	4
+	.dw	(.L181-.L28)/2
+	.db	19,2,22,13,3,19,125,4,17,14,126,4
+	.dw	(.L64-.L181)/2
+	.db	19,0,8,13,0,0,0
+	.endsec	; End of section
+
+	.section	.debug_frame ,cluster('$group_GPIO_Init')
+	.dw	68
+	.dw	.L383,.L30,.L70-.L30
+	.db	8,128,2,8,129,2,8,130,2,8,131,2,8,132,2,8,133,2,8,134,2,8,135,2,4
+	.dw	(.L190-.L30)/2
+	.db	19,6,22,13,3,19,125,12,17,14,126,17,5,124,17,4,122,4
+	.dw	(.L70-.L190)/2
+	.db	19,0,8,13,0
+	.endsec	; End of section
+
+	.section	.debug_frame ,cluster('$group_GPIO_StructInit')
+	.dw	40
+	.dw	.L383,.L32,.L76-.L32
+	.db	8,3,8,128,2,8,129,2,8,130,2,8,131,2,8,132,2,8,133,2,8,134,2,8,135,2,0,0
+	.endsec	; End of section
+
+	.section	.debug_frame ,cluster('$group_GPIO_PinLockConfig')
+	.dw	60
+	.dw	.L383,.L34,.L82-.L34
+	.db	8,3,8,128,2,8,129,2,8,130,2,8,131,2,8,132,2,8,133,2,8,134,2,8,135,2,4
+	.dw	(.L195-.L34)/2
+	.db	19,2,22,13,3,19,125,4,4
+	.dw	(.L196-.L195)/2
+	.db	19,0,8,13
+	.endsec	; End of section
+
+	.section	.debug_frame ,cluster('$group_GPIO_ReadInputDataBit')
+	.dw	40
+	.dw	.L383,.L36,.L88-.L36
+	.db	8,3,8,128,2,8,129,2,8,130,2,8,131,2,8,132,2,8,133,2,8,134,2,8,135,2,0,0
+	.endsec	; End of section
+
+	.section	.debug_frame ,cluster('$group_GPIO_ReadInputData')
+	.dw	44
+	.dw	.L383,.L38,.L94-.L38
+	.db	8,1,8,2,8,3,8,128,2,8,129,2,8,130,2,8,131,2,8,132,2,8,133,2,8,134,2,8,135,2,0,0
+	.endsec	; End of section
+
+	.section	.debug_frame ,cluster('$group_GPIO_ReadOutputDataBit')
+	.dw	40
+	.dw	.L383,.L40,.L100-.L40
+	.db	8,3,8,128,2,8,129,2,8,130,2,8,131,2,8,132,2,8,133,2,8,134,2,8,135,2,0,0
+	.endsec	; End of section
+
+	.section	.debug_frame ,cluster('$group_GPIO_ReadOutputData')
+	.dw	44
+	.dw	.L383,.L42,.L106-.L42
+	.db	8,1,8,2,8,3,8,128,2,8,129,2,8,130,2,8,131,2,8,132,2,8,133,2,8,134,2,8,135,2,0,0
+	.endsec	; End of section
+
+	.section	.debug_frame ,cluster('$group_GPIO_SetBits')
+	.dw	40
+	.dw	.L383,.L44,.L112-.L44
+	.db	8,2,8,3,8,128,2,8,129,2,8,130,2,8,131,2,8,132,2,8,133,2,8,134,2,8,135,2
+	.endsec	; End of section
+
+	.section	.debug_frame ,cluster('$group_GPIO_ResetBits')
+	.dw	40
+	.dw	.L383,.L46,.L118-.L46
+	.db	8,2,8,3,8,128,2,8,129,2,8,130,2,8,131,2,8,132,2,8,133,2,8,134,2,8,135,2
+	.endsec	; End of section
+
+	.section	.debug_frame ,cluster('$group_GPIO_WriteBit')
+	.dw	40
+	.dw	.L383,.L48,.L124-.L48
+	.db	8,3,8,128,2,8,129,2,8,130,2,8,131,2,8,132,2,8,133,2,8,134,2,8,135,2,0,0
+	.endsec	; End of section
+
+	.section	.debug_frame ,cluster('$group_GPIO_Write')
+	.dw	40
+	.dw	.L383,.L50,.L130-.L50
+	.db	8,2,8,3,8,128,2,8,129,2,8,130,2,8,131,2,8,132,2,8,133,2,8,134,2,8,135,2
+	.endsec	; End of section
+
+	.section	.debug_frame ,cluster('$group_GPIO_ToggleBits')
+	.dw	40
+	.dw	.L383,.L52,.L136-.L52
+	.db	8,3,8,128,2,8,129,2,8,130,2,8,131,2,8,132,2,8,133,2,8,134,2,8,135,2,0,0
+	.endsec	; End of section
+
+	.section	.debug_frame ,cluster('$group_GPIO_PinAFConfig')
+	.dw	64
+	.dw	.L383,.L54,.L142-.L54
+	.db	8,128,2,8,129,2,8,130,2,8,131,2,8,132,2,8,133,2,8,134,2,8,135,2,4
+	.dw	(.L200-.L54)/2
+	.db	19,4,22,13,3,19,125,8,17,14,126,17,4,124,4
+	.dw	(.L142-.L200)/2
+	.db	19,0,8,13
+	.endsec	; End of section
+
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   541  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   542  /**
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   543    * @}
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   544    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   545  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   546  /**
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   547    * @}
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   548    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   549  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   550  /**
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   551    * @}
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   552    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   553  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   554  /**
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   555    * @}
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   556    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c	   557  /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
+
+	; Module end
+	.end

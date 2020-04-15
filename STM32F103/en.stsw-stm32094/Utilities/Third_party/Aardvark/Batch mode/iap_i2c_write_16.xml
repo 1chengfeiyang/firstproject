@@ -1,0 +1,13 @@
+<aardvark>
+<!-- +++++++++++++++++++++++++++CONFIGURATION++++++++++++++++++++++++ -->
+    <configure i2c="1" spi="0" gpio="1" tpower="0" pullups="1"/>
+    <i2c_bitrate khz="100"/>
+<!-- +++++++++++++++++++++++++++WRITE COMMAND++++++++++++++++++++++++ -->
+    <i2c_write addr="0x18" count="24"  radix="16">
+	06							<!-- opcode of WRITE COMMAND --> 
+	08 00 10 00                 <!-- add of flash memory  -->
+	00 10                       <!-- number of bytes  to be written -->
+	FF                          <!-- dummy byte -->
+    01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16  <!-- write 16 bytes -->  
+    </i2c_write>  
+</aardvark>

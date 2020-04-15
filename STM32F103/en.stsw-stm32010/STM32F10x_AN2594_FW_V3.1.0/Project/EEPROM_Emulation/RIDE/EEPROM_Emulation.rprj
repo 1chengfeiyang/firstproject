@@ -1,0 +1,4 @@
+
+<Project Header="Project 'EEPROM_Emulation'" Path=".\EEPROM_Emulation.rprj" Project="Yes" OutputFile="" sate="96" ActiveApp="EEPROM_Emulation" >
+	<ApplicationBuild Header="EEPROM_Emulation" Extern=".\EEPROM_Emulation.rapp" Path=".\EEPROM_Emulation.rapp" OutputFile=".\STM3210C-EVAL\EEPROM_Emulation.elf" Config="STM3210C-EVAL" sate="98" />
+</Project>

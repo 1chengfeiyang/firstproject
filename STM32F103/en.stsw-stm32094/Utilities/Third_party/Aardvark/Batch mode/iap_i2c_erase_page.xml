@@ -1,0 +1,7 @@
+<aardvark>
+<!-- +++++++++++++++++++++++++++CONFIGURATION++++++++++++++++++++++++ -->
+<configure i2c="1" spi="0" gpio="1" tpower="0" pullups="1"/>
+<i2c_bitrate khz="100"/>
+<!-- +++++++++++++++++++++++++++ERASE PAGE COMMAND++++++++++++++++++++++++ -->
+<i2c_write addr="0x18" count="7"  radix="16">20 08 00 10 00 00 07 </i2c_write> 
+</aardvark>

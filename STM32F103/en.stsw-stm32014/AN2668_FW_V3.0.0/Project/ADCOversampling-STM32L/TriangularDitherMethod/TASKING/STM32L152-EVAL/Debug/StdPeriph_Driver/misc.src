@@ -1,0 +1,1275 @@
+	; TASKING VX-toolset for ARM Cortex: C compiler v4.4r1 Build 765 SN 00123456
+	; Options: -f cc5832a --dep-file=StdPeriph_Driver\.misc.obj.d -CARMv7M -D__PROC_STM32L152VB__ -DVECT_TAB_FLASH -DUSE_STDPERIPH_DRIVER -DUSE_STM32L152_EVAL -DSTM32L1XX_MD -I..\..\..\inc -I..\..\..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc -I..\..\..\..\..\..\Libraries\CMSIS\Device\ST\STM32L1xx\Include -I..\..\..\..\..\..\Libraries\CMSIS\Include -g -t4 -w557 -w529 -w588 --make-target=StdPeriph_Driver\misc.obj --language=-gcc,-volatile,+strings -O3 --source --compact-max-size=200 -o StdPeriph_Driver\misc.src
+	; Module start
+	;.ident 'TASKING VX-toolset for ARM Cortex: C compiler v4.4r1 Build 765 SN 00123456'
+	.source 'C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c'
+
+	.section	.text ,cluster('$group_NVIC_PriorityGroupConfig')
+	.global	NVIC_PriorityGroupConfig
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	     1  /**
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	     2    ******************************************************************************
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	     3    * @file    misc.c
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	     4    * @author  MCD Application Team
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	     5    * @version V1.1.1
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	     6    * @date    05-March-2012
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	     7    * @brief   This file provides all the miscellaneous firmware functions (add-on
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	     8    *          to CMSIS functions).
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	     9    ******************************************************************************
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    10    * @attention
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    11    *
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    12    * <h2><center>&copy; COPYRIGHT 2012 STMicroelectronics</center></h2>
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    13    *
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    14    * Licensed under MCD-ST Liberty SW License Agreement V2, (the "License");
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    15    * You may not use this file except in compliance with the License.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    16    * You may obtain a copy of the License at:
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    17    *
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    18    *        http://www.st.com/software_license_agreement_liberty_v2
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    19    *
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    20    * Unless required by applicable law or agreed to in writing, software 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    21    * distributed under the License is distributed on an "AS IS" BASIS, 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    22    * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    23    * See the License for the specific language governing permissions and
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    24    * limitations under the License.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    25    *
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    26    ******************************************************************************
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    27    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    28  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    29  /* Includes ------------------------------------------------------------------*/
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    30  #include "misc.h"
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    31  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    32  /** @addtogroup STM32L1xx_StdPeriph_Driver
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    33    * @{
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    34    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    35  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    36  /** @defgroup MISC 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    37    * @brief MISC driver modules
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    38    * @{
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    39    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    40  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    41  /* Private typedef -----------------------------------------------------------*/
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    42  /* Private define ------------------------------------------------------------*/
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    43  #define AIRCR_VECTKEY_MASK    ((uint32_t)0x05FA0000)
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    44  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    45  /* Private macro -------------------------------------------------------------*/
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    46  /* Private variables ---------------------------------------------------------*/
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    47  /* Private function prototypes -----------------------------------------------*/
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    48  /* Private functions ---------------------------------------------------------*/
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    49  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    50  /** @defgroup MISC_Private_Functions
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    51    * @{
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    52    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    53  /**
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    54    *
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    55  @verbatim
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    56   *******************************************************************************
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    57                     ##### Interrupts configuration functions #####
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    58   *******************************************************************************
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    59      [..] This section provide functions allowing to configure the NVIC interrupts 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    60           (IRQ).The Cortex-M3 exceptions are managed by CMSIS functions.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    61           (#) Configure the NVIC Priority Grouping using NVIC_PriorityGroupConfig() 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    62               function according to the following table.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    63               The table below gives the allowed values of the preemption priority 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    64               and subpriority according to the Priority Grouping configuration 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    65               performed by NVIC_PriorityGroupConfig function.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    66    ============================================================================================================================
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    67      NVIC_PriorityGroup   | NVIC_IRQChannelPreemptionPriority | NVIC_IRQChannelSubPriority  | Description
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    68    ============================================================================================================================
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    69     NVIC_PriorityGroup_0  |                0                  |            0-15             |   0 bits for preemption priority
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    70                           |                                   |                             |   4 bits for subpriority
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    71    ----------------------------------------------------------------------------------------------------------------------------
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    72     NVIC_PriorityGroup_1  |                0-1                |            0-7              |   1 bits for preemption priority
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    73                           |                                   |                             |   3 bits for subpriority
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    74    ----------------------------------------------------------------------------------------------------------------------------
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    75     NVIC_PriorityGroup_2  |                0-3                |            0-3              |   2 bits for preemption priority
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    76                           |                                   |                             |   2 bits for subpriority
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    77    ----------------------------------------------------------------------------------------------------------------------------
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    78     NVIC_PriorityGroup_3  |                0-7                |            0-1              |   3 bits for preemption priority
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    79                           |                                   |                             |   1 bits for subpriority
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    80    ----------------------------------------------------------------------------------------------------------------------------
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    81     NVIC_PriorityGroup_4  |                0-15               |            0                |   4 bits for preemption priority
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    82                           |                                   |                             |   0 bits for subpriority
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    83    ============================================================================================================================
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    84  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    85  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    86           (#) Enable and Configure the priority of the selected IRQ Channels.  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    87  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    88          -@- When the NVIC_PriorityGroup_0 is selected, it will no any nested interrupt,
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    89              the IRQ priority will be managed only by subpriority.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    90              The sub-priority is only used to sort pending exception priorities, 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    91              and does not affect active exceptions.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    92          -@- Lower priority values gives higher priority.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    93          -@- Priority Order:
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    94              (#@) Lowest Preemption priority.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    95              (#@) Lowest Subpriority.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    96              (#@) Lowest hardware priority (IRQn position).
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    97    
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    98  @endverbatim
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	    99  */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   100  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   101  /**
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   102    * @brief  Configures the priority grouping: preemption priority and subpriority.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   103    * @param  NVIC_PriorityGroup: specifies the priority grouping bits length. 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   104    *   This parameter can be one of the following values:
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   105    *     @arg NVIC_PriorityGroup_0: 0 bits for preemption priority
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   106    *                                4 bits for subpriority.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   107    *     @note When NVIC_PriorityGroup_0 is selected, it will no be any nested 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   108    *           interrupt. This interrupts priority is managed only with subpriority.  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   109    *     @arg NVIC_PriorityGroup_1: 1 bits for preemption priority.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   110    *                                3 bits for subpriority.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   111    *     @arg NVIC_PriorityGroup_2: 2 bits for preemption priority.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   112    *                                2 bits for subpriority.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   113    *     @arg NVIC_PriorityGroup_3: 3 bits for preemption priority.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   114    *                                1 bits for subpriority.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   115    *     @arg NVIC_PriorityGroup_4: 4 bits for preemption priority.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   116    *                                0 bits for subpriority.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   117    * @retval None
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   118    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   119  void NVIC_PriorityGroupConfig(uint32_t NVIC_PriorityGroup)
+; Function NVIC_PriorityGroupConfig
+.L26:
+	.thumb
+	.align	4
+NVIC_PriorityGroupConfig:	.type	func
+
+.L9:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   120  {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   121    /* Check the parameters */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   122    assert_param(IS_NVIC_PRIORITY_GROUP(NVIC_PriorityGroup));
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   123    
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   124    /* Set the PRIGROUP[10:8] bits according to NVIC_PriorityGroup value */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   125    SCB->AIRCR = AIRCR_VECTKEY_MASK | NVIC_PriorityGroup;
+	orrs	r0,r0,#100139008
+.L66:
+	orrs	r0,r0,#131072
+.L91:
+	movs	r1,#-536813568
+.L92:
+	str	r0,[r1,#3340]
+.L93:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   126  }
+	bx	lr
+.L27:
+	.size	NVIC_PriorityGroupConfig,$-NVIC_PriorityGroupConfig
+	; End of function
+	.endsec	; End of section
+
+	.section	.text ,cluster('$group_NVIC_Init')
+	.global	NVIC_Init
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   127  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   128  /**
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   129    * @brief  Initializes the NVIC peripheral according to the specified
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   130    *         parameters in the NVIC_InitStruct.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   131    * @note   To configure interrupts priority correctly, the NVIC_PriorityGroupConfig()
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   132    *         function should be called before.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   133    * @param  NVIC_InitStruct: pointer to a NVIC_InitTypeDef structure that contains
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   134    *         the configuration information for the specified NVIC peripheral.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   135    * @retval None
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   136    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   137  void NVIC_Init(NVIC_InitTypeDef* NVIC_InitStruct)
+; Function NVIC_Init
+.L32:
+	.thumb
+	.align	4
+NVIC_Init:	.type	func
+
+.L11:
+	push	{r4}
+.L67:
+	mov	r3,r0
+.L70:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   138  {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   139    uint8_t tmppriority = 0x00, tmppre = 0x00, tmpsub = 0x0F;
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   140    
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   141    /* Check the parameters */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   142    assert_param(IS_FUNCTIONAL_STATE(NVIC_InitStruct->NVIC_IRQChannelCmd));
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   143    assert_param(IS_NVIC_PREEMPTION_PRIORITY(NVIC_InitStruct->NVIC_IRQChannelPreemptionPriority));  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   144    assert_param(IS_NVIC_SUB_PRIORITY(NVIC_InitStruct->NVIC_IRQChannelSubPriority));
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   145      
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   146    if (NVIC_InitStruct->NVIC_IRQChannelCmd != DISABLE)
+	ldr	r0,[r3,#4]
+.L69:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   147    {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   148      /* Compute the Corresponding IRQ Priority --------------------------------*/    
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   149      tmppriority = (0x700 - ((SCB->AIRCR) & (uint32_t)0x700))>> 0x08;
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   150      tmppre = (0x4 - tmppriority);
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   151      tmpsub = tmpsub >> tmppriority;
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   152  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   153      tmppriority = (uint32_t)NVIC_InitStruct->NVIC_IRQChannelPreemptionPriority << tmppre;
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   154      tmppriority |=  (uint8_t)(NVIC_InitStruct->NVIC_IRQChannelSubPriority & tmpsub);
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   155      tmppriority = tmppriority << 0x04;
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   156          
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   157      NVIC->IP[NVIC_InitStruct->NVIC_IRQChannel] = tmppriority;
+	ldrb	r4,[r3,#0]
+.L98:
+	cbz	r0,.L2
+.L99:
+	movs	r0,#-536813568
+	ldr	r0,[r0,#3340]
+.L100:
+	movs	r1,#15
+.L101:
+	ands	r0,r0,#1792
+.L102:
+	rsbs	r0,r0,#1792
+	movs	r0,r0,lsr #8
+.L71:
+	rsbs	r2,r0,#4
+.L103:
+	movs	r0,r1,asr r0
+.L72:
+	ldrb	r1,[r3,#1]
+.L104:
+	movs	r1,r1,lsl r2
+.L105:
+	uxtb	r2,r1
+.L106:
+	ldrb	r1,[r3,#2]
+.L107:
+	ands	r1,r1,r0
+.L108:
+	orrs	r2,r2,r1
+.L109:
+	uxtb	r0,r2
+.L73:
+	movw	r1,#@lsh(-536812544)
+.L110:
+	movs	r0,r0,lsl #4
+.L111:
+	movt	r1,#@msh(-536812544)
+.L112:
+	strb	r0,[r1,r4]
+.L113:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   158      
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   159      /* Enable the Selected IRQ Channels --------------------------------------*/
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   160      NVIC->ISER[NVIC_InitStruct->NVIC_IRQChannel >> 0x05] =
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   161        (uint32_t)0x01 << (NVIC_InitStruct->NVIC_IRQChannel & (uint8_t)0x1F);
+	ldrb	r0,[r3,#0]
+.L114:
+	movs	r1,r0,asr #5
+.L115:
+	ands	r2,r0,#31
+.L116:
+	movs	r0,#1
+.L117:
+	movs	r0,r0,lsl r2
+.L118:
+	movw	r2,#@lsh(-536813312)
+	movt	r2,#@msh(-536813312)
+.L119:
+	str	r0,[r2,r1,lsl #2]
+.L120:
+	b	.L3
+.L2:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   162    }
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   163    else
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   164    {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   165      /* Disable the Selected IRQ Channels -------------------------------------*/
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   166      NVIC->ICER[NVIC_InitStruct->NVIC_IRQChannel >> 0x05] =
+	movs	r0,r4,asr #5
+.L121:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   167        (uint32_t)0x01 << (NVIC_InitStruct->NVIC_IRQChannel & (uint8_t)0x1F);
+	ands	r2,r4,#31
+.L122:
+	movs	r1,#1
+.L123:
+	movs	r1,r1,lsl r2
+.L124:
+	movw	r2,#@lsh(-536813184)
+	movt	r2,#@msh(-536813184)
+.L125:
+	str	r1,[r2,r0,lsl #2]
+.L3:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   168    }
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   169  }
+	ldr	r4,[sp],#4
+.L68:
+	bx	lr
+.L33:
+	.size	NVIC_Init,$-NVIC_Init
+	; End of function
+	.endsec	; End of section
+
+	.section	.text ,cluster('$group_NVIC_SetVectorTable')
+	.global	NVIC_SetVectorTable
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   170  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   171  /**
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   172    * @brief  Sets the vector table location and Offset.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   173    * @param  NVIC_VectTab: specifies if the vector table is in RAM or FLASH memory.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   174    *   This parameter can be one of the following values:
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   175    *     @arg NVIC_VectTab_RAM: Vector Table in internal SRAM.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   176    *     @arg NVIC_VectTab_FLASH: Vector Table in internal FLASH.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   177    * @param  Offset: Vector Table base offset field. This value must be a multiple of 0x200.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   178    * @retval None
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   179    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   180  void NVIC_SetVectorTable(uint32_t NVIC_VectTab, uint32_t Offset)
+; Function NVIC_SetVectorTable
+.L38:
+	.thumb
+	.align	4
+NVIC_SetVectorTable:	.type	func
+
+.L13:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   181  { 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   182    /* Check the parameters */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   183    assert_param(IS_NVIC_VECTTAB(NVIC_VectTab));
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   184    assert_param(IS_NVIC_OFFSET(Offset));  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   185     
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   186    SCB->VTOR = NVIC_VectTab | (Offset & (uint32_t)0x1FFFFF80);
+	bics	r1,r1,#-536870912
+.L75:
+	bics	r1,r1,#127
+.L130:
+	orrs	r0,r0,r1
+.L74:
+	movs	r1,#-536813568
+.L131:
+	str	r0,[r1,#3336]
+.L132:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   187  }
+	bx	lr
+.L39:
+	.size	NVIC_SetVectorTable,$-NVIC_SetVectorTable
+	; End of function
+	.endsec	; End of section
+
+	.section	.text ,cluster('$group_NVIC_SystemLPConfig')
+	.global	NVIC_SystemLPConfig
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   188  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   189  /**
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   190    * @brief  Selects the condition for the system to enter low power mode.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   191    * @param  LowPowerMode: Specifies the new mode for the system to enter low power mode.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   192    *   This parameter can be one of the following values:
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   193    *     @arg NVIC_LP_SEVONPEND: Low Power SEV on Pend.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   194    *     @arg NVIC_LP_SLEEPDEEP: Low Power DEEPSLEEP request.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   195    *     @arg NVIC_LP_SLEEPONEXIT: Low Power Sleep on Exit.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   196    * @param  NewState: new state of LP condition. 
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   197    *         This parameter can be: ENABLE or DISABLE.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   198    * @retval None
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   199    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   200  void NVIC_SystemLPConfig(uint8_t LowPowerMode, FunctionalState NewState)
+; Function NVIC_SystemLPConfig
+.L44:
+	.thumb
+	.align	4
+NVIC_SystemLPConfig:	.type	func
+
+.L15:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   201  {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   202    /* Check the parameters */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   203    assert_param(IS_NVIC_LP(LowPowerMode));
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   204    assert_param(IS_FUNCTIONAL_STATE(NewState));  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   205    
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   206    if (NewState != DISABLE)
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   207    {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   208      SCB->SCR |= LowPowerMode;
+	movw	r2,#@lsh(-536810224)
+	movt	r2,#@msh(-536810224)
+.L137:
+	cbz	r1,.L4
+.L138:
+	ldr	r1,[r2,#0]
+.L76:
+	orrs	r1,r1,r0
+.L139:
+	b	.L5
+.L4:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   209    }
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   210    else
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   211    {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   212      SCB->SCR &= (uint32_t)(~(uint32_t)LowPowerMode);
+	ldr	r1,[r2,#0]
+.L77:
+	bics	r1,r1,r0
+.L5:
+	str	r1,[r2,#0]
+.L140:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   213    }
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   214  }
+	bx	lr
+.L45:
+	.size	NVIC_SystemLPConfig,$-NVIC_SystemLPConfig
+	; End of function
+	.endsec	; End of section
+
+	.section	.text ,cluster('$group_SysTick_CLKSourceConfig')
+	.global	SysTick_CLKSourceConfig
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   215  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   216  /**
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   217    * @brief  Configures the SysTick clock source.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   218    * @param  SysTick_CLKSource: specifies the SysTick clock source.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   219    *   This parameter can be one of the following values:
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   220    *     @arg SysTick_CLKSource_HCLK_Div8: AHB clock divided by 8 selected as SysTick clock source.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   221    *     @arg SysTick_CLKSource_HCLK: AHB clock selected as SysTick clock source.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   222    * @retval None
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   223    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   224  void SysTick_CLKSourceConfig(uint32_t SysTick_CLKSource)
+; Function SysTick_CLKSourceConfig
+.L50:
+	.thumb
+	.align	4
+SysTick_CLKSourceConfig:	.type	func
+
+.L17:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   225  {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   226    /* Check the parameters */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   227    assert_param(IS_SYSTICK_CLK_SOURCE(SysTick_CLKSource));
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   228    
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   229    if (SysTick_CLKSource == SysTick_CLKSource_HCLK)
+	cmp	r0,#4
+.L145:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   230    {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   231      SysTick->CTRL |= SysTick_CLKSource_HCLK;
+	movw	r1,#@lsh(-536813552)
+	movt	r1,#@msh(-536813552)
+	ittee	eq
+	ldreq	r0,[r1,#0]
+.L78:
+	orreq	r0,r0,#4
+.L146:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   232    }
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   233    else
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   234    {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   235      SysTick->CTRL &= SysTick_CLKSource_HCLK_Div8;
+	ldrne	r0,[r1,#0]
+.L147:
+	bicne	r0,r0,#4
+.L7:
+	str	r0,[r1,#0]
+.L148:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   236    }
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   237  }
+	bx	lr
+.L51:
+	.size	SysTick_CLKSourceConfig,$-SysTick_CLKSourceConfig
+	; End of function
+	.endsec	; End of section
+
+	.calls	'NVIC_PriorityGroupConfig','',0
+	.calls	'NVIC_Init','',4
+	.calls	'NVIC_SetVectorTable','',0
+	.calls	'NVIC_SystemLPConfig','',0
+	.calls	'SysTick_CLKSourceConfig','',0
+	.section	.debug_info
+.L19:
+	.dw	2217
+	.dh	3
+	.dw	.L20
+	.db	4
+.L18:
+	.db	1
+	.dw	.L79,.L80,.L81
+	.db	12,1
+	.dw	.L21
+	.db	2
+	.db	'NVIC_SetPriority',0,3,1,246,7,22,1,1,3
+	.db	'IRQn',0,2,171,1,14,4,4
+	.db	'NonMaskableInt_IRQn',0,114,4
+	.db	'MemoryManagement_IRQn',0,116,4
+	.db	'BusFault_IRQn',0,117,4
+	.db	'UsageFault_IRQn',0,118,4
+	.db	'SVC_IRQn',0,123,4
+	.db	'DebugMonitor_IRQn',0,124,4
+	.db	'PendSV_IRQn',0,126,4
+	.db	'SysTick_IRQn',0,127,4
+	.db	'WWDG_IRQn',0,0,4
+	.db	'PVD_IRQn',0,1,4
+	.db	'TAMPER_STAMP_IRQn',0,2,4
+	.db	'RTC_WKUP_IRQn',0,3,4
+	.db	'FLASH_IRQn',0,4,4
+	.db	'RCC_IRQn',0,5,4
+	.db	'EXTI0_IRQn',0,6,4
+	.db	'EXTI1_IRQn',0,7,4
+	.db	'EXTI2_IRQn',0,8,4
+	.db	'EXTI3_IRQn',0,9,4
+	.db	'EXTI4_IRQn',0,10,4
+	.db	'DMA1_Channel1_IRQn',0,11,4
+	.db	'DMA1_Channel2_IRQn',0,12,4
+	.db	'DMA1_Channel3_IRQn',0,13,4
+	.db	'DMA1_Channel4_IRQn',0,14,4
+	.db	'DMA1_Channel5_IRQn',0,15,4
+	.db	'DMA1_Channel6_IRQn',0,16,4
+	.db	'DMA1_Channel7_IRQn',0,17,4
+	.db	'ADC1_IRQn',0,18,4
+	.db	'USB_HP_IRQn',0,19,4
+	.db	'USB_LP_IRQn',0,20,4
+	.db	'DAC_IRQn',0,21,4
+	.db	'COMP_IRQn',0,22,4
+	.db	'EXTI9_5_IRQn',0,23,4
+	.db	'LCD_IRQn',0,24,4
+	.db	'TIM9_IRQn',0,25,4
+	.db	'TIM10_IRQn',0,26,4
+	.db	'TIM11_IRQn',0,27,4
+	.db	'TIM2_IRQn',0,28,4
+	.db	'TIM3_IRQn',0,29,4
+	.db	'TIM4_IRQn',0,30,4
+	.db	'I2C1_EV_IRQn',0,31,4
+	.db	'I2C1_ER_IRQn',0,32,4
+	.db	'I2C2_EV_IRQn',0,33,4
+	.db	'I2C2_ER_IRQn',0,34,4
+	.db	'SPI1_IRQn',0,35,4
+	.db	'SPI2_IRQn',0,36,4
+	.db	'USART1_IRQn',0,37,4
+	.db	'USART2_IRQn',0,38,4
+	.db	'USART3_IRQn',0,39,4
+	.db	'EXTI15_10_IRQn',0,40,4
+	.db	'RTC_Alarm_IRQn',0,41,4
+	.db	'USB_FS_WKUP_IRQn',0,42,4
+	.db	'TIM6_IRQn',0,43,4
+	.db	'TIM7_IRQn',0,44,0,5
+	.db	'IRQn',0,1,246,7,49
+	.dw	55
+.L52:
+	.db	6
+	.db	'unsigned int',0,4,7,5
+	.db	'priority',0,1,246,7,64
+	.dw	882
+	.db	7,0,8
+	.dw	30
+	.db	9
+	.dw	868
+	.db	9
+	.dw	898
+	.db	7,0,10,3,54,9,8
+.L56:
+	.db	6
+	.db	'unsigned char',0,1,8,11
+	.db	'NVIC_IRQChannel',0,1
+	.dw	940
+	.db	2,35,0,11
+	.db	'NVIC_IRQChannelPreemptionPriority',0,1
+	.dw	940
+	.db	2,35,1,11
+	.db	'NVIC_IRQChannelSubPriority',0,1
+	.dw	940
+	.db	2,35,2
+.L63:
+	.db	12,2,148,2,9,4,4
+	.db	'DISABLE',0,0,4
+	.db	'ENABLE',0,1,0,11
+	.db	'NVIC_IRQChannelCmd',0,4
+	.dw	1061
+	.db	2,35,4,0
+.L54:
+	.db	13
+	.dw	935
+	.db	14
+	.db	'void',0,13
+	.dw	1121
+	.db	15
+	.db	'__prof_adm',0,4,1,1
+	.dw	1127
+	.db	16,1,13
+	.dw	1151
+	.db	15
+	.db	'__codeptr',0,4,1,1
+	.dw	1153
+	.db	15
+	.db	'IRQn_Type',0,2,132,2,3
+	.dw	55
+	.db	15
+	.db	'uint8_t',0,5,24,33
+	.dw	940
+	.db	6
+	.db	'unsigned short int',0,2,7,15
+	.db	'uint16_t',0,5,26,33
+	.dw	1211
+	.db	6
+	.db	'int',0,4,5,15
+	.db	'int32_t',0,5,27,33
+	.dw	1250
+	.db	15
+	.db	'uint32_t',0,5,28,33
+	.dw	882
+	.db	15
+	.db	'FunctionalState',0,2,148,2,47
+	.dw	1061
+	.db	12,6,54,9,4,4
+	.db	'EXTI_Mode_Interrupt',0,0,4
+	.db	'EXTI_Mode_Event',0,4,0,15
+	.db	'EXTIMode_TypeDef',0,6,58,2
+	.dw	1315
+	.db	12,6,66,9,4,4
+	.db	'EXTI_Trigger_Rising',0,8,4
+	.db	'EXTI_Trigger_Falling',0,12,4
+	.db	'EXTI_Trigger_Rising_Falling',0,16,0,15
+	.db	'EXTITrigger_TypeDef',0,6,71,2
+	.dw	1386
+	.db	10,7,54,9,28,11
+	.db	'FSMC_AddressSetupTime',0,4
+	.dw	882
+	.db	2,35,0,11
+	.db	'FSMC_AddressHoldTime',0,4
+	.dw	882
+	.db	2,35,4,11
+	.db	'FSMC_DataSetupTime',0,4
+	.dw	882
+	.db	2,35,8,11
+	.db	'FSMC_BusTurnAroundDuration',0,4
+	.dw	882
+	.db	2,35,12,11
+	.db	'FSMC_CLKDivision',0,4
+	.dw	882
+	.db	2,35,16,11
+	.db	'FSMC_DataLatency',0,4
+	.dw	882
+	.db	2,35,20,11
+	.db	'FSMC_AccessMode',0,4
+	.dw	882
+	.db	2,35,24,0,15
+	.db	'FSMC_NORSRAMTimingInitTypeDef',0,7,90,2
+	.dw	1495
+	.db	12,8,62,9,4,4
+	.db	'GPIO_Mode_IN',0,0,4
+	.db	'GPIO_Mode_OUT',0,1,4
+	.db	'GPIO_Mode_AF',0,2,4
+	.db	'GPIO_Mode_AN',0,3,0,15
+	.db	'GPIOMode_TypeDef',0,8,68,2
+	.dw	1741
+	.db	12,8,78,9,4,4
+	.db	'GPIO_OType_PP',0,0,4
+	.db	'GPIO_OType_OD',0,1,0,15
+	.db	'GPIOOType_TypeDef',0,8,81,2
+	.dw	1833
+	.db	12,8,91,9,4,4
+	.db	'GPIO_Speed_400KHz',0,0,4
+	.db	'GPIO_Speed_2MHz',0,1,4
+	.db	'GPIO_Speed_10MHz',0,2,4
+	.db	'GPIO_Speed_40MHz',0,3,0,15
+	.db	'GPIOSpeed_TypeDef',0,8,97,2
+	.dw	1897
+	.db	12,8,107,9,4,4
+	.db	'GPIO_PuPd_NOPULL',0,0,4
+	.db	'GPIO_PuPd_UP',0,1,4
+	.db	'GPIO_PuPd_DOWN',0,2,0,15
+	.db	'GPIOPuPd_TypeDef',0,8,111,2
+	.dw	2005
+	.db	10,9,68,9,4,11
+	.db	'RTC_Hours',0,1
+	.dw	940
+	.db	2,35,0,11
+	.db	'RTC_Minutes',0,1
+	.dw	940
+	.db	2,35,1,11
+	.db	'RTC_Seconds',0,1
+	.dw	940
+	.db	2,35,2,11
+	.db	'RTC_H12',0,1
+	.dw	940
+	.db	2,35,3,0,15
+	.db	'RTC_TimeTypeDef',0,9,83,2
+	.dw	2087
+	.db	15
+	.db	'NVIC_InitTypeDef',0,3,72,3
+	.dw	935
+	.db	0
+	.endsec	; End of section
+
+	.section	.debug_abbrev
+.L20:
+	.db	1,17,1,3,14,37,14,27,14,19,15,128,70,12,16,6,0,0,2,46,1,3,8,32,13,58,15,59,15,57,15,54,15,39,12,0,0,3
+	.db	4,1,3,8,58,15,59,15,57,15,11,15,0,0,4,40,0,3,8,28,13,0,0,5,5,0,3,8,58,15,59,15,57,15,73,19,0,0,6,36,0
+	.db	3,8,11,15,62,15,0,0,7,11,0,0,0,8,46,1,49,19,0,0,9,5,0,49,19,0,0,10,19,1,58,15,59,15,57,15,11,15,0,0,11
+	.db	13,0,3,8,11,15,73,19,56,9,0,0,12,4,1,58,15,59,15,57,15,11,15,0,0,13,15,0,73,19,0,0,14,59,0,3,8,0,0,15
+	.db	22,0,3,8,58,15,59,15,57,15,73,19,0,0,16,21,0,54,15,0,0,0
+	.endsec	; End of section
+
+	.section	.debug_line
+.L21:
+	.dw	.L84-.L83
+.L83:
+	.dh	3
+	.dw	.L86-.L85
+.L85:
+	.db	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.db	'..\\..\\..\\..\\..\\..\\Libraries\\CMSIS\\Include',0
+	.db	'..\\..\\..\\..\\..\\..\\Libraries\\CMSIS\\Device\\ST\\STM32L1xx\\Include',0
+	.db	'..\\..\\..\\..\\..\\..\\Libraries\\STM32L1xx_StdPeriph_Driver\\inc',0
+	.db	'C:\\Program Files\\TASKING\\carm v4.4r1\\include\\',0,0
+	.db	'core_cm3.h',0,1,0,0
+	.db	'stm32l1xx.h',0,2,0,0
+	.db	'misc.h',0,3,0,0
+	.db	'C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c',0
+	.db	0,0,0
+	.db	'stdint.h',0,4,0,0
+	.db	'stm32l1xx_exti.h',0,3,0,0
+	.db	'stm32l1xx_fsmc.h',0,3,0,0
+	.db	'stm32l1xx_gpio.h',0,3,0,0
+	.db	'stm32l1xx_rtc.h',0,3,0,0,0
+.L86:
+.L84:
+	.endsec	; End of section
+
+	.section	.debug_info ,cluster('$group_NVIC_PriorityGroupConfig')
+.L22:
+	.dw	121
+	.dh	3
+	.dw	.L23
+	.db	4,1
+	.dw	.L79,.L80,.L81
+	.db	12,1
+	.dw	.L25,.L24
+	.db	2
+	.dw	.L18
+	.db	3
+	.db	'NVIC_PriorityGroupConfig',0,1,119,6,1,1,1
+	.dw	.L9,.L27,.L8
+	.db	4
+	.db	'NVIC_PriorityGroup',0,1,119,40
+	.dw	.L52,.L53
+	.db	5
+	.dw	.L9,.L27
+	.db	0,0
+	.endsec	; End of section
+
+	.section	.debug_abbrev ,cluster('$group_NVIC_PriorityGroupConfig')
+.L23:
+	.db	1,17,1,3,14,37,14,27,14,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54
+	.db	15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.endsec	; End of section
+
+	.section	.debug_line ,cluster('$group_NVIC_PriorityGroupConfig')
+.L24:
+	.dw	.L88-.L87
+.L87:
+	.dh	3
+	.dw	.L90-.L89
+.L89:
+	.db	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.db	'C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c',0
+	.db	0,0,0,0
+.L90:
+	.db	5,35,7,0,5,2
+	.dw	.L9
+	.db	3,252,0,1,5,6,9
+	.dh	.L91-.L9
+	.db	1,5,14,9
+	.dh	.L92-.L91
+	.db	1,5,1,9
+	.dh	.L93-.L92
+	.db	3,1,1,7,9
+	.dh	.L27-.L93
+	.db	0,1,1
+.L88:
+	.endsec	; End of section
+
+	.section	.debug_ranges ,cluster('$group_NVIC_PriorityGroupConfig')
+.L25:
+	.dw	-1,.L26,0,.L27-.L26,0,0
+	.endsec	; End of section
+
+	.section	.debug_info ,cluster('$group_NVIC_Init')
+.L28:
+	.dw	171
+	.dh	3
+	.dw	.L29
+	.db	4,1
+	.dw	.L79,.L80,.L81
+	.db	12,1
+	.dw	.L31,.L30
+	.db	2
+	.dw	.L18
+	.db	3
+	.db	'NVIC_Init',0,1,137,1,6,1,1,1
+	.dw	.L11,.L33,.L10
+	.db	4
+	.db	'NVIC_InitStruct',0,1,137,1,34
+	.dw	.L54,.L55
+	.db	5
+	.dw	.L11,.L33
+	.db	6
+	.db	'tmppriority',0,1,139,1,11
+	.dw	.L56,.L57
+	.db	6
+	.db	'tmppre',0,1,139,1,31
+	.dw	.L56,.L58
+	.db	6
+	.db	'tmpsub',0,1,139,1,46
+	.dw	.L56,.L59
+	.db	0,0,0
+	.endsec	; End of section
+
+	.section	.debug_abbrev ,cluster('$group_NVIC_Init')
+.L29:
+	.db	1,17,1,3,14,37,14,27,14,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54
+	.db	15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52
+	.db	0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.endsec	; End of section
+
+	.section	.debug_line ,cluster('$group_NVIC_Init')
+.L30:
+	.dw	.L95-.L94
+.L94:
+	.dh	3
+	.dw	.L97-.L96
+.L96:
+	.db	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.db	'C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c',0
+	.db	0,0,0,0
+.L97:
+	.db	5,6,7,0,5,2
+	.dw	.L11
+	.db	3,136,1,1,5,22,9
+	.dh	.L70-.L11
+	.db	3,9,1,5,29,9
+	.dh	.L69-.L70
+	.db	3,11,1,5,3,9
+	.dh	.L98-.L69
+	.db	3,117,1,5,33,7,9
+	.dh	.L99-.L98
+	.db	3,3,1,5,14,9
+	.dh	.L100-.L99
+	.db	3,2,1,5,42,9
+	.dh	.L101-.L100
+	.db	3,126,1,5,26,9
+	.dh	.L102-.L101
+	.db	1,5,19,9
+	.dh	.L71-.L102
+	.db	3,1,1,5,21,9
+	.dh	.L103-.L71
+	.db	3,1,1,5,44,9
+	.dh	.L72-.L103
+	.db	3,2,1,5,80,9
+	.dh	.L104-.L72
+	.db	1,5,5,9
+	.dh	.L105-.L104
+	.db	3,1,1,5,46,9
+	.dh	.L106-.L105
+	.db	1,5,75,9
+	.dh	.L107-.L106
+	.db	1,5,17,9
+	.dh	.L108-.L107
+	.db	1,5,19,9
+	.dh	.L109-.L108
+	.db	3,1,1,5,9,9
+	.dh	.L73-.L109
+	.db	3,2,1,5,31,9
+	.dh	.L110-.L73
+	.db	3,126,1,5,9,9
+	.dh	.L111-.L110
+	.db	3,2,1,5,48,9
+	.dh	.L112-.L111
+	.db	1,5,41,9
+	.dh	.L113-.L112
+	.db	3,4,1,5,49,9
+	.dh	.L114-.L113
+	.db	3,127,1,5,41,9
+	.dh	.L115-.L114
+	.db	3,1,1,5,7,9
+	.dh	.L116-.L115
+	.db	1,5,22,9
+	.dh	.L117-.L116
+	.db	1,5,9,9
+	.dh	.L118-.L117
+	.db	3,127,1,5,58,9
+	.dh	.L119-.L118
+	.db	1,5,68,9
+	.dh	.L120-.L119
+	.db	3,117,1,5,49,9
+	.dh	.L2-.L120
+	.db	3,17,1,5,41,9
+	.dh	.L121-.L2
+	.db	3,1,1,5,7,9
+	.dh	.L122-.L121
+	.db	1,5,22,9
+	.dh	.L123-.L122
+	.db	1,5,9,9
+	.dh	.L124-.L123
+	.db	3,127,1,5,58,9
+	.dh	.L125-.L124
+	.db	1,5,1,9
+	.dh	.L3-.L125
+	.db	3,3,1,9
+	.dh	.L33-.L3
+	.db	0,1,1
+.L95:
+	.endsec	; End of section
+
+	.section	.debug_ranges ,cluster('$group_NVIC_Init')
+.L31:
+	.dw	-1,.L32,0,.L33-.L32,0,0
+	.endsec	; End of section
+
+	.section	.debug_info ,cluster('$group_NVIC_SetVectorTable')
+.L34:
+	.dw	132
+	.dh	3
+	.dw	.L35
+	.db	4,1
+	.dw	.L79,.L80,.L81
+	.db	12,1
+	.dw	.L37,.L36
+	.db	2
+	.dw	.L18
+	.db	3
+	.db	'NVIC_SetVectorTable',0,1,180,1,6,1,1,1
+	.dw	.L13,.L39,.L12
+	.db	4
+	.db	'NVIC_VectTab',0,1,180,1,35
+	.dw	.L52,.L60
+	.db	4
+	.db	'Offset',0,1,180,1,58
+	.dw	.L52,.L61
+	.db	5
+	.dw	.L13,.L39
+	.db	0,0
+	.endsec	; End of section
+
+	.section	.debug_abbrev ,cluster('$group_NVIC_SetVectorTable')
+.L35:
+	.db	1,17,1,3,14,37,14,27,14,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54
+	.db	15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.endsec	; End of section
+
+	.section	.debug_line ,cluster('$group_NVIC_SetVectorTable')
+.L36:
+	.dw	.L127-.L126
+.L126:
+	.dh	3
+	.dw	.L129-.L128
+.L128:
+	.db	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.db	'C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c',0
+	.db	0,0,0,0
+.L129:
+	.db	5,38,7,0,5,2
+	.dw	.L13
+	.db	3,185,1,1,5,28,9
+	.dh	.L130-.L13
+	.db	1,5,6,9
+	.dh	.L74-.L130
+	.db	1,5,13,9
+	.dh	.L131-.L74
+	.db	1,5,1,9
+	.dh	.L132-.L131
+	.db	3,1,1,7,9
+	.dh	.L39-.L132
+	.db	0,1,1
+.L127:
+	.endsec	; End of section
+
+	.section	.debug_ranges ,cluster('$group_NVIC_SetVectorTable')
+.L37:
+	.dw	-1,.L38,0,.L39-.L38,0,0
+	.endsec	; End of section
+
+	.section	.debug_info ,cluster('$group_NVIC_SystemLPConfig')
+.L40:
+	.dw	134
+	.dh	3
+	.dw	.L41
+	.db	4,1
+	.dw	.L79,.L80,.L81
+	.db	12,1
+	.dw	.L43,.L42
+	.db	2
+	.dw	.L18
+	.db	3
+	.db	'NVIC_SystemLPConfig',0,1,200,1,6,1,1,1
+	.dw	.L15,.L45,.L14
+	.db	4
+	.db	'LowPowerMode',0,1,200,1,34
+	.dw	.L56,.L62
+	.db	4
+	.db	'NewState',0,1,200,1,64
+	.dw	.L63,.L64
+	.db	5
+	.dw	.L15,.L45
+	.db	0,0
+	.endsec	; End of section
+
+	.section	.debug_abbrev ,cluster('$group_NVIC_SystemLPConfig')
+.L41:
+	.db	1,17,1,3,14,37,14,27,14,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54
+	.db	15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.endsec	; End of section
+
+	.section	.debug_line ,cluster('$group_NVIC_SystemLPConfig')
+.L42:
+	.dw	.L134-.L133
+.L133:
+	.dh	3
+	.dw	.L136-.L135
+.L135:
+	.db	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.db	'C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c',0
+	.db	0,0,0,0
+.L136:
+	.db	5,8,7,0,5,2
+	.dw	.L15
+	.db	3,207,1,1,5,3,9
+	.dh	.L137-.L15
+	.db	3,126,1,5,8,7,9
+	.dh	.L138-.L137
+	.db	3,2,1,5,14,9
+	.dh	.L76-.L138
+	.db	1,5,29,9
+	.dh	.L139-.L76
+	.db	1,5,8,9
+	.dh	.L4-.L139
+	.db	3,4,1,5,14,9
+	.dh	.L77-.L4
+	.db	1,5,1,9
+	.dh	.L140-.L77
+	.db	3,2,1,7,9
+	.dh	.L45-.L140
+	.db	0,1,1
+.L134:
+	.endsec	; End of section
+
+	.section	.debug_ranges ,cluster('$group_NVIC_SystemLPConfig')
+.L43:
+	.dw	-1,.L44,0,.L45-.L44,0,0
+	.endsec	; End of section
+
+	.section	.debug_info ,cluster('$group_SysTick_CLKSourceConfig')
+.L46:
+	.dw	121
+	.dh	3
+	.dw	.L47
+	.db	4,1
+	.dw	.L79,.L80,.L81
+	.db	12,1
+	.dw	.L49,.L48
+	.db	2
+	.dw	.L18
+	.db	3
+	.db	'SysTick_CLKSourceConfig',0,1,224,1,6,1,1,1
+	.dw	.L17,.L51,.L16
+	.db	4
+	.db	'SysTick_CLKSource',0,1,224,1,39
+	.dw	.L52,.L65
+	.db	5
+	.dw	.L17,.L51
+	.db	0,0
+	.endsec	; End of section
+
+	.section	.debug_abbrev ,cluster('$group_SysTick_CLKSourceConfig')
+.L47:
+	.db	1,17,1,3,14,37,14,27,14,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54
+	.db	15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.endsec	; End of section
+
+	.section	.debug_line ,cluster('$group_SysTick_CLKSourceConfig')
+.L48:
+	.dw	.L142-.L141
+.L141:
+	.dh	3
+	.dw	.L144-.L143
+.L143:
+	.db	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.db	'C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c',0
+	.db	0,0,0,0
+.L144:
+	.db	5,3,7,0,5,2
+	.dw	.L17
+	.db	3,228,1,1,5,12,9
+	.dh	.L145-.L17
+	.db	3,2,1,5,19,9
+	.dh	.L78-.L145
+	.db	1,5,12,9
+	.dh	.L146-.L78
+	.db	3,4,1,5,19,9
+	.dh	.L147-.L146
+	.db	1,5,1,9
+	.dh	.L148-.L147
+	.db	3,2,1,7,9
+	.dh	.L51-.L148
+	.db	0,1,1
+.L142:
+	.endsec	; End of section
+
+	.section	.debug_ranges ,cluster('$group_SysTick_CLKSourceConfig')
+.L49:
+	.dw	-1,.L50,0,.L51-.L50,0,0
+	.endsec	; End of section
+
+	.section	.debug_str
+.L79:
+	.db	'C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c',0
+.L80:
+	.db	'TASKING VX-toolset for ARM Cortex: C compiler',0
+.L81:
+	.db	'C:\\Users\\hmidenen\\Desktop\\Sanity Check\\AN2668_FW_V3.0.0\\Project\\ADCOversampling-STM32L\\TriangularDitherMethod\\TASKING\\STM32L152-EVAL\\Debug\\',0
+	.endsec	; End of section
+
+	.section	.debug_loc ,cluster('$group_NVIC_Init')
+.L10:
+	.dw	-1,.L11,0,.L67-.L11
+	.dh	2
+	.db	125,0
+	.dw	.L67-.L11,.L68-.L11
+	.dh	2
+	.db	125,4
+	.dw	.L68-.L11,.L33-.L11
+	.dh	2
+	.db	125,0
+	.dw	0,0
+.L55:
+	.dw	-1,.L11,0,.L69-.L11
+	.dh	1
+	.db	80
+	.dw	.L70-.L11,.L33-.L11
+	.dh	1
+	.db	83
+	.dw	0,0
+.L58:
+	.dw	0,0
+.L57:
+	.dw	-1,.L11,.L71-.L11,.L72-.L11
+	.dh	1
+	.db	80
+	.dw	0,0
+.L59:
+	.dw	-1,.L11,.L72-.L11,.L73-.L11
+	.dh	1
+	.db	80
+	.dw	0,0
+	.endsec	; End of section
+
+	.section	.debug_loc ,cluster('$group_NVIC_PriorityGroupConfig')
+.L53:
+	.dw	-1,.L9,0,.L66-.L9
+	.dh	1
+	.db	80
+	.dw	0,0
+.L8:
+	.dw	-1,.L9,0,.L27-.L9
+	.dh	2
+	.db	125,0
+	.dw	0,0
+	.endsec	; End of section
+
+	.section	.debug_loc ,cluster('$group_NVIC_SetVectorTable')
+.L12:
+	.dw	-1,.L13,0,.L39-.L13
+	.dh	2
+	.db	125,0
+	.dw	0,0
+.L60:
+	.dw	-1,.L13,0,.L74-.L13
+	.dh	1
+	.db	80
+	.dw	0,0
+.L61:
+	.dw	-1,.L13,0,.L75-.L13
+	.dh	1
+	.db	81
+	.dw	0,0
+	.endsec	; End of section
+
+	.section	.debug_loc ,cluster('$group_NVIC_SystemLPConfig')
+.L62:
+	.dw	-1,.L15,0,.L45-.L15
+	.dh	1
+	.db	80
+	.dw	0,0
+.L14:
+	.dw	-1,.L15,0,.L45-.L15
+	.dh	2
+	.db	125,0
+	.dw	0,0
+.L64:
+	.dw	-1,.L15,0,.L76-.L15
+	.dh	1
+	.db	81
+	.dw	.L4-.L15,.L77-.L15
+	.dh	1
+	.db	81
+	.dw	0,0
+	.endsec	; End of section
+
+	.section	.debug_loc ,cluster('$group_SysTick_CLKSourceConfig')
+.L65:
+	.dw	-1,.L17,0,.L78-.L17
+	.dh	1
+	.db	80
+	.dw	0,0
+.L16:
+	.dw	-1,.L17,0,.L51-.L17
+	.dh	2
+	.db	125,0
+	.dw	0,0
+	.endsec	; End of section
+
+	.section	.debug_frame
+.L149:
+	.dw	64
+	.dw	-1
+	.db	3,0,2,2,14,12,13,0,8,4,8,5,8,6,8,7,8,8,8,9,8,10,8,11,8,13,8,14,8,15,8,128,1,8,136,2,8,137,2,8,138,2,8
+	.db	139,2,8,140,2,8,141,2,8,142,2,8,143,2,0,0,0
+	.endsec	; End of section
+
+	.section	.debug_frame ,cluster('$group_NVIC_PriorityGroupConfig')
+	.dw	40
+	.dw	.L149,.L9,.L27-.L9
+	.db	8,2,8,3,8,128,2,8,129,2,8,130,2,8,131,2,8,132,2,8,133,2,8,134,2,8,135,2
+	.endsec	; End of section
+
+	.section	.debug_frame ,cluster('$group_NVIC_Init')
+	.dw	64
+	.dw	.L149,.L11,.L33-.L11
+	.db	8,128,2,8,129,2,8,130,2,8,131,2,8,132,2,8,133,2,8,134,2,8,135,2,4
+	.dw	(.L67-.L11)/2
+	.db	19,2,22,13,3,19,125,4,17,4,126,4
+	.dw	(.L68-.L67)/2
+	.db	19,0,8,13,196,0,0
+	.endsec	; End of section
+
+	.section	.debug_frame ,cluster('$group_NVIC_SetVectorTable')
+	.dw	40
+	.dw	.L149,.L13,.L39-.L13
+	.db	8,2,8,3,8,128,2,8,129,2,8,130,2,8,131,2,8,132,2,8,133,2,8,134,2,8,135,2
+	.endsec	; End of section
+
+	.section	.debug_frame ,cluster('$group_NVIC_SystemLPConfig')
+	.dw	40
+	.dw	.L149,.L15,.L45-.L15
+	.db	8,3,8,128,2,8,129,2,8,130,2,8,131,2,8,132,2,8,133,2,8,134,2,8,135,2,0,0
+	.endsec	; End of section
+
+	.section	.debug_frame ,cluster('$group_SysTick_CLKSourceConfig')
+	.dw	40
+	.dw	.L149,.L17,.L51-.L17
+	.db	8,2,8,3,8,128,2,8,129,2,8,130,2,8,131,2,8,132,2,8,133,2,8,134,2,8,135,2
+	.endsec	; End of section
+
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   238  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   239  /**
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   240    * @}
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   241    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   242  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   243  /**
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   244    * @}
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   245    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   246  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   247  /**
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   248    * @}
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   249    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   250  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Libraries/STM32L1xx_StdPeriph_Driver/src/misc.c	   251  /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
+
+	; Module end
+	.end

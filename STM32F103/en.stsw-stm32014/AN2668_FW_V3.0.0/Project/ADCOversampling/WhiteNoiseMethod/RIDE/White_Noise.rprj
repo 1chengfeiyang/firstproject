@@ -1,0 +1,4 @@
+
+<Project Header="Project 'White_Noise'" Path=".\White_Noise.rprj" Project="Yes" OutputFile="" sate="96" ActiveApp="White_Noise" >
+	<ApplicationBuild Header="White_Noise" Extern=".\White_Noise.rapp" Path=".\White_Noise.rapp" OutputFile=".\STM3210E-EVAL\White_Noise.elf" sate="96" Config="STM3210E-EVAL" />
+</Project>

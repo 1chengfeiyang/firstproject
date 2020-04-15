@@ -1,0 +1,2068 @@
+	; TASKING VX-toolset for ARM Cortex: C compiler v4.4r1 Build 765 SN 00123456
+	; Options: -f cc7408a --dep-file=User\.stm32l1xx_it.obj.d -CARMv7M -D__PROC_STM32L152VB__ -DVECT_TAB_FLASH -DUSE_STDPERIPH_DRIVER -DUSE_STM32L152_EVAL -DSTM32L1XX_MD -I..\..\..\inc -I..\..\..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc -I..\..\..\..\..\..\Libraries\CMSIS\Device\ST\STM32L1xx\Include -I..\..\..\..\..\..\Libraries\CMSIS\Include -g -t4 -w557 -w529 -w588 --make-target=User\stm32l1xx_it.obj --language=-gcc,-volatile,+strings -O3 --source --compact-max-size=200 -o User\stm32l1xx_it.src
+	; Module start
+	;.ident 'TASKING VX-toolset for ARM Cortex: C compiler v4.4r1 Build 765 SN 00123456'
+	.source 'C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c'
+
+	.section	.text ,cluster('$group_NMI_Handler')
+	.global	NMI_Handler
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	     1  /**
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	     2    ******************************************************************************
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	     3    * @file    ADC/ADC1_Freeze/stm32l1xx_it.c
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	     4    * @author  MCD Application Team
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	     5    * @version V1.1.1
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	     6    * @date    13-April-2012
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	     7    * @brief   Main Interrupt Service Routines.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	     8    *          This file provides template for all exceptions handler and peripherals
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	     9    *          interrupt service routine.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    10    ******************************************************************************
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    11    * @attention
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    12    *
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    13    * <h2><center>&copy; COPYRIGHT 2012 STMicroelectronics</center></h2>
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    14    *
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    15    * Licensed under MCD-ST Liberty SW License Agreement V2, (the "License");
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    16    * You may not use this file except in compliance with the License.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    17    * You may obtain a copy of the License at:
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    18    *
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    19    *        http://www.st.com/software_license_agreement_liberty_v2
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    20    *
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    21    * Unless required by applicable law or agreed to in writing, software
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    22    * distributed under the License is distributed on an "AS IS" BASIS,
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    23    * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    24    * See the License for the specific language governing permissions and
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    25    * limitations under the License.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    26    *
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    27    ******************************************************************************
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    28    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    29  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    30  /* Includes ------------------------------------------------------------------*/
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    31  #include "stm32l1xx_it.h"
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    32  #include "Oversampling.h"
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    33  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    34  /** @addtogroup TriangularDitherMethod
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    35    * @{
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    36    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    37  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    38  /** @addtogroup ADC1_Freeze
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    39    * @{
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    40    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    41  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    42  /* Private typedef -----------------------------------------------------------*/
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    43  /* Private define ------------------------------------------------------------*/
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    44  /* Private macro -------------------------------------------------------------*/
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    45  /* Private variables ---------------------------------------------------------*/
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    46  #ifdef Thermal_Noise_Measure
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    47  /* This parameter to compute the ADC thermal noise */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    48  extern uint16_t ADC_ConvertedValue[Total_Samples_Number];
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    49  extern uint16_t ADC_Codes[Relevant_Samples_Number];
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    50  extern uint16_t ADC_Codes_Number[Relevant_Samples_Number];
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    51  #else
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    52  extern uint16_t ADC_ConvertedValue[ADC_Oversampling_Factor];
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    53  extern uint16_t TimerPulseWidth[BUFFER_PW_WIDTH];
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    54  #endif
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    55  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    56  #ifdef Oversampling_Test
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    57  extern uint16_t ADC_Oversampled_Buffer[Oversampling_Test_Samples];
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    58  #endif
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    59  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    60  __IO uint16_t ADC_Oversampled_Data;
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    61  /* Private function prototypes -----------------------------------------------*/
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    62  /* Private functions ---------------------------------------------------------*/
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    63  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    64  /******************************************************************************/
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    65  /*            Cortex-M3 Processor Exceptions Handlers                         */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    66  /******************************************************************************/
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    67  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    68  /**
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    69    * @brief  This function handles NMI exception.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    70    * @param  None
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    71    * @retval None
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    72    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    73  void NMI_Handler(void)
+; Function NMI_Handler
+.L34:
+	.thumb
+	.align	4
+NMI_Handler:	.type	func
+
+.L9:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    74  {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    75  }
+	bx	lr
+.L35:
+	.size	NMI_Handler,$-NMI_Handler
+	; End of function
+	.endsec	; End of section
+
+	.section	.text ,cluster('$group_HardFault_Handler')
+	.global	HardFault_Handler
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    76  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    77  /**
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    78    * @brief  This function handles Hard Fault exception.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    79    * @param  None
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    80    * @retval None
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    81    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    82  void HardFault_Handler(void)
+; Function HardFault_Handler
+.L40:
+	.thumb
+	.align	4
+HardFault_Handler:	.type	func
+
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    83  {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    84    /* Go to infinite loop when Hard Fault exception occurs */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    85    while (1)
+.L2:
+	b	.L2
+.L41:
+	.size	HardFault_Handler,$-HardFault_Handler
+	; End of function
+	.endsec	; End of section
+
+	.section	.text ,cluster('$group_MemManage_Handler')
+	.global	MemManage_Handler
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    86    {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    87    }
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    88  }
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    89  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    90  /**
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    91    * @brief  This function handles Memory Manage exception.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    92    * @param  None
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    93    * @retval None
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    94    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    95  void MemManage_Handler(void)
+; Function MemManage_Handler
+.L46:
+	.thumb
+	.align	4
+MemManage_Handler:	.type	func
+
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    96  {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    97    /* Go to infinite loop when Memory Manage exception occurs */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    98    while (1)
+.L3:
+	b	.L3
+.L47:
+	.size	MemManage_Handler,$-MemManage_Handler
+	; End of function
+	.endsec	; End of section
+
+	.section	.text ,cluster('$group_BusFault_Handler')
+	.global	BusFault_Handler
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	    99    {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   100    }
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   101  }
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   102  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   103  /**
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   104    * @brief  This function handles Bus Fault exception.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   105    * @param  None
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   106    * @retval None
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   107    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   108  void BusFault_Handler(void)
+; Function BusFault_Handler
+.L52:
+	.thumb
+	.align	4
+BusFault_Handler:	.type	func
+
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   109  {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   110    /* Go to infinite loop when Bus Fault exception occurs */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   111    while (1)
+.L4:
+	b	.L4
+.L53:
+	.size	BusFault_Handler,$-BusFault_Handler
+	; End of function
+	.endsec	; End of section
+
+	.section	.text ,cluster('$group_UsageFault_Handler')
+	.global	UsageFault_Handler
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   112    {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   113    }
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   114  }
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   115  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   116  /**
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   117    * @brief  This function handles Usage Fault exception.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   118    * @param  None
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   119    * @retval None
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   120    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   121  void UsageFault_Handler(void)
+; Function UsageFault_Handler
+.L58:
+	.thumb
+	.align	4
+UsageFault_Handler:	.type	func
+
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   122  {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   123    /* Go to infinite loop when Usage Fault exception occurs */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   124    while (1)
+.L5:
+	b	.L5
+.L59:
+	.size	UsageFault_Handler,$-UsageFault_Handler
+	; End of function
+	.endsec	; End of section
+
+	.section	.text ,cluster('$group_SVC_Handler')
+	.global	SVC_Handler
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   125    {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   126    }
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   127  }
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   128  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   129  /**
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   130    * @brief  This function handles SVCall exception.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   131    * @param  None
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   132    * @retval None
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   133    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   134  void SVC_Handler(void)
+; Function SVC_Handler
+.L64:
+	.thumb
+	.align	4
+SVC_Handler:	.type	func
+
+.L15:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   135  {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   136  }
+	bx	lr
+.L65:
+	.size	SVC_Handler,$-SVC_Handler
+	; End of function
+	.endsec	; End of section
+
+	.section	.text ,cluster('$group_DebugMon_Handler')
+	.global	DebugMon_Handler
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   137  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   138  /**
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   139    * @brief  This function handles Debug Monitor exception.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   140    * @param  None
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   141    * @retval None
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   142    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   143  void DebugMon_Handler(void)
+; Function DebugMon_Handler
+.L70:
+	.thumb
+	.align	4
+DebugMon_Handler:	.type	func
+
+.L17:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   144  {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   145  }
+	bx	lr
+.L71:
+	.size	DebugMon_Handler,$-DebugMon_Handler
+	; End of function
+	.endsec	; End of section
+
+	.section	.text ,cluster('$group_PendSV_Handler')
+	.global	PendSV_Handler
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   146  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   147  /**
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   148    * @brief  This function handles PendSV_Handler exception.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   149    * @param  None
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   150    * @retval None
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   151    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   152  void PendSV_Handler(void)
+; Function PendSV_Handler
+.L76:
+	.thumb
+	.align	4
+PendSV_Handler:	.type	func
+
+.L19:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   153  {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   154  }
+	bx	lr
+.L77:
+	.size	PendSV_Handler,$-PendSV_Handler
+	; End of function
+	.endsec	; End of section
+
+	.section	.text ,cluster('$group_SysTick_Handler')
+	.global	SysTick_Handler
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   155  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   156  /**
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   157    * @brief  This function handles SysTick Handler.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   158    * @param  None
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   159    * @retval None
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   160    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   161  void SysTick_Handler(void)
+; Function SysTick_Handler
+.L82:
+	.thumb
+	.align	4
+SysTick_Handler:	.type	func
+
+.L21:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   162  {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   163  }
+	bx	lr
+.L83:
+	.size	SysTick_Handler,$-SysTick_Handler
+	; End of function
+	.endsec	; End of section
+
+	.section	.text ,cluster('$group_DMA1_Channel1_IRQHandler')
+	.global	DMA1_Channel1_IRQHandler
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   164  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   165  /******************************************************************************/
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   166  /*            STM32L1xx Peripherals Interrupt Handlers                        */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   167  /******************************************************************************/
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   168  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   169  /**
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   170    * @brief  This function handles DMA1_Channel1 interrupt request.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   171    * @param  None
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   172    * @retval : None
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   173    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   174  void DMA1_Channel1_IRQHandler(void)
+; Function DMA1_Channel1_IRQHandler
+.L88:
+	.thumb
+	.align	4
+DMA1_Channel1_IRQHandler:	.type	func
+
+.L23:
+	push	{r4,r5,lr}
+.L101:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   175  {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   176    #ifdef Oversampling_Test
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   177      static uint32_t index = 0;
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   178  #endif
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   179  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   180     /* Clear the DMA Global interrupt bit DMA_IT_GL1*/
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   181     DMA1->IFCR = DMA1_IT_GL1;
+	movs	r0,#1
+.L151:
+	movw	r1,#@lsh(1073897476)
+	movt	r1,#@msh(1073897476)
+.L152:
+	str	r0,[r1,#0]
+.L153:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   182  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   183   #ifdef Thermal_Noise_Measure
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   184     Oversampling_TestADCThermalNoise( ADC_Codes, ADC_Codes_Number);
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   185   #else
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   186  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   187     /* Compute the oversampled result */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   188     ADC_Oversampled_Data = Oversampling_GetConversion();
+	bl	Oversampling_GetConversion
+.L154:
+	ldr	r4,.L7
+.L155:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   189  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   190     /* Disable DMA channel1 */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   191     DMA1_Channel1->CCR &= 0xFFFFFFFE;
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   192  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   193     /* Update the Number of DMA transfer */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   194     DMA1_Channel1->CNDTR = ADC_Oversampling_Factor;
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   195  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   196     /* Update the Destination Memory of the DMA pointer */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   197     DMA1_Channel1->CMAR = (uint32_t)ADC_ConvertedValue;
+	movw	r2,#@lsh(1073897492)
+.L156:
+	strh.n	r0,[r4,#@BASEREL(ADC_Oversampled_Data)]
+.L157:
+	movw	r0,#@lsh(1073897480)
+	movt	r0,#@msh(1073897480)
+.L158:
+	movt	r2,#@msh(1073897492)
+.L159:
+	ldr	r1,[r0,#0]
+.L160:
+	bics	r1,r1,#1
+	str	r1,[r0,#0]
+.L161:
+	movw	r1,#@lsh(1073897484)
+.L162:
+	movs	r0,#8
+.L163:
+	movt	r1,#@msh(1073897484)
+.L164:
+	str	r0,[r1,#0]
+.L165:
+	ldr	r1,.L7+4
+.L166:
+	str	r1,[r2,#0]
+.L167:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   198  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   199      /* Disable DMA channel3 */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   200     DMA1_Channel3->CCR &= 0xFFFFFFFE;
+	movw	r1,#@lsh(1073897520)
+	movt	r1,#@msh(1073897520)
+	ldr	r2,[r1,#0]
+.L168:
+	bics	r2,r2,#1
+	str	r2,[r1,#0]
+.L169:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   201  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   202     /* Update the Number of DMA transfer */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   203     DMA1_Channel3->CNDTR = BUFFER_PW_WIDTH;
+	movw	r1,#@lsh(1073897524)
+	movt	r1,#@msh(1073897524)
+.L170:
+	str	r0,[r1,#0]
+.L171:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   204  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   205     /* Update the source memory of the DMA pointer */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   206     DMA1_Channel3->CMAR = (uint32_t)TimerPulseWidth;
+	movw	r1,#@lsh(1073897532)
+.L172:
+	ldr	r0,.L7+8
+.L173:
+	movt	r1,#@msh(1073897532)
+.L174:
+	str	r0,[r1,#0]
+.L175:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   207  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   208     /* stop ADC DMA transfer */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   209     ADC_DMACmd(ADC1, DISABLE);
+	movw	r0,#@lsh(1073816576)
+.L176:
+	movs	r1,#0
+.L177:
+	movt	r0,#@msh(1073816576)
+.L178:
+	bl	ADC_DMACmd
+.L179:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   210  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   211  #ifdef Oversampling_Test
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   212     ADC_Oversampled_Buffer[index] = ADC_Oversampled_Data;
+	ldr.n	r0,[r4,#@BASEREL(_999001_index)]
+.L180:
+	ldrh.n	r1,[r4,#@BASEREL(ADC_Oversampled_Data)]
+.L181:
+	ldr	r5,.L7+12
+.L182:
+	strh	r1,[r5,r0,lsl #1]
+.L183:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   213     index++;
+	adds	r0,r0,#1
+.L184:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   214     if ( index == Oversampling_Test_Samples )
+	cmp	r0,#500
+.L185:
+	str.n	r0,[r4,#@BASEREL(_999001_index)]
+.L186:
+	it	ne
+	popne	{r4,r5,pc}
+.L187:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   215     {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   216       /* Disable the TIM2 Timer */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   217       TIM_Cmd(TIM2, DISABLE);
+	movs	r1,#0
+.L188:
+	movs	r0,#1073741824
+.L189:
+	bl	TIM_Cmd
+.L190:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   218  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   219       /* copy the ADC_Oversampled_Buffer into a file */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   220       Oversampling_CopyConvValuesToFile(  ADC_Oversampled_Buffer , Oversampling_Test_Samples );
+	mov	r0,r5
+	movs	r1,#500
+	bl	Oversampling_CopyConvValuesToFile
+.L6:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   221     }
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   222  #endif
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   223  #endif
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   224  }
+	pop	{r4,r5,pc}
+.L98:
+	.align	4
+.L7:
+	.dw	@BASE(ADC_Oversampled_Data)
+	.dw	ADC_ConvertedValue
+	.dw	TimerPulseWidth
+	.dw	ADC_Oversampled_Buffer
+.L89:
+	.size	DMA1_Channel1_IRQHandler,$-DMA1_Channel1_IRQHandler
+	; End of function
+	.endsec	; End of section
+
+	.section	.text ,cluster('$group_TIM2_IRQHandler')
+	.global	TIM2_IRQHandler
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   225  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   226  /**
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   227    * @}
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   228    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   229  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   230  /**
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   231    * @}
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   232    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   233  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   234  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   235  /**
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   236    * @brief  This function handles TIM2 interrupt request.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   237    * @param  None
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   238    * @retval : None
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   239    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   240  void TIM2_IRQHandler(void)
+; Function TIM2_IRQHandler
+.L94:
+	.thumb
+	.align	4
+TIM2_IRQHandler:	.type	func
+
+.L25:
+	push	{lr}
+.L102:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   241  {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   242    /* Clear the interrupt Update pending bit */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   243    TIM_ClearITPendingBit( TIM2, TIM_IT_Update);
+	movs	r1,#1
+.L195:
+	movs	r0,#1073741824
+.L196:
+	bl	TIM_ClearITPendingBit
+.L197:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   244  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   245    /* Enable DMA channel 3 transfer */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   246    DMA1_Channel3->CCR |= 0x00000001;
+	movw	r0,#@lsh(1073897520)
+	movt	r0,#@msh(1073897520)
+	ldr	r1,[r0,#0]
+.L198:
+	orrs	r1,r1,#1
+	str	r1,[r0,#0]
+.L199:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   247  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   248    /* Enable DMA channel1 */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   249    DMA1_Channel1->CCR |= 0x00000001;
+	movw	r0,#@lsh(1073897480)
+	movt	r0,#@msh(1073897480)
+	ldr	r1,[r0,#0]
+.L200:
+	orrs	r1,r1,#1
+	str	r1,[r0,#0]
+.L201:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   250  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   251    /* enable ADC DMA transfer - to continue */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   252    ADC_DMACmd(ADC1, ENABLE);
+	movs	r1,#1
+.L202:
+	movw	r0,#@lsh(1073816576)
+	movt	r0,#@msh(1073816576)
+.L203:
+	bl	ADC_DMACmd
+.L204:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   253  }
+	pop	{pc}
+.L95:
+	.size	TIM2_IRQHandler,$-TIM2_IRQHandler
+	; End of function
+	.endsec	; End of section
+
+	.section	.data ,group("cluster_.1.C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c"),concat,cluster('$group_ADC_Oversampled_Data')
+	.global	ADC_Oversampled_Data
+	.align	2
+ADC_Oversampled_Data:	.type	object
+	.size	ADC_Oversampled_Data,2
+	.db	0,0
+	.endsec	; End of section
+
+	.section	.data ,group("cluster_.1.C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c"),concat,cluster('$group__999001_index')
+	.align	4
+_999001_index:	.type	object
+	.size	_999001_index,4
+	.db	0,0,0,0
+	.endsec	; End of section
+
+	.calls	'DMA1_Channel1_IRQHandler','Oversampling_GetConversion'
+	.calls	'DMA1_Channel1_IRQHandler','ADC_DMACmd'
+	.calls	'DMA1_Channel1_IRQHandler','TIM_Cmd'
+	.calls	'DMA1_Channel1_IRQHandler','Oversampling_CopyConvValuesToFile'
+	.calls	'TIM2_IRQHandler','TIM_ClearITPendingBit'
+	.calls	'TIM2_IRQHandler','ADC_DMACmd'
+	.calls	'NMI_Handler','',0
+	.calls	'HardFault_Handler','',0
+	.calls	'MemManage_Handler','',0
+	.calls	'BusFault_Handler','',0
+	.calls	'UsageFault_Handler','',0
+	.calls	'SVC_Handler','',0
+	.calls	'DebugMon_Handler','',0
+	.calls	'PendSV_Handler','',0
+	.calls	'SysTick_Handler','',0
+	.calls	'DMA1_Channel1_IRQHandler','',12
+	.calls	'TIM2_IRQHandler','',4
+	.extern	ADC_DMACmd
+	.extern	TIM_Cmd
+	.extern	TIM_ClearITPendingBit
+	.extern	Oversampling_CopyConvValuesToFile
+	.extern	Oversampling_GetConversion
+	.extern	ADC_ConvertedValue
+	.extern	TimerPulseWidth
+	.extern	ADC_Oversampled_Buffer
+	.section	.debug_info
+.L27:
+	.dw	3646
+	.dh	3
+	.dw	.L28
+	.db	4
+.L26:
+	.db	1
+	.dw	.L103,.L104,.L105
+	.db	12,1
+	.dw	.L29
+	.db	2
+	.db	'NVIC_SetPriority',0,3,1,246,7,22,1,1,3
+	.db	'IRQn',0,2,171,1,14,4,4
+	.db	'NonMaskableInt_IRQn',0,114,4
+	.db	'MemoryManagement_IRQn',0,116,4
+	.db	'BusFault_IRQn',0,117,4
+	.db	'UsageFault_IRQn',0,118,4
+	.db	'SVC_IRQn',0,123,4
+	.db	'DebugMonitor_IRQn',0,124,4
+	.db	'PendSV_IRQn',0,126,4
+	.db	'SysTick_IRQn',0,127,4
+	.db	'WWDG_IRQn',0,0,4
+	.db	'PVD_IRQn',0,1,4
+	.db	'TAMPER_STAMP_IRQn',0,2,4
+	.db	'RTC_WKUP_IRQn',0,3,4
+	.db	'FLASH_IRQn',0,4,4
+	.db	'RCC_IRQn',0,5,4
+	.db	'EXTI0_IRQn',0,6,4
+	.db	'EXTI1_IRQn',0,7,4
+	.db	'EXTI2_IRQn',0,8,4
+	.db	'EXTI3_IRQn',0,9,4
+	.db	'EXTI4_IRQn',0,10,4
+	.db	'DMA1_Channel1_IRQn',0,11,4
+	.db	'DMA1_Channel2_IRQn',0,12,4
+	.db	'DMA1_Channel3_IRQn',0,13,4
+	.db	'DMA1_Channel4_IRQn',0,14,4
+	.db	'DMA1_Channel5_IRQn',0,15,4
+	.db	'DMA1_Channel6_IRQn',0,16,4
+	.db	'DMA1_Channel7_IRQn',0,17,4
+	.db	'ADC1_IRQn',0,18,4
+	.db	'USB_HP_IRQn',0,19,4
+	.db	'USB_LP_IRQn',0,20,4
+	.db	'DAC_IRQn',0,21,4
+	.db	'COMP_IRQn',0,22,4
+	.db	'EXTI9_5_IRQn',0,23,4
+	.db	'LCD_IRQn',0,24,4
+	.db	'TIM9_IRQn',0,25,4
+	.db	'TIM10_IRQn',0,26,4
+	.db	'TIM11_IRQn',0,27,4
+	.db	'TIM2_IRQn',0,28,4
+	.db	'TIM3_IRQn',0,29,4
+	.db	'TIM4_IRQn',0,30,4
+	.db	'I2C1_EV_IRQn',0,31,4
+	.db	'I2C1_ER_IRQn',0,32,4
+	.db	'I2C2_EV_IRQn',0,33,4
+	.db	'I2C2_ER_IRQn',0,34,4
+	.db	'SPI1_IRQn',0,35,4
+	.db	'SPI2_IRQn',0,36,4
+	.db	'USART1_IRQn',0,37,4
+	.db	'USART2_IRQn',0,38,4
+	.db	'USART3_IRQn',0,39,4
+	.db	'EXTI15_10_IRQn',0,40,4
+	.db	'RTC_Alarm_IRQn',0,41,4
+	.db	'USB_FS_WKUP_IRQn',0,42,4
+	.db	'TIM6_IRQn',0,43,4
+	.db	'TIM7_IRQn',0,44,0,5
+	.db	'IRQn',0,1,246,7,49
+	.dw	55
+.L99:
+	.db	6
+	.db	'unsigned int',0,4,7,5
+	.db	'priority',0,1,246,7,64
+	.dw	882
+	.db	7,0,8
+	.dw	30
+	.db	9
+	.dw	868
+	.db	9
+	.dw	898
+	.db	7,0,10
+	.db	'ADC_DMACmd',0,3,230,4,6,1,1,1,1,11,2,205,2,9,96,12
+	.dw	882
+	.db	13
+	.db	'SR',0,4
+	.dw	961
+	.db	2,35,0,12
+	.dw	882
+	.db	13
+	.db	'CR1',0,4
+	.dw	978
+	.db	2,35,4,12
+	.dw	882
+	.db	13
+	.db	'CR2',0,4
+	.dw	996
+	.db	2,35,8,12
+	.dw	882
+	.db	13
+	.db	'SMPR1',0,4
+	.dw	1014
+	.db	2,35,12,12
+	.dw	882
+	.db	13
+	.db	'SMPR2',0,4
+	.dw	1034
+	.db	2,35,16,12
+	.dw	882
+	.db	13
+	.db	'SMPR3',0,4
+	.dw	1054
+	.db	2,35,20,12
+	.dw	882
+	.db	13
+	.db	'JOFR1',0,4
+	.dw	1074
+	.db	2,35,24,12
+	.dw	882
+	.db	13
+	.db	'JOFR2',0,4
+	.dw	1094
+	.db	2,35,28,12
+	.dw	882
+	.db	13
+	.db	'JOFR3',0,4
+	.dw	1114
+	.db	2,35,32,12
+	.dw	882
+	.db	13
+	.db	'JOFR4',0,4
+	.dw	1134
+	.db	2,35,36,12
+	.dw	882
+	.db	13
+	.db	'HTR',0,4
+	.dw	1154
+	.db	2,35,40,12
+	.dw	882
+	.db	13
+	.db	'LTR',0,4
+	.dw	1172
+	.db	2,35,44,12
+	.dw	882
+	.db	13
+	.db	'SQR1',0,4
+	.dw	1190
+	.db	2,35,48,12
+	.dw	882
+	.db	13
+	.db	'SQR2',0,4
+	.dw	1209
+	.db	2,35,52,12
+	.dw	882
+	.db	13
+	.db	'SQR3',0,4
+	.dw	1228
+	.db	2,35,56,12
+	.dw	882
+	.db	13
+	.db	'SQR4',0,4
+	.dw	1247
+	.db	2,35,60,12
+	.dw	882
+	.db	13
+	.db	'SQR5',0,4
+	.dw	1266
+	.db	2,35,64,12
+	.dw	882
+	.db	13
+	.db	'JSQR',0,4
+	.dw	1285
+	.db	2,35,68,12
+	.dw	882
+	.db	13
+	.db	'JDR1',0,4
+	.dw	1304
+	.db	2,35,72,12
+	.dw	882
+	.db	13
+	.db	'JDR2',0,4
+	.dw	1323
+	.db	2,35,76,12
+	.dw	882
+	.db	13
+	.db	'JDR3',0,4
+	.dw	1342
+	.db	2,35,80,12
+	.dw	882
+	.db	13
+	.db	'JDR4',0,4
+	.dw	1361
+	.db	2,35,84,12
+	.dw	882
+	.db	13
+	.db	'DR',0,4
+	.dw	1380
+	.db	2,35,88,12
+	.dw	882
+	.db	13
+	.db	'SMPR0',0,4
+	.dw	1397
+	.db	2,35,92,0,14
+	.dw	955
+	.db	5
+	.db	'ADCx',0,3,230,4,30
+	.dw	1418
+	.db	15,2,148,2,9,4,4
+	.db	'DISABLE',0,0,4
+	.db	'ENABLE',0,1,0,5
+	.db	'NewState',0,3,230,4,52
+	.dw	1437
+	.db	0,10
+	.db	'TIM_Cmd',0,4,235,6,6,1,1,1,1,11,2,153,6,9,84,6
+	.db	'unsigned short int',0,2,7,12
+	.dw	1505
+	.db	13
+	.db	'CR1',0,2
+	.dw	1527
+	.db	2,35,0,13
+	.db	'RESERVED0',0,2
+	.dw	1505
+	.db	2,35,2,12
+	.dw	1505
+	.db	13
+	.db	'CR2',0,2
+	.dw	1564
+	.db	2,35,4,13
+	.db	'RESERVED1',0,2
+	.dw	1505
+	.db	2,35,6,12
+	.dw	1505
+	.db	13
+	.db	'SMCR',0,2
+	.dw	1601
+	.db	2,35,8,13
+	.db	'RESERVED2',0,2
+	.dw	1505
+	.db	2,35,10,12
+	.dw	1505
+	.db	13
+	.db	'DIER',0,2
+	.dw	1639
+	.db	2,35,12,13
+	.db	'RESERVED3',0,2
+	.dw	1505
+	.db	2,35,14,12
+	.dw	1505
+	.db	13
+	.db	'SR',0,2
+	.dw	1677
+	.db	2,35,16,13
+	.db	'RESERVED4',0,2
+	.dw	1505
+	.db	2,35,18,12
+	.dw	1505
+	.db	13
+	.db	'EGR',0,2
+	.dw	1713
+	.db	2,35,20,13
+	.db	'RESERVED5',0,2
+	.dw	1505
+	.db	2,35,22,12
+	.dw	1505
+	.db	13
+	.db	'CCMR1',0,2
+	.dw	1750
+	.db	2,35,24,13
+	.db	'RESERVED6',0,2
+	.dw	1505
+	.db	2,35,26,12
+	.dw	1505
+	.db	13
+	.db	'CCMR2',0,2
+	.dw	1789
+	.db	2,35,28,13
+	.db	'RESERVED7',0,2
+	.dw	1505
+	.db	2,35,30,12
+	.dw	1505
+	.db	13
+	.db	'CCER',0,2
+	.dw	1828
+	.db	2,35,32,13
+	.db	'RESERVED8',0,2
+	.dw	1505
+	.db	2,35,34,12
+	.dw	882
+	.db	13
+	.db	'CNT',0,4
+	.dw	1866
+	.db	2,35,36,12
+	.dw	1505
+	.db	13
+	.db	'PSC',0,2
+	.dw	1884
+	.db	2,35,40,13
+	.db	'RESERVED10',0,2
+	.dw	1505
+	.db	2,35,42,12
+	.dw	882
+	.db	13
+	.db	'ARR',0,4
+	.dw	1922
+	.db	2,35,44,13
+	.db	'RESERVED12',0,4
+	.dw	882
+	.db	2,35,48,12
+	.dw	882
+	.db	13
+	.db	'CCR1',0,4
+	.dw	1960
+	.db	2,35,52,12
+	.dw	882
+	.db	13
+	.db	'CCR2',0,4
+	.dw	1979
+	.db	2,35,56,12
+	.dw	882
+	.db	13
+	.db	'CCR3',0,4
+	.dw	1998
+	.db	2,35,60,12
+	.dw	882
+	.db	13
+	.db	'CCR4',0,4
+	.dw	2017
+	.db	2,35,64,13
+	.db	'RESERVED17',0,4
+	.dw	882
+	.db	2,35,68,12
+	.dw	1505
+	.db	13
+	.db	'DCR',0,2
+	.dw	2056
+	.db	2,35,72,13
+	.db	'RESERVED18',0,2
+	.dw	1505
+	.db	2,35,74,12
+	.dw	1505
+	.db	13
+	.db	'DMAR',0,2
+	.dw	2094
+	.db	2,35,76,13
+	.db	'RESERVED19',0,2
+	.dw	1505
+	.db	2,35,78,12
+	.dw	1505
+	.db	13
+	.db	'OR',0,2
+	.dw	2133
+	.db	2,35,80,13
+	.db	'RESERVED20',0,2
+	.dw	1505
+	.db	2,35,82,0,14
+	.dw	1499
+	.db	5
+	.db	'TIMx',0,4,235,6,27
+	.dw	2171
+	.db	5
+	.db	'NewState',0,4,235,6,49
+	.dw	1437
+	.db	0,10
+	.db	'TIM_ClearITPendingBit',0,4,162,7,6,1,1,1,1,5
+	.db	'TIMx',0,4,162,7,41
+	.dw	2171
+	.db	5
+	.db	'TIM_IT',0,4,162,7,56
+	.dw	1505
+	.db	0,10
+	.db	'Oversampling_CopyConvValuesToFile',0,5,57,6,1,1,1,1,12
+	.dw	1505
+	.db	14
+	.dw	2313
+	.db	5
+	.db	'Tab',0,5,57,57
+	.dw	2318
+	.db	5
+	.db	'size',0,5,57,71
+	.dw	882
+	.db	0,16
+	.db	'Oversampling_GetConversion',0,5,58,11
+	.dw	1505
+	.db	1,1,1,1,17
+	.db	'__size_t',0,6,1,1
+	.dw	882
+	.db	18
+	.db	'void',0,14
+	.dw	2405
+	.db	17
+	.db	'__prof_adm',0,6,1,1
+	.dw	2411
+	.db	19,1,14
+	.dw	2435
+	.db	17
+	.db	'__codeptr',0,6,1,1
+	.dw	2437
+	.db	17
+	.db	'IRQn_Type',0,2,132,2,3
+	.dw	55
+	.db	6
+	.db	'unsigned char',0,1,8,17
+	.db	'uint8_t',0,7,24,33
+	.dw	2479
+	.db	17
+	.db	'uint16_t',0,7,26,33
+	.dw	1505
+	.db	6
+	.db	'int',0,4,5,17
+	.db	'int32_t',0,7,27,33
+	.dw	2529
+	.db	17
+	.db	'uint32_t',0,7,28,33
+	.dw	882
+	.db	17
+	.db	'FunctionalState',0,2,148,2,47
+	.dw	1437
+	.db	17
+	.db	'ADC_TypeDef',0,2,231,2,3
+	.dw	955
+	.db	17
+	.db	'TIM_TypeDef',0,2,189,6,3
+	.dw	1499
+	.db	15,8,54,9,4,4
+	.db	'EXTI_Mode_Interrupt',0,0,4
+	.db	'EXTI_Mode_Event',0,4,0,17
+	.db	'EXTIMode_TypeDef',0,8,58,2
+	.dw	2636
+	.db	15,8,66,9,4,4
+	.db	'EXTI_Trigger_Rising',0,8,4
+	.db	'EXTI_Trigger_Falling',0,12,4
+	.db	'EXTI_Trigger_Rising_Falling',0,16,0,17
+	.db	'EXTITrigger_TypeDef',0,8,71,2
+	.dw	2707
+	.db	11,9,54,9,28,13
+	.db	'FSMC_AddressSetupTime',0,4
+	.dw	882
+	.db	2,35,0,13
+	.db	'FSMC_AddressHoldTime',0,4
+	.dw	882
+	.db	2,35,4,13
+	.db	'FSMC_DataSetupTime',0,4
+	.dw	882
+	.db	2,35,8,13
+	.db	'FSMC_BusTurnAroundDuration',0,4
+	.dw	882
+	.db	2,35,12,13
+	.db	'FSMC_CLKDivision',0,4
+	.dw	882
+	.db	2,35,16,13
+	.db	'FSMC_DataLatency',0,4
+	.dw	882
+	.db	2,35,20,13
+	.db	'FSMC_AccessMode',0,4
+	.dw	882
+	.db	2,35,24,0,17
+	.db	'FSMC_NORSRAMTimingInitTypeDef',0,9,90,2
+	.dw	2816
+	.db	15,10,62,9,4,4
+	.db	'GPIO_Mode_IN',0,0,4
+	.db	'GPIO_Mode_OUT',0,1,4
+	.db	'GPIO_Mode_AF',0,2,4
+	.db	'GPIO_Mode_AN',0,3,0,17
+	.db	'GPIOMode_TypeDef',0,10,68,2
+	.dw	3062
+	.db	15,10,78,9,4,4
+	.db	'GPIO_OType_PP',0,0,4
+	.db	'GPIO_OType_OD',0,1,0,17
+	.db	'GPIOOType_TypeDef',0,10,81,2
+	.dw	3154
+	.db	15,10,91,9,4,4
+	.db	'GPIO_Speed_400KHz',0,0,4
+	.db	'GPIO_Speed_2MHz',0,1,4
+	.db	'GPIO_Speed_10MHz',0,2,4
+	.db	'GPIO_Speed_40MHz',0,3,0,17
+	.db	'GPIOSpeed_TypeDef',0,10,97,2
+	.dw	3218
+	.db	15,10,107,9,4,4
+	.db	'GPIO_PuPd_NOPULL',0,0,4
+	.db	'GPIO_PuPd_UP',0,1,4
+	.db	'GPIO_PuPd_DOWN',0,2,0,17
+	.db	'GPIOPuPd_TypeDef',0,10,111,2
+	.dw	3326
+	.db	11,11,68,9,4,13
+	.db	'RTC_Hours',0,1
+	.dw	2479
+	.db	2,35,0,13
+	.db	'RTC_Minutes',0,1
+	.dw	2479
+	.db	2,35,1,13
+	.db	'RTC_Seconds',0,1
+	.dw	2479
+	.db	2,35,2,13
+	.db	'RTC_H12',0,1
+	.dw	2479
+	.db	2,35,3,0,17
+	.db	'RTC_TimeTypeDef',0,11,83,2
+	.dw	3408
+	.db	17
+	.db	'_iob_flag_t',0,12,74,25
+	.dw	1505
+	.db	20,16
+	.dw	1505
+	.db	21,7,0,22
+	.db	'ADC_ConvertedValue',0,6,52,17
+	.dw	3536
+	.db	1,1,22
+	.db	'TimerPulseWidth',0,6,53,17
+	.dw	3536
+	.db	1,1,20,232,7
+	.dw	1505
+	.db	21,243,3,0,22
+	.db	'ADC_Oversampled_Buffer',0,6,57,17
+	.dw	3600
+	.db	1,1
+.L100:
+	.db	12
+	.dw	1505
+	.db	0
+	.endsec	; End of section
+
+	.section	.debug_abbrev
+.L28:
+	.db	1,17,1,3,14,37,14,27,14,19,15,128,70,12,16,6,0,0,2,46,1,3,8,32,13,58,15,59,15,57,15,54,15,39,12,0,0,3
+	.db	4,1,3,8,58,15,59,15,57,15,11,15,0,0,4,40,0,3,8,28,13,0,0,5,5,0,3,8,58,15,59,15,57,15,73,19,0,0,6,36,0
+	.db	3,8,11,15,62,15,0,0,7,11,0,0,0,8,46,1,49,19,0,0,9,5,0,49,19,0,0,10,46,1,3,8,58,15,59,15,57,15,54,15,39
+	.db	12,63,12,60,12,0,0,11,19,1,58,15,59,15,57,15,11,15,0,0,12,53,0,73,19,0,0,13,13,0,3,8,11,15,73,19,56,9
+	.db	0,0,14,15,0,73,19,0,0,15,4,1,58,15,59,15,57,15,11,15,0,0,16,46,0,3,8,58,15,59,15,57,15,73,19,54,15,39
+	.db	12,63,12,60,12,0,0,17,22,0,3,8,58,15,59,15,57,15,73,19,0,0,18,59,0,3,8,0,0,19,21,0,54,15,0,0,20,1,1,11
+	.db	15,73,19,0,0,21,33,0,47,15,0,0,22,52,0,3,8,58,15,59,15,57,15,73,19,63,12,60,12,0,0,0
+	.endsec	; End of section
+
+	.section	.debug_line
+.L29:
+	.dw	.L108-.L107
+.L107:
+	.dh	3
+	.dw	.L110-.L109
+.L109:
+	.db	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.db	'..\\..\\..\\..\\..\\..\\Libraries\\CMSIS\\Include',0
+	.db	'..\\..\\..\\..\\..\\..\\Libraries\\CMSIS\\Device\\ST\\STM32L1xx\\Include',0
+	.db	'..\\..\\..\\..\\..\\..\\Libraries\\STM32L1xx_StdPeriph_Driver\\inc',0
+	.db	'..\\..\\..\\inc',0
+	.db	'C:\\Program Files\\TASKING\\carm v4.4r1\\include\\',0,0
+	.db	'core_cm3.h',0,1,0,0
+	.db	'stm32l1xx.h',0,2,0,0
+	.db	'stm32l1xx_adc.h',0,3,0,0
+	.db	'stm32l1xx_tim.h',0,3,0,0
+	.db	'Oversampling.h',0,4,0,0
+	.db	'C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c',0
+	.db	0,0,0
+	.db	'stdint.h',0,5,0,0
+	.db	'stm32l1xx_exti.h',0,3,0,0
+	.db	'stm32l1xx_fsmc.h',0,3,0,0
+	.db	'stm32l1xx_gpio.h',0,3,0,0
+	.db	'stm32l1xx_rtc.h',0,3,0,0
+	.db	'stdio.h',0,5,0,0,0
+.L110:
+.L108:
+	.endsec	; End of section
+
+	.section	.debug_info ,cluster('$group_NMI_Handler')
+.L30:
+	.dw	77
+	.dh	3
+	.dw	.L31
+	.db	4,1
+	.dw	.L103,.L104,.L105
+	.db	12,1
+	.dw	.L33,.L32
+	.db	2
+	.dw	.L26
+	.db	3
+	.db	'NMI_Handler',0,1,73,6,1,1,1
+	.dw	.L9,.L35,.L8
+	.db	4
+	.dw	.L9,.L35
+	.db	0,0
+	.endsec	; End of section
+
+	.section	.debug_abbrev ,cluster('$group_NMI_Handler')
+.L31:
+	.db	1,17,1,3,14,37,14,27,14,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54
+	.db	15,39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.endsec	; End of section
+
+	.section	.debug_line ,cluster('$group_NMI_Handler')
+.L32:
+	.dw	.L112-.L111
+.L111:
+	.dh	3
+	.dw	.L114-.L113
+.L113:
+	.db	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.db	'C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c',0
+	.db	0,0,0,0
+.L114:
+	.db	5,1,7,0,5,2
+	.dw	.L9
+	.db	3,202,0,1,7,9
+	.dh	.L35-.L9
+	.db	0,1,1
+.L112:
+	.endsec	; End of section
+
+	.section	.debug_ranges ,cluster('$group_NMI_Handler')
+.L33:
+	.dw	-1,.L34,0,.L35-.L34,0,0
+	.endsec	; End of section
+
+	.section	.debug_info ,cluster('$group_HardFault_Handler')
+.L36:
+	.dw	83
+	.dh	3
+	.dw	.L37
+	.db	4,1
+	.dw	.L103,.L104,.L105
+	.db	12,1
+	.dw	.L39,.L38
+	.db	2
+	.dw	.L26
+	.db	3
+	.db	'HardFault_Handler',0,1,82,6,1,1,1
+	.dw	.L2,.L41,.L10
+	.db	4
+	.dw	.L2,.L41
+	.db	0,0
+	.endsec	; End of section
+
+	.section	.debug_abbrev ,cluster('$group_HardFault_Handler')
+.L37:
+	.db	1,17,1,3,14,37,14,27,14,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54
+	.db	15,39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.endsec	; End of section
+
+	.section	.debug_line ,cluster('$group_HardFault_Handler')
+.L38:
+	.dw	.L116-.L115
+.L115:
+	.dh	3
+	.dw	.L118-.L117
+.L117:
+	.db	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.db	'C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c',0
+	.db	0,0,0,0
+.L118:
+	.db	5,11,7,0,5,2
+	.dw	.L2
+	.db	3,212,0,1,5,1,9
+	.dh	.L41-.L2
+	.db	3,3,0,1,1
+.L116:
+	.endsec	; End of section
+
+	.section	.debug_ranges ,cluster('$group_HardFault_Handler')
+.L39:
+	.dw	-1,.L40,0,.L41-.L40,0,0
+	.endsec	; End of section
+
+	.section	.debug_info ,cluster('$group_MemManage_Handler')
+.L42:
+	.dw	83
+	.dh	3
+	.dw	.L43
+	.db	4,1
+	.dw	.L103,.L104,.L105
+	.db	12,1
+	.dw	.L45,.L44
+	.db	2
+	.dw	.L26
+	.db	3
+	.db	'MemManage_Handler',0,1,95,6,1,1,1
+	.dw	.L3,.L47,.L11
+	.db	4
+	.dw	.L3,.L47
+	.db	0,0
+	.endsec	; End of section
+
+	.section	.debug_abbrev ,cluster('$group_MemManage_Handler')
+.L43:
+	.db	1,17,1,3,14,37,14,27,14,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54
+	.db	15,39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.endsec	; End of section
+
+	.section	.debug_line ,cluster('$group_MemManage_Handler')
+.L44:
+	.dw	.L120-.L119
+.L119:
+	.dh	3
+	.dw	.L122-.L121
+.L121:
+	.db	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.db	'C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c',0
+	.db	0,0,0,0
+.L122:
+	.db	5,11,7,0,5,2
+	.dw	.L3
+	.db	3,225,0,1,5,1,9
+	.dh	.L47-.L3
+	.db	3,3,0,1,1
+.L120:
+	.endsec	; End of section
+
+	.section	.debug_ranges ,cluster('$group_MemManage_Handler')
+.L45:
+	.dw	-1,.L46,0,.L47-.L46,0,0
+	.endsec	; End of section
+
+	.section	.debug_info ,cluster('$group_BusFault_Handler')
+.L48:
+	.dw	82
+	.dh	3
+	.dw	.L49
+	.db	4,1
+	.dw	.L103,.L104,.L105
+	.db	12,1
+	.dw	.L51,.L50
+	.db	2
+	.dw	.L26
+	.db	3
+	.db	'BusFault_Handler',0,1,108,6,1,1,1
+	.dw	.L4,.L53,.L12
+	.db	4
+	.dw	.L4,.L53
+	.db	0,0
+	.endsec	; End of section
+
+	.section	.debug_abbrev ,cluster('$group_BusFault_Handler')
+.L49:
+	.db	1,17,1,3,14,37,14,27,14,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54
+	.db	15,39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.endsec	; End of section
+
+	.section	.debug_line ,cluster('$group_BusFault_Handler')
+.L50:
+	.dw	.L124-.L123
+.L123:
+	.dh	3
+	.dw	.L126-.L125
+.L125:
+	.db	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.db	'C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c',0
+	.db	0,0,0,0
+.L126:
+	.db	5,11,7,0,5,2
+	.dw	.L4
+	.db	3,238,0,1,5,1,9
+	.dh	.L53-.L4
+	.db	3,3,0,1,1
+.L124:
+	.endsec	; End of section
+
+	.section	.debug_ranges ,cluster('$group_BusFault_Handler')
+.L51:
+	.dw	-1,.L52,0,.L53-.L52,0,0
+	.endsec	; End of section
+
+	.section	.debug_info ,cluster('$group_UsageFault_Handler')
+.L54:
+	.dw	84
+	.dh	3
+	.dw	.L55
+	.db	4,1
+	.dw	.L103,.L104,.L105
+	.db	12,1
+	.dw	.L57,.L56
+	.db	2
+	.dw	.L26
+	.db	3
+	.db	'UsageFault_Handler',0,1,121,6,1,1,1
+	.dw	.L5,.L59,.L13
+	.db	4
+	.dw	.L5,.L59
+	.db	0,0
+	.endsec	; End of section
+
+	.section	.debug_abbrev ,cluster('$group_UsageFault_Handler')
+.L55:
+	.db	1,17,1,3,14,37,14,27,14,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54
+	.db	15,39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.endsec	; End of section
+
+	.section	.debug_line ,cluster('$group_UsageFault_Handler')
+.L56:
+	.dw	.L128-.L127
+.L127:
+	.dh	3
+	.dw	.L130-.L129
+.L129:
+	.db	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.db	'C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c',0
+	.db	0,0,0,0
+.L130:
+	.db	5,11,7,0,5,2
+	.dw	.L5
+	.db	3,251,0,1,5,1,9
+	.dh	.L59-.L5
+	.db	3,3,0,1,1
+.L128:
+	.endsec	; End of section
+
+	.section	.debug_ranges ,cluster('$group_UsageFault_Handler')
+.L57:
+	.dw	-1,.L58,0,.L59-.L58,0,0
+	.endsec	; End of section
+
+	.section	.debug_info ,cluster('$group_SVC_Handler')
+.L60:
+	.dw	78
+	.dh	3
+	.dw	.L61
+	.db	4,1
+	.dw	.L103,.L104,.L105
+	.db	12,1
+	.dw	.L63,.L62
+	.db	2
+	.dw	.L26
+	.db	3
+	.db	'SVC_Handler',0,1,134,1,6,1,1,1
+	.dw	.L15,.L65,.L14
+	.db	4
+	.dw	.L15,.L65
+	.db	0,0
+	.endsec	; End of section
+
+	.section	.debug_abbrev ,cluster('$group_SVC_Handler')
+.L61:
+	.db	1,17,1,3,14,37,14,27,14,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54
+	.db	15,39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.endsec	; End of section
+
+	.section	.debug_line ,cluster('$group_SVC_Handler')
+.L62:
+	.dw	.L132-.L131
+.L131:
+	.dh	3
+	.dw	.L134-.L133
+.L133:
+	.db	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.db	'C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c',0
+	.db	0,0,0,0
+.L134:
+	.db	5,1,7,0,5,2
+	.dw	.L15
+	.db	3,135,1,1,7,9
+	.dh	.L65-.L15
+	.db	0,1,1
+.L132:
+	.endsec	; End of section
+
+	.section	.debug_ranges ,cluster('$group_SVC_Handler')
+.L63:
+	.dw	-1,.L64,0,.L65-.L64,0,0
+	.endsec	; End of section
+
+	.section	.debug_info ,cluster('$group_DebugMon_Handler')
+.L66:
+	.dw	83
+	.dh	3
+	.dw	.L67
+	.db	4,1
+	.dw	.L103,.L104,.L105
+	.db	12,1
+	.dw	.L69,.L68
+	.db	2
+	.dw	.L26
+	.db	3
+	.db	'DebugMon_Handler',0,1,143,1,6,1,1,1
+	.dw	.L17,.L71,.L16
+	.db	4
+	.dw	.L17,.L71
+	.db	0,0
+	.endsec	; End of section
+
+	.section	.debug_abbrev ,cluster('$group_DebugMon_Handler')
+.L67:
+	.db	1,17,1,3,14,37,14,27,14,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54
+	.db	15,39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.endsec	; End of section
+
+	.section	.debug_line ,cluster('$group_DebugMon_Handler')
+.L68:
+	.dw	.L136-.L135
+.L135:
+	.dh	3
+	.dw	.L138-.L137
+.L137:
+	.db	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.db	'C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c',0
+	.db	0,0,0,0
+.L138:
+	.db	5,1,7,0,5,2
+	.dw	.L17
+	.db	3,144,1,1,7,9
+	.dh	.L71-.L17
+	.db	0,1,1
+.L136:
+	.endsec	; End of section
+
+	.section	.debug_ranges ,cluster('$group_DebugMon_Handler')
+.L69:
+	.dw	-1,.L70,0,.L71-.L70,0,0
+	.endsec	; End of section
+
+	.section	.debug_info ,cluster('$group_PendSV_Handler')
+.L72:
+	.dw	81
+	.dh	3
+	.dw	.L73
+	.db	4,1
+	.dw	.L103,.L104,.L105
+	.db	12,1
+	.dw	.L75,.L74
+	.db	2
+	.dw	.L26
+	.db	3
+	.db	'PendSV_Handler',0,1,152,1,6,1,1,1
+	.dw	.L19,.L77,.L18
+	.db	4
+	.dw	.L19,.L77
+	.db	0,0
+	.endsec	; End of section
+
+	.section	.debug_abbrev ,cluster('$group_PendSV_Handler')
+.L73:
+	.db	1,17,1,3,14,37,14,27,14,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54
+	.db	15,39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.endsec	; End of section
+
+	.section	.debug_line ,cluster('$group_PendSV_Handler')
+.L74:
+	.dw	.L140-.L139
+.L139:
+	.dh	3
+	.dw	.L142-.L141
+.L141:
+	.db	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.db	'C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c',0
+	.db	0,0,0,0
+.L142:
+	.db	5,1,7,0,5,2
+	.dw	.L19
+	.db	3,153,1,1,7,9
+	.dh	.L77-.L19
+	.db	0,1,1
+.L140:
+	.endsec	; End of section
+
+	.section	.debug_ranges ,cluster('$group_PendSV_Handler')
+.L75:
+	.dw	-1,.L76,0,.L77-.L76,0,0
+	.endsec	; End of section
+
+	.section	.debug_info ,cluster('$group_SysTick_Handler')
+.L78:
+	.dw	82
+	.dh	3
+	.dw	.L79
+	.db	4,1
+	.dw	.L103,.L104,.L105
+	.db	12,1
+	.dw	.L81,.L80
+	.db	2
+	.dw	.L26
+	.db	3
+	.db	'SysTick_Handler',0,1,161,1,6,1,1,1
+	.dw	.L21,.L83,.L20
+	.db	4
+	.dw	.L21,.L83
+	.db	0,0
+	.endsec	; End of section
+
+	.section	.debug_abbrev ,cluster('$group_SysTick_Handler')
+.L79:
+	.db	1,17,1,3,14,37,14,27,14,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54
+	.db	15,39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.endsec	; End of section
+
+	.section	.debug_line ,cluster('$group_SysTick_Handler')
+.L80:
+	.dw	.L144-.L143
+.L143:
+	.dh	3
+	.dw	.L146-.L145
+.L145:
+	.db	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.db	'C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c',0
+	.db	0,0,0,0
+.L146:
+	.db	5,1,7,0,5,2
+	.dw	.L21
+	.db	3,162,1,1,7,9
+	.dh	.L83-.L21
+	.db	0,1,1
+.L144:
+	.endsec	; End of section
+
+	.section	.debug_ranges ,cluster('$group_SysTick_Handler')
+.L81:
+	.dw	-1,.L82,0,.L83-.L82,0,0
+	.endsec	; End of section
+
+	.section	.debug_info ,cluster('$group_DMA1_Channel1_IRQHandler')
+.L84:
+	.dw	113
+	.dh	3
+	.dw	.L85
+	.db	4,1
+	.dw	.L103,.L104,.L105
+	.db	12,1
+	.dw	.L87,.L86
+	.db	2
+	.dw	.L26
+	.db	3
+	.db	'DMA1_Channel1_IRQHandler',0,1,174,1,6,1,1,1
+	.dw	.L23,.L98,.L22
+	.db	4
+	.dw	.L23,.L98
+	.db	5
+	.db	'index',0,1,177,1,21
+	.dw	.L99
+	.db	5,3
+	.dw	_999001_index
+	.db	0,0,0
+	.endsec	; End of section
+
+	.section	.debug_abbrev ,cluster('$group_DMA1_Channel1_IRQHandler')
+.L85:
+	.db	1,17,1,3,14,37,14,27,14,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54
+	.db	15,39,12,63,12,17,1,18,1,64,6,0,0,4,11,1,17,1,18,1,0,0,5,52,0,3,8,58,15,59,15,57,15,73,16,2,9,0,0,0
+	.endsec	; End of section
+
+	.section	.debug_line ,cluster('$group_DMA1_Channel1_IRQHandler')
+.L86:
+	.dw	.L148-.L147
+.L147:
+	.dh	3
+	.dw	.L150-.L149
+.L149:
+	.db	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.db	'C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c',0
+	.db	0,0,0,0
+.L150:
+	.db	5,6,7,0,5,2
+	.dw	.L23
+	.db	3,173,1,1,5,17,9
+	.dh	.L101-.L23
+	.db	3,7,1,5,8,9
+	.dh	.L151-.L101
+	.db	1,5,15,9
+	.dh	.L152-.L151
+	.db	1,5,53,9
+	.dh	.L153-.L152
+	.db	3,7,1,5,6,9
+	.dh	.L154-.L153
+	.db	3,114,1,5,17,9
+	.dh	.L155-.L154
+	.db	3,23,1,5,25,9
+	.dh	.L156-.L155
+	.db	3,119,1,5,17,9
+	.dh	.L157-.L156
+	.db	3,3,1,9
+	.dh	.L158-.L157
+	.db	3,6,1,9
+	.dh	.L159-.L158
+	.db	3,122,1,5,23,9
+	.dh	.L160-.L159
+	.db	1,5,17,9
+	.dh	.L161-.L160
+	.db	3,3,1,5,27,9
+	.dh	.L162-.L161
+	.db	1,5,17,9
+	.dh	.L163-.L162
+	.db	1,5,25,9
+	.dh	.L164-.L163
+	.db	1,5,36,9
+	.dh	.L165-.L164
+	.db	3,3,1,5,24,9
+	.dh	.L166-.L165
+	.db	1,5,17,9
+	.dh	.L167-.L166
+	.db	3,3,1,5,23,9
+	.dh	.L168-.L167
+	.db	1,5,17,9
+	.dh	.L169-.L168
+	.db	3,3,1,5,25,9
+	.dh	.L170-.L169
+	.db	1,5,17,9
+	.dh	.L171-.L170
+	.db	3,3,1,5,36,9
+	.dh	.L172-.L171
+	.db	1,5,17,9
+	.dh	.L173-.L172
+	.db	1,5,24,9
+	.dh	.L174-.L173
+	.db	1,5,15,9
+	.dh	.L175-.L174
+	.db	3,3,1,5,21,9
+	.dh	.L176-.L175
+	.db	1,5,15,9
+	.dh	.L177-.L176
+	.db	1,5,21,9
+	.dh	.L178-.L177
+	.db	1,5,27,9
+	.dh	.L179-.L178
+	.db	3,3,1,5,36,9
+	.dh	.L180-.L179
+	.db	1,5,4,9
+	.dh	.L181-.L180
+	.db	1,5,34,9
+	.dh	.L182-.L181
+	.db	1,5,9,9
+	.dh	.L183-.L182
+	.db	3,1,1,5,4,9
+	.dh	.L184-.L183
+	.db	3,1,1,5,9,9
+	.dh	.L185-.L184
+	.db	3,127,1,5,4,9
+	.dh	.L186-.L185
+	.db	3,1,1,5,20,9
+	.dh	.L187-.L186
+	.db	3,3,1,5,14,9
+	.dh	.L188-.L187
+	.db	1,5,20,9
+	.dh	.L189-.L188
+	.db	1,5,67,9
+	.dh	.L190-.L189
+	.db	3,3,1,5,1,9
+	.dh	.L6-.L190
+	.db	3,4,1,7,9
+	.dh	.L89-.L6
+	.db	0,1,1
+.L148:
+	.endsec	; End of section
+
+	.section	.debug_ranges ,cluster('$group_DMA1_Channel1_IRQHandler')
+.L87:
+	.dw	-1,.L88,0,.L89-.L88,0,0
+	.endsec	; End of section
+
+	.section	.debug_info ,cluster('$group_TIM2_IRQHandler')
+.L90:
+	.dw	82
+	.dh	3
+	.dw	.L91
+	.db	4,1
+	.dw	.L103,.L104,.L105
+	.db	12,1
+	.dw	.L93,.L92
+	.db	2
+	.dw	.L26
+	.db	3
+	.db	'TIM2_IRQHandler',0,1,240,1,6,1,1,1
+	.dw	.L25,.L95,.L24
+	.db	4
+	.dw	.L25,.L95
+	.db	0,0
+	.endsec	; End of section
+
+	.section	.debug_abbrev ,cluster('$group_TIM2_IRQHandler')
+.L91:
+	.db	1,17,1,3,14,37,14,27,14,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54
+	.db	15,39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.endsec	; End of section
+
+	.section	.debug_line ,cluster('$group_TIM2_IRQHandler')
+.L92:
+	.dw	.L192-.L191
+.L191:
+	.dh	3
+	.dw	.L194-.L193
+.L193:
+	.db	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.db	'C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c',0
+	.db	0,0,0,0
+.L194:
+	.db	5,6,7,0,5,2
+	.dw	.L25
+	.db	3,239,1,1,5,32,9
+	.dh	.L102-.L25
+	.db	3,3,1,5,26,9
+	.dh	.L195-.L102
+	.db	1,5,32,9
+	.dh	.L196-.L195
+	.db	1,5,16,9
+	.dh	.L197-.L196
+	.db	3,3,1,5,22,9
+	.dh	.L198-.L197
+	.db	1,5,16,9
+	.dh	.L199-.L198
+	.db	3,3,1,5,22,9
+	.dh	.L200-.L199
+	.db	1,5,20,9
+	.dh	.L201-.L200
+	.db	3,3,1,5,14,9
+	.dh	.L202-.L201
+	.db	1,5,20,9
+	.dh	.L203-.L202
+	.db	1,5,1,9
+	.dh	.L204-.L203
+	.db	3,1,1,7,9
+	.dh	.L95-.L204
+	.db	0,1,1
+.L192:
+	.endsec	; End of section
+
+	.section	.debug_ranges ,cluster('$group_TIM2_IRQHandler')
+.L93:
+	.dw	-1,.L94,0,.L95-.L94,0,0
+	.endsec	; End of section
+
+	.section	.debug_info ,cluster('$group_ADC_Oversampled_Data')
+.L96:
+	.dw	64
+	.dh	3
+	.dw	.L97
+	.db	4,1
+	.dw	.L103,.L104,.L105
+	.db	12,1,2
+	.dw	.L26
+	.db	3
+	.db	'ADC_Oversampled_Data',0,6,60,15
+	.dw	.L100
+	.db	1,5,3
+	.dw	ADC_Oversampled_Data
+	.db	0
+	.endsec	; End of section
+
+	.section	.debug_abbrev ,cluster('$group_ADC_Oversampled_Data')
+.L97:
+	.db	1,17,1,3,14,37,14,27,14,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12
+	.db	2,9,0,0,0
+	.endsec	; End of section
+
+	.section	.debug_str
+.L103:
+	.db	'C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c',0
+.L104:
+	.db	'TASKING VX-toolset for ARM Cortex: C compiler',0
+.L105:
+	.db	'C:\\Users\\hmidenen\\Desktop\\Sanity Check\\AN2668_FW_V3.0.0\\Project\\ADCOversampling-STM32L\\TriangularDitherMethod\\TASKING\\STM32L152-EVAL\\Debug\\',0
+	.endsec	; End of section
+
+	.section	.debug_loc ,cluster('$group_BusFault_Handler')
+.L12:
+	.dw	-1,.L4,0,.L53-.L4
+	.dh	2
+	.db	125,0
+	.dw	0,0
+	.endsec	; End of section
+
+	.section	.debug_loc ,cluster('$group_DMA1_Channel1_IRQHandler')
+.L22:
+	.dw	-1,.L23,0,.L101-.L23
+	.dh	2
+	.db	125,0
+	.dw	.L101-.L23,.L98-.L23
+	.dh	2
+	.db	125,12
+	.dw	.L98-.L23,.L98-.L23
+	.dh	2
+	.db	125,0
+	.dw	0,0
+	.endsec	; End of section
+
+	.section	.debug_loc ,cluster('$group_DebugMon_Handler')
+.L16:
+	.dw	-1,.L17,0,.L71-.L17
+	.dh	2
+	.db	125,0
+	.dw	0,0
+	.endsec	; End of section
+
+	.section	.debug_loc ,cluster('$group_HardFault_Handler')
+.L10:
+	.dw	-1,.L2,0,.L41-.L2
+	.dh	2
+	.db	125,0
+	.dw	0,0
+	.endsec	; End of section
+
+	.section	.debug_loc ,cluster('$group_MemManage_Handler')
+.L11:
+	.dw	-1,.L3,0,.L47-.L3
+	.dh	2
+	.db	125,0
+	.dw	0,0
+	.endsec	; End of section
+
+	.section	.debug_loc ,cluster('$group_NMI_Handler')
+.L8:
+	.dw	-1,.L9,0,.L35-.L9
+	.dh	2
+	.db	125,0
+	.dw	0,0
+	.endsec	; End of section
+
+	.section	.debug_loc ,cluster('$group_PendSV_Handler')
+.L18:
+	.dw	-1,.L19,0,.L77-.L19
+	.dh	2
+	.db	125,0
+	.dw	0,0
+	.endsec	; End of section
+
+	.section	.debug_loc ,cluster('$group_SVC_Handler')
+.L14:
+	.dw	-1,.L15,0,.L65-.L15
+	.dh	2
+	.db	125,0
+	.dw	0,0
+	.endsec	; End of section
+
+	.section	.debug_loc ,cluster('$group_SysTick_Handler')
+.L20:
+	.dw	-1,.L21,0,.L83-.L21
+	.dh	2
+	.db	125,0
+	.dw	0,0
+	.endsec	; End of section
+
+	.section	.debug_loc ,cluster('$group_TIM2_IRQHandler')
+.L24:
+	.dw	-1,.L25,0,.L102-.L25
+	.dh	2
+	.db	125,0
+	.dw	.L102-.L25,.L95-.L25
+	.dh	2
+	.db	125,4
+	.dw	.L95-.L25,.L95-.L25
+	.dh	2
+	.db	125,0
+	.dw	0,0
+	.endsec	; End of section
+
+	.section	.debug_loc ,cluster('$group_UsageFault_Handler')
+.L13:
+	.dw	-1,.L5,0,.L59-.L5
+	.dh	2
+	.db	125,0
+	.dw	0,0
+	.endsec	; End of section
+
+	.section	.debug_frame
+.L205:
+	.dw	64
+	.dw	-1
+	.db	3,0,2,2,14,12,13,0,8,4,8,5,8,6,8,7,8,8,8,9,8,10,8,11,8,13,8,14,8,15,8,128,1,8,136,2,8,137,2,8,138,2,8
+	.db	139,2,8,140,2,8,141,2,8,142,2,8,143,2,0,0,0
+	.endsec	; End of section
+
+	.section	.debug_frame ,cluster('$group_NMI_Handler')
+	.dw	44
+	.dw	.L205,.L9,.L35-.L9
+	.db	8,0,8,1,8,2,8,3,8,128,2,8,129,2,8,130,2,8,131,2,8,132,2,8,133,2,8,134,2,8,135,2
+	.endsec	; End of section
+
+	.section	.debug_frame ,cluster('$group_HardFault_Handler')
+	.dw	44
+	.dw	.L205,.L2,.L41-.L2
+	.db	8,0,8,1,8,2,8,3,8,128,2,8,129,2,8,130,2,8,131,2,8,132,2,8,133,2,8,134,2,8,135,2
+	.endsec	; End of section
+
+	.section	.debug_frame ,cluster('$group_MemManage_Handler')
+	.dw	44
+	.dw	.L205,.L3,.L47-.L3
+	.db	8,0,8,1,8,2,8,3,8,128,2,8,129,2,8,130,2,8,131,2,8,132,2,8,133,2,8,134,2,8,135,2
+	.endsec	; End of section
+
+	.section	.debug_frame ,cluster('$group_BusFault_Handler')
+	.dw	44
+	.dw	.L205,.L4,.L53-.L4
+	.db	8,0,8,1,8,2,8,3,8,128,2,8,129,2,8,130,2,8,131,2,8,132,2,8,133,2,8,134,2,8,135,2
+	.endsec	; End of section
+
+	.section	.debug_frame ,cluster('$group_UsageFault_Handler')
+	.dw	44
+	.dw	.L205,.L5,.L59-.L5
+	.db	8,0,8,1,8,2,8,3,8,128,2,8,129,2,8,130,2,8,131,2,8,132,2,8,133,2,8,134,2,8,135,2
+	.endsec	; End of section
+
+	.section	.debug_frame ,cluster('$group_SVC_Handler')
+	.dw	44
+	.dw	.L205,.L15,.L65-.L15
+	.db	8,0,8,1,8,2,8,3,8,128,2,8,129,2,8,130,2,8,131,2,8,132,2,8,133,2,8,134,2,8,135,2
+	.endsec	; End of section
+
+	.section	.debug_frame ,cluster('$group_DebugMon_Handler')
+	.dw	44
+	.dw	.L205,.L17,.L71-.L17
+	.db	8,0,8,1,8,2,8,3,8,128,2,8,129,2,8,130,2,8,131,2,8,132,2,8,133,2,8,134,2,8,135,2
+	.endsec	; End of section
+
+	.section	.debug_frame ,cluster('$group_PendSV_Handler')
+	.dw	44
+	.dw	.L205,.L19,.L77-.L19
+	.db	8,0,8,1,8,2,8,3,8,128,2,8,129,2,8,130,2,8,131,2,8,132,2,8,133,2,8,134,2,8,135,2
+	.endsec	; End of section
+
+	.section	.debug_frame ,cluster('$group_SysTick_Handler')
+	.dw	44
+	.dw	.L205,.L21,.L83-.L21
+	.db	8,0,8,1,8,2,8,3,8,128,2,8,129,2,8,130,2,8,131,2,8,132,2,8,133,2,8,134,2,8,135,2
+	.endsec	; End of section
+
+	.section	.debug_frame ,cluster('$group_DMA1_Channel1_IRQHandler')
+	.dw	44
+	.dw	.L205,.L23,.L98-.L23
+	.db	4
+	.dw	(.L101-.L23)/2
+	.db	19,6,22,13,3,19,125,12,17,14,126,17,5,124,17,4,122,4
+	.dw	(.L98-.L101)/2
+	.db	19,0,8,13,0
+	.endsec	; End of section
+
+	.section	.debug_frame ,cluster('$group_TIM2_IRQHandler')
+	.dw	40
+	.dw	.L205,.L25,.L95-.L25
+	.db	4
+	.dw	(.L102-.L25)/2
+	.db	19,2,22,13,3,19,125,4,17,14,126,4
+	.dw	(.L95-.L102)/2
+	.db	19,0,8,13,0,0,0
+	.endsec	; End of section
+
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   254  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   255  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   256  /**
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   257    * @}
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   258    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   259  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/stm32l1xx_it.c	   260  /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
+
+	; Module end
+	.end

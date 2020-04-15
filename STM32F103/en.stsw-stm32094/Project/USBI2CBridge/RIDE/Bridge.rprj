@@ -1,0 +1,4 @@
+
+<Project Header="Project 'Bridge'" Path=".\Bridge.rprj" Project="Yes" OutputFile="" sate="96" ActiveApp="Bridge" >
+	<ApplicationBuild Header="Bridge" Extern=".\Bridge.rapp" Path=".\Bridge.rapp" OutputFile=".\STM3210E-EVAL_XL\Bridge.elf" Config="STM3210E-EVAL_XL" sate="98" />
+</Project>

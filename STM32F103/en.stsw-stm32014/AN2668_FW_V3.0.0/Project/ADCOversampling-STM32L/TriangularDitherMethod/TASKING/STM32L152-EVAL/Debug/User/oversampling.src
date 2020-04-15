@@ -1,0 +1,1696 @@
+	; TASKING VX-toolset for ARM Cortex: C compiler v4.4r1 Build 765 SN 00123456
+	; Options: -f cc7348a --dep-file=User\.oversampling.obj.d -CARMv7M -D__PROC_STM32L152VB__ -DVECT_TAB_FLASH -DUSE_STDPERIPH_DRIVER -DUSE_STM32L152_EVAL -DSTM32L1XX_MD -I..\..\..\inc -I..\..\..\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc -I..\..\..\..\..\..\Libraries\CMSIS\Device\ST\STM32L1xx\Include -I..\..\..\..\..\..\Libraries\CMSIS\Include -g -t4 -w557 -w529 -w588 --make-target=User\oversampling.obj --language=-gcc,-volatile,+strings -O3 --source --compact-max-size=200 -o User\oversampling.src
+	; Module start
+	;.ident 'TASKING VX-toolset for ARM Cortex: C compiler v4.4r1 Build 765 SN 00123456'
+	.source 'C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c'
+
+	.section	.text ,cluster('$group_Oversampling_InitBuffer')
+	.global	Oversampling_InitBuffer
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	     1  /**
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	     2    ******************************************************************************
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	     3    * @file TriangularDitherMethod/src/oversampling.c
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	     4    * @author  MCD Application Team
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	     5    * @version  V2.0.0
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	     6    * @date  04/27/2009
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	     7    * @brief  This file contains the oversampling functions body.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	     8    ******************************************************************************
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	     9    * @copy
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    10    *
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    11    * THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    12    * WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    13    * TIME. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    14    * DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    15    * FROM THE CONTENT OF SUCH FIRMWARE AND/OR THE USE MADE BY CUSTOMERS OF THE
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    16    * CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    17    *
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    18    * <h2><center>&copy; COPYRIGHT 2009 STMicroelectronics</center></h2>
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    19    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    20  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    21  /* Includes ------------------------------------------------------------------*/
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    22  #include <stdio.h>
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    23  #include "oversampling.h"
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    24  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    25  #ifdef Thermal_Noise_Measure
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    26  /* This parameter to compute the ADC thermal noise */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    27  uint16_t ADC_ConvertedValue[Total_Samples_Number];
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    28  uint16_t ADC_Codes[Relevant_Samples_Number];
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    29  uint16_t ADC_Codes_Number[Relevant_Samples_Number];
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    30  #else
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    31  uint16_t ADC_ConvertedValue[ADC_Oversampling_Factor];
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    32  uint16_t TimerPulseWidth[BUFFER_PW_WIDTH];
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    33  #endif
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    34  #ifdef Oversampling_Test
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    35  uint16_t ADC_Oversampled_Buffer[Oversampling_Test_Samples];
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    36  #endif
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    37  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    38  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    39  /** @addtogroup TriangularDitherMethod
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    40    * @{
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    41    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    42  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    43  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    44  /* Private typedef -----------------------------------------------------------*/
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    45  /* Private define ------------------------------------------------------------*/
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    46  /* Private macro -------------------------------------------------------------*/
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    47  /* Private variables ---------------------------------------------------------*/
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    48  /* Private function prototypes -----------------------------------------------*/
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    49  void Oversampling_InitBuffer ( uint16_t * Buffer , uint32_t size );
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    50  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    51  #ifdef __GNUC__
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    52    /* With GCC/RAISONANCE, small printf (option LD Linker->Libraries->Small printf
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    53       set to 'Yes') calls __io_putchar() */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    54    #define PUTCHAR_PROTOTYPE int __io_putchar(int ch)
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    55  #else
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    56    #define PUTCHAR_PROTOTYPE int fputc(int ch, FILE *f)
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    57  #endif /* __GNUC__ */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    58  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    59  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    60  /* Private functions ---------------------------------------------------------*/
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    61  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    62  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    63  /**
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    64    * @brief  Initializes a data buffer which size is passed in parameter
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    65    *   Input1         : buffer
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    66    *   Input2         : buffer size
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    67    * @retval : None
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    68    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    69  void Oversampling_InitBuffer( uint16_t * Buffer , uint32_t size )
+; Function Oversampling_InitBuffer
+.L66:
+	.thumb
+	.align	4
+Oversampling_InitBuffer:	.type	func
+
+.L17:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    70  {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    71    uint32_t index = 0;
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    72    for( index = 0; index < size; index++)
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    73    Buffer[index] = 0;
+	movs	r2,#0
+.L183:
+	b	.L2
+.L3:
+	strh	r2,[r0],#2
+.L184:
+	subs	r1,r1,#1
+.L2:
+	cmp	r1,#0
+	bne	.L3
+.L185:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    74  }
+	bx	lr
+.L67:
+	.size	Oversampling_InitBuffer,$-Oversampling_InitBuffer
+	; End of function
+	.endsec	; End of section
+
+	.section	.text ,cluster('$group_fputc')
+	.global	fputc
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    75  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    76  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    77  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    78  /**
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    79    * @brief  Retargets the C library printf function to the USART.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    80    * @param  None
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    81    * @retval : None
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    82    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    83  PUTCHAR_PROTOTYPE
+; Function fputc
+.L36:
+	.thumb
+	.align	4
+fputc:	.type	func
+
+.L19:
+	push	{r4,r5,lr}
+.L97:
+	mov	r4,r0
+.L100:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    84  {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    85    /* Place your implementation of fputc here */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    86    /* e.g. write a character to the USART */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    87    USART_SendData(USART2, (uint8_t) ch);
+	uxtb	r1,r0
+.L99:
+	movw	r5,#@lsh(1073759232)
+	movt	r5,#@msh(1073759232)
+.L125:
+	mov	r0,r5
+.L98:
+	bl	USART_SendData
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    88  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    89    /* Loop until the end of transmission */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    90    while(USART_GetFlagStatus(USART2, USART_FLAG_TC) == RESET)
+.L4:
+	mov	r0,r5
+	movs	r1,#64
+	bl	USART_GetFlagStatus
+.L126:
+	cmp	r0,#0
+	beq	.L4
+.L127:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    91    {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    92    }
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    93    return ch;
+	mov	r0,r4
+.L101:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    94  }
+	pop	{r4,r5,pc}
+.L37:
+	.size	fputc,$-fputc
+	; End of function
+	.endsec	; End of section
+
+	.section	.text ,cluster('$group_Oversampling_InitData')
+	.global	Oversampling_InitData
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    95  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    96  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    97  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    98  /**
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	    99    * @brief  Initializes The different data buffers used in the
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   100    *   oversampling alogorithm according to the different cases:
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   101    *   Thermal_Noise_Measure, Oversampling_Test
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   102    * @param uint16_t buffer
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   103    * @arg uint32_t: buffer size
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   104    * @retval : None
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   105    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   106  void  Oversampling_InitData( void )
+; Function Oversampling_InitData
+.L42:
+	.thumb
+	.align	4
+Oversampling_InitData:	.type	func
+
+.L21:
+	push	{lr}
+.L102:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   107  {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   108    #ifdef  Thermal_Noise_Measure
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   109    Oversampling_InitBuffer( ADC_ConvertedValue, Total_Samples_Number);
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   110    Oversampling_InitBuffer( ADC_Codes, Relevant_Samples_Number);
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   111    Oversampling_InitBuffer( ADC_Codes_Number, Relevant_Samples_Number);
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   112    #else
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   113    Oversampling_InitBuffer( ADC_ConvertedValue, ADC_Oversampling_Factor);
+	ldr	r0,.L12
+.L132:
+	movs	r1,#8
+	bl	Oversampling_InitBuffer
+.L133:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   114    /* Init the Capture compare values for the triangular waveform generation */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   115    Oversampling_ComputePulseWidthBuffer();
+	bl	Oversampling_ComputePulseWidthBuffer
+.L134:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   116    #endif
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   117    #ifdef Oversampling_Test
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   118    Oversampling_InitBuffer ( ADC_Oversampled_Buffer, Oversampling_Test_Samples);
+	ldr	r0,.L12+4
+.L135:
+	movs	r1,#500
+	bl	Oversampling_InitBuffer
+.L136:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   119    #endif
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   120  }
+	pop	{pc}
+.L78:
+	.align	4
+.L12:
+	.dw	ADC_ConvertedValue
+	.dw	ADC_Oversampled_Buffer
+.L43:
+	.size	Oversampling_InitData,$-Oversampling_InitData
+	; End of function
+	.endsec	; End of section
+
+	.section	.text ,cluster('$group_Oversampling_GetConversion')
+	.global	Oversampling_GetConversion
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   121  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   122  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   123  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   124  /**
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   125    * @brief  Determines the number of each code bin included in the
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   126    *   samples.
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   127    * @param uint16_t buffer conatining the code bins
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   128    * @arg uint16_t buffer containing the number of the corresponding code
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   129    * @arg uint32_t: Code bins Number
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   130    * @retval : None
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   131    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   132  #ifdef Thermal_Noise_Measure
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   133  void  Oversampling_TestADCThermalNoise( __IO uint16_t *ADC_Code, __IO uint16_t *ADC_Code_Number)
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   134  {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   135    uint32_t index = 0;
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   136    uint32_t i = 0;
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   137    uint32_t pointeur = 0;
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   138  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   139    do
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   140    {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   141      if ( index == 0)
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   142       {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   143        ADC_Code[0] = ADC_ConvertedValue[0];
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   144        ADC_Code_Number[0] = 1;
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   145       }
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   146       else
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   147       {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   148         i = 0;
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   149         do
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   150          {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   151            if( ADC_ConvertedValue[index] == ADC_Code[i])
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   152            {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   153              ADC_Code_Number[i]++;
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   154              break;
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   155            }
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   156            i++;
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   157          } while( i<= pointeur);
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   158  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   159          if( i == (pointeur+1))
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   160          {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   161            pointeur++;
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   162            ADC_Code[pointeur] = ADC_ConvertedValue[index];
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   163            ADC_Code_Number[pointeur] = 1;
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   164          }
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   165      } /* end else */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   166      index++;
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   167    } while( index < Total_Samples_Number);
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   168  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   169   Oversampling_CopyConvValuesToFile(  ADC_Code , 100 );
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   170  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   171   printf( "The occurance of each ADC code is as follow:\n");
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   172  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   173   Oversampling_CopyConvValuesToFile(  ADC_Code_Number , 100 );
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   174  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   175  }
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   176  #endif
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   177  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   178  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   179  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   180  /**
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   181    * @brief  Gives the ADC oversampled conversion result
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   182    * @param  None
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   183    * @retval : Oversampled Result
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   184    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   185  uint16_t Oversampling_GetConversion ( void )
+; Function Oversampling_GetConversion
+.L54:
+	.thumb
+	.align	4
+Oversampling_GetConversion:	.type	func
+
+.L23:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   186  {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   187    uint32_t index = 0;
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   188    uint32_t result = 0;
+	movs	r0,#0
+.L103:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   189  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   190    for( index = 0; index < ADC_Oversampling_Factor ; index++)
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   191      result += ADC_ConvertedValue[index];
+	ldr	r2,.L13
+.L152:
+	movs	r1,#8
+.L6:
+	subs	r1,r1,#1
+.L153:
+	ldrh	r3,[r2],#2
+.L154:
+	add	r0,r0,r3
+.L155:
+	bne	.L6
+.L156:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   192  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   193    result = (result + 1 ) >> 1;
+	adds	r0,r0,#1
+.L104:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   194  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   195    /* This line is to compensate the offset AOP VIN+ = 3.3V */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   196    result =  OFFSET_3V - result;
+	movw	r1,#@lsh(16383)
+.L157:
+	subs	r0,r1,r0,lsr #1
+.L105:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   197  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   198   return ( (uint16_t)result );
+	uxth	r0,r0
+.L106:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   199  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   200  }
+	bx	lr
+.L86:
+	.align	4
+.L13:
+	.dw	ADC_ConvertedValue
+.L55:
+	.size	Oversampling_GetConversion,$-Oversampling_GetConversion
+	; End of function
+	.endsec	; End of section
+
+	.section	.text ,cluster('$group_Oversampling_CopyConvValuesToFile')
+	.global	Oversampling_CopyConvValuesToFile
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   201  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   202  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   203  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   204  /**
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   205    * @brief  Copies the ADC converted value into a text file
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   206    *   Input1         : Buffer
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   207    *   Input2         : Buffer size
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   208    * @retval : None
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   209    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   210  void Oversampling_CopyConvValuesToFile ( __IO uint16_t *Tab, uint32_t size )
+; Function Oversampling_CopyConvValuesToFile
+.L48:
+	.thumb
+	.align	4
+Oversampling_CopyConvValuesToFile:	.type	func
+
+.L25:
+	push	{r4,r5,lr}
+.L107:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   211  {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   212    uint32_t index = 0;
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   213  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   214    for ( index = 0; index < size ; index++ )
+	mov	r5,r0
+.L141:
+	mov	r4,r1
+.L142:
+	b	.L8
+.L9:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   215     {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   216  	 printf("%x\r\n", Tab[index]);
+	ldrh	r1,[r5],#2
+.L143:
+	ldr	r0,.L14
+.L144:
+	bl	printf
+.L145:
+	subs	r4,r4,#1
+.L8:
+	cmp	r4,#0
+	bne	.L9
+.L146:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   217     }
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   218     printf ("End\n\r");
+	ldr	r0,.L14+4
+	bl	printf
+.L147:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   219  }
+	pop	{r4,r5,pc}
+.L79:
+	.align	4
+.L14:
+	.dw	.1.str
+	.dw	.2.str
+.L49:
+	.size	Oversampling_CopyConvValuesToFile,$-Oversampling_CopyConvValuesToFile
+	; End of function
+	.endsec	; End of section
+
+	.section	.text ,cluster('$group_Oversampling_ComputePulseWidthBuffer')
+	.global	Oversampling_ComputePulseWidthBuffer
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   220  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   221  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   222  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   223  /**
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   224    * @brief  Computes the Pulse width buffer that is used to update the
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   225    *   Compare register of Timer 3 used for the triangular waveform
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   226    *   generation
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   227    * @param  None
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   228    * @retval : None
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   229    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   230  #ifndef Thermal_Noise_Measure
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   231  void Oversampling_ComputePulseWidthBuffer ( void)
+; Function Oversampling_ComputePulseWidthBuffer
+.L60:
+	.thumb
+	.align	4
+Oversampling_ComputePulseWidthBuffer:	.type	func
+
+.L27:
+	push	{r4}
+.L108:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   232  {
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   233    uint32_t index = 0;
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   234    uint32_t Half_Size = ( ADC_Oversampling_Factor >> 1 );
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   235  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   236     TimerPulseWidth[0] = TIM_PWM_STEP;
+	ldr	r0,.L15
+.L162:
+	movs	r1,#8
+.L163:
+	strh	r1,[r0,#0]
+.L164:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   237  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   238    for( index = 1 ; index < Half_Size - 1 ; index++)
+	mov	r1,r0
+.L165:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   239      TimerPulseWidth[ index] = TimerPulseWidth[index - 1] + TIM_PWM_STEP;
+	adds	r3,r0,#2
+.L166:
+	movs	r2,#2
+.L10:
+	ldrh	r4,[r1],#2
+.L167:
+	adds	r4,r4,#8
+.L168:
+	subs	r2,r2,#1
+.L169:
+	strh	r4,[r3],#2
+.L170:
+	bne	.L10
+.L171:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   240  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   241   for( index = 0; index < Half_Size - 1 ; index++)
+	movs	r1,#0
+.L110:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   242      TimerPulseWidth[Half_Size + index] = TimerPulseWidth[Half_Size - index-2];
+	ldr	r2,.L15+4
+.L11:
+	subs	r3,r0,r1,lsl #1
+.L172:
+	adds	r1,r1,#1
+.L173:
+	cmp	r1,#3
+.L174:
+	ldrh	r3,[r3,#4]
+.L175:
+	strh	r3,[r2],#2
+.L176:
+	blo	.L11
+.L177:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   243  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   244   TimerPulseWidth[Half_Size - 1 ] = TIM_PWM_PERIOD;
+	movs	r1,#31
+.L111:
+	strh	r1,[r0,#6]
+.L178:
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   245  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   246  }
+	ldr	r4,[sp],#4
+.L109:
+	bx	lr
+.L89:
+	.align	4
+.L15:
+	.dw	TimerPulseWidth
+	.dw	TimerPulseWidth+8
+.L61:
+	.size	Oversampling_ComputePulseWidthBuffer,$-Oversampling_ComputePulseWidthBuffer
+	; End of function
+	.endsec	; End of section
+
+	.section	.data ,group("cluster_.1.C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c"),concat,cluster('$group_ADC_ConvertedValue')
+	.global	ADC_ConvertedValue
+	.align	4
+ADC_ConvertedValue:	.type	object
+	.size	ADC_ConvertedValue,16
+	.bs	16,0
+	.endsec	; End of section
+
+	.section	.data ,group("cluster_.1.C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c"),concat,cluster('$group_TimerPulseWidth')
+	.global	TimerPulseWidth
+	.align	4
+TimerPulseWidth:	.type	object
+	.size	TimerPulseWidth,16
+	.bs	16,0
+	.endsec	; End of section
+
+	.section	.bss ,cluster('$group_ADC_Oversampled_Buffer')
+	.global	ADC_Oversampled_Buffer
+	.align	4
+ADC_Oversampled_Buffer:	.type	object
+	.size	ADC_Oversampled_Buffer,1000
+	.ds	1000
+	.endsec	; End of section
+
+	.section	.rodata ,cluster('$group_.1.str')
+	.align	4
+.1.str:	.type	object
+	.size	.1.str,5
+	.db	'%x\r\n',0
+	.endsec	; End of section
+
+	.section	.rodata ,cluster('$group_.2.str')
+	.align	4
+.2.str:	.type	object
+	.size	.2.str,6
+	.db	'End\n\r',0
+	.endsec	; End of section
+
+	.calls	'fputc','USART_SendData'
+	.calls	'fputc','USART_GetFlagStatus'
+	.calls	'Oversampling_InitData','Oversampling_InitBuffer'
+	.calls	'Oversampling_InitData','Oversampling_ComputePulseWidthBuffer'
+	.calls	'Oversampling_CopyConvValuesToFile','printf'
+	.calls	'Oversampling_InitBuffer','',0
+	.calls	'fputc','',12
+	.calls	'Oversampling_InitData','',4
+	.calls	'Oversampling_GetConversion','',0
+	.calls	'Oversampling_CopyConvValuesToFile','',12
+	.calls	'Oversampling_ComputePulseWidthBuffer','',4
+	.extern	printf
+	.extern	USART_SendData
+	.extern	USART_GetFlagStatus
+	.extern	__printf_int
+	.section	.debug_info
+.L29:
+	.dw	2764
+	.dh	3
+	.dw	.L30
+	.db	4
+.L28:
+	.db	1
+	.dw	.L112,.L113,.L114
+	.db	12,1
+	.dw	.L31
+	.db	2
+	.db	'NVIC_SetPriority',0,3,1,246,7,22,1,1,3
+	.db	'IRQn',0,2,171,1,14,4,4
+	.db	'NonMaskableInt_IRQn',0,114,4
+	.db	'MemoryManagement_IRQn',0,116,4
+	.db	'BusFault_IRQn',0,117,4
+	.db	'UsageFault_IRQn',0,118,4
+	.db	'SVC_IRQn',0,123,4
+	.db	'DebugMonitor_IRQn',0,124,4
+	.db	'PendSV_IRQn',0,126,4
+	.db	'SysTick_IRQn',0,127,4
+	.db	'WWDG_IRQn',0,0,4
+	.db	'PVD_IRQn',0,1,4
+	.db	'TAMPER_STAMP_IRQn',0,2,4
+	.db	'RTC_WKUP_IRQn',0,3,4
+	.db	'FLASH_IRQn',0,4,4
+	.db	'RCC_IRQn',0,5,4
+	.db	'EXTI0_IRQn',0,6,4
+	.db	'EXTI1_IRQn',0,7,4
+	.db	'EXTI2_IRQn',0,8,4
+	.db	'EXTI3_IRQn',0,9,4
+	.db	'EXTI4_IRQn',0,10,4
+	.db	'DMA1_Channel1_IRQn',0,11,4
+	.db	'DMA1_Channel2_IRQn',0,12,4
+	.db	'DMA1_Channel3_IRQn',0,13,4
+	.db	'DMA1_Channel4_IRQn',0,14,4
+	.db	'DMA1_Channel5_IRQn',0,15,4
+	.db	'DMA1_Channel6_IRQn',0,16,4
+	.db	'DMA1_Channel7_IRQn',0,17,4
+	.db	'ADC1_IRQn',0,18,4
+	.db	'USB_HP_IRQn',0,19,4
+	.db	'USB_LP_IRQn',0,20,4
+	.db	'DAC_IRQn',0,21,4
+	.db	'COMP_IRQn',0,22,4
+	.db	'EXTI9_5_IRQn',0,23,4
+	.db	'LCD_IRQn',0,24,4
+	.db	'TIM9_IRQn',0,25,4
+	.db	'TIM10_IRQn',0,26,4
+	.db	'TIM11_IRQn',0,27,4
+	.db	'TIM2_IRQn',0,28,4
+	.db	'TIM3_IRQn',0,29,4
+	.db	'TIM4_IRQn',0,30,4
+	.db	'I2C1_EV_IRQn',0,31,4
+	.db	'I2C1_ER_IRQn',0,32,4
+	.db	'I2C2_EV_IRQn',0,33,4
+	.db	'I2C2_ER_IRQn',0,34,4
+	.db	'SPI1_IRQn',0,35,4
+	.db	'SPI2_IRQn',0,36,4
+	.db	'USART1_IRQn',0,37,4
+	.db	'USART2_IRQn',0,38,4
+	.db	'USART3_IRQn',0,39,4
+	.db	'EXTI15_10_IRQn',0,40,4
+	.db	'RTC_Alarm_IRQn',0,41,4
+	.db	'USB_FS_WKUP_IRQn',0,42,4
+	.db	'TIM6_IRQn',0,43,4
+	.db	'TIM7_IRQn',0,44,0,5
+	.db	'IRQn',0,1,246,7,49
+	.dw	55
+.L82:
+	.db	6
+	.db	'unsigned int',0,4,7,5
+	.db	'priority',0,1,246,7,64
+	.dw	882
+	.db	7,0
+.L74:
+	.db	6
+	.db	'int',0,4,5,8
+	.db	'printf',0,3,139,1,16
+	.dw	918
+	.db	1,1,1,1,6
+	.db	'char',0,1,6,9
+	.dw	945
+	.db	10
+	.dw	953
+	.db	11
+	.dw	958
+	.db	12,3,139,1,38
+	.dw	963
+	.db	13,3,139,1,50,0,14
+	.db	'_iobuf',0,3,77,8,20,10
+	.dw	945
+	.db	15
+	.db	'_ptr',0,4
+	.dw	995
+	.db	2,35,0,15
+	.db	'_base',0,4
+	.dw	995
+	.db	2,35,4,15
+	.db	'_cnt',0,4
+	.dw	918
+	.db	2,35,8,15
+	.db	'_bufsiz',0,4
+	.dw	918
+	.db	2,35,12
+.L85:
+	.db	6
+	.db	'unsigned short int',0,2,7,15
+	.db	'_flag',0,2
+	.dw	1060
+	.db	2,35,16,6
+	.db	'unsigned char',0,1,8,15
+	.db	'_file',0,1
+	.dw	1097
+	.db	2,35,18,0
+.L76:
+	.db	10
+	.dw	983
+	.db	16
+	.dw	30
+	.db	17
+	.dw	868
+	.db	17
+	.dw	898
+	.db	7,0,18
+	.db	'USART_SendData',0,4,250,2,6,1,1,1,1,19,2,195,6,9,28,20
+	.dw	1060
+	.db	15
+	.db	'SR',0,2
+	.dw	1182
+	.db	2,35,0,15
+	.db	'RESERVED0',0,2
+	.dw	1060
+	.db	2,35,2,20
+	.dw	1060
+	.db	15
+	.db	'DR',0,2
+	.dw	1218
+	.db	2,35,4,15
+	.db	'RESERVED1',0,2
+	.dw	1060
+	.db	2,35,6,20
+	.dw	1060
+	.db	15
+	.db	'BRR',0,2
+	.dw	1254
+	.db	2,35,8,15
+	.db	'RESERVED2',0,2
+	.dw	1060
+	.db	2,35,10,20
+	.dw	1060
+	.db	15
+	.db	'CR1',0,2
+	.dw	1291
+	.db	2,35,12,15
+	.db	'RESERVED3',0,2
+	.dw	1060
+	.db	2,35,14,20
+	.dw	1060
+	.db	15
+	.db	'CR2',0,2
+	.dw	1328
+	.db	2,35,16,15
+	.db	'RESERVED4',0,2
+	.dw	1060
+	.db	2,35,18,20
+	.dw	1060
+	.db	15
+	.db	'CR3',0,2
+	.dw	1365
+	.db	2,35,20,15
+	.db	'RESERVED5',0,2
+	.dw	1060
+	.db	2,35,22,20
+	.dw	1060
+	.db	15
+	.db	'GTPR',0,2
+	.dw	1402
+	.db	2,35,24,15
+	.db	'RESERVED6',0,2
+	.dw	1060
+	.db	2,35,26,0,10
+	.dw	1176
+	.db	5
+	.db	'USARTx',0,4,250,2,36
+	.dw	1441
+	.db	5
+	.db	'Data',0,4,250,2,53
+	.dw	1060
+	.db	0,21,2,146,2,9,4,4
+	.db	'RESET',0,0,4
+	.db	'SET',0,1,0,8
+	.db	'USART_GetFlagStatus',0,4,152,3,12
+	.dw	1477
+	.db	1,1,1,1,5
+	.db	'USARTx',0,4,152,3,47
+	.dw	1441
+	.db	5
+	.db	'USART_FLAG',0,4,152,3,64
+	.dw	1060
+	.db	0,20
+	.dw	1060
+.L80:
+	.db	10
+	.dw	1568
+.L91:
+	.db	10
+	.dw	1060
+	.db	22
+	.db	'__size_t',0,5,1,1
+	.dw	882
+	.db	23
+	.db	'void',0,10
+	.dw	1600
+	.db	22
+	.db	'__prof_adm',0,5,1,1
+	.dw	1606
+	.db	24,1,10
+	.dw	1630
+	.db	22
+	.db	'__codeptr',0,5,1,1
+	.dw	1632
+	.db	22
+	.db	'_iob_flag_t',0,3,74,25
+	.dw	1060
+	.db	22
+	.db	'FILE',0,3,88,25
+	.dw	983
+	.db	22
+	.db	'IRQn_Type',0,2,132,2,3
+	.dw	55
+	.db	22
+	.db	'uint8_t',0,6,24,33
+	.dw	1097
+	.db	22
+	.db	'uint16_t',0,6,26,33
+	.dw	1060
+	.db	22
+	.db	'int32_t',0,6,27,33
+	.dw	918
+	.db	22
+	.db	'uint32_t',0,6,28,33
+	.dw	882
+	.db	22
+	.db	'FlagStatus',0,2,146,2,40
+	.dw	1477
+	.db	21,2,148,2,9,4,4
+	.db	'DISABLE',0,0,4
+	.db	'ENABLE',0,1,0,22
+	.db	'FunctionalState',0,2,148,2,47
+	.dw	1793
+	.db	22
+	.db	'USART_TypeDef',0,2,211,6,3
+	.dw	1176
+	.db	21,7,54,9,4,4
+	.db	'EXTI_Mode_Interrupt',0,0,4
+	.db	'EXTI_Mode_Event',0,4,0,22
+	.db	'EXTIMode_TypeDef',0,7,58,2
+	.dw	1867
+	.db	21,7,66,9,4,4
+	.db	'EXTI_Trigger_Rising',0,8,4
+	.db	'EXTI_Trigger_Falling',0,12,4
+	.db	'EXTI_Trigger_Rising_Falling',0,16,0,22
+	.db	'EXTITrigger_TypeDef',0,7,71,2
+	.dw	1938
+	.db	19,8,54,9,28,15
+	.db	'FSMC_AddressSetupTime',0,4
+	.dw	882
+	.db	2,35,0,15
+	.db	'FSMC_AddressHoldTime',0,4
+	.dw	882
+	.db	2,35,4,15
+	.db	'FSMC_DataSetupTime',0,4
+	.dw	882
+	.db	2,35,8,15
+	.db	'FSMC_BusTurnAroundDuration',0,4
+	.dw	882
+	.db	2,35,12,15
+	.db	'FSMC_CLKDivision',0,4
+	.dw	882
+	.db	2,35,16,15
+	.db	'FSMC_DataLatency',0,4
+	.dw	882
+	.db	2,35,20,15
+	.db	'FSMC_AccessMode',0,4
+	.dw	882
+	.db	2,35,24,0,22
+	.db	'FSMC_NORSRAMTimingInitTypeDef',0,8,90,2
+	.dw	2047
+	.db	21,9,62,9,4,4
+	.db	'GPIO_Mode_IN',0,0,4
+	.db	'GPIO_Mode_OUT',0,1,4
+	.db	'GPIO_Mode_AF',0,2,4
+	.db	'GPIO_Mode_AN',0,3,0,22
+	.db	'GPIOMode_TypeDef',0,9,68,2
+	.dw	2293
+	.db	21,9,78,9,4,4
+	.db	'GPIO_OType_PP',0,0,4
+	.db	'GPIO_OType_OD',0,1,0,22
+	.db	'GPIOOType_TypeDef',0,9,81,2
+	.dw	2385
+	.db	21,9,91,9,4,4
+	.db	'GPIO_Speed_400KHz',0,0,4
+	.db	'GPIO_Speed_2MHz',0,1,4
+	.db	'GPIO_Speed_10MHz',0,2,4
+	.db	'GPIO_Speed_40MHz',0,3,0,22
+	.db	'GPIOSpeed_TypeDef',0,9,97,2
+	.dw	2449
+	.db	21,9,107,9,4,4
+	.db	'GPIO_PuPd_NOPULL',0,0,4
+	.db	'GPIO_PuPd_UP',0,1,4
+	.db	'GPIO_PuPd_DOWN',0,2,0,22
+	.db	'GPIOPuPd_TypeDef',0,9,111,2
+	.dw	2557
+	.db	19,10,68,9,4,15
+	.db	'RTC_Hours',0,1
+	.dw	1097
+	.db	2,35,0,15
+	.db	'RTC_Minutes',0,1
+	.dw	1097
+	.db	2,35,1,15
+	.db	'RTC_Seconds',0,1
+	.dw	1097
+	.db	2,35,2,15
+	.db	'RTC_H12',0,1
+	.dw	1097
+	.db	2,35,3,0,22
+	.db	'RTC_TimeTypeDef',0,10,83,2
+	.dw	2639
+.L95:
+	.db	25,16
+	.dw	1060
+	.db	26,7,0
+.L96:
+	.db	25,232,7
+	.dw	1060
+	.db	26,243,3,0,0
+	.endsec	; End of section
+
+	.section	.debug_abbrev
+.L30:
+	.db	1,17,1,3,14,37,14,27,14,19,15,128,70,12,16,6,0,0,2,46,1,3,8,32,13,58,15,59,15,57,15,54,15,39,12,0,0,3
+	.db	4,1,3,8,58,15,59,15,57,15,11,15,0,0,4,40,0,3,8,28,13,0,0,5,5,0,3,8,58,15,59,15,57,15,73,19,0,0,6,36,0
+	.db	3,8,11,15,62,15,0,0,7,11,0,0,0,8,46,1,3,8,58,15,59,15,57,15,73,19,54,15,39,12,63,12,60,12,0,0,9,38,0,73
+	.db	19,0,0,10,15,0,73,19,0,0,11,55,0,73,19,0,0,12,5,0,58,15,59,15,57,15,73,19,0,0,13,24,0,58,15,59,15,57,15
+	.db	0,0,14,19,1,3,8,58,15,59,15,57,15,11,15,0,0,15,13,0,3,8,11,15,73,19,56,9,0,0,16,46,1,49,19,0,0,17,5,0
+	.db	49,19,0,0,18,46,1,3,8,58,15,59,15,57,15,54,15,39,12,63,12,60,12,0,0,19,19,1,58,15,59,15,57,15,11,15,0
+	.db	0,20,53,0,73,19,0,0,21,4,1,58,15,59,15,57,15,11,15,0,0,22,22,0,3,8,58,15,59,15,57,15,73,19,0,0,23,59,0
+	.db	3,8,0,0,24,21,0,54,15,0,0,25,1,1,11,15,73,19,0,0,26,33,0,47,15,0,0,0
+	.endsec	; End of section
+
+	.section	.debug_line
+.L31:
+	.dw	.L118-.L117
+.L117:
+	.dh	3
+	.dw	.L120-.L119
+.L119:
+	.db	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.db	'..\\..\\..\\..\\..\\..\\Libraries\\CMSIS\\Include',0
+	.db	'..\\..\\..\\..\\..\\..\\Libraries\\CMSIS\\Device\\ST\\STM32L1xx\\Include',0
+	.db	'C:\\Program Files\\TASKING\\carm v4.4r1\\include\\',0
+	.db	'..\\..\\..\\..\\..\\..\\Libraries\\STM32L1xx_StdPeriph_Driver\\inc',0,0
+	.db	'core_cm3.h',0,1,0,0
+	.db	'stm32l1xx.h',0,2,0,0
+	.db	'stdio.h',0,3,0,0
+	.db	'stm32l1xx_usart.h',0,4,0,0
+	.db	'C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c',0
+	.db	0,0,0
+	.db	'stdint.h',0,3,0,0
+	.db	'stm32l1xx_exti.h',0,4,0,0
+	.db	'stm32l1xx_fsmc.h',0,4,0,0
+	.db	'stm32l1xx_gpio.h',0,4,0,0
+	.db	'stm32l1xx_rtc.h',0,4,0,0,0
+.L120:
+.L118:
+	.endsec	; End of section
+
+	.section	.debug_info ,cluster('$group_fputc')
+.L32:
+	.dw	104
+	.dh	3
+	.dw	.L33
+	.db	4,1
+	.dw	.L112,.L113,.L114
+	.db	12,1
+	.dw	.L35,.L34
+	.db	2
+	.dw	.L28
+	.db	3
+	.db	'fputc',0,1,83,1
+	.dw	.L74
+	.db	1,1,1
+	.dw	.L19,.L37,.L18
+	.db	4
+	.db	'ch',0,1,83,1
+	.dw	.L74,.L75
+	.db	4
+	.db	'f',0,1,83,1
+	.dw	.L76,.L77
+	.db	5
+	.dw	.L19,.L37
+	.db	0,0
+	.endsec	; End of section
+
+	.section	.debug_abbrev ,cluster('$group_fputc')
+.L33:
+	.db	1,17,1,3,14,37,14,27,14,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73
+	.db	16,54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0
+	.db	0
+	.endsec	; End of section
+
+	.section	.debug_line ,cluster('$group_fputc')
+.L34:
+	.dw	.L122-.L121
+.L121:
+	.dh	3
+	.dw	.L124-.L123
+.L123:
+	.db	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.db	'C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c',0
+	.db	0,0,0,0
+.L124:
+	.db	5,1,7,0,5,2
+	.dw	.L19
+	.db	3,210,0,1,5,26,9
+	.dh	.L100-.L19
+	.db	3,4,1,5,18,9
+	.dh	.L99-.L100
+	.db	1,5,26,9
+	.dh	.L125-.L99
+	.db	1,5,37,9
+	.dh	.L4-.L125
+	.db	3,3,1,5,60,9
+	.dh	.L126-.L4
+	.db	1,5,3,9
+	.dh	.L127-.L126
+	.db	3,3,1,5,1,9
+	.dh	.L101-.L127
+	.db	3,1,1,7,9
+	.dh	.L37-.L101
+	.db	0,1,1
+.L122:
+	.endsec	; End of section
+
+	.section	.debug_ranges ,cluster('$group_fputc')
+.L35:
+	.dw	-1,.L36,0,.L37-.L36,0,0
+	.endsec	; End of section
+
+	.section	.debug_info ,cluster('$group_Oversampling_InitData')
+.L38:
+	.dw	87
+	.dh	3
+	.dw	.L39
+	.db	4,1
+	.dw	.L112,.L113,.L114
+	.db	12,1
+	.dw	.L41,.L40
+	.db	2
+	.dw	.L28
+	.db	3
+	.db	'Oversampling_InitData',0,1,106,7,1,1,1
+	.dw	.L21,.L78,.L20
+	.db	4
+	.dw	.L21,.L78
+	.db	0,0
+	.endsec	; End of section
+
+	.section	.debug_abbrev ,cluster('$group_Oversampling_InitData')
+.L39:
+	.db	1,17,1,3,14,37,14,27,14,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54
+	.db	15,39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.endsec	; End of section
+
+	.section	.debug_line ,cluster('$group_Oversampling_InitData')
+.L40:
+	.dw	.L129-.L128
+.L128:
+	.dh	3
+	.dw	.L131-.L130
+.L130:
+	.db	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.db	'C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c',0
+	.db	0,0,0,0
+.L131:
+	.db	5,7,7,0,5,2
+	.dw	.L21
+	.db	3,233,0,1,5,28,9
+	.dh	.L102-.L21
+	.db	3,7,1,5,48,9
+	.dh	.L132-.L102
+	.db	1,5,39,9
+	.dh	.L133-.L132
+	.db	3,2,1,5,29,9
+	.dh	.L134-.L133
+	.db	3,3,1,5,53,9
+	.dh	.L135-.L134
+	.db	1,5,1,9
+	.dh	.L136-.L135
+	.db	3,2,1,7,9
+	.dh	.L43-.L136
+	.db	0,1,1
+.L129:
+	.endsec	; End of section
+
+	.section	.debug_ranges ,cluster('$group_Oversampling_InitData')
+.L41:
+	.dw	-1,.L42,0,.L43-.L42,0,0
+	.endsec	; End of section
+
+	.section	.debug_info ,cluster('$group_Oversampling_CopyConvValuesToFile')
+.L44:
+	.dw	155
+	.dh	3
+	.dw	.L45
+	.db	4,1
+	.dw	.L112,.L113,.L114
+	.db	12,1
+	.dw	.L47,.L46
+	.db	2
+	.dw	.L28
+	.db	3
+	.db	'Oversampling_CopyConvValuesToFile',0,1,210,1,6,1,1,1
+	.dw	.L25,.L79,.L24
+	.db	4
+	.db	'Tab',0,1,210,1,57
+	.dw	.L80,.L81
+	.db	4
+	.db	'size',0,1,210,1,71
+	.dw	.L82,.L83
+	.db	5
+	.dw	.L25,.L79
+	.db	6
+	.db	'index',0,1,212,1,12
+	.dw	.L82,.L84
+	.db	0,0,0
+	.endsec	; End of section
+
+	.section	.debug_abbrev ,cluster('$group_Oversampling_CopyConvValuesToFile')
+.L45:
+	.db	1,17,1,3,14,37,14,27,14,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54
+	.db	15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52
+	.db	0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.endsec	; End of section
+
+	.section	.debug_line ,cluster('$group_Oversampling_CopyConvValuesToFile')
+.L46:
+	.dw	.L138-.L137
+.L137:
+	.dh	3
+	.dw	.L140-.L139
+.L139:
+	.db	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.db	'C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c',0
+	.db	0,0,0,0
+.L140:
+	.db	5,6,7,0,5,2
+	.dw	.L25
+	.db	3,209,1,1,5,43,9
+	.dh	.L107-.L25
+	.db	3,4,1,5,18,9
+	.dh	.L141-.L107
+	.db	1,5,33,9
+	.dh	.L142-.L141
+	.db	1,5,23,9
+	.dh	.L9-.L142
+	.db	3,2,1,5,10,9
+	.dh	.L143-.L9
+	.db	1,5,23,9
+	.dh	.L144-.L143
+	.db	1,5,43,9
+	.dh	.L145-.L144
+	.db	3,126,1,5,33,9
+	.dh	.L8-.L145
+	.db	1,5,12,9
+	.dh	.L146-.L8
+	.db	3,4,1,5,1,9
+	.dh	.L147-.L146
+	.db	3,1,1,7,9
+	.dh	.L49-.L147
+	.db	0,1,1
+.L138:
+	.endsec	; End of section
+
+	.section	.debug_ranges ,cluster('$group_Oversampling_CopyConvValuesToFile')
+.L47:
+	.dw	-1,.L48,0,.L49-.L48,0,0
+	.endsec	; End of section
+
+	.section	.debug_info ,cluster('$group_Oversampling_GetConversion')
+.L50:
+	.dw	137
+	.dh	3
+	.dw	.L51
+	.db	4,1
+	.dw	.L112,.L113,.L114
+	.db	12,1
+	.dw	.L53,.L52
+	.db	2
+	.dw	.L28
+	.db	3
+	.db	'Oversampling_GetConversion',0,1,185,1,10
+	.dw	.L85
+	.db	1,1,1
+	.dw	.L23,.L86,.L22
+	.db	4
+	.dw	.L23,.L86
+	.db	5
+	.db	'index',0,1,187,1,12
+	.dw	.L82,.L87
+	.db	5
+	.db	'result',0,1,188,1,12
+	.dw	.L82,.L88
+	.db	0,0,0
+	.endsec	; End of section
+
+	.section	.debug_abbrev ,cluster('$group_Oversampling_GetConversion')
+.L51:
+	.db	1,17,1,3,14,37,14,27,14,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73
+	.db	16,54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,11,1,17,1,18,1,0,0,5,52,0,3,8,58,15,59,15,57,15,73,16,2,6,0
+	.db	0,0
+	.endsec	; End of section
+
+	.section	.debug_line ,cluster('$group_Oversampling_GetConversion')
+.L52:
+	.dw	.L149-.L148
+.L148:
+	.dh	3
+	.dw	.L151-.L150
+.L150:
+	.db	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.db	'C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c',0
+	.db	0,0,0,0
+.L151:
+	.db	5,21,7,0,5,2
+	.dw	.L23
+	.db	3,187,1,1,5,15,9
+	.dh	.L103-.L23
+	.db	3,3,1,5,17,9
+	.dh	.L152-.L103
+	.db	3,127,1,5,60,9
+	.dh	.L6-.L152
+	.db	1,5,33,9
+	.dh	.L153-.L6
+	.db	3,1,1,5,12,9
+	.dh	.L154-.L153
+	.db	1,5,51,9
+	.dh	.L155-.L154
+	.db	3,127,1,5,20,7,9
+	.dh	.L156-.L155
+	.db	3,3,1,5,13,9
+	.dh	.L104-.L156
+	.db	3,3,1,5,23,9
+	.dh	.L157-.L104
+	.db	1,5,11,9
+	.dh	.L105-.L157
+	.db	3,2,1,5,1,9
+	.dh	.L106-.L105
+	.db	3,2,1,7,9
+	.dh	.L55-.L106
+	.db	0,1,1
+.L149:
+	.endsec	; End of section
+
+	.section	.debug_ranges ,cluster('$group_Oversampling_GetConversion')
+.L53:
+	.dw	-1,.L54,0,.L55-.L54,0,0
+	.endsec	; End of section
+
+	.section	.debug_info ,cluster('$group_Oversampling_ComputePulseWidthBuffer')
+.L56:
+	.dw	123
+	.dh	3
+	.dw	.L57
+	.db	4,1
+	.dw	.L112,.L113,.L114
+	.db	12,1
+	.dw	.L59,.L58
+	.db	2
+	.dw	.L28
+	.db	3
+	.db	'Oversampling_ComputePulseWidthBuffer',0,1,231,1,6,1,1,1
+	.dw	.L27,.L89,.L26
+	.db	4
+	.dw	.L27,.L89
+	.db	5
+	.db	'index',0,1,233,1,12
+	.dw	.L82,.L90
+	.db	0,0,0
+	.endsec	; End of section
+
+	.section	.debug_abbrev ,cluster('$group_Oversampling_ComputePulseWidthBuffer')
+.L57:
+	.db	1,17,1,3,14,37,14,27,14,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54
+	.db	15,39,12,63,12,17,1,18,1,64,6,0,0,4,11,1,17,1,18,1,0,0,5,52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.endsec	; End of section
+
+	.section	.debug_line ,cluster('$group_Oversampling_ComputePulseWidthBuffer')
+.L58:
+	.dw	.L159-.L158
+.L158:
+	.dh	3
+	.dw	.L161-.L160
+.L160:
+	.db	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.db	'C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c',0
+	.db	0,0,0,0
+.L161:
+	.db	5,6,7,0,5,2
+	.dw	.L27
+	.db	3,230,1,1,5,4,9
+	.dh	.L108-.L27
+	.db	3,5,1,5,25,9
+	.dh	.L162-.L108
+	.db	1,5,23,9
+	.dh	.L163-.L162
+	.db	1,5,51,9
+	.dh	.L164-.L163
+	.db	3,2,1,5,20,9
+	.dh	.L165-.L164
+	.db	3,1,1,5,18,9
+	.dh	.L166-.L165
+	.db	3,127,1,5,46,9
+	.dh	.L10-.L166
+	.db	3,1,1,5,58,9
+	.dh	.L167-.L10
+	.db	1,5,51,9
+	.dh	.L168-.L167
+	.db	3,127,1,5,29,9
+	.dh	.L169-.L168
+	.db	3,1,1,5,42,9
+	.dh	.L170-.L169
+	.db	3,127,1,5,15,7,9
+	.dh	.L171-.L170
+	.db	3,3,1,5,20,9
+	.dh	.L110-.L171
+	.db	3,1,1,5,42,9
+	.dh	.L11-.L110
+	.db	1,5,47,9
+	.dh	.L172-.L11
+	.db	3,127,1,5,40,9
+	.dh	.L173-.L172
+	.db	1,5,57,9
+	.dh	.L174-.L173
+	.db	3,1,1,5,40,9
+	.dh	.L175-.L174
+	.db	1,9
+	.dh	.L176-.L175
+	.db	3,127,1,5,36,7,9
+	.dh	.L177-.L176
+	.db	3,3,1,5,34,9
+	.dh	.L111-.L177
+	.db	1,5,1,9
+	.dh	.L178-.L111
+	.db	3,2,1,9
+	.dh	.L61-.L178
+	.db	0,1,1
+.L159:
+	.endsec	; End of section
+
+	.section	.debug_ranges ,cluster('$group_Oversampling_ComputePulseWidthBuffer')
+.L59:
+	.dw	-1,.L60,0,.L61-.L60,0,0
+	.endsec	; End of section
+
+	.section	.debug_info ,cluster('$group_Oversampling_InitBuffer')
+.L62:
+	.dw	144
+	.dh	3
+	.dw	.L63
+	.db	4,1
+	.dw	.L112,.L113,.L114
+	.db	12,1
+	.dw	.L65,.L64
+	.db	2
+	.dw	.L28
+	.db	3
+	.db	'Oversampling_InitBuffer',0,1,69,6,1,1,1
+	.dw	.L17,.L67,.L16
+	.db	4
+	.db	'Buffer',0,1,69,42
+	.dw	.L91,.L92
+	.db	4
+	.db	'size',0,1,69,60
+	.dw	.L82,.L93
+	.db	5
+	.dw	.L17,.L67
+	.db	6
+	.db	'index',0,1,71,12
+	.dw	.L82,.L94
+	.db	0,0,0
+	.endsec	; End of section
+
+	.section	.debug_abbrev ,cluster('$group_Oversampling_InitBuffer')
+.L63:
+	.db	1,17,1,3,14,37,14,27,14,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54
+	.db	15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52
+	.db	0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.endsec	; End of section
+
+	.section	.debug_line ,cluster('$group_Oversampling_InitBuffer')
+.L64:
+	.dw	.L180-.L179
+.L179:
+	.dh	3
+	.dw	.L182-.L181
+.L181:
+	.db	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.db	'C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c',0
+	.db	0,0,0,0
+.L182:
+	.db	5,19,7,0,5,2
+	.dw	.L17
+	.db	3,200,0,1,5,31,9
+	.dh	.L183-.L17
+	.db	3,127,1,5,17,9
+	.dh	.L3-.L183
+	.db	3,1,1,5,40,9
+	.dh	.L184-.L3
+	.db	3,127,1,5,31,9
+	.dh	.L2-.L184
+	.db	1,5,1,9
+	.dh	.L185-.L2
+	.db	3,2,1,7,9
+	.dh	.L67-.L185
+	.db	0,1,1
+.L180:
+	.endsec	; End of section
+
+	.section	.debug_ranges ,cluster('$group_Oversampling_InitBuffer')
+.L65:
+	.dw	-1,.L66,0,.L67-.L66,0,0
+	.endsec	; End of section
+
+	.section	.debug_info ,cluster('$group_ADC_ConvertedValue')
+.L68:
+	.dw	62
+	.dh	3
+	.dw	.L69
+	.db	4,1
+	.dw	.L112,.L113,.L114
+	.db	12,1,2
+	.dw	.L28
+	.db	3
+	.db	'ADC_ConvertedValue',0,5,31,10
+	.dw	.L95
+	.db	1,5,3
+	.dw	ADC_ConvertedValue
+	.db	0
+	.endsec	; End of section
+
+	.section	.debug_abbrev ,cluster('$group_ADC_ConvertedValue')
+.L69:
+	.db	1,17,1,3,14,37,14,27,14,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12
+	.db	2,9,0,0,0
+	.endsec	; End of section
+
+	.section	.debug_info ,cluster('$group_TimerPulseWidth')
+.L70:
+	.dw	59
+	.dh	3
+	.dw	.L71
+	.db	4,1
+	.dw	.L112,.L113,.L114
+	.db	12,1,2
+	.dw	.L28
+	.db	3
+	.db	'TimerPulseWidth',0,5,32,10
+	.dw	.L95
+	.db	1,5,3
+	.dw	TimerPulseWidth
+	.db	0
+	.endsec	; End of section
+
+	.section	.debug_abbrev ,cluster('$group_TimerPulseWidth')
+.L71:
+	.db	1,17,1,3,14,37,14,27,14,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12
+	.db	2,9,0,0,0
+	.endsec	; End of section
+
+	.section	.debug_info ,cluster('$group_ADC_Oversampled_Buffer')
+.L72:
+	.dw	66
+	.dh	3
+	.dw	.L73
+	.db	4,1
+	.dw	.L112,.L113,.L114
+	.db	12,1,2
+	.dw	.L28
+	.db	3
+	.db	'ADC_Oversampled_Buffer',0,5,35,10
+	.dw	.L96
+	.db	1,5,3
+	.dw	ADC_Oversampled_Buffer
+	.db	0
+	.endsec	; End of section
+
+	.section	.debug_abbrev ,cluster('$group_ADC_Oversampled_Buffer')
+.L73:
+	.db	1,17,1,3,14,37,14,27,14,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12
+	.db	2,9,0,0,0
+	.endsec	; End of section
+
+	.section	.debug_str
+.L113:
+	.db	'TASKING VX-toolset for ARM Cortex: C compiler',0
+.L112:
+	.db	'C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c',0
+.L114:
+	.db	'C:\\Users\\hmidenen\\Desktop\\Sanity Check\\AN2668_FW_V3.0.0\\Project\\ADCOversampling-STM32L\\TriangularDitherMethod\\TASKING\\STM32L152-EVAL\\Debug\\',0
+	.endsec	; End of section
+
+	.section	.debug_loc ,cluster('$group_Oversampling_ComputePulseWidthBuffer')
+.L26:
+	.dw	-1,.L27,0,.L108-.L27
+	.dh	2
+	.db	125,0
+	.dw	.L108-.L27,.L109-.L27
+	.dh	2
+	.db	125,4
+	.dw	.L109-.L27,.L89-.L27
+	.dh	2
+	.db	125,0
+	.dw	0,0
+.L90:
+	.dw	-1,.L27,.L110-.L27,.L111-.L27
+	.dh	1
+	.db	81
+	.dw	0,0
+	.endsec	; End of section
+
+	.section	.debug_loc ,cluster('$group_Oversampling_CopyConvValuesToFile')
+.L24:
+	.dw	-1,.L25,0,.L107-.L25
+	.dh	2
+	.db	125,0
+	.dw	.L107-.L25,.L79-.L25
+	.dh	2
+	.db	125,12
+	.dw	.L79-.L25,.L79-.L25
+	.dh	2
+	.db	125,0
+	.dw	0,0
+.L81:
+	.dw	-1,.L25,0,.L9-.L25
+	.dh	1
+	.db	80
+	.dw	0,0
+.L84:
+	.dw	0,0
+.L83:
+	.dw	-1,.L25,0,.L9-.L25
+	.dh	1
+	.db	81
+	.dw	0,0
+	.endsec	; End of section
+
+	.section	.debug_loc ,cluster('$group_Oversampling_GetConversion')
+.L22:
+	.dw	-1,.L23,0,.L86-.L23
+	.dh	2
+	.db	125,0
+	.dw	0,0
+.L87:
+	.dw	0,0
+.L88:
+	.dw	-1,.L23,.L103-.L23,.L104-.L23
+	.dh	1
+	.db	80
+	.dw	.L105-.L23,.L106-.L23
+	.dh	1
+	.db	80
+	.dw	0,0
+	.endsec	; End of section
+
+	.section	.debug_loc ,cluster('$group_Oversampling_InitBuffer')
+.L92:
+	.dw	-1,.L17,0,.L67-.L17
+	.dh	1
+	.db	80
+	.dw	0,0
+.L16:
+	.dw	-1,.L17,0,.L67-.L17
+	.dh	2
+	.db	125,0
+	.dw	0,0
+.L94:
+	.dw	0,0
+.L93:
+	.dw	-1,.L17,0,.L67-.L17
+	.dh	1
+	.db	81
+	.dw	0,0
+	.endsec	; End of section
+
+	.section	.debug_loc ,cluster('$group_Oversampling_InitData')
+.L20:
+	.dw	-1,.L21,0,.L102-.L21
+	.dh	2
+	.db	125,0
+	.dw	.L102-.L21,.L78-.L21
+	.dh	2
+	.db	125,4
+	.dw	.L78-.L21,.L78-.L21
+	.dh	2
+	.db	125,0
+	.dw	0,0
+	.endsec	; End of section
+
+	.section	.debug_loc ,cluster('$group_fputc')
+.L75:
+	.dw	-1,.L19,0,.L98-.L19
+	.dh	1
+	.db	80
+	.dw	.L100-.L19,.L37-.L19
+	.dh	1
+	.db	84
+	.dw	.L101-.L19,.L37-.L19
+	.dh	1
+	.db	80
+	.dw	0,0
+.L77:
+	.dw	-1,.L19,0,.L99-.L19
+	.dh	1
+	.db	81
+	.dw	0,0
+.L18:
+	.dw	-1,.L19,0,.L97-.L19
+	.dh	2
+	.db	125,0
+	.dw	.L97-.L19,.L37-.L19
+	.dh	2
+	.db	125,12
+	.dw	.L37-.L19,.L37-.L19
+	.dh	2
+	.db	125,0
+	.dw	0,0
+	.endsec	; End of section
+
+	.section	.debug_frame
+.L186:
+	.dw	64
+	.dw	-1
+	.db	3,0,2,2,14,12,13,0,8,4,8,5,8,6,8,7,8,8,8,9,8,10,8,11,8,13,8,14,8,15,8,128,1,8,136,2,8,137,2,8,138,2,8
+	.db	139,2,8,140,2,8,141,2,8,142,2,8,143,2,0,0,0
+	.endsec	; End of section
+
+	.section	.debug_frame ,cluster('$group_Oversampling_InitBuffer')
+	.dw	40
+	.dw	.L186,.L17,.L67-.L17
+	.db	8,3,8,128,2,8,129,2,8,130,2,8,131,2,8,132,2,8,133,2,8,134,2,8,135,2,0,0
+	.endsec	; End of section
+
+	.section	.debug_frame ,cluster('$group_fputc')
+	.dw	44
+	.dw	.L186,.L19,.L37-.L19
+	.db	4
+	.dw	(.L97-.L19)/2
+	.db	19,6,22,13,3,19,125,12,17,14,126,17,5,124,17,4,122,4
+	.dw	(.L37-.L97)/2
+	.db	19,0,8,13,0
+	.endsec	; End of section
+
+	.section	.debug_frame ,cluster('$group_Oversampling_InitData')
+	.dw	64
+	.dw	.L186,.L21,.L78-.L21
+	.db	8,128,2,8,129,2,8,130,2,8,131,2,8,132,2,8,133,2,8,134,2,8,135,2,4
+	.dw	(.L102-.L21)/2
+	.db	19,2,22,13,3,19,125,4,17,14,126,4
+	.dw	(.L78-.L102)/2
+	.db	19,0,8,13,0,0,0
+	.endsec	; End of section
+
+	.section	.debug_frame ,cluster('$group_Oversampling_GetConversion')
+	.dw	36
+	.dw	.L186,.L23,.L86-.L23
+	.db	8,128,2,8,129,2,8,130,2,8,131,2,8,132,2,8,133,2,8,134,2,8,135,2
+	.endsec	; End of section
+
+	.section	.debug_frame ,cluster('$group_Oversampling_CopyConvValuesToFile')
+	.dw	44
+	.dw	.L186,.L25,.L79-.L25
+	.db	4
+	.dw	(.L107-.L25)/2
+	.db	19,6,22,13,3,19,125,12,17,14,126,17,5,124,17,4,122,4
+	.dw	(.L79-.L107)/2
+	.db	19,0,8,13,0
+	.endsec	; End of section
+
+	.section	.debug_frame ,cluster('$group_Oversampling_ComputePulseWidthBuffer')
+	.dw	64
+	.dw	.L186,.L27,.L89-.L27
+	.db	8,128,2,8,129,2,8,130,2,8,131,2,8,132,2,8,133,2,8,134,2,8,135,2,4
+	.dw	(.L108-.L27)/2
+	.db	19,2,22,13,3,19,125,4,17,4,126,4
+	.dw	(.L109-.L108)/2
+	.db	19,0,8,13,196,0,0
+	.endsec	; End of section
+
+
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   247  #endif
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   248  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   249  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   250  /**
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   251    * @}
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   252    */
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   253  
+; C:/Users/hmidenen/Desktop/Sanity Check/AN2668_FW_V3.0.0/Project/ADCOversampling-STM32L/TriangularDitherMethod/src/oversampling.c	   254  /******************* (C) COPYRIGHT 2009 STMicroelectronics *****END OF FILE****/
+
+	; Module end
+	.end

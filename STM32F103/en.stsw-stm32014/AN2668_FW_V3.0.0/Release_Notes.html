@@ -1,0 +1,416 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html xmlns="http://www.w3.org/TR/REC-html40" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word"><head><title>Release Notes for AN2668 "Improving STM32F101xx and STM32F103xx ADC resolution by oversampling" firmware</title>
+
+
+
+  
+
+
+  
+  
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+
+  
+  <link href="Library_files/filelist.xml" rel="File-List">
+
+
+  
+  <link href="Library_files/editdata.mso" rel="Edit-Time-Data"><!--[if !mso]> <STYLE>v\:* { BEHAVIOR: url(#default#VML) } o\:* { BEHAVIOR: url(#default#VML) } w\:* { BEHAVIOR: url(#default#VML) } .shape { BEHAVIOR: url(#default#VML) } </STYLE> <![endif]--><!--[if gte mso 9]><xml> <o:DocumentProperties> <o:Author>STMicroelectronics</o:Author> <o:LastAuthor>STMicroelectronics</o:LastAuthor> <o:Revision>37</o:Revision> <o:TotalTime>136</o:TotalTime> <o:Created>2009-02-27T19:26:00Z</o:Created> <o:LastSaved>2009-03-01T17:56:00Z</o:LastSaved> <o:Pages>1</o:Pages> <o:Words>522</o:Words> <o:Characters>2977</o:Characters> <o:Company>STMicroelectronics</o:Company> <o:Lines>24</o:Lines> <o:Paragraphs>6</o:Paragraphs> <o:CharactersWithSpaces>3493</o:CharactersWithSpaces> <o:Version>11.6568</o:Version> </o:DocumentProperties> </xml><![endif]--><!--[if gte mso 9]><xml> <w:WordDocument> <w:Zoom>110</w:Zoom> <w:ValidateAgainstSchemas/> <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid> <w:IgnoreMixedContent>false</w:IgnoreMixedContent> <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText> <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel> </w:WordDocument> </xml><![endif]--><!--[if gte mso 9]><xml> <w:LatentStyles DefLockedState="false" LatentStyleCount="156"> </w:LatentStyles> </xml><![endif]-->
+
+
+
+  
+  <style>@page Section1 {size: 8.5in 11.0in; margin: 1.0in 1.25in 1.0in 1.25in; mso-header-margin: .5in; mso-footer-margin: .5in; mso-paper-source: 0; }
+P.MsoNormal {
+FONT-SIZE: 12pt; MARGIN: 0in 0in 0pt; FONT-FAMILY: "Times New Roman"; mso-style-parent: ""; mso-pagination: widow-orphan; mso-fareast-font-family: "Times New Roman"
+}
+LI.MsoNormal {
+FONT-SIZE: 12pt; MARGIN: 0in 0in 0pt; FONT-FAMILY: "Times New Roman"; mso-style-parent: ""; mso-pagination: widow-orphan; mso-fareast-font-family: "Times New Roman"
+}
+DIV.MsoNormal {
+FONT-SIZE: 12pt; MARGIN: 0in 0in 0pt; FONT-FAMILY: "Times New Roman"; mso-style-parent: ""; mso-pagination: widow-orphan; mso-fareast-font-family: "Times New Roman"
+}
+H2 {
+FONT-WEIGHT: bold; FONT-SIZE: 14pt; MARGIN: 12pt 0in 3pt; FONT-STYLE: italic; FONT-FAMILY: Arial; mso-pagination: widow-orphan; mso-style-next: Normal; mso-outline-level: 2
+}
+A:link {
+COLOR: blue; TEXT-DECORATION: underline; text-underline: single
+}
+SPAN.MsoHyperlink {
+COLOR: blue; TEXT-DECORATION: underline; text-underline: single
+}
+A:visited {
+COLOR: blue; TEXT-DECORATION: underline; text-underline: single
+}
+SPAN.MsoHyperlinkFollowed {
+COLOR: blue; TEXT-DECORATION: underline; text-underline: single
+}
+P {
+FONT-SIZE: 12pt; MARGIN-LEFT: 0in; MARGIN-RIGHT: 0in; FONT-FAMILY: "Times New Roman"; mso-pagination: widow-orphan; mso-fareast-font-family: "Times New Roman"; mso-margin-top-alt: auto; mso-margin-bottom-alt: auto
+}
+DIV.Section1 {
+page: Section1
+}
+  </style><!--[if gte mso 10]> <style> /* Style Definitions */ table.MsoNormalTable {mso-style-name:"Table Normal"; mso-tstyle-rowband-size:0; mso-tstyle-colband-size:0; mso-style-noshow:yes; mso-style-parent:""; mso-padding-alt:0in 5.4pt 0in 5.4pt; mso-para-margin:0in; mso-para-margin-bottom:.0001pt; mso-pagination:widow-orphan; font-size:10.0pt; font-family:"Times New Roman"; mso-ansi-language:#0400; mso-fareast-language:#0400; mso-bidi-language:#0400;} </style> <![endif]--><!--[if gte mso 9]><xml> <o:shapedefaults v:ext="edit" spidmax="5122"/> </xml><![endif]--><!--[if gte mso 9]><xml> <o:shapelayout v:ext="edit"> <o:idmap v:ext="edit" data="1"/> </o:shapelayout></xml><![endif]-->
+  
+  <meta content="MSHTML 6.00.2900.3492" name="GENERATOR"></head><body lang="EN-US" link="blue" vlink="blue">
+
+
+<div class="Section1">
+<p class="MsoNormal"><span style="font-family: Arial;"><o:p><br>
+
+
+</o:p></span></p>
+
+
+<div align="center">
+<table class="MsoNormalTable" style="width: 675pt;" border="0" cellpadding="0" cellspacing="0" width="900">
+
+
+  <tbody>
+
+
+    <tr>
+
+
+      <td style="padding: 0cm;" valign="top">
+      
+      <table class="MsoNormalTable" style="width: 675pt;" border="0" cellpadding="0" cellspacing="0" width="900">
+
+
+        <tbody>
+
+
+          <tr>
+
+
+            <td style="padding: 1.5pt;">
+            
+            <h1 style="margin-bottom: 18pt; text-align: center;" align="center"><span style="font-size: 20pt; color: rgb(51, 102, 255); font-family: Verdana;">Release
+Notes for AN2668 "Improving STM32F10xxx and STM32L1xxxx ADC resolution
+by oversampling"</span><span style="font-size: 20pt; font-family: Verdana;"><o:p></o:p></span></h1>
+
+
+            
+            <p class="MsoNormal" style="margin: 0cm 0cm 8pt; line-height: normal; font-size: 10pt; font-family: Verdana,sans-serif; color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px;" align="center"><span style="font-size: 10pt;">Copyright © 2013 STMicroelectronics</span></p>
+            <p class="MsoNormal" style="margin: 0cm 0cm 8pt; line-height: normal; font-size: 10pt; font-family: Verdana,sans-serif; color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px;" align="center"><span style="font-size: 10pt;">Microcontrollers Division - Application Team</span></p>
+            <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt; color: black; font-family: Arial;"></span><span style="color: black;"><u1:p></u1:p><o:p></o:p></span></p>
+
+
+            
+            <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt; color: black; font-family: Arial;"><img style="border: 0px solid ;" alt="" id="_x0000_i1025" src="_htmresc/st_logo.png" height="126" width="171"></span><span style="font-size: 10pt;"><o:p></o:p></span></p>
+
+
+            </td>
+
+
+          </tr>
+
+
+        
+        </tbody>
+      
+      </table>
+
+
+      
+      <p class="MsoNormal"><span style="display: none; font-family: Arial;"><o:p>&nbsp;</o:p></span></p>
+
+
+      
+      <table class="MsoNormalTable" style="width: 675pt;" border="0" cellpadding="0" width="900">
+
+
+        <tbody>
+
+
+          <tr>
+
+
+            <td style="padding: 0cm;" valign="top">
+            
+            <h2 style="background: rgb(51, 102, 255) none repeat scroll 0% 50%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;"><span style="font-size: 12pt; color: white;">Contents<o:p></o:p></span></h2>
+
+
+            
+            <ol style="margin-top: 0cm;" type="1">
+
+
+              <li class="MsoNormal" style="margin-top: 4.5pt; margin-bottom: 4.5pt; color: black;"><span style="font-size: 10pt; font-family: Verdana;"><a href="#WhatsNew3.0">What's
+New in AN2668 "Improving STM32F10xxx and STM32L1xxxx ADC resolution by oversampling"</a></span><a href="Release_Notes.html#WhatsNew"><span style="font-size: 10pt; font-family: Arial;"> </span></a><span style="font-size: 10pt; font-family: Verdana;"><a href="Release_Notes.html#WhatsNew">V3.0.0</a></span><span style="font-size: 10pt; font-family: Verdana;"></span></li>
+
+              <li class="MsoNormal" style="margin-top: 4.5pt; margin-bottom: 4.5pt; color: black;"><span style="font-size: 10pt; font-family: Verdana;"><a href="#WhatsNew2.0">What's
+New in AN2668 "Improving STM32F10xxx and STM32L1xxxx ADC resolution by oversampling"</a></span><a href="#WhatsNew"><span style="font-size: 10pt; font-family: Arial;"> </span></a><span style="font-size: 10pt; font-family: Verdana;"><a href="#WhatsNew">V2.0.0</a><o:p></o:p></span>
+              </li>
+
+
+              <li class="MsoNormal" style="margin-top: 4.5pt; margin-bottom: 4.5pt; color: black;"><span style="font-size: 10pt; font-family: Verdana;"><a href="file:///C:/VSS_Working%20folder/CHM-youssef/AN%20CHM/STM32F10x_AN2557_FW/Release_Notes.html#StdPeriph_Lib">What
+is </a></span><a href="#WhatIs"><span style="font-size: 10pt; font-family: Arial;">AN2668 "Improving STM32F10xxx and STM32L1xxxx ADC resolution by oversampling"</span></a><span style="font-size: 10pt; font-family: Verdana;"><a href="file:///C:/VSS_Working%20folder/CHM-youssef/AN%20CHM/STM32F10x_AN2557_FW/Release_Notes.html#StdPeriph_Lib">?</a><o:p></o:p></span>
+              </li>
+
+
+              <li class="MsoNormal" style="margin-top: 4.5pt; margin-bottom: 4.5pt; color: black;"><a href="#History"><span style="font-size: 10pt; font-family: Arial;">AN2668 "Improving STM32F10xxx and STM32L1xxxx ADC resolution by oversampling"</span></a><a href="#History"><small><span style="font-family: Arial;"></span></small></a><span style="font-size: 10pt; font-family: Verdana;"><a href="#History">&nbsp;update History</a><o:p></o:p></span>
+              </li>
+
+
+              <li class="MsoNormal" style="margin-top: 4.5pt; margin-bottom: 4.5pt; color: black;"><span style="font-size: 10pt; font-family: Verdana;"><a href="#License">License</a><o:p></o:p></span>
+              </li>
+
+
+            
+            </ol>
+
+
+            
+            <h2 style="background: rgb(51, 102, 255) none repeat scroll 0% 50%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;"><a name="WhatsNew3.0"></a><span style="font-size: 12pt; color: white;">What's New in AN2668 "Improving STM32F10xxx and STM32L1xxxx ADC resolution by oversampling" V3.0.0?</span><span style="font-size: 12pt;"><o:p></o:p></span></h2>
+
+
+            <span style="font-size: 10pt; color: black; font-family: Verdana;">The</span><small><span style="font-family: Arial;"> </span></small><span style="font-size: 10pt; font-family: Arial;">AN2668 "Improving STM32F10xxx and STM32L1xxxx ADC resolution by oversampling"</span><span style="font-size: 10pt; color: black; font-family: Verdana;">
+V3.0.0 is an update of </span><span style="font-size: 10pt; color: black; font-family: Verdana;">V2.0.0
+that makes the application note compliant with the </span><span style="font-size: 10pt; color: black; font-family: Verdana;">STM32L </span><span style="font-size: 10pt; color: black; font-family: Verdana;">low power family&nbsp;microcontrollers.</span>
+            
+            <h2 style="background: rgb(51, 102, 255) none repeat scroll 0% 50%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;"></h2>
+
+            
+            <h2 style="background: rgb(51, 102, 255) none repeat scroll 0% 50%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;"><a name="WhatsNew2.0"></a><span style="font-size: 12pt; color: white;">What's New in AN2668 "Improving STM32F10xxx and STM32L1xxxx ADC resolution by oversampling" V2.0.0?</span><span style="font-size: 12pt;"><o:p></o:p></span></h2>
+
+
+            
+            <p class="MsoNormal" style="margin: 4.5pt 0cm;"><span style="font-size: 10pt; color: black; font-family: Verdana;">The</span><small><span style="font-family: Arial;"> </span></small><span style="font-size: 10pt; font-family: Arial;">AN2668 "Improving STM32F10xxx and STM32L1xxxx ADC resolution by oversampling"</span><span style="font-size: 10pt; color: black; font-family: Verdana;">
+V2.0.0 is an update of </span><span style="font-size: 10pt; color: black; font-family: Verdana;">V1.0.0
+that makes the application note compliant with the Cortex&#8482;
+microcontroller software interface standard (CMSIS).<o:p></o:p></span></p>
+
+
+            
+            <h2 style="background: rgb(51, 102, 255) none repeat scroll 0% 50%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;"><a name="WhatIs"></a><span style="font-size: 12pt; color: white;">What
+is AN2668 "Improving STM32F10xxx and STM32L1xxxx ADC resolution by oversampling"?</span><span style="font-size: 12pt;"><o:p></o:p></span></h2>
+
+
+            <span style="font-size: 10pt; font-family: Arial;">The AN2668 "Improving STM32F10xxx and STM32L1xxxx ADC resolution by oversampling"</span><span style="font-size: 10pt; font-family: Arial;">
+gives two methods to improve ADC resolution. These techniques are based
+on the same principle: oversampling the input signal with the maximum 1
+MHz ADC capability and decimating the input signal to enhance its
+resolution.<br>
+
+The method and the firmware given within this
+application note apply to both Medium- and High-density STM32F10xxx
+products and </span><span style="font-size: 10pt; font-family: Arial;">STM32L1xxxx products</span><span style="font-size: 10pt; font-family: Arial;">. Some specific hints are given at the end of the application
+note to take advantage of the Medium- and High-density STM32F103xx
+performance line devices and of the High-density STM32F101xx access
+line devices.<br>
+
+This application note is split into two main parts:
+the first one describes how oversampling increases the ADC-specified
+resolution while the second describes the guidelines to implement the
+different methods available and gives the firmware flowchart of their
+implementation on the STM32F101xx, STM32F103xx and&nbsp;</span><span style="font-size: 10pt; font-family: Arial;">STM32L1xxxx</span><span style="font-size: 10pt; font-family: Arial;"> devices.</span><span style="font-family: &quot;Times New Roman&quot;;"><br>
+
+
+            </span>
+            
+            <p class="MsoNormal" style="margin: 4.5pt 0cm;"><small><span style="font-family: Arial;">The </span></small><span style="font-size: 10pt; font-family: Arial;">AN2668 "Improving STM32F10xxx and STM32L1xxxx ADC resolution by oversampling"</span><small><span style="font-family: Arial;"> is full CMSIS compliant.</span></small><span style="font-size: 10pt; color: black; font-family: Verdana;"><o:p></o:p></span></p>
+
+
+            
+            <p style="text-align: center;" align="center"><span style="color: black;"><a href="http://www.onarm.com/" target="_blank"><span style="font-family: Arial; text-decoration: none;"><img alt="" id="_x0000_i1026" style="border: 0px solid ; width: 180px; height: 119px;" src="_htmresc/CMSIS_Logo_Final.jpg"></span></a><o:p></o:p></span></p>
+
+
+            
+            <h2 style="background: rgb(51, 102, 255) none repeat scroll 0% 50%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;"><a name="History"></a><span style="font-size: 12pt; color: white;">AN2668 "Improving STM32F10xxx and STM32L1xxxx ADC resolution by oversampling"&nbsp;update History<o:p></o:p></span></h2>
+
+
+            
+            <p class="MsoNormal"><span style="color: black;"><o:p>&nbsp;</o:p></span></p>
+
+            
+            <h3 style="background: rgb(51, 102, 255) none repeat scroll 0% 50%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; margin-right: 558.05pt;"><span style="font-size: 10pt; color: white; font-family: Arial;">V3.0.0
+- 03/19/2013<o:p></o:p></span></h3>
+
+
+            
+            <ul style="margin-top: 0cm;" type="square">
+
+              <li class="MsoNormal" style="margin-top: 4.5pt; margin-bottom: 4.5pt; color: black;"><span style="font-size: 10pt; font-family: Verdana;"><span class="SpellE"><span class="spelle"><span style="font-family: Verdana;"></span></span></span></span><span style="font-size: 10pt; color: black; font-family: Verdana;"></span><span style="font-size: 10pt; font-family: Arial;">AN2668
+                </span><span style="font-size: 10pt; color: black; font-family: Verdana;">
+V3.0.0</span><span style="font-size: 10pt; font-family: Verdana;"></span><span style="font-size: 10pt; color: black; font-family: Verdana;">&nbsp;</span><small><span style="font-family: Arial;">updated to support&nbsp;</span></small><span style="font-size: 10pt; font-family: Verdana;">STM32L1xxxx
+microcontrollers</span> </li>
+
+              
+              <ul>
+
+                <li class="MsoNormal" style="margin-top: 4.5pt; margin-bottom: 4.5pt; color: black;">added&nbsp;<span style="font-size: 10pt; font-family: Verdana;">STM32L1xx
+Standard Peripherals Library </span><span style="font-size: 10pt; font-family: Verdana;">(<span style="font-weight: bold; font-style: italic;">StdPeriph_Lib</span>) </span><span style="font-size: 10pt; font-family: Verdana;">V1.1.1</span></li>
+
+                <li class="MsoNormal" style="margin-top: 4.5pt; margin-bottom: 4.5pt; color: black;"><span style="font-size: 10pt; font-family: Verdana;">exaples ported to support </span><span style="font-size: 10pt; font-family: Verdana;">STM32L1xxxx
+microcontrollers</span></li>
+
+              
+              </ul>
+              <li class="MsoNormal" style="margin-top: 4.5pt; margin-bottom: 4.5pt; color: black;"><span style="font-size: 10pt; font-family: Arial;">AN2668
+                </span><span style="font-size: 10pt; color: black; font-family: Verdana;">
+V3.0.0</span><span style="font-size: 10pt; font-family: Verdana;"></span><span style="font-size: 10pt; color: black; font-family: Verdana;">&nbsp;</span><small><span style="font-family: Arial;">updated to support </span></small><span style="font-size: 10pt; font-family: Verdana;">more toolchains</span></li>
+              <ul>
+                <li class="MsoNormal" style="margin-top: 4.5pt; margin-bottom: 4.5pt; color: black;"><span style="font-size: 10pt; font-family: Verdana;">EWARM, MDK-ARM, RIDE, TASKING, TrueSTUDIO<br>
+                  </span></li>
+              </ul>
+
+
+            
+            </ul>
+
+
+            <span style="font-size: 10pt; color: black; font-family: Verdana;"></span><span style="font-size: 10pt; font-family: Verdana;"></span>
+            
+            <h3 style="background: rgb(51, 102, 255) none repeat scroll 0% 50%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; margin-right: 558.05pt;"><span style="font-size: 10pt; color: white; font-family: Arial;">V2.0.0
+- 04/27/2009<o:p></o:p></span></h3>
+
+
+            
+            <ul style="margin-top: 0cm;" type="square">
+
+
+              <li class="MsoNormal" style="margin-top: 4.5pt; margin-bottom: 4.5pt; color: black;"><span style="font-size: 10pt; font-family: Verdana;"><span class="SpellE"><span class="spelle"><span style="font-family: Verdana;"></span></span></span></span><span style="font-size: 10pt; color: black; font-family: Verdana;"></span><span style="font-size: 10pt; font-family: Arial;">AN2668
+                </span><span style="font-size: 10pt; color: black; font-family: Verdana;">
+V2.0.0</span><span style="font-size: 10pt; font-family: Verdana;"></span><span style="font-size: 10pt; color: black; font-family: Verdana;">&nbsp;</span><small><span style="font-family: Arial;">updated with</span></small><span style="font-size: 10pt; font-family: Verdana;">&nbsp;STM32F10x
+Standard Peripherals Library (<span style="font-weight: bold; font-style: italic;">StdPeriph_Lib</span>)
+V3.0.0</span> </li>
+
+
+              <li class="MsoNormal" style="margin-top: 4.5pt; margin-bottom: 4.5pt; color: black;"><span style="font-size: 10pt; font-family: Verdana;"></span><span style="font-size: 10pt; color: black; font-family: Verdana;"></span><span style="font-size: 10pt; font-family: Arial;">AN2668</span><span style="font-size: 10pt; color: black; font-family: Verdana;"> &nbsp;V2.0.0</span><span style="font-size: 10pt; font-family: Verdana;"> is full
+CMSIS compliant</span> </li>
+
+
+              <li class="MsoNormal" style="margin-top: 4.5pt; margin-bottom: 4.5pt; color: black;"><span style="font-size: 10pt; font-family: Verdana;"></span><span style="font-size: 10pt; font-family: Verdana;">STM32F10x
+Standard Peripherals Library Structure is updated.</span> </li>
+
+
+              <li class="MsoNormal" style="margin-top: 4.5pt; margin-bottom: 4.5pt; color: black;"><span style="font-size: 10pt; font-family: Verdana;"></span><span style="font-size: 10pt; color: black; font-family: Verdana;"></span><span style="font-size: 10pt; font-family: Arial;">AN2668</span><span style="font-size: 10pt; color: black; font-family: Verdana;"></span><span style="font-size: 10pt; font-family: Verdana;"> Package
+Architecture is enhanced</span> </li>
+
+
+            
+            </ul>
+
+
+            
+            <p class="MsoNormal"><span style="font-size: 10pt; color: black; font-family: Verdana;">For
+more details, please refer to <a href="http://www.st.com/mcu/familiesdocs-110.html" target="_blank">AN2953</a> "How to migrate from the
+STM32F10xxx firmware library V2.0.3 to the STM32F10xxx standard
+peripheral library V3.0.0".</span><span style="font-size: 10pt; color: white; font-family: Arial;"></span><span style="font-size: 10pt; font-family: Verdana;">&nbsp;&nbsp;</span><span style="font-size: 10pt; color: white; font-family: Arial;"></span><span style="font-size: 10pt; font-family: Verdana;">&nbsp;<o:p></o:p></span></p>
+
+
+            
+            <h3 style="background: rgb(51, 102, 255) none repeat scroll 0% 50%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; margin-right: 558.05pt;"><span style="font-size: 10pt; color: white; font-family: Arial;">V1.0.0
+- 09/08/2008<o:p></o:p></span></h3>
+
+
+            
+            <ul style="margin-top: 0cm;" type="square">
+
+
+              <li class="MsoNormal" style="margin-top: 4.5pt; margin-bottom: 4.5pt; color: black;"><span style="font-size: 10pt; font-family: Verdana;">Updated with STM32F10x FWLib V2.0.1</span></li>
+
+              <li class="MsoNormal" style="margin-top: 4.5pt; margin-bottom: 4.5pt; color: black;"><span style="font-size: 10pt; font-family: Verdana;">Add Project with RIDE and HITOP, EWARM toolchains<br>
+
+                </span></li>
+
+            
+            </ul>
+
+            
+            <h3 style="background: rgb(51, 102, 255) none repeat scroll 0% 50%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; margin-right: 558.05pt;"><span style="font-size: 10pt; color: white; font-family: Arial;">V0.1 - 01/25/2008<o:p></o:p></span></h3>
+
+
+            
+            <ul>
+
+              <li><span style="font-size: 10pt; font-family: Verdana;">Created.</span></li>
+
+            
+            </ul>
+
+            
+            <ul style="margin-top: 0cm;" type="square">
+
+              <span style="font-family: Verdana;"></span>
+            
+            </ul>
+
+
+            
+            <h2 style="background: rgb(51, 102, 255) none repeat scroll 0% 50%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;"><a name="License"></a><span style="font-size: 12pt; color: white;">License<o:p></o:p></span></h2>
+
+
+            
+            <p class="MsoNormal" style="margin: 4.5pt 0cm;"><span style="font-size: 10pt; color: black; font-family: Verdana;">The
+enclosed firmware and all the related documentation are not covered by
+a License Agreement, if you need such License you can contact your
+local STMicroelectronics office.<u1:p></u1:p><o:p></o:p></span></p>
+
+
+            
+            <p class="MsoNormal"><b><span style="font-size: 10pt; color: black; font-family: Verdana;">THE
+PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
+WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO
+SAVE TIME. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR
+ANY DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY
+CLAIMS ARISING FROM THE CONTENT OF SUCH FIRMWARE AND/OR THE USE MADE BY
+CUSTOMERS OF THE CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH
+THEIR PRODUCTS. <o:p></o:p></span></b></p>
+
+
+            
+            <p class="MsoNormal"><span style="color: black;"><o:p>&nbsp;</o:p></span></p>
+
+
+            
+            <div class="MsoNormal" style="text-align: center;" align="center"><span style="color: black;">
+            
+            <hr align="center" size="2" width="100%"></span></div>
+
+
+            
+            <p class="MsoNormal" style="margin: 4.5pt 0cm 4.5pt 18pt; text-align: center;" align="center"><span style="font-size: 10pt; color: black; font-family: Verdana;">For
+Complete on </span><span style="font-size: 10pt; font-family: Verdana;">STM32(<span style="color: black;">CORTEX M3) 32-Bit Microcontrollers
+visit </span><u><span style="color: blue;"><a href="http://www.st.com/stm32" target="_blank">www.st.com/STM32</a></span></u></span><span style="color: black;"><o:p></o:p></span></p>
+
+
+            </td>
+
+
+          </tr>
+
+
+        
+        </tbody>
+      
+      </table>
+
+
+      
+      <p class="MsoNormal"><span style="font-size: 10pt;"><o:p></o:p></span></p>
+
+
+      </td>
+
+
+    </tr>
+
+
+  
+  </tbody>
+</table>
+
+
+</div>
+
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+
+</div>
+
+
+</body></html>

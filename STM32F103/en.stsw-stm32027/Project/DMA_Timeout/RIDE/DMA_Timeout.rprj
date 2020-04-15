@@ -1,0 +1,4 @@
+
+<Project Header="Project 'DMA Timeout'" Path=".\DMA_Timeout.rprj" Project="Yes" OutputFile="" sate="96" ActiveApp="DMA_Timeout" >
+	<ApplicationBuild Header="DMA_Timeout" Extern=".\DMA Timeout.rapp" Path=".\DMA_Timeout.rapp" OutputFile=".\STM3210C-EVAL\DMA_Timeout.elf" sate="98" Config="STM3210C-EVAL" />
+</Project>

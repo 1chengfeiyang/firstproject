@@ -1,0 +1,4 @@
+
+<Project Header="Project 'Standby'" Path=".\Standby.rprj" Project="Yes" OutputFile="" sate="96" ActiveApp="Standby" >
+	<ApplicationBuild Header="Standby" Extern=".\Standby.rapp" Path=".\Standby.rapp" OutputFile=".\STM3210B-EVAL\Standby.elf" sate="98" Config="STM3210B-EVAL" />
+</Project>

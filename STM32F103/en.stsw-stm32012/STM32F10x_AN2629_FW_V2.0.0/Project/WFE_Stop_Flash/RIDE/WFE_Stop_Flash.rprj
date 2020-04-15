@@ -1,0 +1,4 @@
+
+<Project Header="Project 'WFE_Stop_Flash'" Path=".\WFE_Stop_Flash.rprj" Project="Yes" OutputFile="" sate="96" ActiveApp="WFE_Stop_Flash" >
+	<ApplicationBuild Header="WFE_Stop_Flash" Extern=".\WFE_Stop_Flash.rapp" Path=".\WFE_Stop_Flash.rapp" OutputFile=".\STM3210B-EVAL\WFE_Stop_Flash.elf" sate="98" Config="STM3210B-EVAL" />
+</Project>

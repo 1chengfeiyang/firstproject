@@ -1,0 +1,4 @@
+
+<Project Header="Project 'CurrentMeasurements'" Path=".\CurrentMeasurements.rprj" Project="Yes" OutputFile="" sate="96" ActiveApp="CurrentMeasurements" >
+	<ApplicationBuild Header="CurrentMeasurements" Extern=".\CurrentMeasurements.rapp" Path=".\CurrentMeasurements.rapp" OutputFile=".\STM3210B-EVAL\CurrentMeasurements.elf" sate="96" Config="STM3210B-EVAL" />
+</Project>

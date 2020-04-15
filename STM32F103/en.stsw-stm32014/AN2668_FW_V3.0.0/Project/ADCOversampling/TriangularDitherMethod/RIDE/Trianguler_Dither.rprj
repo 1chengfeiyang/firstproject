@@ -1,0 +1,4 @@
+
+<Project Header="Project 'Trianguler_Dither'" Path=".\Trianguler_Dither.rprj" Project="Yes" OutputFile="" sate="96" ActiveApp="Trianguler_Dither" >
+	<ApplicationBuild Header="Trianguler_Dither" Extern=".\Trianguler_Dither.rapp" Path=".\Trianguler_Dither.rapp" OutputFile=".\STM3210B-EVAL\Trianguler_Dither.elf" sate="98" Config="STM3210B-EVAL" />
+</Project>

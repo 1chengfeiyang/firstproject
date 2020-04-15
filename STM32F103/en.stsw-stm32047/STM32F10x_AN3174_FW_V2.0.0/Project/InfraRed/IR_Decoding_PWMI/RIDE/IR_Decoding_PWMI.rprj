@@ -1,0 +1,4 @@
+
+<Project Header="Project 'IR_Decoding_PWMI" Path=".\IR_Decoding_PWMI.rprj" Project="Yes" OutputFile="" sate="96" ActiveApp="IR_Decoding_PWMI" AsyncBuild="" >
+	<ApplicationBuild Header="IR_Decoding_PWMI" Extern=".\IR_Decoding_PWMI.rapp" Path=".\IR_Decoding_PWMI.rapp" OutputFile=".\IR_RC5_Decoder\IR_Decoding_PWMI.elf" sate="98" Config="IR_RC5_Decoder" AsyncBuild="" />
+</Project>

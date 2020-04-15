@@ -1,0 +1,4 @@
+
+<Project Header="Project 'DMAInterruptMethod'" Path=".\DMAInterruptMethod.rprj" Project="Yes" OutputFile="" sate="96" ActiveApp="DMAInterruptMethod" >
+	<ApplicationBuild Header="DMAInterruptMethod" Extern=".\DMAInterruptMethod.rapp" Path=".\DMAInterruptMethod.rapp" OutputFile=".\STM3210B-EVAL\DMAInterruptMethod.elf" sate="98" Config="STM3210B-EVAL" />
+</Project>

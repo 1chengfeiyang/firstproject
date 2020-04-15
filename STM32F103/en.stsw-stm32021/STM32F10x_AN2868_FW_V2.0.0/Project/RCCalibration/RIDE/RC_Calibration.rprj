@@ -1,0 +1,4 @@
+
+<Project Header="Project 'RC_Calibration'" Path=".\RC_Calibration.rprj" Project="Yes" OutputFile="" sate="96" ActiveApp="RC_Calibration" >
+	<ApplicationBuild Header="RC_Calibration" Extern=".\RC_Calibration.rapp" Path=".\RC_Calibration.rapp" OutputFile=".\STM3210B-EVAL\RC_Calibration.elf" sate="98" Config="STM3210B-EVAL" />
+</Project>

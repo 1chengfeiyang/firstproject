@@ -1,0 +1,27 @@
+
+**** Build of configuration Debug for project STM32L152-EVAL ****
+
+"C:\\Program Files\\TASKING\\carm v4.4r1\\bin\\amk" -j all -a 
+Compiling system_stm32l1xx.c
+Compiling misc.c
+Compiling stm32l1xx_adc.c
+Compiling stm32l1xx_dma.c
+Compiling stm32l1xx_flash.c
+Compiling stm32l1xx_gpio.c
+Compiling stm32l1xx_rcc.c
+Compiling stm32l1xx_tim.c
+Compiling stm32l1xx_usart.c
+Compiling main.c
+Compiling oversampling.c
+Compiling stm32l1xx_it.c
+Linking to STM32L152-EVAL.abs
+
+Time consumed: 1758 ms
+**** End of build ****
+
+Tool info: 
+TASKING program builder v4.4r1 Build 077
+TASKING VX-toolset for ARM Cortex: object linker v4.4r1 Build 153 SN 00123456
+TASKING VX-toolset for ARM Cortex: assembler v4.4r1 Build 155
+TASKING VX-toolset for ARM Cortex: control program v4.4r1 Build 132
+TASKING VX-toolset for ARM Cortex: C compiler v4.4r1 Build 765 SN 00123456

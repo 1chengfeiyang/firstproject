@@ -1,0 +1,4 @@
+
+<Project Header="Project 'USART_FIFO'" Path=".\USART_FIFO.rprj" Project="Yes" OutputFile="" sate="96" ActiveApp="USART_FIFO" >
+	<ApplicationBuild Header="USART_FIFO" Extern=".\USART_FIFO.rapp" Path=".\USART FIFO.rapp" OutputFile=".\STM3210C-EVAL\USART_FIFO.elf" sate="96" Config="STM3210C-EVAL" />
+</Project>

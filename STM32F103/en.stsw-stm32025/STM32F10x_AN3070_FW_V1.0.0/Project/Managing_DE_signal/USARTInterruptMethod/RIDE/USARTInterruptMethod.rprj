@@ -1,0 +1,4 @@
+
+<Project Header="Project 'USARTInterruptMethod'" Path=".\USARTInterruptMethod.rprj" Project="Yes" OutputFile="" sate="96" ActiveApp="USARTInterruptMethod" >
+	<ApplicationBuild Header="USARTInterruptMethod" Extern=".\USARTInterruptMethod.rapp" Path=".\USARTInterruptMethod.rapp" OutputFile=".\STM3210B-EVAL\USARTInterruptMethod.elf" sate="98" Config="STM3210B-EVAL" />
+</Project>

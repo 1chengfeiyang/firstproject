@@ -1,0 +1,4 @@
+
+<Project Header="Project 'WakeUpTiming'" Path=".\WakeUpTiming.rprj" Project="Yes" OutputFile="" sate="96" ActiveApp="WakeUpTiming" >
+	<ApplicationBuild Header="WakeUpTiming" Extern=".\WakeUpTiming.rapp" Path=".\WakeUpTiming.rapp" OutputFile=".\STM3210B-EVAL\WakeUpTiming.elf" sate="98" Config="STM3210B-EVAL" />
+</Project>
